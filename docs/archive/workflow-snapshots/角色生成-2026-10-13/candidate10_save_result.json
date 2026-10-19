@@ -1,0 +1,8 @@
+{
+  "gateway": "https://gw-6ed29e3e0a33433b9eb91aca62301fa5.cn-beijing.aigclinks.com:8016",
+  "saved_at": "2026-10-15T01:53:34.427474+00:00",
+  "previous_sha256": "f81afc591f18d4e8f8ad2752c6726cd4f9d12411f795fcdc33acb7174cf59d01",
+  "workflow_sha256": "d852cfe014145108f484eee0b547002e8177cdaab825375edb263c05098e71d4",
+  "full_readback_matches": true,
+  "save_response": "\"workflows\\\\\\u89d2\\u8272\\u751f\\u6210.json\""
+}

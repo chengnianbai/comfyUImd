@@ -1,0 +1,11 @@
+{
+  "remote_saved": true,
+  "local_workflow": "D:\\xiaobai-claude code\\comfyUImd\\系列-夜市百相簿\\03-工作流\\闻灯-锁脸诊断保存-2026-10-09\\夜市百相簿-主工作流-已保存.json",
+  "front_reference": "闻灯-脸部正面-成品_00017_.png",
+  "layout_completed": false,
+  "queue": {
+    "queue_running": [],
+    "queue_pending": []
+  },
+  "remote_response": "\"workflows\\\\\\u591c\\u5e02\\u767e\\u76f8\\u7c3f-\\u4e3b\\u5de5\\u4f5c\\u6d41.json\""
+}

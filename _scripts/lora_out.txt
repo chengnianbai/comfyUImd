@@ -1,0 +1,90 @@
+
+### 搜索词: detail tweaker   (20 条)
+   AiWise/Detail-Tweaker-XL_v1                                dl=1149     diffusers,text-to-image,lora,template:diffusion-lora,base_model:stabilityai/stable-diffusion-xl-base-1.0,base_model:adapter:stabilityai/stable-diffusion-xl-base-1.0
+   LyliaEngine/Anima_Detail_Tweaker                           dl=537      diffusers,text-to-image,lora,template:diffusion-lora,base_model:LyliaEngine/anima_baseV10,base_model:adapter:LyliaEngine/anima_baseV10
+   Muapi/detail-tweaker-xl                                    dl=204      diffusers,lora,text-to-image,stable-diffusion-xl,sdxl,sdxl-1.0
+   ImagineLabs/detail-tweaker                                 dl=47       diffusers,text-to-image,lora,template:diffusion-lora,base_model:xinsir/controlnet-union-sdxl-1.0,base_model:adapter:xinsir/controlnet-union-sdxl-1.0
+   Muapi/pony-detail-tweaker                                  dl=33       diffusers,lora,text-to-image,stable-diffusion-xl,pony,license:openrail++
+   Muapi/detail-tweaker-illustrious-by-stable-yogi            dl=31       diffusers,lora,text-to-image,stable-diffusion-xl,illustrious,base_model:OnomaAIResearch/Illustrious-xl-early-release-v0
+   UnifiedHorusRA/Detail_Tweaker_XL                           dl=5        custom,art,en,region:us
+   OedoSoldier/detail-tweaker-lora                            dl=0        pl,region:us
+   Kizi-Art/detail-tweaker-lora                               dl=0        region:us
+   niitokikei/DetailTweaker                                   dl=0        license:other,region:us
+   aujbvoOPxJynWXSwOCKjONnysgjnsZAX/detail-tweaker            dl=0        region:us
+   imagepipeline/Detail-Tweaker-LoRA                          dl=0        imagepipeline,imagepipeline.io,text-to-image,ultra-realistic,license:creativeml-openrail-m,region:us
+   imagepipeline/Detail-Tweaker-XL                            dl=0        imagepipeline,imagepipeline.io,text-to-image,ultra-realistic,license:creativeml-openrail-m,region:us
+   getdiffus/SDaB1-Detail-Tweaker-LoRA-LoRA                   dl=0        StableDiffusion,GetDiffus,anime,photorealistic,concept,detailed
+   DarkAngelH/Detail_Tweaker_LoRA                             dl=0        region:us
+   Puttis/DetailTweaker                                       dl=0        region:us
+   whysosad69/DetailTweaker_1.0                               dl=0        region:us
+   Yuriy81/DetailTweakerXL_lora                               dl=0        region:us
+   LengXuXu/Detail_Tweaker_XL                                 dl=0        region:us
+   Planningo/detail-tweaker-XL                                dl=0        region:us
+
+### 搜索词: detail lora sd15   (0 条)
+
+### 搜索词: more details lora   (2 条)
+   Muapi/better-picture-more-details-lora                     dl=22       diffusers,lora,text-to-image,stable-diffusion-xl,sdxl,sdxl-1.0
+   Dcry/add-more-details-detail-enhancer-tweaker-lora         dl=0        region:us
+
+### 搜索词: skin texture lora   (5 条)
+   DefendIntelligence/lora-skin-texture                       dl=0        region:us
+   PetruZetta/skin_texture_flux_lora                          dl=0        region:us
+   gustasanches/skin-texture-lora-v1                          dl=0        region:us
+   damian2185/skin-texture-v21-lora                           dl=0        region:us
+   lastremorse/z-image-Realistic-Skin-Texture-style-lora      dl=0        region:us
+
+### 搜索词: realistic skin lora   (4 条)
+   igorgomes3/Skin_Realistic_LoRa                             dl=128      diffusers,text-to-image,lora,template:diffusion-lora,base_model:black-forest-labs/FLUX.1-dev,base_model:adapter:black-forest-labs/FLUX.1-dev
+   Muapi/realistic-armpit-stubble-realistic-skin-flux-lora    dl=30       diffusers,lora,text-to-image,stable-diffusion,flux,flux.1-d
+   code4freedom/realistic-skin-lora-flux                      dl=0        license:creativeml-openrail-m,region:us
+   lastremorse/z-image-Realistic-Skin-Texture-style-lora      dl=0        region:us
+
+### 搜索词: add detail lora   (7 条)
+   Shakker-Labs/FLUX.1-dev-LoRA-add-details                   dl=2781     diffusers,text-to-image,stable-diffusion,lora,image-generation,flux
+   AiAF/Add_Micro_Details_-_Concept_Illustrious__v1.0_Pony_lora dl=322      diffusers,lora,pony,anime,photorealistic,concept
+   Boxer11/adddetailLora                                      dl=0        region:us
+   amaru96vn/Add_Detail_Lora-1.5                              dl=0        region:us
+   trieult/lora_add_details_xl                                dl=0        region:us
+   Dcry/add-more-details-detail-enhancer-tweaker-lora         dl=0        region:us
+   luvGPT/add-detail-lora                                     dl=0        region:us
+
+### 搜索词: film grain lora   (8 条)
+   ilkerzgi/krea-2-faded-japanese-film-grain-lora             dl=180      diffusers,lora,text-to-image,krea,krea-2,fal-ai
+   ilkerzgi/krea-2-grainy-nineties-film-lora                  dl=100      diffusers,lora,text-to-image,krea,krea-2,fal-ai
+   ilkerzgi/krea-2-moody-desaturated-film-grain-lora          dl=97       diffusers,lora,text-to-image,krea,krea-2,fal-ai
+   markredito/FilmGrain-LoRA-stablediffusion                  dl=59       diffusers,art,text-to-image,en,license:artistic-2.0,region:us
+   ilkerzgi/krea-2-muted-film-grain-east-lora                 dl=36       diffusers,lora,text-to-image,krea,krea-2,fal-ai
+   ilkerzgi/krea-2-golden-grain-surreal-film-lora             dl=35       diffusers,lora,text-to-image,krea,krea-2,fal-ai
+   ilkerzgi/krea-2-cool-blue-film-grain-lora                  dl=34       diffusers,lora,text-to-image,krea,krea-2,fal-ai
+   izitn/FilmGrainLoRA                                        dl=0        region:us
+
+### 搜索词: portrait realism lora stable diffusion 1.5   (0 条)
+
+
+===== 汇总（按下载量）=====
+Shakker-Labs/FLUX.1-dev-LoRA-add-details                     2781
+AiWise/Detail-Tweaker-XL_v1                                  1149
+LyliaEngine/Anima_Detail_Tweaker                             537
+AiAF/Add_Micro_Details_-_Concept_Illustrious__v1.0_Pony_lora 322
+Muapi/detail-tweaker-xl                                      204
+ilkerzgi/krea-2-faded-japanese-film-grain-lora               180
+igorgomes3/Skin_Realistic_LoRa                               128
+ilkerzgi/krea-2-grainy-nineties-film-lora                    100
+ilkerzgi/krea-2-moody-desaturated-film-grain-lora            97
+markredito/FilmGrain-LoRA-stablediffusion                    59
+ImagineLabs/detail-tweaker                                   47
+ilkerzgi/krea-2-muted-film-grain-east-lora                   36
+ilkerzgi/krea-2-golden-grain-surreal-film-lora               35
+ilkerzgi/krea-2-cool-blue-film-grain-lora                    34
+Muapi/pony-detail-tweaker                                    33
+Muapi/detail-tweaker-illustrious-by-stable-yogi              31
+Muapi/realistic-armpit-stubble-realistic-skin-flux-lora      30
+Muapi/better-picture-more-details-lora                       22
+UnifiedHorusRA/Detail_Tweaker_XL                             5
+OedoSoldier/detail-tweaker-lora                              0
+Kizi-Art/detail-tweaker-lora                                 0
+niitokikei/DetailTweaker                                     0
+aujbvoOPxJynWXSwOCKjONnysgjnsZAX/detail-tweaker              0
+imagepipeline/Detail-Tweaker-LoRA                            0
+imagepipeline/Detail-Tweaker-XL                              0

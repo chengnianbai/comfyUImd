@@ -1,0 +1,22 @@
+{
+  "history_contains_exact_submitted_prompt": true,
+  "sleeveless_tucked_framing_present": true,
+  "local_remote_equal_after_run": true,
+  "output_size": [
+    2048,
+    3584
+  ],
+  "history_status": "success",
+  "execution_seconds": 51.597,
+  "submitted_jobs": 1,
+  "visual_observation": {
+    "sleeveless": "未实现：仍为短袖",
+    "tucked_hem": "未实现：下摆仍在裤外",
+    "framing_85_percent": "未实现：人物仍接近占满画面",
+    "muscle_target": "肩部被遮挡、肩臂和腿部改善不明显",
+    "slenderness": "未明显改善",
+    "identity": "需用户判断，非原脸像素保持"
+  },
+  "model_issue": "节点标题Kontext，实际文件选项flux1-schnell；仅凭文件名不能验证云端权重真身，服务可选UNet仅一个",
+  "next_action": "展示实际结果并等待用户决定；禁止自行追加生成"
+}

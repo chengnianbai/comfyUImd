@@ -1,0 +1,12 @@
+{
+  "baseline_sha256": "f20973bd9f9cacde73fda289d57b32cddf6ece88f389a0ba90389ae1eef8226c",
+  "candidate_sha256": "a22419e7d44ef9554f9a7f15dbe7e3b82c61e2e60fc9d9adeb07638b4a39d4d1",
+  "changed_nodes": [
+    1310,
+    1373
+  ],
+  "links_unchanged": true,
+  "groups_unchanged": true,
+  "strict_diff_unavailable_reason": "unrelated pre-existing node 1002 output references absent link 1; preserved unchanged",
+  "manual_whitelist_review": true
+}

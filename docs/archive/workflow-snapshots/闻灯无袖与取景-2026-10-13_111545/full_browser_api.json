@@ -1,0 +1,617 @@
+{
+  "14": {
+    "inputs": {
+      "images": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "★ 预览 · 成品（跑完先看这里）"
+    }
+  },
+  "15": {
+    "inputs": {
+      "filename_prefix": "闻灯-全身正面-成品",
+      "images": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "存图 · 成品"
+    }
+  },
+  "23": {
+    "inputs": {
+      "upscale_model": [
+        "1018",
+        0
+      ],
+      "image": [
+        "1317",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "使用模型放大图像"
+    }
+  },
+  "24": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "scale_by": 0.5,
+      "image": [
+        "23",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "缩回 1792×2304"
+    }
+  },
+  "311": {
+    "inputs": {
+      "upscale_model": [
+        "1018",
+        0
+      ],
+      "image": [
+        "1337",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "4x 放大"
+    }
+  },
+  "312": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "scale_by": 0.5,
+      "image": [
+        "311",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "缩回 0.5（净 2x）"
+    }
+  },
+  "316": {
+    "inputs": {
+      "filename_prefix": "闻灯-全身侧面-成品",
+      "images": [
+        "312",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "★ 存图 · 侧面成品"
+    }
+  },
+  "341": {
+    "inputs": {
+      "upscale_model": [
+        "1018",
+        0
+      ],
+      "image": [
+        "1357",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "4x 放大（背面）"
+    }
+  },
+  "342": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "scale_by": 0.5,
+      "image": [
+        "341",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "缩回 0.5（背面）"
+    }
+  },
+  "346": {
+    "inputs": {
+      "filename_prefix": "闻灯-全身背面-成品",
+      "images": [
+        "342",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "★ 存图 · 背面成品"
+    }
+  },
+  "1018": {
+    "inputs": {
+      "model_name": "4x-UltraSharp (1).pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "放大模型 4x-UltraSharp"
+    }
+  },
+  "1024": {
+    "inputs": {
+      "unet_name": "FLUX1\\flux1-schnell.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Kontext fp8_scaled（diffusion_models）"
+    }
+  },
+  "1025": {
+    "inputs": {
+      "clip_name1": "t5\\t5xxl_fp8_e4m3fn_scaled.safetensors",
+      "clip_name2": "clip_l.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIP：t5xxl_fp8 + clip_l"
+    }
+  },
+  "1026": {
+    "inputs": {
+      "vae_name": "FLUX1\\ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "VAE ae.safetensors"
+    }
+  },
+  "1030": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "1025",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "★ 负向（cfg=1.0 下无效，留空仅为满足接口）"
+    }
+  },
+  "1302": {
+    "inputs": {
+      "width": 1024,
+      "height": 1792,
+      "batch_size": 1
+    },
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "全身输出尺寸 1024×1792（三视角共用）"
+    }
+  },
+  "1310": {
+    "inputs": {
+      "image": "闻灯-脸部正面-成品_00017_.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "已确认正脸母版 00017（完整原图）"
+    }
+  },
+  "1311": {
+    "inputs": {
+      "image": [
+        "1310",
+        0
+      ]
+    },
+    "class_type": "FluxKontextImageScale",
+    "_meta": {
+      "title": "参考归一化"
+    }
+  },
+  "1312": {
+    "inputs": {
+      "pixels": [
+        "1311",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "参考 → LATENT"
+    }
+  },
+  "1313": {
+    "inputs": {
+      "text": "Full-length front-view studio reference photograph of the same young East Asian man as the supplied face reference. Preserve his exact facial identity, facial structure and proportions, eyes, eyebrows, nose, lips, chin and jawline, apparent age, messy wavy black hair, hairline and small mole by the outer eye. He wears a plain white fitted sleeveless crew-neck T-shirt with no sleeves, no logo or pattern. The entire shirt hem is neatly tucked inside the waistband of plain white mid-thigh shorts. The waistband is clearly visible and the shirt does not hang over the shorts. No jacket or accessories. Bare feet. His barefoot standing height is 183 cm. A tall, lean athletic male fashion-model physique, naturally long arms and legs, narrow waist, natural moderate shoulder width and a subtle V-shaped torso. Near eight-head body proportions, with a naturally proportioned head and anatomically natural torso. His exposed shoulders have smoothly rounded, moderately developed deltoids, with clear front and outer shoulder contours. The upper arms are moderately full, with natural biceps volume and a visible gentle transition between shoulder and upper arm. The legs are long and lean, with subtle thigh muscle contours, naturally shaped calves and slim ankles. Healthy realistic muscle volume, not bulky or extremely thin, no exaggerated bodybuilding definition. Face and body directly forward, head upright, eye line horizontal, shoulders level. Stand naturally straight, arms relaxed slightly clear of the waist, both feet flat on the same level floor, no raised foot. Use a wider full-length framing from a comfortable camera distance, natural 70 mm portrait perspective, camera level around mid-torso, straight-on without tilt or wide-angle distortion. The entire figure from hair to bare soles occupies about 85 percent of the image height. Leave generous white space above the head and visible floor below both feet; do not crop head, hands or feet. Centered on a pure white seamless studio background, soft even lighting revealing natural shoulder and arm form, realistic skin texture, unified photographic rendering.",
+      "clip": [
+        "1025",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "正面身体指令 · 无袖扎腰 / 肩臂 / 85%取景（待验收）"
+    }
+  },
+  "1314": {
+    "inputs": {
+      "guidance": 3,
+      "conditioning": [
+        "1313",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance 3.0"
+    }
+  },
+  "1315": {
+    "inputs": {
+      "conditioning": [
+        "1314",
+        0
+      ],
+      "latent": [
+        "1312",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "ReferenceLatent"
+    }
+  },
+  "1316": {
+    "inputs": {
+      "seed": 20261008,
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "1024",
+        0
+      ],
+      "positive": [
+        "1315",
+        0
+      ],
+      "negative": [
+        "1030",
+        0
+      ],
+      "latent_image": [
+        "1302",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "Kontext 参考采样 · 20步 / denoise 1.0"
+    }
+  },
+  "1317": {
+    "inputs": {
+      "samples": [
+        "1316",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAEDecode"
+    }
+  },
+  "1330": {
+    "inputs": {
+      "image": "闻灯-脸部左侧-成品_00009_.png [output]"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "已确认侧脸母版 00009（完整原图）"
+    }
+  },
+  "1331": {
+    "inputs": {
+      "image": [
+        "1330",
+        0
+      ]
+    },
+    "class_type": "FluxKontextImageScale",
+    "_meta": {
+      "title": "侧脸母版 · 参考归一化"
+    }
+  },
+  "1332": {
+    "inputs": {
+      "pixels": [
+        "1331",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "侧脸母版 · 参考 latent"
+    }
+  },
+  "1333": {
+    "inputs": {
+      "text": "Rotate this same man and his entire body exactly 90 degrees to face the left edge of the image. A strict left-facing side profile of the whole standing person, not a three-quarter view. His face, chest, pelvis, knees and both bare feet all face left. Only one eye is visible. Keep the same man, facial features, curly black hair, moustache, chin beard, skin tone, body build, plain white sleeveless crew-neck T-shirt neatly tucked fully into the shorts waistband and plain white shorts. Keep the camera at the same distance and keep the same full-length head-to-toe framing as the input. The complete hair, legs, heels and toes must be inside the image with white margins above and below. Arms hanging naturally at his sides, standing straight. Plain white studio background, soft even lighting. His barefoot standing height remains 183 cm. Preserve the tall, lean fashion-model proportions established in the front view: the same head-to-body ratio, long limbs, moderate shoulder width and narrow waist. Both bare feet rest flat on the same level floor. Preserve the front view's moderately developed rounded shoulders, natural upper-arm muscle volume, lean thighs and calves, visible shorts waistband and wider framing with the entire figure occupying about 85 percent of image height. Keep the full head and both feet visible.",
+      "clip": [
+        "1025",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "侧面身体指令 · 保持正面 183 cm 比例（角度待验收）"
+    }
+  },
+  "1334": {
+    "inputs": {
+      "guidance": 3,
+      "conditioning": [
+        "1333",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance 3.0"
+    }
+  },
+  "1335": {
+    "inputs": {
+      "conditioning": [
+        "1334",
+        0
+      ],
+      "latent": [
+        "1371",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "先加入正面全身参考"
+    }
+  },
+  "1336": {
+    "inputs": {
+      "seed": 20261008,
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "1024",
+        0
+      ],
+      "positive": [
+        "1372",
+        0
+      ],
+      "negative": [
+        "1030",
+        0
+      ],
+      "latent_image": [
+        "1302",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "Kontext 参考采样 · 20步 / denoise 1.0"
+    }
+  },
+  "1337": {
+    "inputs": {
+      "samples": [
+        "1336",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAEDecode"
+    }
+  },
+  "1351": {
+    "inputs": {
+      "image": [
+        "1317",
+        0
+      ]
+    },
+    "class_type": "FluxKontextImageScale",
+    "_meta": {
+      "title": "正面全身 → 背面参考"
+    }
+  },
+  "1352": {
+    "inputs": {
+      "pixels": [
+        "1351",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "参考 → LATENT"
+    }
+  },
+  "1353": {
+    "inputs": {
+      "text": "Turn this same man around to show him directly from behind in a full-length studio photograph. Preserve the exact same body build, height, shoulder width, waist, arms, legs, curly black hairstyle, skin tone, plain white sleeveless crew-neck T-shirt neatly tucked fully into the shorts waistband and plain white shorts. His face is not visible. Neutral upright standing pose, arms relaxed at his sides, feet slightly apart. Show the entire person from hair to bare feet, with white space above and below. Same camera distance, white studio background, soft even lighting and natural photographic rendering. His barefoot standing height remains 183 cm. Preserve the tall, lean fashion-model proportions established in the front view: the same head-to-body ratio, long limbs, moderate shoulder width and narrow waist. Both bare feet rest flat on the same level floor. Preserve the front view's moderately developed rounded shoulders, natural upper-arm muscle volume, lean thighs and calves, visible shorts waistband and wider framing with the entire figure occupying about 85 percent of image height. Keep the full head and both feet visible.",
+      "clip": [
+        "1025",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "背面身体指令 · 保持正面 183 cm 比例"
+    }
+  },
+  "1354": {
+    "inputs": {
+      "guidance": 3,
+      "conditioning": [
+        "1353",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance 3.0"
+    }
+  },
+  "1355": {
+    "inputs": {
+      "conditioning": [
+        "1354",
+        0
+      ],
+      "latent": [
+        "1352",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "ReferenceLatent"
+    }
+  },
+  "1356": {
+    "inputs": {
+      "seed": 20261008,
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "1024",
+        0
+      ],
+      "positive": [
+        "1355",
+        0
+      ],
+      "negative": [
+        "1030",
+        0
+      ],
+      "latent_image": [
+        "1302",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "Kontext 参考采样 · 20步 / denoise 1.0"
+    }
+  },
+  "1357": {
+    "inputs": {
+      "samples": [
+        "1356",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAEDecode"
+    }
+  },
+  "1370": {
+    "inputs": {
+      "image": [
+        "1317",
+        0
+      ]
+    },
+    "class_type": "FluxKontextImageScale",
+    "_meta": {
+      "title": "正面全身 · 身体与服装参考"
+    }
+  },
+  "1371": {
+    "inputs": {
+      "pixels": [
+        "1370",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "正面全身 · 参考 latent"
+    }
+  },
+  "1372": {
+    "inputs": {
+      "conditioning": [
+        "1335",
+        0
+      ],
+      "latent": [
+        "1332",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "加入已确认侧脸 · 双参考"
+    }
+  }
+}

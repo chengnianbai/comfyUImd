@@ -1,0 +1,22 @@
+{
+  "changed_nodes": [
+    1313,
+    1333,
+    1353,
+    1373
+  ],
+  "changed_front_api_nodes": [
+    "1313"
+  ],
+  "front_dependencies": 17,
+  "seed": 20261008,
+  "steps": 20,
+  "cfg": 1,
+  "links_unchanged": true,
+  "groups_unchanged": true,
+  "node_overlaps": 0,
+  "browser_errors": [],
+  "reference_crop_persisted": true,
+  "generation_attempt": 2,
+  "generation_limit": 2
+}

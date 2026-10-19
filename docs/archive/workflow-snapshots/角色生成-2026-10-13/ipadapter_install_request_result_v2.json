@@ -1,0 +1,13 @@
+{
+  "payload": {
+    "id": "comfyui_ipadapter_plus",
+    "version": "2.0.0",
+    "selected_version": "2.0.0",
+    "mode": "cache",
+    "skip_post_install": false,
+    "repository": "https://github.com/cubiq/ComfyUI_IPAdapter_plus",
+    "ui_id": "comfyui_ipadapter_plus"
+  },
+  "status": 500,
+  "response": "500 Internal Server Error\n\nServer got itself in trouble"
+}

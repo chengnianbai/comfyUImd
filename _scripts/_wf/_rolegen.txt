@@ -1,0 +1,27 @@
+=== 用户区工作流 ===
+  ['角色生成.json', '闻灯.json']
+  角色生成.json                                id=1942ebf9-d94a-4790-b nodes=7  ★★ 目标
+  闻灯.json                                  id=1ada4652-6b51-457f-a nodes=132
+
+
+########## 角色生成.json ##########
+nodes=7 links=9 groups=[]
+
+=== 加载器 / 采样器 / 分辨率 ===
+  #1     CheckpointLoaderSimple mode=0  ["leosamsHelloworldXL_helloworldXL70.safetensors"]
+  #5     EmptyLatentImage       mode=0  [768, 1536, 1]
+  #6     KSampler               mode=0  [2026101520, "fixed", 30, 6.0, "dpmpp_2m", "karras", 1.0]
+        model        <- #1.CheckpointLoaderSimple
+        positive     <- #2.CLIPTextEncode
+        negative     <- #3.CLIPTextEncode
+        latent_image <- #5.EmptyLatentImage
+
+=== 全部提示词 ===
+
+#2 mode=0  (1368 字符)  clip <- #1.CheckpointLoaderSimple
+One man, (24-year-old East Asian man:1.25), single subject, full-length straight-on front view from head to bare feet, both feet fully inside frame. Plain white sleeveless tank top; the entire tank hem is tucked inside the shorts, with the shorts waistband sitting over and concealing the shirt hem all around the waist; the waistband remains clearly visible. Plain white mid-thigh shorts with completely blank unbranded fabric, no printed or sewn-on details. Bare feet flat on floor, toes visible. Neutral standing casting pose, upright and balanced, legs parallel, arms relaxed straight down, open hands visible. (East Asian face with subtle Eurasian eye structure, elongated almond-shaped brown eyes, clearly visible double eyelid creases on both upper lids, deep orbital sockets with natural shadow beneath a defined brow ridge, straight prominent nasal bridge and defined nose root:1.18). (Dense dark medium-length layered wavy-curly hair, visibly full volume over the crown and both temples, curls extending past the ears toward the nape, irregular separated S-shaped locks and loose curls falling forward across the forehead, no visible part line and no exposed scalp line:1.18). Bare-faced with no cosmetic makeup, natural tired under-eyes, faintly furrowed brows, subdued weary gaze. Broad shoulders, solid build, natural unretouched skin, plain white studio.
+
+#3 mode=0  (1263 字符)  clip <- #1.CheckpointLoaderSimple
+cropped head, cropped legs, cropped feet, partial body, close-up, upper-body crop, portrait crop, shoes, sandals, slippers, socks, footwear, shirtless, bare torso, underwear, briefs, boxers, missing shirt, transparent shirt, untucked shirt, shirt hem outside waistband, fabric hanging over waistband, exposed shirt hem below waistband, logos, logo, brand mark, emblem, badge, label, lettering, text, numbers, printed graphic, symbols, watermark, makeup, eyeliner, eyeshadow, mascara, false eyelashes, lipstick, lip gloss, blush, contour makeup, foundation, concealer, glamor portrait, airbrushed skin, retouched face, sitting, kneeling, crouching, walking, running, dynamic pose, fashion pose, crossed legs, hands on hips, arms crossed, hands in pockets, bent body, leaning, twisted torso, side view, three-quarter view, back view, multiple people, duplicate subject, collage, monolid, single eyelid, indistinct double eyelid, shallow-set eyes, flat brow ridge, flat facial features, low nasal bridge, flat nose, short straight hair, flat hair, visible scalp part, center part, side part, curtain fringe, sparse hair, skinny build, exaggerated bodybuilding, props, accessories, jewelry, deformed hands, extra fingers, deformed feet, fisheye, wide angle distortion
+
+=== Note ===

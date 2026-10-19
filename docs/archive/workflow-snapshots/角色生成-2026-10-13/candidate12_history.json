@@ -1,0 +1,347 @@
+{
+  "e6bb83cc-db58-4dd2-b9fa-c25b6961a88f": {
+    "prompt": [
+      0,
+      "e6bb83cc-db58-4dd2-b9fa-c25b6961a88f",
+      {
+        "1": {
+          "class_type": "CheckpointLoaderSimple",
+          "inputs": {
+            "ckpt_name": "leosamsHelloworldXL_helloworldXL70.safetensors"
+          },
+          "_meta": {
+            "title": "01 通用底模 · LEOSAM HelloWorld XL 7.0 · SDXL"
+          }
+        },
+        "2": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "text": "Full-length straight-on front-view studio casting photograph of one adult man, standing upright with head level, shoulders even, both arms straight and relaxed beside his torso, hands fully visible. Entire body from hair to both bare feet and all toes, centered, occupying about 78 percent of the tall frame with clear white margins above and below. Pure white seamless background. A 24-year-old Asian man with subtle Eurasian influence, solid moderately muscular adult male build, visibly broader shoulders, wider rib cage, fuller chest and abdomen, thicker upper arms and forearms, sturdy thighs and calves with clearly more volume, natural athletic strength, avoid a narrow torso, thin limbs, or runway-model leanness. Thick medium-length dark wavy hair with a broad, naturally voluminous shag silhouette, loose irregular S-waves and separated natural curls, textured layered sides and nape, soft uneven forward-falling fringe with several loose curls over the forehead, hair flowing forward without a defined center part, side part, or curtain split; preserve the irregular curl pattern consistently. A clearly adult East Asian man with realistic masculine facial structure and subtle Western European influence in the eyes: deeper-set almond eyes, stronger visible brow ridge, defined upper orbital area, clear double eyelid creases on both eyes, slightly more prominent nasal bridge and root, natural broad masculine jaw; remain recognizably East Asian, not a Korean pop idol or beauty-model face. Dark brown almond eyes with clearly visible double eyelid creases and moderately deep-set eyes, thick straight eyebrows with a gentle angular arch and tapered tails, natural raised nose bridge, youthful defined jaw, small outer-eye mole. Healthy age-appropriate youthful skin, fair neutral light beige, even consistent tone on face, neck, shoulders, arms, hands and legs; smooth intact skin with subtle visible realistic microtexture and fine natural pores, slight healthy sheen, unretouched natural skin, soft broad diffuse frontal light evenly across face and body. Opaque plain white sleeveless tank top correctly worn and fully covering chest, tank top fully tucked into the shorts; the entire lower hem is visibly inside the waistband all around, with a continuous waistband clearly outside and above the fabric, no fabric hanging below the waistband. Plain white shorts with no logo, print, lettering or brand mark. Barefoot, realistic body anatomy, natural skin and hair detail.",
+            "clip": [
+              "1",
+              1
+            ]
+          },
+          "_meta": {
+            "title": "02 SDXL正向 · V1.3无分缝刘海/细纹理/扎腰"
+          }
+        },
+        "3": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "text": "closeup, portrait, cropped body, cropped feet, cut off toes, out of frame, multiple people, shirtless, bare torso, tank top off, tank hem hanging outside shorts, untucked shirt, cloth wrapped around waist, hands in pockets, tilted head, slouch, center part, side part, visible part line, swept-back open forehead, straight flat hair, sparse hair, brown hair, light eyes, single eyelids, poreless skin, airbrushed skin, beauty filter, waxy skin, plastic skin, overly smooth skin, blurry skin, acne, prominent scars, uneven skin patches, tan lines, yellow or orange skin, harsh shadows, hard specular highlights, oily shine, logo, brand mark, lettering, print, watermark, jewelry, props, scenery, gray background, blur, low resolution, deformed anatomy, extra limbs, extra fingers, fused toes ,center-parted hair, middle part, visible center parting, side part, curtain bangs, symmetrical split fringe, swept-back open forehead, K-pop idol styling, glossy idol makeup, feminine idol face ,center part, middle part, side part, curtain split, curtains framing both sides of forehead, Korean idol, K-pop styling, idol makeup, glass skin, delicate fashion-model face, narrow shoulders, narrow torso, thin upper arms, skinny forearms, narrow thighs, hanging tank hem, untucked tank top, fabric outside waistband, logos, brand marks, letters",
+            "clip": [
+              "1",
+              1
+            ]
+          },
+          "_meta": {
+            "title": "03 SDXL负向 · 禁止裁切/散衣摆/磨皮/品牌标记"
+          }
+        },
+        "5": {
+          "class_type": "EmptyLatentImage",
+          "inputs": {
+            "width": 768,
+            "height": 1536,
+            "batch_size": 1
+          },
+          "_meta": {
+            "title": "05 SDXL全身画布 · 768×1536窄高构图"
+          }
+        },
+        "6": {
+          "class_type": "KSampler",
+          "inputs": {
+            "seed": 2026101301,
+            "steps": 30,
+            "cfg": 6.0,
+            "sampler_name": "dpmpp_2m",
+            "scheduler": "karras",
+            "denoise": 1.0,
+            "model": [
+              "21",
+              0
+            ],
+            "positive": [
+              "2",
+              0
+            ],
+            "negative": [
+              "3",
+              0
+            ],
+            "latent_image": [
+              "5",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "06 SDXL采样 · 30步 CFG6 · DPM++2M Karras"
+          }
+        },
+        "7": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "6",
+              0
+            ],
+            "vae": [
+              "1",
+              2
+            ]
+          },
+          "_meta": {
+            "title": "07 VAE 解码"
+          }
+        },
+        "8": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "filename_prefix": "角色生成/闻灯五官发型参考-候选12",
+            "images": [
+              "7",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "08 保存 · SDXL正面全身候选10 · 最终调试"
+          }
+        },
+        "9": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "candidate09_fullbody_reference.png",
+            "upload": "image"
+          }
+        },
+        "10": {
+          "class_type": "PrepImageForClipVision",
+          "inputs": {
+            "image": [
+              "9",
+              0
+            ],
+            "interpolation": "LANCZOS",
+            "crop_position": "pad",
+            "sharpening": 0.0
+          }
+        },
+        "11": {
+          "class_type": "IPAdapterUnifiedLoader",
+          "inputs": {
+            "model": [
+              "1",
+              0
+            ],
+            "preset": "PLUS (high strength)"
+          }
+        },
+        "12": {
+          "class_type": "IPAdapterAdvanced",
+          "inputs": {
+            "model": [
+              "11",
+              0
+            ],
+            "ipadapter": [
+              "11",
+              1
+            ],
+            "image": [
+              "10",
+              0
+            ],
+            "weight": 0.16,
+            "weight_type": "ease out",
+            "combine_embeds": "concat",
+            "start_at": 0.0,
+            "end_at": 0.42,
+            "embeds_scaling": "V only"
+          }
+        },
+        "13": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "candidate12_feature_ref_01.png",
+            "upload": "image"
+          }
+        },
+        "14": {
+          "class_type": "PrepImageForClipVision",
+          "inputs": {
+            "image": [
+              "13",
+              0
+            ],
+            "interpolation": "LANCZOS",
+            "crop_position": "pad",
+            "sharpening": 0.0
+          }
+        },
+        "15": {
+          "class_type": "IPAdapterAdvanced",
+          "inputs": {
+            "model": [
+              "12",
+              0
+            ],
+            "ipadapter": [
+              "11",
+              1
+            ],
+            "image": [
+              "14",
+              0
+            ],
+            "weight": 0.42,
+            "weight_type": "ease out",
+            "combine_embeds": "concat",
+            "start_at": 0.0,
+            "end_at": 0.68,
+            "embeds_scaling": "V only"
+          }
+        },
+        "16": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "candidate12_feature_ref_02.png",
+            "upload": "image"
+          }
+        },
+        "17": {
+          "class_type": "PrepImageForClipVision",
+          "inputs": {
+            "image": [
+              "16",
+              0
+            ],
+            "interpolation": "LANCZOS",
+            "crop_position": "pad",
+            "sharpening": 0.0
+          }
+        },
+        "18": {
+          "class_type": "IPAdapterAdvanced",
+          "inputs": {
+            "model": [
+              "15",
+              0
+            ],
+            "ipadapter": [
+              "11",
+              1
+            ],
+            "image": [
+              "17",
+              0
+            ],
+            "weight": 0.38,
+            "weight_type": "ease out",
+            "combine_embeds": "concat",
+            "start_at": 0.0,
+            "end_at": 0.68,
+            "embeds_scaling": "V only"
+          }
+        },
+        "19": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "candidate12_feature_ref_03.png",
+            "upload": "image"
+          }
+        },
+        "20": {
+          "class_type": "PrepImageForClipVision",
+          "inputs": {
+            "image": [
+              "19",
+              0
+            ],
+            "interpolation": "LANCZOS",
+            "crop_position": "pad",
+            "sharpening": 0.0
+          }
+        },
+        "21": {
+          "class_type": "IPAdapterAdvanced",
+          "inputs": {
+            "model": [
+              "18",
+              0
+            ],
+            "ipadapter": [
+              "11",
+              1
+            ],
+            "image": [
+              "20",
+              0
+            ],
+            "weight": 0.4,
+            "weight_type": "ease out",
+            "combine_embeds": "concat",
+            "start_at": 0.0,
+            "end_at": 0.72,
+            "embeds_scaling": "V only"
+          }
+        }
+      },
+      {
+        "client_id": "bb6ac9e2-5c0a-47b6-8b05-edcadc36c766",
+        "create_time": 1792047116321
+      },
+      [
+        "8"
+      ]
+    ],
+    "outputs": {
+      "8": {
+        "images": [
+          {
+            "filename": "闻灯五官发型参考-候选12_00001_.png",
+            "subfolder": "角色生成",
+            "type": "output"
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "e6bb83cc-db58-4dd2-b9fa-c25b6961a88f",
+            "timestamp": 1792047116322
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "e6bb83cc-db58-4dd2-b9fa-c25b6961a88f",
+            "timestamp": 1792047116336
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "e6bb83cc-db58-4dd2-b9fa-c25b6961a88f",
+            "timestamp": 1792047162967
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "8": {
+        "node_id": "8",
+        "display_node": "8",
+        "parent_node": null,
+        "real_node_id": "8"
+      }
+    }
+  }
+}

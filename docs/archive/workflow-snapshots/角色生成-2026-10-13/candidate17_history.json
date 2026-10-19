@@ -1,0 +1,170 @@
+{
+  "prompt": [
+    8,
+    "90d5270a-7a8f-4f2b-adbd-bb04123c429e",
+    {
+      "1": {
+        "class_type": "CheckpointLoaderSimple",
+        "inputs": {
+          "ckpt_name": "leosamsHelloworldXL_helloworldXL70.safetensors"
+        },
+        "_meta": {
+          "title": "01 通用底模 · LEOSAM HelloWorld XL 7.0 · SDXL"
+        }
+      },
+      "2": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "text": "One 24-year-old East Asian man, single subject, full-length front view, head to toe. Subtly Eurasian eye structure: deeply set brown almond eyes with visible orbital depth, both upper eyelid creases clearly visible, defined raised brow ridge, straight prominent high nasal bridge. Neutral model-casting pose: standing upright facing camera, balanced weight, straight parallel legs, flat bare feet with toes visible, arms relaxed straight down at sides, open hands visible, head upright. Plain white sleeveless tank top tucked fully into plain white shorts, clear waistband. Broad shoulders, solid chest and torso, full upper arms and thighs. Dense dark mid-length layered curls, voluminous crown and sides, loose irregular waves, forward broken fringe, no part. Natural skin, white studio background, soft even light.",
+          "clip": [
+            "1",
+            1
+          ]
+        },
+        "_meta": {
+          "title": "02 SDXL正向｜候选17：扎腰、手露出、深眼窝卷发"
+        }
+      },
+      "3": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "text": "shoes, sandals, slippers, socks, footwear, sitting, kneeling, crouching, walking, running, dynamic pose, fashion pose, crossed legs, hands on hips, arms crossed, hands in pockets, bent body, leaning, twisted torso, tiptoeing, raised foot, multiple people, extra person, duplicate figure, multiple poses, side view, back view, collage, triptych, contact sheet, split panel, cropped head, cropped feet, missing feet, close-up, shirtless, nude, underwear, briefs, transparent shirt, untucked shirt, loose hem, center part, side part, curtain fringe, short straight hair, flat hair, sparse hair, monolid, single eyelids, shallow-set eyes, flat brow ridge, flat facial features, low nasal bridge, flat nose, narrow shoulders, skinny limbs, logos, text, watermark, props, accessories, jewelry, deformed hands, extra fingers, deformed feet, fisheye, wide angle distortion, dramatic perspective",
+          "clip": [
+            "1",
+            1
+          ]
+        },
+        "_meta": {
+          "title": "03 SDXL反向｜候选17：排除鞋袜、散摆、插袋和短直发"
+        }
+      },
+      "5": {
+        "class_type": "EmptyLatentImage",
+        "inputs": {
+          "width": 768,
+          "height": 1536,
+          "batch_size": 1
+        },
+        "_meta": {
+          "title": "05 SDXL全身画布｜768 × 1536"
+        }
+      },
+      "6": {
+        "class_type": "KSampler",
+        "inputs": {
+          "seed": 2026101517,
+          "steps": 30,
+          "cfg": 6.0,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras",
+          "denoise": 1.0,
+          "model": [
+            "1",
+            0
+          ],
+          "positive": [
+            "2",
+            0
+          ],
+          "negative": [
+            "3",
+            0
+          ],
+          "latent_image": [
+            "5",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "06 SDXL采样｜30步 CFG6 · DPM++2M Karras"
+        }
+      },
+      "7": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "6",
+            0
+          ],
+          "vae": [
+            "1",
+            2
+          ]
+        },
+        "_meta": {
+          "title": "07 VAE 解码"
+        }
+      },
+      "8": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "filename_prefix": "角色生成/闻灯角色生成-候选17",
+          "images": [
+            "7",
+            0
+          ]
+        },
+        "_meta": {
+          "title": "08 输出｜角色初始形象全身图"
+        }
+      }
+    },
+    {
+      "client_id": "3b633c5f-c1a4-40ab-85bb-adb3bd07eeb7",
+      "create_time": 1792051251700
+    },
+    [
+      "8"
+    ]
+  ],
+  "outputs": {
+    "8": {
+      "images": [
+        {
+          "filename": "闻灯角色生成-候选17_00001_.png",
+          "subfolder": "角色生成",
+          "type": "output"
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "90d5270a-7a8f-4f2b-adbd-bb04123c429e",
+          "timestamp": 1792051251701
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "5"
+          ],
+          "prompt_id": "90d5270a-7a8f-4f2b-adbd-bb04123c429e",
+          "timestamp": 1792051251702
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "90d5270a-7a8f-4f2b-adbd-bb04123c429e",
+          "timestamp": 1792051258890
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "8": {
+      "node_id": "8",
+      "display_node": "8",
+      "parent_node": null,
+      "real_node_id": "8"
+    }
+  }
+}

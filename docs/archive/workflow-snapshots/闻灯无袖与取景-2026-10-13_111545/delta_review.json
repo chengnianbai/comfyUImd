@@ -1,0 +1,57 @@
+{
+  "changes": [
+    {
+      "path": "/nodes/1313/title",
+      "old": "正面身体指令 · 183 cm / 修长模特体型（待验收）",
+      "new": "正面身体指令 · 无袖扎腰 / 肩臂 / 85%取景（待验收）"
+    },
+    {
+      "path": "/nodes/1313/widgets_values/0",
+      "old": "Full-length character reference photograph of a young man wearing a plain white crew-neck t-shirt and plain white shorts, bare feet: simple clean white t-shirt, no logo, no print, no pattern, no pocket; nothing worn over the t-shirt, no jacket, no coat, no collar, no tie, no scarf; plain white shorts. A young East Asian man with East Asian facial features, the same East Asian person as the reference: same ethnicity, same face, same messy wavy black hair, same hairline, same black hair colour. He must never look Caucasian, never look European, never change ethnicity. Regenerate this person as a natural high-end photographic full-length reference photo of the same exact person. Preserve the exact identity of the reference: same facial structure and face shape, same facial proportions, same eyes and eyebrows, same nose shape, same lips, same chin and jawline, same hairline and haircut, same messy wavy black hair, same apparent age, same small mole at the outer corner of the eye, same stable identity marks. Facing the camera directly, front view, looking straight at the viewer. The head is held perfectly upright and level: the eye line is horizontal, the head is not tilted and not turned, the chin is level, the neck is vertical, both shoulders are level and at the same height. His barefoot standing height is 183 cm. He has a tall, lean male fashion-model physique: a slender elongated silhouette, naturally long legs and long arms, a narrow waist, natural moderate shoulder width and a subtle V-shaped torso. Approximately eight anatomical head lengths from the top of the skull to the soles of the feet, with a naturally proportioned head; preserve the reference facial proportions. The legs are visually long relative to the torso. Keep the torso anatomically natural, without compressing the chest, abdomen or arms. Keep the chest and shoulders lean, with restrained muscle definition and realistic healthy body volume. Avoid a stocky build, thick waist, bulky chest, bodybuilder muscles, extreme thinness, oversized head, shortened legs or exaggerated anatomy. Full body visible from head to feet, head to toe, the entire standing figure inside the frame with clear space above the head and below the feet, standing straight, arms relaxed naturally at the sides, weight evenly distributed on both feet, both legs naturally straight, both bare feet flat on the same level floor, no raised foot, feet fully visible, centered composition. Pure white seamless background, soft even studio lighting, unified lighting and material across the whole figure, realistic skin texture with subtle visible pores, natural photographic grain, sharp focus on the face.",
+      "new": "Full-length front-view studio reference photograph of the same young East Asian man as the supplied face reference. Preserve his exact facial identity, facial structure and proportions, eyes, eyebrows, nose, lips, chin and jawline, apparent age, messy wavy black hair, hairline and small mole by the outer eye. He wears a plain white fitted sleeveless crew-neck T-shirt with no sleeves, no logo or pattern. The entire shirt hem is neatly tucked inside the waistband of plain white mid-thigh shorts. The waistband is clearly visible and the shirt does not hang over the shorts. No jacket or accessories. Bare feet. His barefoot standing height is 183 cm. A tall, lean athletic male fashion-model physique, naturally long arms and legs, narrow waist, natural moderate shoulder width and a subtle V-shaped torso. Near eight-head body proportions, with a naturally proportioned head and anatomically natural torso. His exposed shoulders have smoothly rounded, moderately developed deltoids, with clear front and outer shoulder contours. The upper arms are moderately full, with natural biceps volume and a visible gentle transition between shoulder and upper arm. The legs are long and lean, with subtle thigh muscle contours, naturally shaped calves and slim ankles. Healthy realistic muscle volume, not bulky or extremely thin, no exaggerated bodybuilding definition. Face and body directly forward, head upright, eye line horizontal, shoulders level. Stand naturally straight, arms relaxed slightly clear of the waist, both feet flat on the same level floor, no raised foot. Use a wider full-length framing from a comfortable camera distance, natural 70 mm portrait perspective, camera level around mid-torso, straight-on without tilt or wide-angle distortion. The entire figure from hair to bare soles occupies about 85 percent of the image height. Leave generous white space above the head and visible floor below both feet; do not crop head, hands or feet. Centered on a pure white seamless studio background, soft even lighting revealing natural shoulder and arm form, realistic skin texture, unified photographic rendering."
+    },
+    {
+      "path": "/nodes/1333/widgets_values/0",
+      "old": "Rotate this same man and his entire body exactly 90 degrees to face the left edge of the image. A strict left-facing side profile of the whole standing person, not a three-quarter view. His face, chest, pelvis, knees and both bare feet all face left. Only one eye is visible. Keep the same man, facial features, curly black hair, moustache, chin beard, skin tone, body build, plain white crew-neck T-shirt and plain white shorts. Keep the camera at the same distance and keep the same full-length head-to-toe framing as the input. The complete hair, legs, heels and toes must be inside the image with white margins above and below. Arms hanging naturally at his sides, standing straight. Plain white studio background, soft even lighting. His barefoot standing height remains 183 cm. Preserve the tall, lean fashion-model proportions established in the front view: the same head-to-body ratio, long limbs, moderate shoulder width and narrow waist. Both bare feet rest flat on the same level floor.",
+      "new": "Rotate this same man and his entire body exactly 90 degrees to face the left edge of the image. A strict left-facing side profile of the whole standing person, not a three-quarter view. His face, chest, pelvis, knees and both bare feet all face left. Only one eye is visible. Keep the same man, facial features, curly black hair, moustache, chin beard, skin tone, body build, plain white sleeveless crew-neck T-shirt neatly tucked fully into the shorts waistband and plain white shorts. Keep the camera at the same distance and keep the same full-length head-to-toe framing as the input. The complete hair, legs, heels and toes must be inside the image with white margins above and below. Arms hanging naturally at his sides, standing straight. Plain white studio background, soft even lighting. His barefoot standing height remains 183 cm. Preserve the tall, lean fashion-model proportions established in the front view: the same head-to-body ratio, long limbs, moderate shoulder width and narrow waist. Both bare feet rest flat on the same level floor. Preserve the front view's moderately developed rounded shoulders, natural upper-arm muscle volume, lean thighs and calves, visible shorts waistband and wider framing with the entire figure occupying about 85 percent of image height. Keep the full head and both feet visible."
+    },
+    {
+      "path": "/nodes/1353/widgets_values/0",
+      "old": "Turn this same man around to show him directly from behind in a full-length studio photograph. Preserve the exact same body build, height, shoulder width, waist, arms, legs, curly black hairstyle, skin tone, plain white crew-neck T-shirt and plain white shorts. His face is not visible. Neutral upright standing pose, arms relaxed at his sides, feet slightly apart. Show the entire person from hair to bare feet, with white space above and below. Same camera distance, white studio background, soft even lighting and natural photographic rendering. His barefoot standing height remains 183 cm. Preserve the tall, lean fashion-model proportions established in the front view: the same head-to-body ratio, long limbs, moderate shoulder width and narrow waist. Both bare feet rest flat on the same level floor.",
+      "new": "Turn this same man around to show him directly from behind in a full-length studio photograph. Preserve the exact same body build, height, shoulder width, waist, arms, legs, curly black hairstyle, skin tone, plain white sleeveless crew-neck T-shirt neatly tucked fully into the shorts waistband and plain white shorts. His face is not visible. Neutral upright standing pose, arms relaxed at his sides, feet slightly apart. Show the entire person from hair to bare feet, with white space above and below. Same camera distance, white studio background, soft even lighting and natural photographic rendering. His barefoot standing height remains 183 cm. Preserve the tall, lean fashion-model proportions established in the front view: the same head-to-body ratio, long limbs, moderate shoulder width and narrow waist. Both bare feet rest flat on the same level floor. Preserve the front view's moderately developed rounded shoulders, natural upper-arm muscle volume, lean thighs and calves, visible shorts waistband and wider framing with the entire figure occupying about 85 percent of image height. Keep the full head and both feet visible."
+    },
+    {
+      "path": "/nodes/1373/widgets_values/0",
+      "old": "当前点击运行：仅输出全身正面、侧面、背面候选。\n\n正面：完整已确认脸部母版 00017。\n侧面：正面全身作为身体/服装参考，同时读取已确认侧脸 00009。\n背面：沿用当前正面全身的身体/服装。\n\n白T恤＋白短裤；身份为软参考，需要逐张验收。\n当前侧面仍偏斜侧，未达到严格90°，不要直接标成三视图终稿。\n\n右侧脸部历史链与裁脸精修输出已停用，不会自动重画已确认脸。\n可在绿色分组右侧查看并保存三个全身输出。\n\n2026-10-13：身体目标 183 cm、修长男性模特体型；只参考身体，不替换闻灯脸部。\n本轮仅改 1313/1333/1353 的身体描述，先单独验证正面。\n人物照片目前仅用于讨论体型，没有接入图像条件，也不复制抬脚姿势。\n旧 P 分段拉伸效果未获认可，不采用。当前仍是软身份参考，生成图需检查脸与身材。",
+      "new": "主工作入口：闻灯.json；仍待用户验收。\n完整主图保留正面、侧面、背面；本轮验证只提交正面一张。\n\n正面脸部母版00017；侧面保留00009及正面身体参考。\n目标：183 cm修长男性模特体型，适度圆润肩臂肌肉、精瘦腿部；白色无袖T恤全部扎进白短裤。\n取景目标：人物约占画面高度85%，头顶和双脚下方留白，完整头脚，双脚落地。\n两张新参考只用于分析服装/肌肉，没有接入图像条件，不借用参考人物的脸。\n节点1024标题与实际选项不符：当前实际选择FLUX1/flux1-schnell.safetensors；本轮未切换模型。\n每轮生成后先展示实际图片与不足，等待用户决定下一轮，不自动继续生成。\n旧P分段缩放不采用；侧面角度和身份仍待解决。"
+    }
+  ],
+  "scope": "local",
+  "review_reasons": [
+    "parameters"
+  ],
+  "context": {
+    "old": [
+      1025
+    ],
+    "new": [
+      1314,
+      1334,
+      1354
+    ]
+  },
+  "old_counts": {
+    "nodes": 132,
+    "links": 198
+  },
+  "new_counts": {
+    "nodes": 132,
+    "links": 198
+  },
+  "old_path": "D:\\xiaobai-claude code\\comfyUImd\\docs\\archive\\workflow-snapshots\\闻灯无袖与取景-2026-10-13_111545\\local_before.json",
+  "new_path": "D:\\xiaobai-claude code\\comfyUImd\\docs\\archive\\workflow-snapshots\\闻灯无袖与取景-2026-10-13_111545\\candidate.json",
+  "old_sha256": "a07de74b1260c063c52360f0ecbe895dedc6c378a1aa2a55fd37818c557e3ae6",
+  "new_sha256": "f20973bd9f9cacde73fda289d57b32cddf6ece88f389a0ba90389ae1eef8226c",
+  "parse_skipped": false,
+  "state_path": "D:\\xiaobai-claude code\\comfyUImd\\docs\\generated\\workflow-state\\闻灯.state.json"
+}

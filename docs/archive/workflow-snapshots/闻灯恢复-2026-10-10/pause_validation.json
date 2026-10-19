@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-10T18:59:54.009186+08:00",
+  "local_sha256": "50ba3f2ebf0a44a5b54fe47c346aab4d2791e9b39136e6921f7acef0183dd494",
+  "queue_running": [],
+  "queue_pending": [],
+  "remote_error": "[WinError 10054] 远程主机强迫关闭了一个现有的连接。",
+  "local_equals_saved": true,
+  "node_count": 132,
+  "link_count": 198,
+  "group_count": 13,
+  "remote_equals_local": true,
+  "retry_succeeded": true
+}

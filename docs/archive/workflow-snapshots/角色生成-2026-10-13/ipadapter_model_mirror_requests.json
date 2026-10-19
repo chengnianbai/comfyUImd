@@ -1,0 +1,36 @@
+[
+  {
+    "payload": {
+      "name": "ip-adapter-plus_sdxl_vit-h.safetensors",
+      "type": "IP-Adapter",
+      "base": "SDXL",
+      "save_path": "ipadapter",
+      "description": "This model requires the use of the SD1.5 encoder despite being for SDXL checkpoints [ipadapter]",
+      "reference": "https://huggingface.co/h94/IP-Adapter",
+      "filename": "ip-adapter-plus_sdxl_vit-h.safetensors",
+      "url": "https://hf-mirror.com/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors",
+      "size": "847.5MB",
+      "installed": "False",
+      "ui_id": "role-mirror-ip-adapter-plus_sdxl_vit-h.safetensors"
+    },
+    "status": 200,
+    "body": ""
+  },
+  {
+    "payload": {
+      "name": "CLIPVision model (IP-Adapter) CLIP-ViT-H-14-laion2B-s32B-b79K",
+      "type": "clip_vision",
+      "base": "ViT-H",
+      "save_path": "clip_vision",
+      "description": "CLIPVision model (needed for IP-Adapter)",
+      "reference": "https://huggingface.co/h94/IP-Adapter",
+      "filename": "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors",
+      "url": "https://hf-mirror.com/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors",
+      "size": "2.53GB",
+      "installed": "False",
+      "ui_id": "role-mirror-CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"
+    },
+    "status": 200,
+    "body": ""
+  }
+]

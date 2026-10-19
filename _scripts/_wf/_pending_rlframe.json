@@ -1,0 +1,7885 @@
+{
+ "id": "f1003783-a698-4bd3-accd-5b4efff4ac9a",
+ "revision": 0,
+ "last_node_id": 1221,
+ "last_link_id": 2418,
+ "nodes": [
+  {
+   "id": 6,
+   "type": "EmptyLatentImage",
+   "pos": [
+    7728.5441756327755,
+    7182.8495839967645
+   ],
+   "size": [
+    430,
+    130
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "宽度",
+     "name": "width",
+     "type": "INT",
+     "widget": {
+      "name": "width"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "高度",
+     "name": "height",
+     "type": "INT",
+     "widget": {
+      "name": "height"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "批量大小",
+     "name": "batch_size",
+     "type": "INT",
+     "widget": {
+      "name": "batch_size"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      16
+     ]
+    }
+   ],
+   "title": "画布 832×1216（全身竖构图 · 约 7.5 头身）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "EmptyLatentImage"
+   },
+   "widgets_values": [
+    768,
+    1344,
+    1
+   ]
+  },
+  {
+   "id": 17,
+   "type": "CLIPSetLastLayer",
+   "pos": [
+    7728.5441756327755,
+    6832.849583996765
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 20,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 1
+    },
+    {
+     "localized_name": "停止在CLIP层",
+     "name": "stop_at_clip_layer",
+     "type": "INT",
+     "widget": {
+      "name": "stop_at_clip_layer"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "slot_index": 0,
+     "links": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      2370,
+      2371
+     ]
+    }
+   ],
+   "title": "Clip Skip = 1（SDXL 必须）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPSetLastLayer"
+   },
+   "widgets_values": [
+    -1
+   ]
+  },
+  {
+   "id": 1,
+   "type": "CheckpointLoaderSimple",
+   "pos": [
+    7728.5441756327755,
+    7012.849583996764
+   ],
+   "size": [
+    430,
+    120
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "Checkpoint名称",
+     "name": "ckpt_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "ckpt_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "模型",
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      13,
+      27,
+      2375,
+      2392,
+      2401,
+      2413
+     ]
+    },
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "links": [
+      1
+     ]
+    },
+    {
+     "localized_name": "VAE",
+     "name": "VAE",
+     "type": "VAE",
+     "links": [
+      18,
+      25,
+      31,
+      2379,
+      2390,
+      2396,
+      2405,
+      2411,
+      2417
+     ]
+    }
+   ],
+   "title": "底模 · HelloWorld XL 7.0（SDXL）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CheckpointLoaderSimple"
+   },
+   "widgets_values": [
+    "leosamsHelloworldXL_helloworldXL70.safetensors"
+   ]
+  },
+  {
+   "id": 2,
+   "type": "CLIPTextEncode",
+   "pos": [
+    8238.544175632775,
+    7012.849583996764
+   ],
+   "size": [
+    560,
+    300
+   ],
+   "flags": {},
+   "order": 32,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 2
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      7
+     ]
+    }
+   ],
+   "title": "正向 A · 构图 + 人物 + 服装（全身正面）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "full body shot head to toe, entire body visible, feet fully visible, wide full-length framing, standing straight, arms naturally at sides, centered composition, 1boy, solo, 24 year old east asian man, masculine face, strong jaw, bare upper body, plain white shorts, pure white background"
+   ]
+  },
+  {
+   "id": 18,
+   "type": "CLIPTextEncode",
+   "pos": [
+    8238.544175632775,
+    8032.849583996761
+   ],
+   "size": [
+    560,
+    130
+   ],
+   "flags": {},
+   "order": 35,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 5
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      10
+     ]
+    }
+   ],
+   "title": "负向 N2 服饰/正装（已剔除 bare chest/shirtless）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "t-shirt, sweater, business suit, blazer, tie, dress shirt, formal wear, ironed shirt, wool coat, brown coat, beige coat, blue coat, light coat, new clothes, fashion model, jeans, denim, white sneakers, new shoes, police uniform, wuxia, hanfu"
+   ]
+  },
+  {
+   "id": 3,
+   "type": "CLIPTextEncode",
+   "pos": [
+    8238.544175632775,
+    7362.849583996764
+   ],
+   "size": [
+    560,
+    260
+   ],
+   "flags": {},
+   "order": 33,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 3
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      8,
+      2373,
+      2399
+     ]
+    }
+   ],
+   "title": "正向 B · 人体比例 + 白底 + 光位 + 质感",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "natural human anatomy, realistic human proportions, 7 to 8 head proportion, correct shoulder width, correct hip width, symmetrical body, visible skin pores, skin texture, peach fuzz, messy wavy hair, pure white background, soft even lighting, sharp focus, photorealistic"
+   ]
+  },
+  {
+   "id": 19,
+   "type": "CLIPTextEncode",
+   "pos": [
+    8238.544175632775,
+    8212.849583996765
+   ],
+   "size": [
+    560,
+    170
+   ],
+   "flags": {},
+   "order": 36,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 6
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      12
+     ]
+    }
+   ],
+   "title": "负向 N3 背景/构图/姿态（全身版 · 已并入 §17）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "dark background, grey background, gradient background, vignette, shadow, busy background, freckles, mole on cheek, mole on forehead, extra fingers, bad hands, watermark, text, blurry, lowres, airbrushed, over-smoothed, beauty filter, retouched, dynamic pose, sitting, walking, running, hands on hips, arms crossed, hands in pockets, twisted torso, exaggerated anatomy, long limbs, short legs, oversized head, distorted hands, deformed feet, cropped feet, cropped head, fisheye, wide angle distortion, complex background, props, accessories, cropped legs, cropped feet, cropped ankles, close-up, portrait crop, zoomed in, half body, knees up"
+   ]
+  },
+  {
+   "id": 5,
+   "type": "CLIPTextEncode",
+   "pos": [
+    8238.544175632775,
+    7672.849583996764
+   ],
+   "size": [
+    560,
+    280
+   ],
+   "flags": {},
+   "order": 34,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 4
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      9
+     ]
+    }
+   ],
+   "title": "负向 N1 · 反柔弱 / 反女性",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "1girl, female, feminine face, delicate, fragile, soft features, soft round face, pretty boy, boyish face, bishounen, makeup, lipstick, rosy lips, eyeshadow, teenage, child, narrow face, pale skin, blonde hair, straight hair, slicked back hair, undercut, side part, neat hair"
+   ]
+  },
+  {
+   "id": 4,
+   "type": "ConditioningCombine",
+   "pos": [
+    8858.544175632775,
+    7012.849583996764
+   ],
+   "size": [
+    330,
+    90
+   ],
+   "flags": {},
+   "order": 50,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "条件_1",
+     "name": "conditioning_1",
+     "type": "CONDITIONING",
+     "link": 7
+    },
+    {
+     "localized_name": "条件_2",
+     "name": "conditioning_2",
+     "type": "CONDITIONING",
+     "link": 8
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      28,
+      2424
+     ]
+    }
+   ],
+   "title": "合并 A + B（突破 75 token 上限的关键）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ConditioningCombine"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 20,
+   "type": "ConditioningCombine",
+   "pos": [
+    8858.544175632775,
+    8052.849583996762
+   ],
+   "size": [
+    330,
+    90
+   ],
+   "flags": {},
+   "order": 51,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "条件_1",
+     "name": "conditioning_1",
+     "type": "CONDITIONING",
+     "link": 9
+    },
+    {
+     "localized_name": "条件_2",
+     "name": "conditioning_2",
+     "type": "CONDITIONING",
+     "link": 10
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      11
+     ]
+    }
+   ],
+   "title": "负向 N1+N2",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ConditioningCombine"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 7,
+   "type": "KSampler",
+   "pos": [
+    9238.544175632776,
+    7012.849583996764
+   ],
+   "size": [
+    380.9380859375,
+    300
+   ],
+   "flags": {},
+   "order": 59,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "模型",
+     "name": "model",
+     "type": "MODEL",
+     "link": 13
+    },
+    {
+     "localized_name": "正面条件",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 2428
+    },
+    {
+     "localized_name": "负面条件",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 15
+    },
+    {
+     "localized_name": "Latent图像",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 16
+    },
+    {
+     "localized_name": "种子",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "步数",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "采样器名称",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "调度器",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "降噪",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      17
+     ]
+    }
+   ],
+   "title": "KSampler 第1段 · 30步 CFG10 denoise1.0",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "KSampler"
+   },
+   "widgets_values": [
+    20260916,
+    "fixed",
+    30,
+    10,
+    "dpmpp_2m",
+    "karras",
+    1
+   ]
+  },
+  {
+   "id": 21,
+   "type": "ConditioningCombine",
+   "pos": [
+    8858.544175632775,
+    8192.849583996764
+   ],
+   "size": [
+    330,
+    90
+   ],
+   "flags": {},
+   "order": 57,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "条件_1",
+     "name": "conditioning_1",
+     "type": "CONDITIONING",
+     "link": 11
+    },
+    {
+     "localized_name": "条件_2",
+     "name": "conditioning_2",
+     "type": "CONDITIONING",
+     "link": 12
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      15,
+      29,
+      2377,
+      2394,
+      2403,
+      2415
+     ]
+    }
+   ],
+   "title": "负向 (N1+N2)+N3",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ConditioningCombine"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 8,
+   "type": "VAEDecode",
+   "pos": [
+    9238.544175632776,
+    7362.849583996764
+   ],
+   "size": [
+    340,
+    80
+   ],
+   "flags": {},
+   "order": 63,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "Latent",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 17
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 18
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      19,
+      20,
+      2419
+     ]
+    }
+   ],
+   "title": "VAEDecode（草稿 896×1152）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 22,
+   "type": "UpscaleModelLoader",
+   "pos": [
+    7728.5441756327755,
+    7582.849583996764
+   ],
+   "size": [
+    430,
+    80
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "模型名称",
+     "name": "model_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "model_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "放大模型",
+     "name": "UPSCALE_MODEL",
+     "type": "UPSCALE_MODEL",
+     "slot_index": 0,
+     "links": [
+      22,
+      2386,
+      2407
+     ]
+    }
+   ],
+   "title": "放大模型 4x-UltraSharp",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "UpscaleModelLoader"
+   },
+   "widgets_values": [
+    "4x-UltraSharp (1).pth"
+   ]
+  },
+  {
+   "id": 9,
+   "type": "PreviewImage",
+   "pos": [
+    9238.544175632776,
+    7482.849583996764
+   ],
+   "size": [
+    340,
+    320
+   ],
+   "flags": {},
+   "order": 67,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 19
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "title": "预览 · 草稿",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "PreviewImage"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 23,
+   "type": "ImageUpscaleWithModel",
+   "pos": [
+    8238.544175632775,
+    7582.849583996764
+   ],
+   "size": [
+    420,
+    80
+   ],
+   "flags": {},
+   "order": 75,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "放大模型",
+     "name": "upscale_model",
+     "type": "UPSCALE_MODEL",
+     "link": 22
+    },
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2419
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      23
+     ]
+    }
+   ],
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ImageUpscaleWithModel"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 10,
+   "type": "SaveImage",
+   "pos": [
+    9638.544175632776,
+    7482.849583996764
+   ],
+   "size": [
+    420,
+    320
+   ],
+   "flags": {},
+   "order": 68,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图片",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 20
+    },
+    {
+     "localized_name": "文件名前缀",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "title": "存图 · 草稿",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "闻灯-全身正面-草稿"
+   ]
+  },
+  {
+   "id": 24,
+   "type": "ImageScaleBy",
+   "pos": [
+    8718.544175632773,
+    7582.849583996764
+   ],
+   "size": [
+    330,
+    82
+   ],
+   "flags": {},
+   "order": 79,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 23
+    },
+    {
+     "localized_name": "缩放算法",
+     "name": "upscale_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "upscale_method"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "缩放系数",
+     "name": "scale_by",
+     "type": "FLOAT",
+     "widget": {
+      "name": "scale_by"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      24,
+      2368,
+      2369
+     ]
+    }
+   ],
+   "title": "缩回 1792×2304",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ImageScaleBy"
+   },
+   "widgets_values": [
+    "lanczos",
+    0.5
+   ]
+  },
+  {
+   "id": 12,
+   "type": "KSampler",
+   "pos": [
+    9238.544175632776,
+    7852.849583996764
+   ],
+   "size": [
+    463.5982421875,
+    300
+   ],
+   "flags": {},
+   "order": 89,
+   "mode": 2,
+   "inputs": [
+    {
+     "localized_name": "模型",
+     "name": "model",
+     "type": "MODEL",
+     "link": 27
+    },
+    {
+     "localized_name": "正面条件",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 28
+    },
+    {
+     "localized_name": "负面条件",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 29
+    },
+    {
+     "localized_name": "Latent图像",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 26
+    },
+    {
+     "localized_name": "种子",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "步数",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "采样器名称",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "调度器",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "降噪",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      30
+     ]
+    }
+   ],
+   "title": "KSampler 第2段 · 20步 CFG10 denoise0.25（融合贴脸 + 补细节）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "KSampler"
+   },
+   "widgets_values": [
+    20260916,
+    "fixed",
+    20,
+    10,
+    "dpmpp_2m",
+    "karras",
+    0.25
+   ]
+  },
+  {
+   "id": 25,
+   "type": "VAEEncode",
+   "pos": [
+    9088.544175632776,
+    7582.849583996764
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 83,
+   "mode": 2,
+   "inputs": [
+    {
+     "localized_name": "像素",
+     "name": "pixels",
+     "type": "IMAGE",
+     "link": 24
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 25
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      26
+     ]
+    }
+   ],
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEEncode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 13,
+   "type": "VAEDecode",
+   "pos": [
+    9238.544175632776,
+    8202.849583996765
+   ],
+   "size": [
+    340,
+    80
+   ],
+   "flags": {},
+   "order": 94,
+   "mode": 2,
+   "inputs": [
+    {
+     "localized_name": "Latent",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 30
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 31
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "title": "VAEDecode（成品）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 14,
+   "type": "PreviewImage",
+   "pos": [
+    9238.544175632776,
+    8322.849583996769
+   ],
+   "size": [
+    420,
+    620
+   ],
+   "flags": {},
+   "order": 85,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 2369
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "title": "★ 预览 · 成品（跑完先看这里）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "PreviewImage"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 15,
+   "type": "SaveImage",
+   "pos": [
+    9698.544175632776,
+    8322.849583996769
+   ],
+   "size": [
+    420,
+    620
+   ],
+   "flags": {},
+   "order": 84,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图片",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 2368
+    },
+    {
+     "localized_name": "文件名前缀",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "title": "存图 · 成品",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "闻灯-全身正面-成品"
+   ]
+  },
+  {
+   "id": 1001,
+   "type": "Note",
+   "pos": [
+    7700,
+    5580
+   ],
+   "size": [
+    1900,
+    520
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "title": "★ 说明 · 闻灯脸部（img2img 保身份）",
+   "properties": {
+    "Node name for S&R": "Note"
+   },
+   "widgets_values": [
+    "【闻灯 · 脸部 · 一条链出三张终稿】\n\n★ 分工（2026-09-24 重构）\n  右半边（原组3）= Kontext 出底稿：00009 → 统一正脸 → 真 90° 左脸\n  左半边（本块）= SDXL 出终稿：正脸 / 左脸 / 右脸\n\n★ 为什么侧脸要绕这一圈\n  90° 姿势只有 Kontext 给得出。实测三重证据：v23 自己的 denoise 阶梯只到 3/4；\n  T2I-Adapter(canny) 强度 1.5→3.5 姿势纹丝不动只变脏；拿一张完美 90° 当基图，\n  SDXL 在 d0.30 就已经把它拧回 3/4。所以侧脸 = 「Kontext 出 90° → SDXL d0.45 重绘」，\n  结果落 3/4（用户 2026-09-24 已确认接受）。\n\n★ 三条支路\n  正脸 1004(wendeng_face_base.png) → d0.30 → 1021 成品\n  左脸 1100(缩组3 的 90° 侧脸) → d0.45 → 1109 成品\n  右脸 1110(左脸成品水平翻转) → 1111 成品\n\n★ 已删除草稿存图（1017/1106），只留成品。\n  注意线上计数器 last_link_id/last_node_id 曾是过期值，已修正。\n\n★ 跑法（按分支名提交，不要在浏览器点「运行」）\n  python _scripts\\run_wf.py \"夜市百相簿-主工作流.json\" \"闻灯-脸部正面,闻灯-脸部左侧,闻灯-脸部右侧\" final\n"
+   ],
+   "color": "#432",
+   "bgcolor": "#653"
+  },
+  {
+   "id": 1002,
+   "type": "CheckpointLoaderSimple",
+   "pos": [
+    7700,
+    3500
+   ],
+   "size": [
+    470,
+    100
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "Checkpoint名称",
+     "name": "ckpt_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "ckpt_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "模型",
+     "name": "MODEL",
+     "type": "MODEL",
+     "slot_index": 0,
+     "links": [
+      1016,
+      2326
+     ]
+    },
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "slot_index": 1,
+     "links": [
+      1001
+     ]
+    },
+    {
+     "localized_name": "VAE",
+     "name": "VAE",
+     "type": "VAE",
+     "slot_index": 2,
+     "links": [
+      1002,
+      1021,
+      2322,
+      2331
+     ]
+    }
+   ],
+   "title": "底模 · HelloWorld XL（SDXL）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CheckpointLoaderSimple"
+   },
+   "widgets_values": [
+    "leosamsHelloworldXL_helloworldXL70.safetensors"
+   ]
+  },
+  {
+   "id": 1003,
+   "type": "CLIPSetLastLayer",
+   "pos": [
+    7700,
+    4020
+   ],
+   "size": [
+    380,
+    60
+   ],
+   "flags": {},
+   "order": 23,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 1001
+    },
+    {
+     "localized_name": "停止在CLIP层",
+     "name": "stop_at_clip_layer",
+     "type": "INT",
+     "widget": {
+      "name": "stop_at_clip_layer"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "slot_index": 0,
+     "links": [
+      1005,
+      1006,
+      1009,
+      1010,
+      1011,
+      2323,
+      2423
+     ]
+    }
+   ],
+   "title": "Clip Skip = 1（SDXL 必须）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPSetLastLayer"
+   },
+   "widgets_values": [
+    -1
+   ]
+  },
+  {
+   "id": 1004,
+   "type": "LoadImage",
+   "pos": [
+    8500,
+    3500
+   ],
+   "size": [
+    400,
+    400
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "COMBO",
+     "widget": {
+      "name": "image"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "选择文件上传",
+     "name": "upload",
+     "type": "IMAGEUPLOAD",
+     "widget": {
+      "name": "upload"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      1003
+     ]
+    },
+    {
+     "localized_name": "遮罩",
+     "name": "MASK",
+     "type": "MASK",
+     "slot_index": 1,
+     "links": []
+    }
+   ],
+   "title": "★ 身份基图 = v23 正面（已确认）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "LoadImage"
+   },
+   "widgets_values": [
+    "wendeng_face_base.png",
+    "image"
+   ]
+  },
+  {
+   "id": 1005,
+   "type": "ImageScale",
+   "pos": [
+    8500,
+    4020
+   ],
+   "size": [
+    330,
+    130
+   ],
+   "flags": {},
+   "order": 24,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 1003
+    },
+    {
+     "localized_name": "缩放算法",
+     "name": "upscale_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "upscale_method"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "宽度",
+     "name": "width",
+     "type": "INT",
+     "widget": {
+      "name": "width"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "高度",
+     "name": "height",
+     "type": "INT",
+     "widget": {
+      "name": "height"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "裁剪",
+     "name": "crop",
+     "type": "COMBO",
+     "widget": {
+      "name": "crop"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      1004
+     ]
+    }
+   ],
+   "title": "统一到 896×1152",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ImageScale"
+   },
+   "widgets_values": [
+    "lanczos",
+    896,
+    1152,
+    "center"
+   ]
+  },
+  {
+   "id": 1006,
+   "type": "VAEEncode",
+   "pos": [
+    8500,
+    4540
+   ],
+   "size": [
+    280,
+    60
+   ],
+   "flags": {},
+   "order": 45,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "像素",
+     "name": "pixels",
+     "type": "IMAGE",
+     "link": 1004
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 1002
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      1019
+     ]
+    }
+   ],
+   "title": "身份 latent",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEEncode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1009,
+   "type": "ConditioningCombine",
+   "pos": [
+    9300,
+    4540
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 54,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "条件_1",
+     "name": "conditioning_1",
+     "type": "CONDITIONING",
+     "link": 1007
+    },
+    {
+     "localized_name": "条件_2",
+     "name": "conditioning_2",
+     "type": "CONDITIONING",
+     "link": 1008
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      1017
+     ]
+    }
+   ],
+   "title": "合并 A + B（突破 75 token 的关键）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ConditioningCombine"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1011,
+   "type": "CLIPTextEncode",
+   "pos": [
+    10100,
+    4020
+   ],
+   "size": [
+    700,
+    220
+   ],
+   "flags": {},
+   "order": 42,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 1010
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      1013
+     ]
+    }
+   ],
+   "title": "负向 N2 · 服饰 / 正装",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "t-shirt, sweater, business suit, blazer, tie, dress shirt, formal wear, ironed shirt, wool coat, brown coat, beige coat, blue coat, light coat, new clothes, fashion model, jeans, denim, bare chest, shirtless, nude, white sneakers, new shoes, police uniform, wuxia, hanfu"
+   ]
+  },
+  {
+   "id": 1012,
+   "type": "CLIPTextEncode",
+   "pos": [
+    10100,
+    4540
+   ],
+   "size": [
+    700,
+    220
+   ],
+   "flags": {},
+   "order": 43,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 1011
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      1015
+     ]
+    }
+   ],
+   "title": "负向 N3 · 背景 / 构图",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "dark background, grey background, gradient background, vignette, shadow, busy background, full body, bare shoulders, shirtless, freckles, mole on cheek, mole on forehead, extra fingers, bad hands, watermark, text, blurry, lowres, airbrushed, over-smoothed, beauty filter, smooth skin, retouched"
+   ]
+  },
+  {
+   "id": 1013,
+   "type": "ConditioningCombine",
+   "pos": [
+    10900,
+    3500
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 55,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "条件_1",
+     "name": "conditioning_1",
+     "type": "CONDITIONING",
+     "link": 1012
+    },
+    {
+     "localized_name": "条件_2",
+     "name": "conditioning_2",
+     "type": "CONDITIONING",
+     "link": 1013
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      1014
+     ]
+    }
+   ],
+   "title": "负向 N1+N2",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ConditioningCombine"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1014,
+   "type": "ConditioningCombine",
+   "pos": [
+    10900,
+    4020
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 58,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "条件_1",
+     "name": "conditioning_1",
+     "type": "CONDITIONING",
+     "link": 1014
+    },
+    {
+     "localized_name": "条件_2",
+     "name": "conditioning_2",
+     "type": "CONDITIONING",
+     "link": 1015
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      1018,
+      2328
+     ]
+    }
+   ],
+   "title": "负向 (N1+N2)+N3",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ConditioningCombine"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1016,
+   "type": "VAEDecode",
+   "pos": [
+    12500,
+    3500
+   ],
+   "size": [
+    250,
+    60
+   ],
+   "flags": {},
+   "order": 66,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "Latent",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 1020
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 1021
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      1023
+     ]
+    }
+   ],
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1018,
+   "type": "UpscaleModelLoader",
+   "pos": [
+    12500,
+    4020
+   ],
+   "size": [
+    520,
+    80
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "模型名称",
+     "name": "model_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "model_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "放大模型",
+     "name": "UPSCALE_MODEL",
+     "type": "UPSCALE_MODEL",
+     "slot_index": 0,
+     "links": [
+      1024,
+      2333
+     ]
+    }
+   ],
+   "title": "放大模型 4x-UltraSharp",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "UpscaleModelLoader"
+   },
+   "widgets_values": [
+    "4x-UltraSharp (1).pth"
+   ]
+  },
+  {
+   "id": 1019,
+   "type": "ImageUpscaleWithModel",
+   "pos": [
+    13300,
+    3500
+   ],
+   "size": [
+    440,
+    80
+   ],
+   "flags": {},
+   "order": 74,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "放大模型",
+     "name": "upscale_model",
+     "type": "UPSCALE_MODEL",
+     "link": 1024
+    },
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 1023
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      1025
+     ]
+    }
+   ],
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ImageUpscaleWithModel"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1020,
+   "type": "ImageScaleBy",
+   "pos": [
+    13300,
+    4020
+   ],
+   "size": [
+    330,
+    82
+   ],
+   "flags": {},
+   "order": 78,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 1025
+    },
+    {
+     "localized_name": "缩放算法",
+     "name": "upscale_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "upscale_method"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "缩放系数",
+     "name": "scale_by",
+     "type": "FLOAT",
+     "widget": {
+      "name": "scale_by"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      2339
+     ]
+    }
+   ],
+   "title": "缩回 1792×2304",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ImageScaleBy"
+   },
+   "widgets_values": [
+    "lanczos",
+    0.5
+   ]
+  },
+  {
+   "id": 1022,
+   "type": "Note",
+   "pos": [
+    10900,
+    5580
+   ],
+   "size": [
+    620,
+    220
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "title": "备注 · 为什么撤掉重绘",
+   "properties": {
+    "Node name for S&R": "Note"
+   },
+   "widgets_values": [
+    "★ 本块没有第二段 KSampler。\n成品 = 第一段 → 4x 放大 → 缩回 0.5，不经过任何二次采样。\n这是附录 B.7 的结论：低 denoise 重绘不补细节、只抹细节。"
+   ],
+   "color": "#432",
+   "bgcolor": "#653"
+  },
+  {
+   "id": 1023,
+   "type": "Note",
+   "pos": [
+    13300,
+    5580
+   ],
+   "size": [
+    1620,
+    720
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 2,
+   "inputs": [],
+   "outputs": [],
+   "title": "★ 说明 · Kontext 统一正脸后再生成左右侧脸",
+   "properties": {
+    "Node name for S&R": "Note"
+   },
+   "widgets_values": [
+    "【Kontext 底稿块 · 现在只负责「姿势 + 身份」】\n\n① 1027 = 身份基准图 00009（SDXL v23 旧稿）。\n② 1046 用 d1.0 + 纯噪声完整重画成「统一正脸」→ 1048 存图。\n③ 1050 的统一正脸 latent 作为身份参考，1034 用 d1.0 生成鼻尖朝画面左的真 90° 侧脸\n   → 1036 存图（这份是整条链的**姿势底稿**，不是终稿）。\n④ 1051 水平翻转得到右侧，方向由像素变换硬保证 → 1042 存图。\n\n★ 终稿不在这里。真 90° 侧脸经 1035 直接喂给本组右半边（1100），\n  由 SDXL 在 d0.45 重绘成终稿（1109/1111）。\n\n★ 1037-1041（旧的「靠提示词赌 RIGHT 方向」右脸支路）已删除：\n  你们的实测已证明它会收敛成和左脸同向，方向现由 1110 ImageFlip 硬保证。\n  （完整备份见 _wf/_backup_pre_merge_*.json，需要还原随时可以）\n\n★ 全链唯一的基图 = 1004 读的 `wendeng_face_base.png`（v23 认可的那张 SDXL 正脸）。\n  1028 现在直接取 **SDXL 正脸成品 1021** 当身份参考（原来取 00009，那张 lapVar 只有\n  106.92、是文档里定性为「病根」的旧稿，已删除该 LoadImage）。\n  => 外部只需要上传一个文件，其余全部由 SDXL 衍生。\n"
+   ],
+   "color": "#432",
+   "bgcolor": "#653"
+  },
+  {
+   "id": 1025,
+   "type": "DualCLIPLoader",
+   "pos": [
+    7700,
+    900
+   ],
+   "size": [
+    430,
+    130
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "CLIP名称1",
+     "name": "clip_name1",
+     "type": "COMBO",
+     "widget": {
+      "name": "clip_name1"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "CLIP名称2",
+     "name": "clip_name2",
+     "type": "COMBO",
+     "widget": {
+      "name": "clip_name2"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "类型",
+     "name": "type",
+     "type": "COMBO",
+     "widget": {
+      "name": "type"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "设备",
+     "name": "device",
+     "shape": 7,
+     "type": "COMBO",
+     "widget": {
+      "name": "device"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "slot_index": 0,
+     "links": [
+      1027,
+      1031,
+      2301,
+      2340,
+      2364
+     ]
+    }
+   ],
+   "title": "DualCLIP：t5xxl_fp8 + clip_l",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "DualCLIPLoader"
+   },
+   "widgets_values": [
+    "t5\\t5xxl_fp8_e4m3fn_scaled.safetensors",
+    "clip_l.safetensors",
+    "flux",
+    "default"
+   ]
+  },
+  {
+   "id": 1026,
+   "type": "VAELoader",
+   "pos": [
+    7700,
+    1420
+   ],
+   "size": [
+    430,
+    80
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "vae名称",
+     "name": "vae_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "vae_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "VAE",
+     "name": "VAE",
+     "type": "VAE",
+     "slot_index": 0,
+     "links": [
+      1028,
+      1040,
+      2310,
+      2314,
+      2345,
+      2352
+     ]
+    }
+   ],
+   "title": "VAE ae.safetensors",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAELoader"
+   },
+   "widgets_values": [
+    "FLUX1\\ae.safetensors"
+   ]
+  },
+  {
+   "id": 1028,
+   "type": "FluxKontextImageScale",
+   "pos": [
+    9300,
+    380
+   ],
+   "size": [
+    330,
+    80
+   ],
+   "flags": {},
+   "order": 82,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2339
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      1030
+     ]
+    }
+   ],
+   "title": "缩到 Kontext 合适尺寸（勿手写宽高）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "FluxKontextImageScale"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1029,
+   "type": "VAEEncode",
+   "pos": [
+    9300,
+    900
+   ],
+   "size": [
+    337.933203125,
+    60
+   ],
+   "flags": {},
+   "order": 88,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "像素",
+     "name": "pixels",
+     "type": "IMAGE",
+     "link": 1030
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 1028
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      2304,
+      2319,
+      2367
+     ]
+    }
+   ],
+   "title": "参考 latent（既喂 conditioning 也当采样起点）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEEncode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1030,
+   "type": "CLIPTextEncode",
+   "pos": [
+    9300,
+    1420
+   ],
+   "size": [
+    420,
+    120
+   ],
+   "flags": {},
+   "order": 25,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 1027
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      1037,
+      2307,
+      2349
+     ]
+    }
+   ],
+   "title": "★ 负向（cfg=1.0 下无效，留空仅为满足接口）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    ""
+   ]
+  },
+  {
+   "id": 1032,
+   "type": "FluxGuidance",
+   "pos": [
+    10100,
+    1940
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 46,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "条件",
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 1032
+    },
+    {
+     "localized_name": "引导",
+     "name": "guidance",
+     "type": "FLOAT",
+     "widget": {
+      "name": "guidance"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      1033
+     ]
+    }
+   ],
+   "title": "Guidance 3.0",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "FluxGuidance"
+   },
+   "widgets_values": [
+    3
+   ]
+  },
+  {
+   "id": 1033,
+   "type": "ReferenceLatent",
+   "pos": [
+    10900,
+    1940
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 93,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "条件",
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 1033
+    },
+    {
+     "localized_name": "Latent",
+     "name": "latent",
+     "shape": 7,
+     "type": "LATENT",
+     "link": 2319
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      1036
+     ]
+    }
+   ],
+   "title": "★ 参考图进 conditioning",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ReferenceLatent"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1034,
+   "type": "KSampler",
+   "pos": [
+    11700,
+    1940
+   ],
+   "size": [
+    330,
+    262
+   ],
+   "flags": {},
+   "order": 98,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "模型",
+     "name": "model",
+     "type": "MODEL",
+     "link": 1035
+    },
+    {
+     "localized_name": "正面条件",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 1036
+    },
+    {
+     "localized_name": "负面条件",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 1037
+    },
+    {
+     "localized_name": "Latent图像",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 2318
+    },
+    {
+     "localized_name": "种子",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "步数",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "采样器名称",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "调度器",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "降噪",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      1039
+     ]
+    }
+   ],
+   "title": "★ 鼻尖朝画面左：Kontext 完整重绘（d1.0）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "KSampler"
+   },
+   "widgets_values": [
+    20260920,
+    "fixed",
+    20,
+    1,
+    "euler",
+    "simple",
+    1
+   ]
+  },
+  {
+   "id": 1035,
+   "type": "VAEDecode",
+   "pos": [
+    12500,
+    1940
+   ],
+   "size": [
+    250,
+    60
+   ],
+   "flags": {},
+   "order": 101,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "Latent",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 1039
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 1040
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      2315,
+      2320
+     ]
+    }
+   ],
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1021,
+   "type": "SaveImage",
+   "pos": [
+    14100,
+    3500
+   ],
+   "size": [
+    500,
+    460
+   ],
+   "flags": {},
+   "order": 103,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图片",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 2354
+    },
+    {
+     "localized_name": "文件名前缀",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "title": "★ 成品 · 无第二段重绘（B.7）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "闻灯-脸部正面-成品"
+   ]
+  },
+  {
+   "id": 1010,
+   "type": "CLIPTextEncode",
+   "pos": [
+    10100,
+    3500
+   ],
+   "size": [
+    700,
+    220
+   ],
+   "flags": {},
+   "order": 41,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 1009
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      1012
+     ]
+    }
+   ],
+   "title": "负向 N1 · 反柔弱 / 反女性",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "old man, middle aged man, mature man, aged face, elderly, aged appearance, aging skin, deep wrinkles, forehead wrinkles, deep nasolabial folds, deep eye bags, heavy dark circles, sunken cheeks, gaunt face, feminine face, feminine features, woman, female, girl, female facial features, delicate feminine features, overly soft facial features, soft jawline, narrow delicate chin, round feminine face, large feminine eyes, makeup, lipstick, pretty girl, bishounen, bishoujo, androgynous, gender ambiguous, effeminate"
+   ]
+  },
+  {
+   "id": 1015,
+   "type": "KSampler",
+   "pos": [
+    11700,
+    3500
+   ],
+   "size": [
+    350.456640625,
+    262
+   ],
+   "flags": {},
+   "order": 62,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "模型",
+     "name": "model",
+     "type": "MODEL",
+     "link": 1016
+    },
+    {
+     "localized_name": "正面条件",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 1017
+    },
+    {
+     "localized_name": "负面条件",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 1018
+    },
+    {
+     "localized_name": "Latent图像",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 1019
+    },
+    {
+     "localized_name": "种子",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "步数",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "采样器名称",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "调度器",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "降噪",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      1020
+     ]
+    }
+   ],
+   "title": "① 第一段 · 30步 CFG10 denoise 0.30（保身份）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "KSampler"
+   },
+   "widgets_values": [
+    20260912,
+    "fixed",
+    30,
+    10,
+    "dpmpp_2m",
+    "karras",
+    0.3
+   ]
+  },
+  {
+   "id": 1008,
+   "type": "CLIPTextEncode",
+   "pos": [
+    9300,
+    4020
+   ],
+   "size": [
+    760,
+    300
+   ],
+   "flags": {},
+   "order": 40,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 1006
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      1008,
+      2325
+     ]
+    }
+   ],
+   "title": "正向 B · 白底 + 光位 + 皮肤质感",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "detailed face, detailed eyes, clear iris detail, individual eyelashes, natural thick eyebrows, clean shaven face, youthful natural skin, realistic skin texture, fine skin texture, subtle visible pores, natural skin imperfections, realistic complexion, natural facial texture, small dark mole at outer corner of eye, visible mole, clearly defined mole, messy wavy hair with individual hair strands, faded blue shirt collar, dark worn coat, pure white background, soft even studio lighting, subtle facial shadows, sharp focus, realistic skin rendering, photorealistic"
+   ]
+  },
+  {
+   "id": 1007,
+   "type": "CLIPTextEncode",
+   "pos": [
+    9300,
+    3500
+   ],
+   "size": [
+    760,
+    300
+   ],
+   "flags": {},
+   "order": 39,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 1005
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      1007
+     ]
+    }
+   ],
+   "title": "正向 A · 人物 + 构图",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "front view, looking at viewer, face closeup, head and shoulders, 1boy, solo, 24 year old young adult east asian man, youthful masculine face, youthful facial proportions, defined but youthful jawline, masculine facial structure, messy wavy black hair, small dark mole at outer corner of eye, visible eye-corner mole, tired but young eyes, slightly heavy eyelids, faint under-eye shadows, faded blue shirt collar, dark worn coat collar, pure white background"
+   ]
+  },
+  {
+   "id": 1044,
+   "type": "FluxGuidance",
+   "pos": [
+    10100,
+    900
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 47,
+   "mode": 2,
+   "inputs": [
+    {
+     "localized_name": "条件",
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 2302
+    },
+    {
+     "localized_name": "引导",
+     "name": "guidance",
+     "type": "FLOAT",
+     "widget": {
+      "name": "guidance"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": []
+    }
+   ],
+   "title": "统一正脸 · Guidance 3.0",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "FluxGuidance"
+   },
+   "widgets_values": [
+    3
+   ]
+  },
+  {
+   "id": 1045,
+   "type": "ReferenceLatent",
+   "pos": [
+    10900,
+    380
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 92,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "条件",
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 2366
+    },
+    {
+     "localized_name": "Latent",
+     "name": "latent",
+     "shape": 7,
+     "type": "LATENT",
+     "link": 2304
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      2306
+     ]
+    }
+   ],
+   "title": "统一正脸 · 参考图进 conditioning",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ReferenceLatent"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1047,
+   "type": "VAEDecode",
+   "pos": [
+    11700,
+    380
+   ],
+   "size": [
+    250,
+    60
+   ],
+   "flags": {},
+   "order": 100,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "Latent",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 2309
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 2310
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      2312,
+      2354
+     ]
+    }
+   ],
+   "title": "统一正脸 · VAEDecode",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1049,
+   "type": "FluxKontextImageScale",
+   "pos": [
+    11700,
+    900
+   ],
+   "size": [
+    330,
+    80
+   ],
+   "flags": {},
+   "order": 102,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2312
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      2313
+     ]
+    }
+   ],
+   "title": "统一正脸 · Kontext 尺寸",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "FluxKontextImageScale"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1050,
+   "type": "VAEEncode",
+   "pos": [
+    12500,
+    900
+   ],
+   "size": [
+    337.933203125,
+    60
+   ],
+   "flags": {},
+   "order": 106,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "像素",
+     "name": "pixels",
+     "type": "IMAGE",
+     "link": 2313
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 2314
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": []
+    }
+   ],
+   "title": "统一正脸 · 成品 latent（供左右侧脸共用）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEEncode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1051,
+   "type": "ImageFlip",
+   "pos": [
+    13300,
+    2460
+   ],
+   "size": [
+    315,
+    82
+   ],
+   "flags": {},
+   "order": 104,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2315
+    },
+    {
+     "localized_name": "翻转方法",
+     "name": "flip_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "flip_method"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": []
+    }
+   ],
+   "title": "右侧脸 · 水平翻转左侧脸（方向硬保证）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ImageFlip"
+   },
+   "widgets_values": [
+    "y-axis: horizontally"
+   ]
+  },
+  {
+   "id": 1052,
+   "type": "EmptySD3LatentImage",
+   "pos": [
+    8500,
+    900
+   ],
+   "size": [
+    315,
+    106
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "宽度",
+     "name": "width",
+     "type": "INT",
+     "widget": {
+      "name": "width"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "高度",
+     "name": "height",
+     "type": "INT",
+     "widget": {
+      "name": "height"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "批量大小",
+     "name": "batch_size",
+     "type": "INT",
+     "widget": {
+      "name": "batch_size"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      2318
+     ]
+    }
+   ],
+   "title": "统一三视角 · 纯噪声 latent 880×1184",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "EmptySD3LatentImage"
+   },
+   "widgets_values": [
+    880,
+    1184,
+    1
+   ]
+  },
+  {
+   "id": 1043,
+   "type": "CLIPTextEncode",
+   "pos": [
+    10100,
+    380
+   ],
+   "size": [
+    700,
+    420
+   ],
+   "flags": {},
+   "order": 27,
+   "mode": 2,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 2301
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      2302
+     ]
+    }
+   ],
+   "title": "统一正脸 · Kontext 编辑指令（只重画质感）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "Regenerate the image as a natural high-end photographic portrait while preserving the exact identity of the reference person.\n\nKeep him clearly as a 24-year-old young adult man in his early twenties.\n\nPreserve the recognizable identity and overall facial character of the reference. Keep the facial appearance refined, attractive and naturally masculine, with balanced facial proportions and a youthful adult appearance.\n\nDo not exaggerate any particular ethnic facial characteristics. Keep the overall appearance natural, contemporary and faithful to the reference image.\n\nPreserve a youthful adult appearance and youthful facial proportions. He should look like a healthy 24-year-old young adult man, not a teenager and not a mature man in his thirties.\n\nPreserve the exact facial identity and recognizable facial structure of the reference.\n\nThe face should have a naturally elongated narrow oval shape. Make the face subtly longer than the previous rendering, with slightly greater vertical facial height while maintaining the same recognizable identity and facial width.\n\nIncrease the vertical proportion of the face moderately, especially through the midface and lower face, creating a refined elongated facial silhouette. The face should feel noticeably longer and slightly narrow, but still natural and masculine.\n\nMaintain a slim, refined facial silhouette with gently tapered cheeks and a clean, naturally defined jawline. Keep the jaw relatively narrow without making it overly sharp or V-shaped.\n\nKeep the forehead, midface and lower face naturally proportioned, with enough vertical facial length to preserve the elongated appearance.\n\nKeep the chin proportionate and naturally elongated rather than short, wide or recessed. Do not create an exaggerated pointed chin.\n\nKeep the mouth area refined and naturally proportioned. The lips should sit naturally within the facial profile, with subtle and balanced projection. Keep a refined, understated mouth shape with a natural lip contour. The lips should be moderately sized and naturally defined, with a subtle cupid's bow and a balanced lower lip.\n\nAvoid a protruding mouth, forward-projecting lips, overly full lips, exaggerated lower lip, pouty lips, or excessive lip volume. The mouth should remain naturally integrated into the face. Keep the side profile clean and balanced without pronounced mouth projection.\n\nKeep the under-eye area youthful and natural. Very subtle natural tear troughs are acceptable, but avoid deep tear troughs, pronounced under-eye grooves, hollow under-eyes or strong eye bags.\n\nKeep the nasolabial folds extremely subtle and age-appropriate. Avoid deep nasolabial folds, pronounced smile lines, strong facial creases or mature-looking facial lines.\n\nThe entire visible skin surface should have a unified, realistic young-adult skin material.\n\nThis realistic skin quality must apply continuously across the entire visible body, not only the face: forehead, cheeks, nose, lips, ears, jawline, chin, neck, throat, collar area, clavicles and any visible upper chest or shoulders.\n\nTreat the face, ears, neck and visible upper body as the same continuous human skin material with consistent photographic rendering.\n\nThe skin should feel soft, supple and naturally hydrated, with a fine-grained organic surface rather than a digitally sharpened or rough surface.\n\nPrioritize realistic skin material and natural light interaction over visible pore detail.\n\nThe skin should have subtle natural microstructure that is visible only through gentle changes in light and tone, not through exaggerated pores, sharp lines or coarse surface detail.\n\nUse delicate skin micro-variation, subtle tonal transitions, natural subsurface light response, soft skin reflectance and very fine natural surface variation.\n\nSkin should have a soft natural specular response with gentle highlights and smooth transitions between light and shadow.\n\nThe skin should not look sharpened, crunchy, gritty, rough, dry, cracked, heavily textured or artificially high-frequency.\n\nAvoid excessive pore visibility. Do not emphasize individual pores as the primary source of realism.\n\nAvoid exaggerated skin grain, harsh micro-contrast, excessive local contrast, oversharpening or artificial clarity.\n\nThe realism should come from realistic skin material, subtle light scattering, natural tonal variation and photographic rendering rather than sharpening.\n\nKeep the skin youthful, smooth and healthy while retaining believable natural surface variation.\n\nKeep natural skin translucency and subtle tonal variation across all visible skin. Allow very subtle natural redness and slight tonal differences around the nose, cheeks, ears, lips, neck and upper chest.\n\nThe skin should be naturally light and slightly fairer than the previous rendering, with a clean light complexion and subtle neutral-warm undertones.\n\nKeep the skin bright and healthy without making it pale, bleached, porcelain-like or overexposed.\n\nDo not smooth the skin excessively. Do not create airbrushed skin, plastic skin, porcelain skin, waxy skin or beauty-filter skin.\n\nKeep the complexion clean and healthy without acne, acne scars, pitted scars, wrinkles, age spots, melasma, hyperpigmentation, brown patches or dirty-looking discoloration.\n\nKeep the eyebrows naturally dense but realistic, with visible individual eyebrow hairs, fine hair texture, natural hair direction and slightly irregular natural density.\n\nKeep only very subtle short natural facial stubble around the upper lip and sides of the mouth. The moustache area should consist of fine individual hairs with visible separation and visible skin between the hairs.\n\nKeep the chin and lower jaw clean-shaven with visible natural skin texture. No beard on the chin, no chin stubble, no goatee, no beard shadow on the chin or lower jaw.\n\nKeep the facial hair subtle and low contrast, never a solid dark patch.\n\nKeep the black wavy hair soft, airy and naturally voluminous. Preserve naturally separated waves, soft hair groupings and a limited number of fine flyaway hairs.\n\nHair should have realistic soft hair texture and natural variation. Do not make the hair look wet, oily, glossy, stiff, gelled or glued together.\n\nA single small dark mole is clearly visible at the outer corner of his LEFT eye. The mole is small, round and naturally embedded in the skin. It is a distinctive identity marker and must remain visible. Do not remove, blur, cover or relocate the mole.\n\nUse natural directional photographic lighting rather than perfectly flat studio lighting.\n\nUse a large soft diffused light source from slightly above and to one side of the face and upper body, creating gentle natural gradients of light and shadow across both the face and visible neck.\n\nExtend the same soft directional illumination continuously from the face onto the ears, jawline, neck, throat, clavicles and visible upper chest.\n\nKeep the neck and lower visible skin naturally illuminated with the same realistic photographic quality as the face.\n\nPreserve subtle three-dimensional form through gentle tonal transitions rather than strong contrast.\n\nKeep the lighting soft enough that the skin remains smooth and youthful while still revealing subtle natural material variation.\n\nAvoid completely even frontal illumination, but also avoid harsh side lighting or strong raking light that exaggerates pores, wrinkles, tear troughs, nasolabial folds or skin roughness.\n\nKeep the shadows soft and controlled, with gentle transitions along the nose, cheekbones, jawline and neck.\n\nMaintain realistic highlight rolloff across the forehead, nose, cheekbones, lips, ears, neck and clavicles.\n\nNatural realistic exposure, restrained highlights, soft shadow detail, realistic dynamic range and natural light falloff.\n\nThe entire visible skin surface should feel like one continuous real human skin material captured by the same high-quality camera, with consistent texture, tone, reflectance and lighting from the face down through the neck and visible upper body.\n\nNatural high-end photographic realism, realistic male portrait photography, subtle cinematic quality, authentic human facial proportions, realistic skin material, natural hair rendering, realistic individual hairs, natural facial shadows, realistic exposure, realistic dynamic range, sharp but natural photographic detail, shallow depth of field, 35mm film photograph, fine natural film grain, muted cinematic color grading, restrained contrast, documentary photographic realism.\n\nThe final result should feel like the same person photographed with a high-end camera under natural professional lighting, not a redesigned face, not a generic model, and not an idealized beauty-filter portrait."
+   ]
+  },
+  {
+   "id": 1046,
+   "type": "KSampler",
+   "pos": [
+    10900,
+    900
+   ],
+   "size": [
+    335.23984375,
+    262
+   ],
+   "flags": {},
+   "order": 97,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "模型",
+     "name": "model",
+     "type": "MODEL",
+     "link": 2305
+    },
+    {
+     "localized_name": "正面条件",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 2306
+    },
+    {
+     "localized_name": "负面条件",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 2307
+    },
+    {
+     "localized_name": "Latent图像",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 2367
+    },
+    {
+     "localized_name": "种子",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "步数",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "采样器名称",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "调度器",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "降噪",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      2309
+     ]
+    }
+   ],
+   "title": "统一正脸 · Kontext 完整重绘（d1.0）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "KSampler"
+   },
+   "widgets_values": [
+    20260920,
+    "fixed",
+    20,
+    1,
+    "euler",
+    "simple",
+    0.93
+   ]
+  },
+  {
+   "id": 1031,
+   "type": "CLIPTextEncode",
+   "pos": [
+    9300,
+    1940
+   ],
+   "size": [
+    700,
+    420
+   ],
+   "flags": {},
+   "order": 26,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 1031
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      1032
+     ]
+    }
+   ],
+   "title": "主图编辑指令 · 鼻尖朝画面左（仅生成一侧）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "Regenerate this person as a natural high-end photographic portrait, seen from a true anatomical 90-degree LEFT profile, while preserving the exact identity of the reference person.\n\nThe reference image is an identity photograph. Use it only as the authoritative source for the person's identity: facial identity, facial structure, facial proportions, hairline and the position of the mole at the outer corner of his left eye. Do not copy its photographic rendering, its skin texture, its surface speckling, its hair volume or its lighting. The finished profile must be re-rendered as a clean, high-end studio portrait of the same person.\n\nThis is a viewing-angle change of the same person, not a new character generation and not a new portrait design. Only the viewing angle changes.\n\nVIEWING ANGLE:\nCreate a true anatomical 90-degree LEFT profile. The face is seen directly from his left side, not a three-quarter view and not a near-profile.\nThe visible facial contour follows naturally: forehead, brow, nose bridge, nose tip, philtrum, lips, chin, jawline, neck.\nKeep the natural relationship between nose projection, lips, chin and jawline. The nose has natural, moderate projection consistent with this person's actual facial structure. The lips sit naturally within the profile without excessive forward projection, excessive fullness or an artificial lip outline. The chin keeps its natural shape and projection: not long, sharp, pointed, recessed or oversized. The jawline stays naturally refined: not excessively angular, square, heavy or sharply V-shaped.\n\nIDENTITY AND FACIAL STRUCTURE:\nPreserve the exact same person, the same apparent age and the same facial character as the reference. Keep the same forehead shape, brow position, eyebrow shape and density, nose structure, lips and mouth shape, philtrum, chin shape, jawline, cheekbone structure, face width and length, and hairline.\nDo not redesign or reinterpret any facial feature. Do not beautify, idealize, masculinize, feminize, mature or make the face more conventionally attractive. Do not replace his facial characteristics with generic male facial features.\n\nAGE:\nHe is a 24-year-old young adult man in his early twenties, healthy and youthful, with youthful facial proportions: not a teenager and not a mature man in his thirties.\n\nSKIN:\nThe entire visible skin surface has a unified, realistic young-adult skin material, applied continuously across the whole visible body: forehead, cheek, nose, lips, ear, jawline, chin, neck, throat and collar area.\nTreat the face, ear, jaw, neck and throat as the same continuous human skin material with consistent photographic rendering.\nThe skin feels soft, supple and naturally hydrated, with a fine-grained organic surface rather than a digitally sharpened or rough surface.\nPrioritize realistic skin material and natural light interaction over visible pore detail. The fine natural microstructure is visible only through gentle changes in light and tone, not through exaggerated pores, sharp lines or coarse surface detail.\nUse delicate skin micro-variation, subtle tonal transitions, natural subsurface light response, soft skin reflectance and very fine natural surface variation.\nThe skin must not look sharpened, crunchy, gritty, rough, dry, cracked, heavily textured or artificially high-frequency. Avoid excessive pore visibility; do not emphasize individual pores as the primary source of realism. Avoid exaggerated skin grain, harsh micro-contrast, excessive local contrast, oversharpening or artificial clarity.\nRender a clean, even, healthy skin surface across the entire cheek, jaw and neck. Do not reproduce the surface speckling, the scattered dark dots or the coarse texture of the reference photograph. The only dark marks on his face are the single mole at the outer corner of his left eye and a very small number of extremely subtle natural skin marks.\nKeep the skin bright, clean and healthy with a light, clear complexion and subtle neutral-warm undertones, without making it pale, bleached, porcelain-like or overexposed.\nThe neck stays clean, even and continuous with the face, with soft continuous tonal transitions from the jaw into the neck and throat. No dark markings, no dark lines, no grooves, no rough patches, no separate or differently textured neck.\nDo not smooth the skin excessively either: no airbrushed, plastic, porcelain, waxy or beauty-filter skin.\n\nLIGHTING:\nKeep the light on the camera side of the face so the visible side of the profile stays evenly and softly lit, as if lit from the camera position. Use a large soft diffused light source from slightly above and slightly toward the camera.\nGentle contrast, soft shadow transitions and realistic highlight rolloff across the forehead, brow, nose, cheekbone, jaw and neck. Natural realistic exposure, restrained highlights, soft shadow detail and realistic dynamic range.\nAvoid harsh raking side light, hard rim light, strong back light, dark split lighting and high-contrast lighting that exaggerates pores, wrinkles or skin roughness.\nThe lighting on the face, ear, jaw and neck must read as the same soft, low-contrast setup, with the same shadow softness, as a clean studio portrait of this person.\n\nHAIR:\nKeep the same black wavy hairstyle and the same hairline as the reference, but render the hair soft, airy and neatly arranged: naturally separated waves, clean soft hair groupings, natural direction and a limited number of fine flyaway hairs.\nThe hair should have realistic soft hair texture with natural variation, and a matte to soft-satin photographic appearance. Lightweight, dry and clean-looking, with restrained, well-controlled volume. Not the loose, oversized, wild or frizzy volume of the reference photograph.\nDo not make the hair look wet, oily, glossy, stiff, gelled, glued together, rope-like, ribbon-like, heavy or like solid blocks.\n\nFACIAL HAIR:\nKeep only very subtle short natural stubble around the upper lip and the sides of the mouth. The moustache area consists of fine individual hairs with visible separation and visible skin between the hairs. Keep the facial hair subtle and low contrast, never a solid dark patch.\nKeep the chin and lower jaw clean-shaven with visible natural skin: no beard, no chin stubble, no goatee, no beard shadow.\nDo not create sideburns or dense facial hair.\n\nEYEBROWS:\nKeep the eyebrows naturally dense but realistic, with visible individual eyebrow hairs, fine hair texture, natural hair direction and slightly irregular natural density. Soft-edged and naturally integrated with the skin: not sparse, not overly sharp, not overly thick, not perfectly shaped, not tattoo-like.\n\nMOLE:\nA single small dark mole is clearly visible at the outer corner of his LEFT eye, in the correct anatomical position for a left profile view. The mole is small, round and naturally embedded in the skin. It is a distinctive identity marker and must remain visible. Do not remove, blur, cover, enlarge or relocate it.\n\nPHOTOGRAPHIC QUALITY:\nNatural high-end photographic realism, realistic male portrait photography, authentic human facial proportions, realistic skin material, natural hair rendering, realistic individual hairs, natural facial shadows, realistic exposure, realistic dynamic range, sharp but natural photographic detail, shallow depth of field, 35mm film photograph, fine natural film grain, muted cinematic color grading, restrained contrast, documentary photographic realism.\nThe image should look like a clean modern studio photograph, not a gritty, grainy or over-processed image. Do not make it more cinematic, dramatic, glossy, contrasty, polished or stylized.\nThe finished profile must look like it was taken in the same session, with the same camera, the same lens, the same lighting and the same color grading as this person's approved front-facing portrait.\n\nFINAL:\nOne single natural photograph of the same person, seen from his left side in a true 90-degree profile.\nThe final result should feel like the same person photographed with a high-end camera under natural professional lighting, not a redesigned face, not a generic model, and not an idealized beauty-filter portrait.\nOnly the viewing angle changes.\n"
+   ]
+  },
+  {
+   "id": 1100,
+   "type": "ImageScale",
+   "pos": [
+    12500,
+    4540
+   ],
+   "size": [
+    337.64609375,
+    130
+   ],
+   "flags": {},
+   "order": 105,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2320
+    },
+    {
+     "localized_name": "缩放算法",
+     "name": "upscale_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "upscale_method"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "宽度",
+     "name": "width",
+     "type": "INT",
+     "widget": {
+      "name": "width"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "高度",
+     "name": "height",
+     "type": "INT",
+     "widget": {
+      "name": "height"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "裁剪",
+     "name": "crop",
+     "type": "COMBO",
+     "widget": {
+      "name": "crop"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      2321
+     ]
+    }
+   ],
+   "title": "① 拿组3 的 90° 侧脸当基图（缩到 896×1152）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ImageScale"
+   },
+   "widgets_values": [
+    "lanczos",
+    896,
+    1152,
+    "center"
+   ]
+  },
+  {
+   "id": 1101,
+   "type": "VAEEncode",
+   "pos": [
+    13300,
+    4540
+   ],
+   "size": [
+    301.757421875,
+    60
+   ],
+   "flags": {},
+   "order": 107,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "像素",
+     "name": "pixels",
+     "type": "IMAGE",
+     "link": 2321
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 2322
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      2329
+     ]
+    }
+   ],
+   "title": "① 身份/姿势 latent（P45 那条链的起点）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEEncode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1102,
+   "type": "CLIPTextEncode",
+   "pos": [
+    12500,
+    5060
+   ],
+   "size": [
+    760,
+    300
+   ],
+   "flags": {},
+   "order": 44,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 2323
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      2324
+     ]
+    }
+   ],
+   "title": "① 正向 A · 侧面视角词",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "side profile view, face centered, true 90 degree side profile, face closeup, head and shoulders, 1boy, solo, 24 year old young adult east asian man, youthful masculine face, youthful facial proportions, defined but youthful jawline, masculine facial structure, messy wavy black hair, small dark mole at outer corner of eye, visible eye-corner mole, tired but young eyes, slightly heavy eyelids, faint under-eye shadows, faded blue shirt collar, dark worn coat collar, pure white background"
+   ]
+  },
+  {
+   "id": 1103,
+   "type": "ConditioningCombine",
+   "pos": [
+    13300,
+    5060
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 56,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "条件_1",
+     "name": "conditioning_1",
+     "type": "CONDITIONING",
+     "link": 2324
+    },
+    {
+     "localized_name": "条件_2",
+     "name": "conditioning_2",
+     "type": "CONDITIONING",
+     "link": 2325
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      2327
+     ]
+    }
+   ],
+   "title": "① 正向 侧面（视角词 + 质感词）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ConditioningCombine"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1104,
+   "type": "KSampler",
+   "pos": [
+    14100,
+    4540
+   ],
+   "size": [
+    350.456640625,
+    262
+   ],
+   "flags": {},
+   "order": 108,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "模型",
+     "name": "model",
+     "type": "MODEL",
+     "link": 2326
+    },
+    {
+     "localized_name": "正面条件",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 2327
+    },
+    {
+     "localized_name": "负面条件",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 2328
+    },
+    {
+     "localized_name": "Latent图像",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 2329
+    },
+    {
+     "localized_name": "种子",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "步数",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "采样器名称",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "调度器",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "降噪",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      2330
+     ]
+    }
+   ],
+   "title": "② KSampler · SDXL d0.45（P45 档）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "KSampler"
+   },
+   "widgets_values": [
+    20260912,
+    "fixed",
+    30,
+    10,
+    "dpmpp_2m",
+    "karras",
+    0.45
+   ]
+  },
+  {
+   "id": 1105,
+   "type": "VAEDecode",
+   "pos": [
+    14900,
+    4540
+   ],
+   "size": [
+    250,
+    60
+   ],
+   "flags": {},
+   "order": 109,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "Latent",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 2330
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 2331
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      2334
+     ]
+    }
+   ],
+   "title": "② VAEDecode",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1107,
+   "type": "ImageUpscaleWithModel",
+   "pos": [
+    15700,
+    4540
+   ],
+   "size": [
+    440,
+    80
+   ],
+   "flags": {},
+   "order": 110,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "放大模型",
+     "name": "upscale_model",
+     "type": "UPSCALE_MODEL",
+     "link": 2333
+    },
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2334
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      2335
+     ]
+    }
+   ],
+   "title": "3x 放大（4x-UltraSharp）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ImageUpscaleWithModel"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1108,
+   "type": "ImageScaleBy",
+   "pos": [
+    16500,
+    4540
+   ],
+   "size": [
+    330,
+    82
+   ],
+   "flags": {},
+   "order": 111,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2335
+    },
+    {
+     "localized_name": "缩放算法",
+     "name": "upscale_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "upscale_method"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "缩放系数",
+     "name": "scale_by",
+     "type": "FLOAT",
+     "widget": {
+      "name": "scale_by"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      2343
+     ]
+    }
+   ],
+   "title": "缩回 0.5（净 2x）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ImageScaleBy"
+   },
+   "widgets_values": [
+    "lanczos",
+    0.5
+   ]
+  },
+  {
+   "id": 1109,
+   "type": "SaveImage",
+   "pos": [
+    21300,
+    4540
+   ],
+   "size": [
+    460,
+    460
+   ],
+   "flags": {},
+   "order": 117,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图片",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 2362
+    },
+    {
+     "localized_name": "文件名前缀",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "title": "★ 成品 · 闻灯脸部左侧",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "闻灯-脸部左侧-成品"
+   ]
+  },
+  {
+   "id": 1110,
+   "type": "ImageFlip",
+   "pos": [
+    21300,
+    5060
+   ],
+   "size": [
+    315,
+    82
+   ],
+   "flags": {},
+   "order": 118,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2363
+    },
+    {
+     "localized_name": "翻转方法",
+     "name": "flip_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "flip_method"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      2338
+     ]
+    }
+   ],
+   "title": "右脸 = 左脸成品水平翻转（方向硬保证）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ImageFlip"
+   },
+   "widgets_values": [
+    "y-axis: horizontally"
+   ]
+  },
+  {
+   "id": 1111,
+   "type": "SaveImage",
+   "pos": [
+    22100,
+    5060
+   ],
+   "size": [
+    460,
+    460
+   ],
+   "flags": {},
+   "order": 119,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图片",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 2338
+    },
+    {
+     "localized_name": "文件名前缀",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "title": "★ 成品 · 闻灯脸部右侧",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "闻灯-脸部右侧-成品"
+   ]
+  },
+  {
+   "id": 1200,
+   "type": "CLIPTextEncode",
+   "pos": [
+    17300,
+    5580
+   ],
+   "size": [
+    700,
+    420
+   ],
+   "flags": {},
+   "order": 28,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 2340
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      2341
+     ]
+    }
+   ],
+   "title": "★ 提质感词（实测通过那套）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "Re-photograph this exact portrait as a natural high-end photographic portrait of the same person.\n\nKeep exactly the same head direction, viewing angle, facial identity, facial proportions, eyes, eyebrows, nose, lips, jaw, cheekbones, hair, mole placement, clothing, crop, framing, lighting direction and background.\n\nDo not turn, rotate or move the head. Do not change the viewing angle. Do not redesign, beautify, age, symmetrize or replace his face.\n\nRegenerate ONLY the photographic surface and the skin material: natural visible pores, fine skin micro-texture, natural skin grain, subtle skin tone variation, individual eyebrow hairs, realistic short stubble with visible skin between the hairs, a few fine flyaway hair strands.\n\nThe realism must come from a real photographic skin surface with genuine micro-detail, not from sharpening. Keep restrained film grain and natural color, and keep the same photographic rendering, lighting and color grading as the input image.\n\nDo not smooth the skin excessively. Do not create airbrushed, plastic, porcelain, waxy, polished or beauty-filter skin. Do not add freckles, dark spots or scattered dark speckles."
+   ]
+  },
+  {
+   "id": 1201,
+   "type": "FluxGuidance",
+   "pos": [
+    18100,
+    5580
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 48,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "条件",
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 2341
+    },
+    {
+     "localized_name": "引导",
+     "name": "guidance",
+     "type": "FLOAT",
+     "widget": {
+      "name": "guidance"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      2342
+     ]
+    }
+   ],
+   "title": "提质感 · Guidance 3.0",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "FluxGuidance"
+   },
+   "widgets_values": [
+    3
+   ]
+  },
+  {
+   "id": 1210,
+   "type": "FluxKontextImageScale",
+   "pos": [
+    17300,
+    4540
+   ],
+   "size": [
+    330,
+    80
+   ],
+   "flags": {},
+   "order": 112,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2343
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      2344
+     ]
+    }
+   ],
+   "title": "左脸 · 提质感 · Kontext 尺寸",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "FluxKontextImageScale"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1211,
+   "type": "VAEEncode",
+   "pos": [
+    18100,
+    4540
+   ],
+   "size": [
+    337.933203125,
+    60
+   ],
+   "flags": {},
+   "order": 113,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "像素",
+     "name": "pixels",
+     "type": "IMAGE",
+     "link": 2344
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 2345
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      2346,
+      2361
+     ]
+    }
+   ],
+   "title": "左脸 · 提质感 · latent",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEEncode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1212,
+   "type": "ReferenceLatent",
+   "pos": [
+    18900,
+    4540
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 114,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "条件",
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 2342
+    },
+    {
+     "localized_name": "Latent",
+     "name": "latent",
+     "shape": 7,
+     "type": "LATENT",
+     "link": 2346
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      2348
+     ]
+    }
+   ],
+   "title": "左脸 · 提质感 · 参考进 conditioning",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ReferenceLatent"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1213,
+   "type": "KSampler",
+   "pos": [
+    19700,
+    4540
+   ],
+   "size": [
+    335.23984375,
+    262
+   ],
+   "flags": {},
+   "order": 115,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "模型",
+     "name": "model",
+     "type": "MODEL",
+     "link": 2347
+    },
+    {
+     "localized_name": "正面条件",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 2348
+    },
+    {
+     "localized_name": "负面条件",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 2349
+    },
+    {
+     "localized_name": "Latent图像",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 2361
+    },
+    {
+     "localized_name": "种子",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "步数",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "采样器名称",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "调度器",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "降噪",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      2351
+     ]
+    }
+   ],
+   "title": "左脸 · Flux 提质感 KSampler（d1.0 纯噪声）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "KSampler"
+   },
+   "widgets_values": [
+    20260920,
+    "fixed",
+    20,
+    1,
+    "euler",
+    "simple",
+    0.93
+   ]
+  },
+  {
+   "id": 1214,
+   "type": "VAEDecode",
+   "pos": [
+    20500,
+    4540
+   ],
+   "size": [
+    250,
+    60
+   ],
+   "flags": {},
+   "order": 116,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "Latent",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 2351
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 2352
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      2362,
+      2363
+     ]
+    }
+   ],
+   "title": "左脸 · 提质感 VAEDecode",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 1220,
+   "type": "CLIPTextEncode",
+   "pos": [
+    7700,
+    5060
+   ],
+   "size": [
+    700,
+    420
+   ],
+   "flags": {},
+   "order": 29,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 2364
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      2365
+     ]
+    }
+   ],
+   "title": "★ 提质感词 · 正脸版（含内眼角约束）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "Re-photograph this exact portrait as a natural high-end photographic portrait of the same person.\n\nKeep exactly the same head direction, viewing angle, facial identity, facial proportions, eyes, eyebrows, nose, lips, jaw, cheekbones, hair, mole placement, clothing, crop, framing, lighting direction and background.\n\nDo not turn, rotate or move the head. Do not change the viewing angle. Do not redesign, beautify, age, symmetrize or replace his face.\n\nRegenerate ONLY the photographic surface and the skin material: natural visible pores, fine skin micro-texture, natural skin grain, subtle skin tone variation, individual eyebrow hairs, realistic short stubble with visible skin between the hairs, a few fine flyaway hair strands.\n\nThe realism must come from a real photographic skin surface with genuine micro-detail, not from sharpening. Keep restrained film grain and natural color, and keep the same photographic rendering, lighting and color grading as the input image.\n\nDo not smooth the skin excessively. Do not create airbrushed, plastic, porcelain, waxy, polished or beauty-filter skin. Do not add freckles, dark spots or scattered dark speckles.\n\nBoth eyes are clean and symmetrical, and both inner eye corners (medial canthus) are flat, smooth and unobtrusive. There is no raised fleshy lump, no enlarged or swollen caruncle, no nodule, no bump, no growth, no skin tag, no pterygium and no swelling at the inner corner of either eye. The inner corner of each eye is only a normal flat fold of skin with no protrusion."
+   ]
+  },
+  {
+   "id": 1221,
+   "type": "FluxGuidance",
+   "pos": [
+    8500,
+    5060
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 49,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "条件",
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 2365
+    },
+    {
+     "localized_name": "引导",
+     "name": "guidance",
+     "type": "FLOAT",
+     "widget": {
+      "name": "guidance"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      2366
+     ]
+    }
+   ],
+   "title": "提质感 · Guidance 3.0（正脸）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "FluxGuidance"
+   },
+   "widgets_values": [
+    3
+   ]
+  },
+  {
+   "id": 300,
+   "type": "CLIPTextEncode",
+   "pos": [
+    7728.126705205194,
+    6712.236123960734
+   ],
+   "size": [
+    560,
+    300
+   ],
+   "flags": {},
+   "order": 37,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 2370
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      2372
+     ]
+    }
+   ],
+   "title": "正向 A · 构图+人物+服装（全身侧面）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "full body shot head to toe, entire body visible, feet fully visible, wide full-length framing, side view, side profile, standing straight, arms naturally at sides, centered composition, 1boy, solo, 24 year old east asian man, masculine face, strong jaw, bare upper body, plain white shorts, pure white background"
+   ]
+  },
+  {
+   "id": 301,
+   "type": "ConditioningCombine",
+   "pos": [
+    8158.126705205195,
+    6712.236123960734
+   ],
+   "size": [
+    330,
+    90
+   ],
+   "flags": {},
+   "order": 52,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "条件_1",
+     "name": "conditioning_1",
+     "type": "CONDITIONING",
+     "link": 2372
+    },
+    {
+     "localized_name": "条件_2",
+     "name": "conditioning_2",
+     "type": "CONDITIONING",
+     "link": 2373
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      2393,
+      2426
+     ]
+    }
+   ],
+   "title": "合并 A+B（侧面）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ConditioningCombine"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 302,
+   "type": "EmptyLatentImage",
+   "pos": [
+    7728.126705205194,
+    7022.236123960734
+   ],
+   "size": [
+    430,
+    130
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "宽度",
+     "name": "width",
+     "type": "INT",
+     "widget": {
+      "name": "width"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "高度",
+     "name": "height",
+     "type": "INT",
+     "widget": {
+      "name": "height"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "批量大小",
+     "name": "batch_size",
+     "type": "INT",
+     "widget": {
+      "name": "batch_size"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      2374
+     ]
+    }
+   ],
+   "title": "画布 832×1216（侧面）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "EmptyLatentImage"
+   },
+   "widgets_values": [
+    768,
+    1344,
+    1
+   ]
+  },
+  {
+   "id": 303,
+   "type": "KSampler",
+   "pos": [
+    8158.126705205195,
+    7022.236123960734
+   ],
+   "size": [
+    380.9380859375,
+    300
+   ],
+   "flags": {},
+   "order": 60,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "模型",
+     "name": "model",
+     "type": "MODEL",
+     "link": 2375
+    },
+    {
+     "localized_name": "正面条件",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 2429
+    },
+    {
+     "localized_name": "负面条件",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 2377
+    },
+    {
+     "localized_name": "Latent图像",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 2374
+    },
+    {
+     "localized_name": "种子",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "步数",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "采样器名称",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "调度器",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "降噪",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      2378
+     ]
+    }
+   ],
+   "title": "① 侧面 KSampler · 30步 CFG10 denoise1.0",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "KSampler"
+   },
+   "widgets_values": [
+    20260916,
+    "fixed",
+    30,
+    10,
+    "dpmpp_2m",
+    "karras",
+    1
+   ]
+  },
+  {
+   "id": 304,
+   "type": "VAEDecode",
+   "pos": [
+    7728.126705205194,
+    7332.236123960734
+   ],
+   "size": [
+    340,
+    80
+   ],
+   "flags": {},
+   "order": 64,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "Latent",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 2378
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 2379
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      2380,
+      2420
+     ]
+    }
+   ],
+   "title": "VAEDecode（侧面草稿）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 305,
+   "type": "SaveImage",
+   "pos": [
+    8158.126705205195,
+    7332.236123960734
+   ],
+   "size": [
+    420,
+    320
+   ],
+   "flags": {},
+   "order": 70,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图片",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 2380
+    },
+    {
+     "localized_name": "文件名前缀",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "title": "存图 · 侧面草稿",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "闻灯-全身侧面-草稿"
+   ]
+  },
+  {
+   "id": 311,
+   "type": "ImageUpscaleWithModel",
+   "pos": [
+    8158.126705205195,
+    8262.236123960734
+   ],
+   "size": [
+    420,
+    80
+   ],
+   "flags": {},
+   "order": 76,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "放大模型",
+     "name": "upscale_model",
+     "type": "UPSCALE_MODEL",
+     "link": 2386
+    },
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2420
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      2388
+     ]
+    }
+   ],
+   "title": "4x 放大",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ImageUpscaleWithModel"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 312,
+   "type": "ImageScaleBy",
+   "pos": [
+    7728.126705205194,
+    8572.236123960734
+   ],
+   "size": [
+    330,
+    82
+   ],
+   "flags": {},
+   "order": 80,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2388
+    },
+    {
+     "localized_name": "缩放算法",
+     "name": "upscale_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "upscale_method"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "缩放系数",
+     "name": "scale_by",
+     "type": "FLOAT",
+     "widget": {
+      "name": "scale_by"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      2389,
+      2421
+     ]
+    }
+   ],
+   "title": "缩回 0.5（净 2x）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ImageScaleBy"
+   },
+   "widgets_values": [
+    "lanczos",
+    0.5
+   ]
+  },
+  {
+   "id": 313,
+   "type": "VAEEncode",
+   "pos": [
+    8158.126705205195,
+    8572.236123960734
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 86,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "像素",
+     "name": "pixels",
+     "type": "IMAGE",
+     "link": 2389
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 2390
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      2391
+     ]
+    }
+   ],
+   "title": "VAEEncode",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEEncode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 314,
+   "type": "KSampler",
+   "pos": [
+    7728.126705205194,
+    8882.236123960734
+   ],
+   "size": [
+    463.5982421875,
+    300
+   ],
+   "flags": {},
+   "order": 90,
+   "mode": 2,
+   "inputs": [
+    {
+     "localized_name": "模型",
+     "name": "model",
+     "type": "MODEL",
+     "link": 2392
+    },
+    {
+     "localized_name": "正面条件",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 2393
+    },
+    {
+     "localized_name": "负面条件",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 2394
+    },
+    {
+     "localized_name": "Latent图像",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 2391
+    },
+    {
+     "localized_name": "种子",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "步数",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "采样器名称",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "调度器",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "降噪",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      2395
+     ]
+    }
+   ],
+   "title": "② 融合（denoise 0.25）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "KSampler"
+   },
+   "widgets_values": [
+    20260916,
+    "fixed",
+    20,
+    10,
+    "dpmpp_2m",
+    "karras",
+    0.25
+   ]
+  },
+  {
+   "id": 315,
+   "type": "VAEDecode",
+   "pos": [
+    8158.126705205195,
+    8882.236123960734
+   ],
+   "size": [
+    340,
+    80
+   ],
+   "flags": {},
+   "order": 95,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "Latent",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 2395
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 2396
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "title": "VAEDecode（侧面成品）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 316,
+   "type": "SaveImage",
+   "pos": [
+    7728.126705205194,
+    9192.236123960734
+   ],
+   "size": [
+    420,
+    620
+   ],
+   "flags": {},
+   "order": 99,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图片",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 2421
+    },
+    {
+     "localized_name": "文件名前缀",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "title": "★ 存图 · 侧面成品",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "闻灯-全身侧面-成品"
+   ]
+  },
+  {
+   "id": 330,
+   "type": "CLIPTextEncode",
+   "pos": [
+    9064.126705205195,
+    6712.236123960734
+   ],
+   "size": [
+    560,
+    300
+   ],
+   "flags": {},
+   "order": 38,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 2371
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      2398
+     ]
+    }
+   ],
+   "title": "正向 A · 构图+人物+服装（全身背面）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "full body shot head to toe, entire body visible, feet fully visible, wide full-length framing, back view, seen from behind, standing straight, arms naturally at sides, centered composition, 1boy, solo, 24 year old east asian man, messy wavy black hair, bare upper body, back muscles, plain white shorts, pure white background"
+   ]
+  },
+  {
+   "id": 331,
+   "type": "ConditioningCombine",
+   "pos": [
+    9494.126705205195,
+    6712.236123960734
+   ],
+   "size": [
+    330,
+    90
+   ],
+   "flags": {},
+   "order": 53,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "条件_1",
+     "name": "conditioning_1",
+     "type": "CONDITIONING",
+     "link": 2398
+    },
+    {
+     "localized_name": "条件_2",
+     "name": "conditioning_2",
+     "type": "CONDITIONING",
+     "link": 2399
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      2402,
+      2414
+     ]
+    }
+   ],
+   "title": "合并 A+B（背面）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ConditioningCombine"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 332,
+   "type": "EmptyLatentImage",
+   "pos": [
+    9064.126705205195,
+    7022.236123960734
+   ],
+   "size": [
+    430,
+    130
+   ],
+   "flags": {},
+   "order": 17,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "宽度",
+     "name": "width",
+     "type": "INT",
+     "widget": {
+      "name": "width"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "高度",
+     "name": "height",
+     "type": "INT",
+     "widget": {
+      "name": "height"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "批量大小",
+     "name": "batch_size",
+     "type": "INT",
+     "widget": {
+      "name": "batch_size"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      2400
+     ]
+    }
+   ],
+   "title": "画布 832×1216（背面）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "EmptyLatentImage"
+   },
+   "widgets_values": [
+    768,
+    1344,
+    1
+   ]
+  },
+  {
+   "id": 333,
+   "type": "KSampler",
+   "pos": [
+    9494.126705205195,
+    7022.236123960734
+   ],
+   "size": [
+    380.9380859375,
+    300
+   ],
+   "flags": {},
+   "order": 61,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "模型",
+     "name": "model",
+     "type": "MODEL",
+     "link": 2401
+    },
+    {
+     "localized_name": "正面条件",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 2402
+    },
+    {
+     "localized_name": "负面条件",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 2403
+    },
+    {
+     "localized_name": "Latent图像",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 2400
+    },
+    {
+     "localized_name": "种子",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "步数",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "采样器名称",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "调度器",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "降噪",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      2404
+     ]
+    }
+   ],
+   "title": "① 背面 KSampler · 30步 CFG10 denoise1.0",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "KSampler"
+   },
+   "widgets_values": [
+    20260916,
+    "fixed",
+    30,
+    10,
+    "dpmpp_2m",
+    "karras",
+    1
+   ]
+  },
+  {
+   "id": 334,
+   "type": "VAEDecode",
+   "pos": [
+    9064.126705205195,
+    7332.236123960734
+   ],
+   "size": [
+    340,
+    80
+   ],
+   "flags": {},
+   "order": 65,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "Latent",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 2404
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 2405
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      2406,
+      2408
+     ]
+    }
+   ],
+   "title": "VAEDecode（背面草稿）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 335,
+   "type": "SaveImage",
+   "pos": [
+    9494.126705205195,
+    7332.236123960734
+   ],
+   "size": [
+    420,
+    320
+   ],
+   "flags": {},
+   "order": 72,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图片",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 2406
+    },
+    {
+     "localized_name": "文件名前缀",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "title": "存图 · 背面草稿",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "闻灯-全身背面-草稿"
+   ]
+  },
+  {
+   "id": 341,
+   "type": "ImageUpscaleWithModel",
+   "pos": [
+    9494.126705205195,
+    8262.236123960734
+   ],
+   "size": [
+    420,
+    80
+   ],
+   "flags": {},
+   "order": 73,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "放大模型",
+     "name": "upscale_model",
+     "type": "UPSCALE_MODEL",
+     "link": 2407
+    },
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2408
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      2409
+     ]
+    }
+   ],
+   "title": "4x 放大（背面）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ImageUpscaleWithModel"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 342,
+   "type": "ImageScaleBy",
+   "pos": [
+    9064.126705205195,
+    8572.236123960734
+   ],
+   "size": [
+    330,
+    82
+   ],
+   "flags": {},
+   "order": 77,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2409
+    },
+    {
+     "localized_name": "缩放算法",
+     "name": "upscale_method",
+     "type": "COMBO",
+     "widget": {
+      "name": "upscale_method"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "缩放系数",
+     "name": "scale_by",
+     "type": "FLOAT",
+     "widget": {
+      "name": "scale_by"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      2410,
+      2422
+     ]
+    }
+   ],
+   "title": "缩回 0.5（背面）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ImageScaleBy"
+   },
+   "widgets_values": [
+    "lanczos",
+    0.5
+   ]
+  },
+  {
+   "id": 343,
+   "type": "VAEEncode",
+   "pos": [
+    9494.126705205195,
+    8572.236123960734
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 81,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "像素",
+     "name": "pixels",
+     "type": "IMAGE",
+     "link": 2410
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 2411
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      2412
+     ]
+    }
+   ],
+   "title": "VAEEncode（背面）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEEncode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 344,
+   "type": "KSampler",
+   "pos": [
+    9064.126705205195,
+    8882.236123960734
+   ],
+   "size": [
+    463.5982421875,
+    300
+   ],
+   "flags": {},
+   "order": 87,
+   "mode": 2,
+   "inputs": [
+    {
+     "localized_name": "模型",
+     "name": "model",
+     "type": "MODEL",
+     "link": 2413
+    },
+    {
+     "localized_name": "正面条件",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 2414
+    },
+    {
+     "localized_name": "负面条件",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 2415
+    },
+    {
+     "localized_name": "Latent图像",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 2412
+    },
+    {
+     "localized_name": "种子",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "步数",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "采样器名称",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "调度器",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "降噪",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      2416
+     ]
+    }
+   ],
+   "title": "② 融合（背面 · denoise 0.25）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "KSampler"
+   },
+   "widgets_values": [
+    20260916,
+    "fixed",
+    20,
+    10,
+    "dpmpp_2m",
+    "karras",
+    0.25
+   ]
+  },
+  {
+   "id": 345,
+   "type": "VAEDecode",
+   "pos": [
+    9494.126705205195,
+    8882.236123960734
+   ],
+   "size": [
+    340,
+    80
+   ],
+   "flags": {},
+   "order": 91,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "Latent",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 2416
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 2417
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "title": "VAEDecode（背面成品）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 346,
+   "type": "SaveImage",
+   "pos": [
+    9064.126705205195,
+    9192.236123960734
+   ],
+   "size": [
+    420,
+    620
+   ],
+   "flags": {},
+   "order": 96,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图片",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 2422
+    },
+    {
+     "localized_name": "文件名前缀",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "title": "★ 存图 · 背面成品",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "闻灯-全身背面-成品"
+   ]
+  },
+  {
+   "id": 16,
+   "type": "Note",
+   "pos": [
+    8128.544175632776,
+    6872.849583996764
+   ],
+   "size": [
+    1189.7762873476395,
+    292.65551517570884
+   ],
+   "flags": {},
+   "order": 18,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "title": "说明 · 夜市百相簿（闻灯 · 先脸后身 v19）",
+   "properties": {
+    "Node name for S&R": "Note"
+   },
+   "widgets_values": [
+    "【闻灯 · 全身立绘 · SDXL 保身份（正面）】\n\n★ 本块 = 原「立绘」块原址改造（约束 §4.1 / §5 / §6 / §7 / §8.1 / §10 / §12 / §13 / §17）\n\n★ 为什么是「先出全身、再把脸贴回去」，而不是直接拿脸当 img2img 基图：\n    plain img2img 的**构图由基图决定**。把一张脸部特写缩进 832×1216 的画布，\n    头部照样占满整幅 → 无论 denoise 调到多高都拉不遠。\n    所以：① 纯文生图先拿到**构图正确的全身**（脸随机）；\n          ② 把**已确认的脸**（本工作流「脸部」块产出的成品）缩到头部、贴到头顶；\n          ③ 二段 denoise 0.25 融合 + 补细节。\n    这正是 §10 的原话：「全身图不是重新生成一个角色，而是把已经确认的脸放到完整身体上」。\n\n★ 依赖（硬性）：必须先跑「脸部」块并**人工确认**那张脸。\n    本块用 LoadImageOutput 直读 output/ 下的 闻灯-脸部正面-成品_00001_.png\n    文件不存在时本组无法提交（这是故意的 —— 对应 §3.1「脸部未确认禁止进入全身」）。\n\n★ 唯一需要标定的旋钮：贴脸尺寸与落点\n    ImageScale = 200×257；ImageCompositeMasked x=316 y=6\n    第一张草稿出来后若头偏大/偏小，只动这几个数。\n\n★ 跑法（不要在浏览器点大「运行」）\n    python _scripts\\run_wf.py \"夜市百相簿-主工作流.json\" \"闻灯-全身正面\" draft    # 先只跑草稿\n    python _scripts\\run_wf.py \"夜市百相簿-主工作流.json\" \"闻灯-全身正面\" final    # 确认构图后再跑成品\n"
+   ],
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 1024,
+   "type": "UNETLoader",
+   "pos": [
+    7701.678109057765,
+    452.99774401276864
+   ],
+   "size": [
+    430,
+    90
+   ],
+   "flags": {},
+   "order": 19,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "UNet名称",
+     "name": "unet_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "unet_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "数据类型",
+     "name": "weight_dtype",
+     "type": "COMBO",
+     "widget": {
+      "name": "weight_dtype"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "模型",
+     "name": "MODEL",
+     "type": "MODEL",
+     "slot_index": 0,
+     "links": [
+      1035,
+      2305,
+      2347
+     ]
+    }
+   ],
+   "title": "Kontext fp8_scaled（diffusion_models）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "UNETLoader"
+   },
+   "widgets_values": [
+    "FLUX1\\flux1-schnell.safetensors",
+    "default"
+   ]
+  },
+  {
+   "id": 340,
+   "type": "CLIPTextEncode",
+   "pos": [
+    3600,
+    12000
+   ],
+   "size": [
+    560,
+    300
+   ],
+   "flags": {},
+   "order": 500,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 2423
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      2425,
+      2427
+     ]
+    }
+   ],
+   "title": "★ 正向 C · 五官/身份（第三段，突破 75 token）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "detailed face, detailed eyes, clear iris detail, natural thick eyebrows, clean shaven face, youthful natural skin, realistic skin texture, subtle visible pores, youthful masculine face, defined youthful jawline, messy wavy black hair with individual hair strands, small dark mole at outer corner of eye, pure white background"
+   ]
+  },
+  {
+   "id": 360,
+   "type": "ConditioningCombine",
+   "pos": [
+    4200,
+    12000
+   ],
+   "size": [
+    330,
+    90
+   ],
+   "flags": {},
+   "order": 860,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "条件_1",
+     "name": "conditioning_1",
+     "type": "CONDITIONING",
+     "link": 2424
+    },
+    {
+     "localized_name": "条件_2",
+     "name": "conditioning_2",
+     "type": "CONDITIONING",
+     "link": 2425
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      2428
+     ]
+    }
+   ],
+   "title": "合并 (A+B) + C（正面）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ConditioningCombine"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 361,
+   "type": "ConditioningCombine",
+   "pos": [
+    4800,
+    12000
+   ],
+   "size": [
+    330,
+    90
+   ],
+   "flags": {},
+   "order": 861,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "条件_1",
+     "name": "conditioning_1",
+     "type": "CONDITIONING",
+     "link": 2426
+    },
+    {
+     "localized_name": "条件_2",
+     "name": "conditioning_2",
+     "type": "CONDITIONING",
+     "link": 2427
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      2429
+     ]
+    }
+   ],
+   "title": "合并 (A+B) + C（侧面）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "ConditioningCombine"
+   },
+   "widgets_values": []
+  }
+ ],
+ "links": [
+  [
+   1,
+   1,
+   1,
+   17,
+   0,
+   "CLIP"
+  ],
+  [
+   2,
+   17,
+   0,
+   2,
+   0,
+   "CLIP"
+  ],
+  [
+   3,
+   17,
+   0,
+   3,
+   0,
+   "CLIP"
+  ],
+  [
+   4,
+   17,
+   0,
+   5,
+   0,
+   "CLIP"
+  ],
+  [
+   5,
+   17,
+   0,
+   18,
+   0,
+   "CLIP"
+  ],
+  [
+   6,
+   17,
+   0,
+   19,
+   0,
+   "CLIP"
+  ],
+  [
+   7,
+   2,
+   0,
+   4,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   8,
+   3,
+   0,
+   4,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   9,
+   5,
+   0,
+   20,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   10,
+   18,
+   0,
+   20,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   11,
+   20,
+   0,
+   21,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   12,
+   19,
+   0,
+   21,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   13,
+   1,
+   0,
+   7,
+   0,
+   "MODEL"
+  ],
+  [
+   15,
+   21,
+   0,
+   7,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   16,
+   6,
+   0,
+   7,
+   3,
+   "LATENT"
+  ],
+  [
+   17,
+   7,
+   0,
+   8,
+   0,
+   "LATENT"
+  ],
+  [
+   18,
+   1,
+   2,
+   8,
+   1,
+   "VAE"
+  ],
+  [
+   19,
+   8,
+   0,
+   9,
+   0,
+   "IMAGE"
+  ],
+  [
+   20,
+   8,
+   0,
+   10,
+   0,
+   "IMAGE"
+  ],
+  [
+   22,
+   22,
+   0,
+   23,
+   0,
+   "UPSCALE_MODEL"
+  ],
+  [
+   23,
+   23,
+   0,
+   24,
+   0,
+   "IMAGE"
+  ],
+  [
+   24,
+   24,
+   0,
+   25,
+   0,
+   "IMAGE"
+  ],
+  [
+   25,
+   1,
+   2,
+   25,
+   1,
+   "VAE"
+  ],
+  [
+   26,
+   25,
+   0,
+   12,
+   3,
+   "LATENT"
+  ],
+  [
+   27,
+   1,
+   0,
+   12,
+   0,
+   "MODEL"
+  ],
+  [
+   28,
+   4,
+   0,
+   12,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   29,
+   21,
+   0,
+   12,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   30,
+   12,
+   0,
+   13,
+   0,
+   "LATENT"
+  ],
+  [
+   31,
+   1,
+   2,
+   13,
+   1,
+   "VAE"
+  ],
+  [
+   1001,
+   1002,
+   1,
+   1003,
+   0,
+   "CLIP"
+  ],
+  [
+   1002,
+   1002,
+   2,
+   1006,
+   1,
+   "VAE"
+  ],
+  [
+   1003,
+   1004,
+   0,
+   1005,
+   0,
+   "IMAGE"
+  ],
+  [
+   1004,
+   1005,
+   0,
+   1006,
+   0,
+   "IMAGE"
+  ],
+  [
+   1005,
+   1003,
+   0,
+   1007,
+   0,
+   "CLIP"
+  ],
+  [
+   1006,
+   1003,
+   0,
+   1008,
+   0,
+   "CLIP"
+  ],
+  [
+   1007,
+   1007,
+   0,
+   1009,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   1008,
+   1008,
+   0,
+   1009,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   1009,
+   1003,
+   0,
+   1010,
+   0,
+   "CLIP"
+  ],
+  [
+   1010,
+   1003,
+   0,
+   1011,
+   0,
+   "CLIP"
+  ],
+  [
+   1011,
+   1003,
+   0,
+   1012,
+   0,
+   "CLIP"
+  ],
+  [
+   1012,
+   1010,
+   0,
+   1013,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   1013,
+   1011,
+   0,
+   1013,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   1014,
+   1013,
+   0,
+   1014,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   1015,
+   1012,
+   0,
+   1014,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   1016,
+   1002,
+   0,
+   1015,
+   0,
+   "MODEL"
+  ],
+  [
+   1017,
+   1009,
+   0,
+   1015,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   1018,
+   1014,
+   0,
+   1015,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   1019,
+   1006,
+   0,
+   1015,
+   3,
+   "LATENT"
+  ],
+  [
+   1020,
+   1015,
+   0,
+   1016,
+   0,
+   "LATENT"
+  ],
+  [
+   1021,
+   1002,
+   2,
+   1016,
+   1,
+   "VAE"
+  ],
+  [
+   1023,
+   1016,
+   0,
+   1019,
+   1,
+   "IMAGE"
+  ],
+  [
+   1024,
+   1018,
+   0,
+   1019,
+   0,
+   "UPSCALE_MODEL"
+  ],
+  [
+   1025,
+   1019,
+   0,
+   1020,
+   0,
+   "IMAGE"
+  ],
+  [
+   1027,
+   1025,
+   0,
+   1030,
+   0,
+   "CLIP"
+  ],
+  [
+   1028,
+   1026,
+   0,
+   1029,
+   1,
+   "VAE"
+  ],
+  [
+   1030,
+   1028,
+   0,
+   1029,
+   0,
+   "IMAGE"
+  ],
+  [
+   1031,
+   1025,
+   0,
+   1031,
+   0,
+   "CLIP"
+  ],
+  [
+   1032,
+   1031,
+   0,
+   1032,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   1033,
+   1032,
+   0,
+   1033,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   1035,
+   1024,
+   0,
+   1034,
+   0,
+   "MODEL"
+  ],
+  [
+   1036,
+   1033,
+   0,
+   1034,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   1037,
+   1030,
+   0,
+   1034,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   1039,
+   1034,
+   0,
+   1035,
+   0,
+   "LATENT"
+  ],
+  [
+   1040,
+   1026,
+   0,
+   1035,
+   1,
+   "VAE"
+  ],
+  [
+   2301,
+   1025,
+   0,
+   1043,
+   0,
+   "CLIP"
+  ],
+  [
+   2302,
+   1043,
+   0,
+   1044,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   2304,
+   1029,
+   0,
+   1045,
+   1,
+   "LATENT"
+  ],
+  [
+   2305,
+   1024,
+   0,
+   1046,
+   0,
+   "MODEL"
+  ],
+  [
+   2306,
+   1045,
+   0,
+   1046,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   2307,
+   1030,
+   0,
+   1046,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   2309,
+   1046,
+   0,
+   1047,
+   0,
+   "LATENT"
+  ],
+  [
+   2310,
+   1026,
+   0,
+   1047,
+   1,
+   "VAE"
+  ],
+  [
+   2312,
+   1047,
+   0,
+   1049,
+   0,
+   "IMAGE"
+  ],
+  [
+   2313,
+   1049,
+   0,
+   1050,
+   0,
+   "IMAGE"
+  ],
+  [
+   2314,
+   1026,
+   0,
+   1050,
+   1,
+   "VAE"
+  ],
+  [
+   2315,
+   1035,
+   0,
+   1051,
+   0,
+   "IMAGE"
+  ],
+  [
+   2318,
+   1052,
+   0,
+   1034,
+   3,
+   "LATENT"
+  ],
+  [
+   2319,
+   1029,
+   0,
+   1033,
+   1,
+   "LATENT"
+  ],
+  [
+   2320,
+   1035,
+   0,
+   1100,
+   0,
+   "IMAGE"
+  ],
+  [
+   2321,
+   1100,
+   0,
+   1101,
+   0,
+   "IMAGE"
+  ],
+  [
+   2322,
+   1002,
+   2,
+   1101,
+   1,
+   "VAE"
+  ],
+  [
+   2323,
+   1003,
+   0,
+   1102,
+   0,
+   "CLIP"
+  ],
+  [
+   2324,
+   1102,
+   0,
+   1103,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   2325,
+   1008,
+   0,
+   1103,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   2326,
+   1002,
+   0,
+   1104,
+   0,
+   "MODEL"
+  ],
+  [
+   2327,
+   1103,
+   0,
+   1104,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   2328,
+   1014,
+   0,
+   1104,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   2329,
+   1101,
+   0,
+   1104,
+   3,
+   "LATENT"
+  ],
+  [
+   2330,
+   1104,
+   0,
+   1105,
+   0,
+   "LATENT"
+  ],
+  [
+   2331,
+   1002,
+   2,
+   1105,
+   1,
+   "VAE"
+  ],
+  [
+   2333,
+   1018,
+   0,
+   1107,
+   0,
+   "UPSCALE_MODEL"
+  ],
+  [
+   2334,
+   1105,
+   0,
+   1107,
+   1,
+   "IMAGE"
+  ],
+  [
+   2335,
+   1107,
+   0,
+   1108,
+   0,
+   "IMAGE"
+  ],
+  [
+   2338,
+   1110,
+   0,
+   1111,
+   0,
+   "IMAGE"
+  ],
+  [
+   2339,
+   1020,
+   0,
+   1028,
+   0,
+   "IMAGE"
+  ],
+  [
+   2340,
+   1025,
+   0,
+   1200,
+   0,
+   "CLIP"
+  ],
+  [
+   2341,
+   1200,
+   0,
+   1201,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   2342,
+   1201,
+   0,
+   1212,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   2343,
+   1108,
+   0,
+   1210,
+   0,
+   "IMAGE"
+  ],
+  [
+   2344,
+   1210,
+   0,
+   1211,
+   0,
+   "IMAGE"
+  ],
+  [
+   2345,
+   1026,
+   0,
+   1211,
+   1,
+   "VAE"
+  ],
+  [
+   2346,
+   1211,
+   0,
+   1212,
+   1,
+   "LATENT"
+  ],
+  [
+   2347,
+   1024,
+   0,
+   1213,
+   0,
+   "MODEL"
+  ],
+  [
+   2348,
+   1212,
+   0,
+   1213,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   2349,
+   1030,
+   0,
+   1213,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   2351,
+   1213,
+   0,
+   1214,
+   0,
+   "LATENT"
+  ],
+  [
+   2352,
+   1026,
+   0,
+   1214,
+   1,
+   "VAE"
+  ],
+  [
+   2354,
+   1047,
+   0,
+   1021,
+   0,
+   "IMAGE"
+  ],
+  [
+   2361,
+   1211,
+   0,
+   1213,
+   3,
+   "LATENT"
+  ],
+  [
+   2362,
+   1214,
+   0,
+   1109,
+   0,
+   "IMAGE"
+  ],
+  [
+   2363,
+   1214,
+   0,
+   1110,
+   0,
+   "IMAGE"
+  ],
+  [
+   2364,
+   1025,
+   0,
+   1220,
+   0,
+   "CLIP"
+  ],
+  [
+   2365,
+   1220,
+   0,
+   1221,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   2366,
+   1221,
+   0,
+   1045,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   2367,
+   1029,
+   0,
+   1046,
+   3,
+   "LATENT"
+  ],
+  [
+   2368,
+   24,
+   0,
+   15,
+   0,
+   "IMAGE"
+  ],
+  [
+   2369,
+   24,
+   0,
+   14,
+   0,
+   "IMAGE"
+  ],
+  [
+   2370,
+   17,
+   0,
+   300,
+   0,
+   "CLIP"
+  ],
+  [
+   2371,
+   17,
+   0,
+   330,
+   0,
+   "CLIP"
+  ],
+  [
+   2372,
+   300,
+   0,
+   301,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   2373,
+   3,
+   0,
+   301,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   2374,
+   302,
+   0,
+   303,
+   3,
+   "LATENT"
+  ],
+  [
+   2375,
+   1,
+   0,
+   303,
+   0,
+   "MODEL"
+  ],
+  [
+   2377,
+   21,
+   0,
+   303,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   2378,
+   303,
+   0,
+   304,
+   0,
+   "LATENT"
+  ],
+  [
+   2379,
+   1,
+   2,
+   304,
+   1,
+   "VAE"
+  ],
+  [
+   2380,
+   304,
+   0,
+   305,
+   0,
+   "IMAGE"
+  ],
+  [
+   2386,
+   22,
+   0,
+   311,
+   0,
+   "UPSCALE_MODEL"
+  ],
+  [
+   2388,
+   311,
+   0,
+   312,
+   0,
+   "IMAGE"
+  ],
+  [
+   2389,
+   312,
+   0,
+   313,
+   0,
+   "IMAGE"
+  ],
+  [
+   2390,
+   1,
+   2,
+   313,
+   1,
+   "VAE"
+  ],
+  [
+   2391,
+   313,
+   0,
+   314,
+   3,
+   "LATENT"
+  ],
+  [
+   2392,
+   1,
+   0,
+   314,
+   0,
+   "MODEL"
+  ],
+  [
+   2393,
+   301,
+   0,
+   314,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   2394,
+   21,
+   0,
+   314,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   2395,
+   314,
+   0,
+   315,
+   0,
+   "LATENT"
+  ],
+  [
+   2396,
+   1,
+   2,
+   315,
+   1,
+   "VAE"
+  ],
+  [
+   2398,
+   330,
+   0,
+   331,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   2399,
+   3,
+   0,
+   331,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   2400,
+   332,
+   0,
+   333,
+   3,
+   "LATENT"
+  ],
+  [
+   2401,
+   1,
+   0,
+   333,
+   0,
+   "MODEL"
+  ],
+  [
+   2402,
+   331,
+   0,
+   333,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   2403,
+   21,
+   0,
+   333,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   2404,
+   333,
+   0,
+   334,
+   0,
+   "LATENT"
+  ],
+  [
+   2405,
+   1,
+   2,
+   334,
+   1,
+   "VAE"
+  ],
+  [
+   2406,
+   334,
+   0,
+   335,
+   0,
+   "IMAGE"
+  ],
+  [
+   2407,
+   22,
+   0,
+   341,
+   0,
+   "UPSCALE_MODEL"
+  ],
+  [
+   2408,
+   334,
+   0,
+   341,
+   1,
+   "IMAGE"
+  ],
+  [
+   2409,
+   341,
+   0,
+   342,
+   0,
+   "IMAGE"
+  ],
+  [
+   2410,
+   342,
+   0,
+   343,
+   0,
+   "IMAGE"
+  ],
+  [
+   2411,
+   1,
+   2,
+   343,
+   1,
+   "VAE"
+  ],
+  [
+   2412,
+   343,
+   0,
+   344,
+   3,
+   "LATENT"
+  ],
+  [
+   2413,
+   1,
+   0,
+   344,
+   0,
+   "MODEL"
+  ],
+  [
+   2414,
+   331,
+   0,
+   344,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   2415,
+   21,
+   0,
+   344,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   2416,
+   344,
+   0,
+   345,
+   0,
+   "LATENT"
+  ],
+  [
+   2417,
+   1,
+   2,
+   345,
+   1,
+   "VAE"
+  ],
+  [
+   2419,
+   8,
+   0,
+   23,
+   1,
+   "IMAGE"
+  ],
+  [
+   2420,
+   304,
+   0,
+   311,
+   1,
+   "IMAGE"
+  ],
+  [
+   2421,
+   312,
+   0,
+   316,
+   0,
+   "IMAGE"
+  ],
+  [
+   2422,
+   342,
+   0,
+   346,
+   0,
+   "IMAGE"
+  ],
+  [
+   2423,
+   1003,
+   0,
+   340,
+   0,
+   "CLIP"
+  ],
+  [
+   2424,
+   4,
+   0,
+   360,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   2425,
+   340,
+   0,
+   360,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   2426,
+   301,
+   0,
+   361,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   2427,
+   340,
+   0,
+   361,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   2428,
+   360,
+   0,
+   7,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   2429,
+   361,
+   0,
+   303,
+   1,
+   "CONDITIONING"
+  ]
+ ],
+ "groups": [
+  {
+   "id": 1,
+   "title": "【闻灯】全身三视角 · SDXL 纯文生图（身份由提示词承担）",
+   "bounding": [
+    3560,
+    6672.236123960734,
+    6638.544175632776,
+    5707.763876039266
+   ],
+   "color": "#8A8A8A",
+   "flags": {}
+  },
+  {
+   "id": 2,
+   "title": "【闻灯】脸部 · SDXL 出终稿 + Kontext 底稿",
+   "bounding": [
+    7660,
+    340,
+    14980,
+    6040
+   ],
+   "color": "#3f789e",
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.1,
+   "offset": [
+    -2102.5181609515694,
+    -2331.552098648616
+   ]
+  }
+ },
+ "version": 0.4
+}

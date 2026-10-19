@@ -1,0 +1,9 @@
+{
+  "experiment": "synthetic workflow; not platform Token measurement",
+  "changes": 100,
+  "full_report_bytes": 512837,
+  "console_chars": 4972,
+  "limit_chars": 5000,
+  "input_tokens": null,
+  "tests_passed": 19
+}

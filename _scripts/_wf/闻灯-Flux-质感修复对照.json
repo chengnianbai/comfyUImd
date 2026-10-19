@@ -1,0 +1,2714 @@
+{
+ "id": "9769690e-5c45-4199-a5e5-75643c6426ce",
+ "revision": 0,
+ "last_node_id": 59,
+ "last_link_id": 69,
+ "nodes": [
+  {
+   "id": 6,
+   "type": "Note",
+   "pos": [
+    61,
+    20
+   ],
+   "size": [
+    2000,
+    1080
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "Note"
+   },
+   "title": "★ 说明 · Flux 质感修复对照批 flux-v5",
+   "widgets_values": [
+    "【闻灯 · Flux 质感修复对照批 flux-v5】  FLUX.1-dev-fp8  |  1024x1280  |  seed 20260917\n基图 = v23 脸部正面成品（SDXL / 身份已确认，1792x2304 压到 1024x1280）\n\n★ 起因：用户评价 flux-v2（Flux img2img 0.30）「还可以，就是皮肤和头发质感不够真实」。\n\n★ 免费实验一 · 1:1 裁切（zoom_sheet.py）\n  v23(SDXL) = 毛孔 / 细绒毛 / 痣群 / 一根根眉毛 / 干爽飞散发丝\n  flux-v2   = 皮肤发蜡有油光 / 眉毛糊 / 头发油亮定型\n  且 flux-v2 是 2048x2560、v23 只有 1792x2304 —— 分辨率更高反而更糊\n  ⇒ 质感是真丢了，不是分辨率不够。\n\n★ 免费实验二 · 重绘前后对比（决定性）\n  flux-v2 的草稿（1024x1280，第二段重绘之前）本地就有，与成品并排：\n    · 草稿：雀斑、毛孔、细小飞散发丝都在\n    · 成品：皮肤更光更蜡、雀斑被抹掉、脸颊泛油光、发绺更亮更成团\n    · 【像素多 3 倍的那张反而更糊】\n  ⇒ 第二段「成品重绘」不是补细节，是在抹细节。⇒ 本批**全部撤掉第二段重绘**。\n\n★ 四个旋钮（一轮只变一个变量）\n  H1 第二段 denoise 0.25 重绘 = 磨皮主犯 → 已确认，本批直接撤掉\n  H2 第一段 0.30 偏高                         → C 压到 0.25\n  H3 提示词 slightly damp 是油光来源、缺 dry/matte/flyaway → B 换新词\n  H5 放大模型 4x-UltraSharp 偏锐化塑化        → D 换 4x_NMKD-Superscale（照片向）\n  H4 光照太平（掠射侧光才是显纹理的物理机制） → 未纳入：约束 §13 要求均匀柔和光，需先经用户同意\n\n★ 四分支对照关系\n  A 旧词 + d0.30 + UltraSharp + 不重绘   ← 与现有 flux-v2 成品对比 = H1 的代价（免费基线已有）\n  B 新词 + d0.30 + UltraSharp + 不重绘   ← A→B 只变 H3\n  C 新词 + d0.25 + UltraSharp + 不重绘   ← B→C 只变 H2\n  D 新词 + d0.30 + NMKD      + 不重绘   ← B→D 只变 H5\n  每条分支：第一段 → 4x 放大 → 缩回 0.5（净 2x）→ 直接存，**没有第二段 KSampler**。\n\n★ 与其它工作流并存、互不覆盖\n  夜市百相簿.json                    SDXL/HelloWorldXL（CFG10 / dpmpp_2m karras / 896x1152）—— v23 出自它\n  闻灯-Flux脸部三视角.json            Flux 三视角（0.30 / 0.60 / 0.60）—— flux-v2 出自它\n  闻灯-Flux脸部三视角-迭代转头.json    4 档 denoise 转头阶梯（已证 img2img 转不到 90°）\n  本文件                             Flux 正面质感修复对照批（A/B/C/D）\n\n★ 看结果的方式（很重要）\n  不要用整图看！必须 zoom_sheet.py 做 1:1 裁切：\n    python zoom_sheet.py out.png 560 \"0.30,0.18,0.70,0.58\" \"标签|副标|图.png\" ...\n  ⚠️ cfg=1.0 → 负向通道关闭，negative 100% 失效，「不要油光/不要磨皮」只能写在正向里。\n"
+   ]
+  },
+  {
+   "id": 1,
+   "type": "CheckpointLoaderSimple",
+   "pos": [
+    61,
+    1140
+   ],
+   "size": [
+    470,
+    100
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "slot_index": 0,
+     "links": [
+      7,
+      20,
+      33,
+      46,
+      59
+     ]
+    },
+    {
+     "name": "CLIP",
+     "type": "CLIP",
+     "slot_index": 1,
+     "links": [
+      1,
+      5,
+      18,
+      31,
+      44,
+      57
+     ]
+    },
+    {
+     "name": "VAE",
+     "type": "VAE",
+     "slot_index": 2,
+     "links": [
+      4,
+      12,
+      25,
+      38,
+      51,
+      64
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CheckpointLoaderSimple"
+   },
+   "title": "FLUX.1-dev-fp8（一体化）",
+   "widgets_values": [
+    "FLUX1\\flux1-dev-fp8.safetensors"
+   ]
+  },
+  {
+   "id": 2,
+   "type": "LoadImage",
+   "pos": [
+    61,
+    1300
+   ],
+   "size": [
+    400,
+    400
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      2
+     ]
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "slot_index": 1,
+     "links": []
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage"
+   },
+   "title": "★ 身份基图 = v23 脸部正面成品",
+   "widgets_values": [
+    "wendeng_v23_face_base.png",
+    "image"
+   ]
+  },
+  {
+   "id": 3,
+   "type": "ImageScale",
+   "pos": [
+    500,
+    1300
+   ],
+   "size": [
+    330,
+    100
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 2
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      3
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageScale"
+   },
+   "title": "统一到 1024x1280",
+   "widgets_values": [
+    "lanczos",
+    1024,
+    1280,
+    "center"
+   ]
+  },
+  {
+   "id": 4,
+   "type": "VAEEncode",
+   "pos": [
+    870,
+    1300
+   ],
+   "size": [
+    280,
+    60
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "pixels",
+     "type": "IMAGE",
+     "link": 3
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": 4
+    }
+   ],
+   "outputs": [
+    {
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      10,
+      23,
+      36,
+      49,
+      62
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEEncode"
+   },
+   "title": "身份 latent",
+   "widgets_values": []
+  },
+  {
+   "id": 7,
+   "type": "CLIPTextEncode",
+   "pos": [
+    1190,
+    1300
+   ],
+   "size": [
+    460,
+    130
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 1
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      9,
+      22,
+      35,
+      48,
+      61
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "title": "★ 负向（cfg=1.0 下无效，留空仅为满足接口）",
+   "widgets_values": [
+    ""
+   ]
+  },
+  {
+   "id": 10,
+   "type": "CLIPTextEncode",
+   "pos": [
+    61,
+    1700
+   ],
+   "size": [
+    760,
+    460
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 5
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      6
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "title": "正向 · FluxV5-A-旧词-d030-Ultra",
+   "widgets_values": [
+    "Photorealistic studio headshot of a 24-year-old East Asian man with a masculine face, a strong angular jaw, thick dark eyebrows, deep-set dark eyes with faint shadows underneath, light stubble, and a single small beauty mark at the outer corner of one eye. He faces the camera directly, head level, shoulders square, face centered and looking straight into the lens, calm neutral expression. He wears a faded blue collared shirt with a dark worn coat collar. His hair is messy wavy black hair, unkempt and slightly damp, with dry individual strands lifting away and separating, and a few loose strands falling across the forehead. It is completely unstyled and there is no hair product, no gel, no salon styling. This is a raw unretouched documentary photograph. Real human skin with clearly visible pores and fine peach fuzz, subtle unevenness in skin tone, faint freckles and a scattering of small moles across the cheeks, natural creases under the eyes. No beauty retouching, no airbrushing, no skin smoothing, not a glamour shot, not a dermatology advertisement. Studio lighting that is soft and even overall but keeps a gentle directional key from one side, so the face still has modeling and depth instead of completely flat light. Plain pure white seamless background, no props, no other people, no scenery, no furniture. Sharp focus, shot on an 85mm lens at f/4, photorealistic, high detail. Keep exactly the same person, the same face, the same identity and the same framing as the input photograph — only the rendering becomes more photographic."
+   ]
+  },
+  {
+   "id": 11,
+   "type": "FluxGuidance",
+   "pos": [
+    860,
+    1700
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 6
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      8
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "FluxGuidance"
+   },
+   "title": "Guidance 3.5",
+   "widgets_values": [
+    3.5
+   ]
+  },
+  {
+   "id": 12,
+   "type": "KSampler",
+   "pos": [
+    860,
+    1820
+   ],
+   "size": [
+    330,
+    262
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 7
+    },
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 8
+    },
+    {
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 9
+    },
+    {
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 10
+    }
+   ],
+   "outputs": [
+    {
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      11
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler"
+   },
+   "title": "① FluxV5-A-旧词-d030-Ultra  第一段 denoise 0.30",
+   "widgets_values": [
+    20260917,
+    "fixed",
+    28,
+    1.0,
+    "euler",
+    "simple",
+    0.3
+   ]
+  },
+  {
+   "id": 13,
+   "type": "VAEDecode",
+   "pos": [
+    1230,
+    1820
+   ],
+   "size": [
+    250,
+    60
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "samples",
+     "type": "LATENT",
+     "link": 11
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": 12
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      13,
+      14
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 14,
+   "type": "SaveImage",
+   "pos": [
+    1230,
+    1920
+   ],
+   "size": [
+    460,
+    460
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 13
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "title": "草稿 · FluxV5-A-旧词-d030-Ultra",
+   "widgets_values": [
+    "FluxV5-A-旧词-d030-Ultra-草稿"
+   ]
+  },
+  {
+   "id": 15,
+   "type": "UpscaleModelLoader",
+   "pos": [
+    1750,
+    1800
+   ],
+   "size": [
+    520,
+    80
+   ],
+   "flags": {},
+   "order": 15,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "UPSCALE_MODEL",
+     "type": "UPSCALE_MODEL",
+     "slot_index": 0,
+     "links": [
+      15
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UpscaleModelLoader"
+   },
+   "title": "放大模型：4x-UltraSharp (1)",
+   "widgets_values": [
+    "4x-UltraSharp (1).pth"
+   ]
+  },
+  {
+   "id": 16,
+   "type": "ImageUpscaleWithModel",
+   "pos": [
+    1750,
+    1940
+   ],
+   "size": [
+    440,
+    80
+   ],
+   "flags": {},
+   "order": 16,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "upscale_model",
+     "type": "UPSCALE_MODEL",
+     "link": 15
+    },
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 14
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      16
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageUpscaleWithModel"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 17,
+   "type": "ImageScaleBy",
+   "pos": [
+    1750,
+    2060
+   ],
+   "size": [
+    330,
+    80
+   ],
+   "flags": {},
+   "order": 17,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 16
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      17
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageScaleBy"
+   },
+   "title": "缩回 2048x2560",
+   "widgets_values": [
+    "lanczos",
+    0.5
+   ]
+  },
+  {
+   "id": 18,
+   "type": "SaveImage",
+   "pos": [
+    2260,
+    1800
+   ],
+   "size": [
+    500,
+    460
+   ],
+   "flags": {},
+   "order": 18,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 17
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "title": "★ 成品 · FluxV5-A-旧词-d030-Ultra（无第二段采样）",
+   "widgets_values": [
+    "FluxV5-A-旧词-d030-Ultra-成品"
+   ]
+  },
+  {
+   "id": 19,
+   "type": "Note",
+   "pos": [
+    2260,
+    2300
+   ],
+   "size": [
+    620,
+    180
+   ],
+   "flags": {},
+   "order": 19,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "Note"
+   },
+   "title": "备注 · FluxV5-A-旧词-d030-Ultra",
+   "widgets_values": [
+    "★ 本分支没有第二段 KSampler。\n成品 = 第一段 → 4x 放大 → 缩回 0.5（净 2x），不经过任何二次采样。\n对照现有 flux-v2 成品，即可看出「重绘」那步的代价。"
+   ]
+  },
+  {
+   "id": 20,
+   "type": "CLIPTextEncode",
+   "pos": [
+    61,
+    2400
+   ],
+   "size": [
+    760,
+    460
+   ],
+   "flags": {},
+   "order": 20,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 18
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      19
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "title": "正向 · FluxV5-B-新词-d030-Ultra",
+   "widgets_values": [
+    "Photorealistic studio headshot of a 24-year-old East Asian man with a masculine face, a strong angular jaw, thick dark eyebrows, deep-set dark eyes with faint shadows underneath, light stubble, and a single small beauty mark at the outer corner of one eye. He faces the camera directly, head level, shoulders square, face centered and looking straight into the lens, calm neutral expression. He wears a faded blue collared shirt with a dark worn coat collar. His hair is messy wavy black hair that is completely dry and matte, never wet, never glossy, with no sheen and no light reflecting off it. It is genuinely unkempt: hundreds of separate individual strands are visible, several thin flyaway hairs lift off the silhouette and stand out against the white background as bright threads catching the light, the ends are dry and slightly frizzy with a few split tips, and a few loose strands fall across his forehead. It is completely unstyled and there is no hair product, no gel, no pomade, no oil, no salon styling. This is a raw unretouched documentary photograph of a real human being. Real skin with clearly visible pores across the cheeks and nose, fine peach fuzz and tiny vellus hairs catching the light along the jaw, faint freckles, a scattering of small moles, uneven skin tone with slight redness around the nose and only a hint of shine on the forehead and nose tip, natural creases under the eyes and fine dry lines. The skin surface is matte and slightly weathered, never waxy, never oily, never airbrushed. Every eyebrow hair and every eyelash is rendered as a separate strand. Shot on 35mm film stock, fine natural film grain, real optical detail. No beauty retouching, no skin smoothing, no wax, no plastic, no digital noise reduction, not a glamour shot, not a dermatology advertisement. Studio lighting that is soft and even overall but keeps a gentle directional key from one side, so the face still has modeling and depth instead of completely flat light. Plain pure white seamless background, no props, no other people, no scenery, no furniture. Sharp focus with real micro-detail, shot on an 85mm lens at f/4, photorealistic, natural sensor noise, no noise reduction, no digital sharpening halo. Keep exactly the same person, the same face, the same identity and the same framing as the input photograph — only the rendering becomes more photographic."
+   ]
+  },
+  {
+   "id": 21,
+   "type": "FluxGuidance",
+   "pos": [
+    860,
+    2400
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 21,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 19
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      21
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "FluxGuidance"
+   },
+   "title": "Guidance 3.5",
+   "widgets_values": [
+    3.5
+   ]
+  },
+  {
+   "id": 22,
+   "type": "KSampler",
+   "pos": [
+    860,
+    2520
+   ],
+   "size": [
+    330,
+    262
+   ],
+   "flags": {},
+   "order": 22,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 20
+    },
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 21
+    },
+    {
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 22
+    },
+    {
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 23
+    }
+   ],
+   "outputs": [
+    {
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      24
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler"
+   },
+   "title": "① FluxV5-B-新词-d030-Ultra  第一段 denoise 0.30",
+   "widgets_values": [
+    20260917,
+    "fixed",
+    28,
+    1.0,
+    "euler",
+    "simple",
+    0.3
+   ]
+  },
+  {
+   "id": 23,
+   "type": "VAEDecode",
+   "pos": [
+    1230,
+    2520
+   ],
+   "size": [
+    250,
+    60
+   ],
+   "flags": {},
+   "order": 23,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "samples",
+     "type": "LATENT",
+     "link": 24
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": 25
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      26,
+      27
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 24,
+   "type": "SaveImage",
+   "pos": [
+    1230,
+    2620
+   ],
+   "size": [
+    460,
+    460
+   ],
+   "flags": {},
+   "order": 24,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 26
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "title": "草稿 · FluxV5-B-新词-d030-Ultra",
+   "widgets_values": [
+    "FluxV5-B-新词-d030-Ultra-草稿"
+   ]
+  },
+  {
+   "id": 25,
+   "type": "UpscaleModelLoader",
+   "pos": [
+    1750,
+    2500
+   ],
+   "size": [
+    520,
+    80
+   ],
+   "flags": {},
+   "order": 25,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "UPSCALE_MODEL",
+     "type": "UPSCALE_MODEL",
+     "slot_index": 0,
+     "links": [
+      28
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UpscaleModelLoader"
+   },
+   "title": "放大模型：4x-UltraSharp (1)",
+   "widgets_values": [
+    "4x-UltraSharp (1).pth"
+   ]
+  },
+  {
+   "id": 26,
+   "type": "ImageUpscaleWithModel",
+   "pos": [
+    1750,
+    2640
+   ],
+   "size": [
+    440,
+    80
+   ],
+   "flags": {},
+   "order": 26,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "upscale_model",
+     "type": "UPSCALE_MODEL",
+     "link": 28
+    },
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 27
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      29
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageUpscaleWithModel"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 27,
+   "type": "ImageScaleBy",
+   "pos": [
+    1750,
+    2760
+   ],
+   "size": [
+    330,
+    80
+   ],
+   "flags": {},
+   "order": 27,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 29
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      30
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageScaleBy"
+   },
+   "title": "缩回 2048x2560",
+   "widgets_values": [
+    "lanczos",
+    0.5
+   ]
+  },
+  {
+   "id": 28,
+   "type": "SaveImage",
+   "pos": [
+    2260,
+    2500
+   ],
+   "size": [
+    500,
+    460
+   ],
+   "flags": {},
+   "order": 28,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 30
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "title": "★ 成品 · FluxV5-B-新词-d030-Ultra（无第二段采样）",
+   "widgets_values": [
+    "FluxV5-B-新词-d030-Ultra-成品"
+   ]
+  },
+  {
+   "id": 29,
+   "type": "Note",
+   "pos": [
+    2260,
+    3000
+   ],
+   "size": [
+    620,
+    180
+   ],
+   "flags": {},
+   "order": 29,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "Note"
+   },
+   "title": "备注 · FluxV5-B-新词-d030-Ultra",
+   "widgets_values": [
+    "★ 本分支没有第二段 KSampler。\n成品 = 第一段 → 4x 放大 → 缩回 0.5（净 2x），不经过任何二次采样。\n对照现有 flux-v2 成品，即可看出「重绘」那步的代价。"
+   ]
+  },
+  {
+   "id": 30,
+   "type": "CLIPTextEncode",
+   "pos": [
+    61,
+    3100
+   ],
+   "size": [
+    760,
+    460
+   ],
+   "flags": {},
+   "order": 30,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 31
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      32
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "title": "正向 · FluxV5-C-新词-d025-Ultra",
+   "widgets_values": [
+    "Photorealistic studio headshot of a 24-year-old East Asian man with a masculine face, a strong angular jaw, thick dark eyebrows, deep-set dark eyes with faint shadows underneath, light stubble, and a single small beauty mark at the outer corner of one eye. He faces the camera directly, head level, shoulders square, face centered and looking straight into the lens, calm neutral expression. He wears a faded blue collared shirt with a dark worn coat collar. His hair is messy wavy black hair that is completely dry and matte, never wet, never glossy, with no sheen and no light reflecting off it. It is genuinely unkempt: hundreds of separate individual strands are visible, several thin flyaway hairs lift off the silhouette and stand out against the white background as bright threads catching the light, the ends are dry and slightly frizzy with a few split tips, and a few loose strands fall across his forehead. It is completely unstyled and there is no hair product, no gel, no pomade, no oil, no salon styling. This is a raw unretouched documentary photograph of a real human being. Real skin with clearly visible pores across the cheeks and nose, fine peach fuzz and tiny vellus hairs catching the light along the jaw, faint freckles, a scattering of small moles, uneven skin tone with slight redness around the nose and only a hint of shine on the forehead and nose tip, natural creases under the eyes and fine dry lines. The skin surface is matte and slightly weathered, never waxy, never oily, never airbrushed. Every eyebrow hair and every eyelash is rendered as a separate strand. Shot on 35mm film stock, fine natural film grain, real optical detail. No beauty retouching, no skin smoothing, no wax, no plastic, no digital noise reduction, not a glamour shot, not a dermatology advertisement. Studio lighting that is soft and even overall but keeps a gentle directional key from one side, so the face still has modeling and depth instead of completely flat light. Plain pure white seamless background, no props, no other people, no scenery, no furniture. Sharp focus with real micro-detail, shot on an 85mm lens at f/4, photorealistic, natural sensor noise, no noise reduction, no digital sharpening halo. Keep exactly the same person, the same face, the same identity and the same framing as the input photograph — only the rendering becomes more photographic."
+   ]
+  },
+  {
+   "id": 31,
+   "type": "FluxGuidance",
+   "pos": [
+    860,
+    3100
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 31,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 32
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      34
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "FluxGuidance"
+   },
+   "title": "Guidance 3.5",
+   "widgets_values": [
+    3.5
+   ]
+  },
+  {
+   "id": 32,
+   "type": "KSampler",
+   "pos": [
+    860,
+    3220
+   ],
+   "size": [
+    330,
+    262
+   ],
+   "flags": {},
+   "order": 32,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 33
+    },
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 34
+    },
+    {
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 35
+    },
+    {
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 36
+    }
+   ],
+   "outputs": [
+    {
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      37
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler"
+   },
+   "title": "① FluxV5-C-新词-d025-Ultra  第一段 denoise 0.25",
+   "widgets_values": [
+    20260917,
+    "fixed",
+    28,
+    1.0,
+    "euler",
+    "simple",
+    0.25
+   ]
+  },
+  {
+   "id": 33,
+   "type": "VAEDecode",
+   "pos": [
+    1230,
+    3220
+   ],
+   "size": [
+    250,
+    60
+   ],
+   "flags": {},
+   "order": 33,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "samples",
+     "type": "LATENT",
+     "link": 37
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": 38
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      39,
+      40
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 34,
+   "type": "SaveImage",
+   "pos": [
+    1230,
+    3320
+   ],
+   "size": [
+    460,
+    460
+   ],
+   "flags": {},
+   "order": 34,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 39
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "title": "草稿 · FluxV5-C-新词-d025-Ultra",
+   "widgets_values": [
+    "FluxV5-C-新词-d025-Ultra-草稿"
+   ]
+  },
+  {
+   "id": 35,
+   "type": "UpscaleModelLoader",
+   "pos": [
+    1750,
+    3200
+   ],
+   "size": [
+    520,
+    80
+   ],
+   "flags": {},
+   "order": 35,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "UPSCALE_MODEL",
+     "type": "UPSCALE_MODEL",
+     "slot_index": 0,
+     "links": [
+      41
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UpscaleModelLoader"
+   },
+   "title": "放大模型：4x-UltraSharp (1)",
+   "widgets_values": [
+    "4x-UltraSharp (1).pth"
+   ]
+  },
+  {
+   "id": 36,
+   "type": "ImageUpscaleWithModel",
+   "pos": [
+    1750,
+    3340
+   ],
+   "size": [
+    440,
+    80
+   ],
+   "flags": {},
+   "order": 36,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "upscale_model",
+     "type": "UPSCALE_MODEL",
+     "link": 41
+    },
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 40
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      42
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageUpscaleWithModel"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 37,
+   "type": "ImageScaleBy",
+   "pos": [
+    1750,
+    3460
+   ],
+   "size": [
+    330,
+    80
+   ],
+   "flags": {},
+   "order": 37,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 42
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      43
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageScaleBy"
+   },
+   "title": "缩回 2048x2560",
+   "widgets_values": [
+    "lanczos",
+    0.5
+   ]
+  },
+  {
+   "id": 38,
+   "type": "SaveImage",
+   "pos": [
+    2260,
+    3200
+   ],
+   "size": [
+    500,
+    460
+   ],
+   "flags": {},
+   "order": 38,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 43
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "title": "★ 成品 · FluxV5-C-新词-d025-Ultra（无第二段采样）",
+   "widgets_values": [
+    "FluxV5-C-新词-d025-Ultra-成品"
+   ]
+  },
+  {
+   "id": 39,
+   "type": "Note",
+   "pos": [
+    2260,
+    3700
+   ],
+   "size": [
+    620,
+    180
+   ],
+   "flags": {},
+   "order": 39,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "Note"
+   },
+   "title": "备注 · FluxV5-C-新词-d025-Ultra",
+   "widgets_values": [
+    "★ 本分支没有第二段 KSampler。\n成品 = 第一段 → 4x 放大 → 缩回 0.5（净 2x），不经过任何二次采样。\n对照现有 flux-v2 成品，即可看出「重绘」那步的代价。"
+   ]
+  },
+  {
+   "id": 40,
+   "type": "CLIPTextEncode",
+   "pos": [
+    61,
+    3800
+   ],
+   "size": [
+    760,
+    460
+   ],
+   "flags": {},
+   "order": 40,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 44
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      45
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "title": "正向 · FluxV5-D-新词-d030-NMKD",
+   "widgets_values": [
+    "Photorealistic studio headshot of a 24-year-old East Asian man with a masculine face, a strong angular jaw, thick dark eyebrows, deep-set dark eyes with faint shadows underneath, light stubble, and a single small beauty mark at the outer corner of one eye. He faces the camera directly, head level, shoulders square, face centered and looking straight into the lens, calm neutral expression. He wears a faded blue collared shirt with a dark worn coat collar. His hair is messy wavy black hair that is completely dry and matte, never wet, never glossy, with no sheen and no light reflecting off it. It is genuinely unkempt: hundreds of separate individual strands are visible, several thin flyaway hairs lift off the silhouette and stand out against the white background as bright threads catching the light, the ends are dry and slightly frizzy with a few split tips, and a few loose strands fall across his forehead. It is completely unstyled and there is no hair product, no gel, no pomade, no oil, no salon styling. This is a raw unretouched documentary photograph of a real human being. Real skin with clearly visible pores across the cheeks and nose, fine peach fuzz and tiny vellus hairs catching the light along the jaw, faint freckles, a scattering of small moles, uneven skin tone with slight redness around the nose and only a hint of shine on the forehead and nose tip, natural creases under the eyes and fine dry lines. The skin surface is matte and slightly weathered, never waxy, never oily, never airbrushed. Every eyebrow hair and every eyelash is rendered as a separate strand. Shot on 35mm film stock, fine natural film grain, real optical detail. No beauty retouching, no skin smoothing, no wax, no plastic, no digital noise reduction, not a glamour shot, not a dermatology advertisement. Studio lighting that is soft and even overall but keeps a gentle directional key from one side, so the face still has modeling and depth instead of completely flat light. Plain pure white seamless background, no props, no other people, no scenery, no furniture. Sharp focus with real micro-detail, shot on an 85mm lens at f/4, photorealistic, natural sensor noise, no noise reduction, no digital sharpening halo. Keep exactly the same person, the same face, the same identity and the same framing as the input photograph — only the rendering becomes more photographic."
+   ]
+  },
+  {
+   "id": 41,
+   "type": "FluxGuidance",
+   "pos": [
+    860,
+    3800
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 41,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 45
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      47
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "FluxGuidance"
+   },
+   "title": "Guidance 3.5",
+   "widgets_values": [
+    3.5
+   ]
+  },
+  {
+   "id": 42,
+   "type": "KSampler",
+   "pos": [
+    860,
+    3920
+   ],
+   "size": [
+    330,
+    262
+   ],
+   "flags": {},
+   "order": 42,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 46
+    },
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 47
+    },
+    {
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 48
+    },
+    {
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 49
+    }
+   ],
+   "outputs": [
+    {
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      50
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler"
+   },
+   "title": "① FluxV5-D-新词-d030-NMKD  第一段 denoise 0.30",
+   "widgets_values": [
+    20260917,
+    "fixed",
+    28,
+    1.0,
+    "euler",
+    "simple",
+    0.3
+   ]
+  },
+  {
+   "id": 43,
+   "type": "VAEDecode",
+   "pos": [
+    1230,
+    3920
+   ],
+   "size": [
+    250,
+    60
+   ],
+   "flags": {},
+   "order": 43,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "samples",
+     "type": "LATENT",
+     "link": 50
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": 51
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      52,
+      53
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 44,
+   "type": "SaveImage",
+   "pos": [
+    1230,
+    4020
+   ],
+   "size": [
+    460,
+    460
+   ],
+   "flags": {},
+   "order": 44,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 52
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "title": "草稿 · FluxV5-D-新词-d030-NMKD",
+   "widgets_values": [
+    "FluxV5-D-新词-d030-NMKD-草稿"
+   ]
+  },
+  {
+   "id": 45,
+   "type": "UpscaleModelLoader",
+   "pos": [
+    1750,
+    3900
+   ],
+   "size": [
+    520,
+    80
+   ],
+   "flags": {},
+   "order": 45,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "UPSCALE_MODEL",
+     "type": "UPSCALE_MODEL",
+     "slot_index": 0,
+     "links": [
+      54
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UpscaleModelLoader"
+   },
+   "title": "放大模型：4x_NMKD-Superscale-SP_178000_G",
+   "widgets_values": [
+    "4x_NMKD-Superscale-SP_178000_G.pth"
+   ]
+  },
+  {
+   "id": 46,
+   "type": "ImageUpscaleWithModel",
+   "pos": [
+    1750,
+    4040
+   ],
+   "size": [
+    440,
+    80
+   ],
+   "flags": {},
+   "order": 46,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "upscale_model",
+     "type": "UPSCALE_MODEL",
+     "link": 54
+    },
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 53
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      55
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageUpscaleWithModel"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 47,
+   "type": "ImageScaleBy",
+   "pos": [
+    1750,
+    4160
+   ],
+   "size": [
+    330,
+    80
+   ],
+   "flags": {},
+   "order": 47,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 55
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      56
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageScaleBy"
+   },
+   "title": "缩回 2048x2560",
+   "widgets_values": [
+    "lanczos",
+    0.5
+   ]
+  },
+  {
+   "id": 48,
+   "type": "SaveImage",
+   "pos": [
+    2260,
+    3900
+   ],
+   "size": [
+    500,
+    460
+   ],
+   "flags": {},
+   "order": 48,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 56
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "title": "★ 成品 · FluxV5-D-新词-d030-NMKD（无第二段采样）",
+   "widgets_values": [
+    "FluxV5-D-新词-d030-NMKD-成品"
+   ]
+  },
+  {
+   "id": 49,
+   "type": "Note",
+   "pos": [
+    2260,
+    4400
+   ],
+   "size": [
+    620,
+    180
+   ],
+   "flags": {},
+   "order": 49,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "Note"
+   },
+   "title": "备注 · FluxV5-D-新词-d030-NMKD",
+   "widgets_values": [
+    "★ 本分支没有第二段 KSampler。\n成品 = 第一段 → 4x 放大 → 缩回 0.5（净 2x），不经过任何二次采样。\n对照现有 flux-v2 成品，即可看出「重绘」那步的代价。"
+   ]
+  },
+  {
+   "id": 50,
+   "type": "CLIPTextEncode",
+   "pos": [
+    61,
+    4500
+   ],
+   "size": [
+    760,
+    460
+   ],
+   "flags": {},
+   "order": 50,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 57
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      58
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "title": "正向 · FluxV5-E-掠射光-d030-Ultra",
+   "widgets_values": [
+    "Photorealistic studio headshot of a 24-year-old East Asian man with a masculine face, a strong angular jaw, thick dark eyebrows, deep-set dark eyes with faint shadows underneath, light stubble, and a single small beauty mark at the outer corner of one eye. He faces the camera directly, head level, shoulders square, face centered and looking straight into the lens, calm neutral expression. He wears a faded blue collared shirt with a dark worn coat collar. His hair is messy wavy black hair that is completely dry and matte, never wet, never glossy, with no sheen and no light reflecting off it. It is genuinely unkempt: hundreds of separate individual strands are visible, several thin flyaway hairs lift off the silhouette and stand out against the white background as bright threads catching the light, the ends are dry and slightly frizzy with a few split tips, and a few loose strands fall across his forehead. It is completely unstyled and there is no hair product, no gel, no pomade, no oil, no salon styling. This is a raw unretouched documentary photograph of a real human being. Real skin with clearly visible pores across the cheeks and nose, fine peach fuzz and tiny vellus hairs catching the light along the jaw, faint freckles, a scattering of small moles, uneven skin tone with slight redness around the nose and only a hint of shine on the forehead and nose tip, natural creases under the eyes and fine dry lines. The skin surface is matte and slightly weathered, never waxy, never oily, never airbrushed. Every eyebrow hair and every eyelash is rendered as a separate strand. Shot on 35mm film stock, fine natural film grain, real optical detail. No beauty retouching, no skin smoothing, no wax, no plastic, no digital noise reduction, not a glamour shot, not a dermatology advertisement. Raking side lighting: a single hard key light from the left side, almost parallel to the skin surface and grazing across it at a low angle, so every pore, every fine hair and every small bump in the skin catches the light and casts a tiny shadow. Deep defined shadows on the far side of the face, strong rim light along the cheekbone and jaw, high micro-contrast on the skin texture. Not flat, not even, not frontal lighting. Plain pure white seamless background, no props, no other people, no scenery, no furniture. Sharp focus with real micro-detail, shot on an 85mm lens at f/4, photorealistic, natural sensor noise, no noise reduction, no digital sharpening halo. Keep exactly the same person, the same face, the same identity and the same framing as the input photograph — only the rendering becomes more photographic."
+   ]
+  },
+  {
+   "id": 51,
+   "type": "FluxGuidance",
+   "pos": [
+    860,
+    4500
+   ],
+   "size": [
+    300,
+    60
+   ],
+   "flags": {},
+   "order": 51,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "conditioning",
+     "type": "CONDITIONING",
+     "link": 58
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "slot_index": 0,
+     "links": [
+      60
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "FluxGuidance"
+   },
+   "title": "Guidance 3.5",
+   "widgets_values": [
+    3.5
+   ]
+  },
+  {
+   "id": 52,
+   "type": "KSampler",
+   "pos": [
+    860,
+    4620
+   ],
+   "size": [
+    330,
+    262
+   ],
+   "flags": {},
+   "order": 52,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 59
+    },
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 60
+    },
+    {
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 61
+    },
+    {
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 62
+    }
+   ],
+   "outputs": [
+    {
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      63
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "KSampler"
+   },
+   "title": "① FluxV5-E-掠射光-d030-Ultra  第一段 denoise 0.30",
+   "widgets_values": [
+    20260917,
+    "fixed",
+    28,
+    1.0,
+    "euler",
+    "simple",
+    0.3
+   ]
+  },
+  {
+   "id": 53,
+   "type": "VAEDecode",
+   "pos": [
+    1230,
+    4620
+   ],
+   "size": [
+    250,
+    60
+   ],
+   "flags": {},
+   "order": 53,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "samples",
+     "type": "LATENT",
+     "link": 63
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": 64
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      65,
+      66
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 54,
+   "type": "SaveImage",
+   "pos": [
+    1230,
+    4720
+   ],
+   "size": [
+    460,
+    460
+   ],
+   "flags": {},
+   "order": 54,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 65
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "title": "草稿 · FluxV5-E-掠射光-d030-Ultra",
+   "widgets_values": [
+    "FluxV5-E-掠射光-d030-Ultra-草稿"
+   ]
+  },
+  {
+   "id": 55,
+   "type": "UpscaleModelLoader",
+   "pos": [
+    1750,
+    4600
+   ],
+   "size": [
+    520,
+    80
+   ],
+   "flags": {},
+   "order": 55,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "UPSCALE_MODEL",
+     "type": "UPSCALE_MODEL",
+     "slot_index": 0,
+     "links": [
+      67
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UpscaleModelLoader"
+   },
+   "title": "放大模型：4x-UltraSharp (1)",
+   "widgets_values": [
+    "4x-UltraSharp (1).pth"
+   ]
+  },
+  {
+   "id": 56,
+   "type": "ImageUpscaleWithModel",
+   "pos": [
+    1750,
+    4740
+   ],
+   "size": [
+    440,
+    80
+   ],
+   "flags": {},
+   "order": 56,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "upscale_model",
+     "type": "UPSCALE_MODEL",
+     "link": 67
+    },
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 66
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      68
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageUpscaleWithModel"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 57,
+   "type": "ImageScaleBy",
+   "pos": [
+    1750,
+    4860
+   ],
+   "size": [
+    330,
+    80
+   ],
+   "flags": {},
+   "order": 57,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 68
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      69
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageScaleBy"
+   },
+   "title": "缩回 2048x2560",
+   "widgets_values": [
+    "lanczos",
+    0.5
+   ]
+  },
+  {
+   "id": 58,
+   "type": "SaveImage",
+   "pos": [
+    2260,
+    4600
+   ],
+   "size": [
+    500,
+    460
+   ],
+   "flags": {},
+   "order": 58,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 69
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "title": "★ 成品 · FluxV5-E-掠射光-d030-Ultra（无第二段采样）",
+   "widgets_values": [
+    "FluxV5-E-掠射光-d030-Ultra-成品"
+   ]
+  },
+  {
+   "id": 59,
+   "type": "Note",
+   "pos": [
+    2260,
+    5100
+   ],
+   "size": [
+    620,
+    180
+   ],
+   "flags": {},
+   "order": 59,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "Note"
+   },
+   "title": "备注 · FluxV5-E-掠射光-d030-Ultra",
+   "widgets_values": [
+    "★ 本分支没有第二段 KSampler。\n成品 = 第一段 → 4x 放大 → 缩回 0.5（净 2x），不经过任何二次采样。\n对照现有 flux-v2 成品，即可看出「重绘」那步的代价。"
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   1,
+   1,
+   7,
+   0,
+   "CLIP"
+  ],
+  [
+   2,
+   2,
+   0,
+   3,
+   0,
+   "IMAGE"
+  ],
+  [
+   3,
+   3,
+   0,
+   4,
+   0,
+   "IMAGE"
+  ],
+  [
+   4,
+   1,
+   2,
+   4,
+   1,
+   "VAE"
+  ],
+  [
+   5,
+   1,
+   1,
+   10,
+   0,
+   "CLIP"
+  ],
+  [
+   6,
+   10,
+   0,
+   11,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   7,
+   1,
+   0,
+   12,
+   0,
+   "MODEL"
+  ],
+  [
+   8,
+   11,
+   0,
+   12,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   9,
+   7,
+   0,
+   12,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   10,
+   4,
+   0,
+   12,
+   3,
+   "LATENT"
+  ],
+  [
+   11,
+   12,
+   0,
+   13,
+   0,
+   "LATENT"
+  ],
+  [
+   12,
+   1,
+   2,
+   13,
+   1,
+   "VAE"
+  ],
+  [
+   13,
+   13,
+   0,
+   14,
+   0,
+   "IMAGE"
+  ],
+  [
+   14,
+   13,
+   0,
+   16,
+   1,
+   "IMAGE"
+  ],
+  [
+   15,
+   15,
+   0,
+   16,
+   0,
+   "UPSCALE_MODEL"
+  ],
+  [
+   16,
+   16,
+   0,
+   17,
+   0,
+   "IMAGE"
+  ],
+  [
+   17,
+   17,
+   0,
+   18,
+   0,
+   "IMAGE"
+  ],
+  [
+   18,
+   1,
+   1,
+   20,
+   0,
+   "CLIP"
+  ],
+  [
+   19,
+   20,
+   0,
+   21,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   20,
+   1,
+   0,
+   22,
+   0,
+   "MODEL"
+  ],
+  [
+   21,
+   21,
+   0,
+   22,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   22,
+   7,
+   0,
+   22,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   23,
+   4,
+   0,
+   22,
+   3,
+   "LATENT"
+  ],
+  [
+   24,
+   22,
+   0,
+   23,
+   0,
+   "LATENT"
+  ],
+  [
+   25,
+   1,
+   2,
+   23,
+   1,
+   "VAE"
+  ],
+  [
+   26,
+   23,
+   0,
+   24,
+   0,
+   "IMAGE"
+  ],
+  [
+   27,
+   23,
+   0,
+   26,
+   1,
+   "IMAGE"
+  ],
+  [
+   28,
+   25,
+   0,
+   26,
+   0,
+   "UPSCALE_MODEL"
+  ],
+  [
+   29,
+   26,
+   0,
+   27,
+   0,
+   "IMAGE"
+  ],
+  [
+   30,
+   27,
+   0,
+   28,
+   0,
+   "IMAGE"
+  ],
+  [
+   31,
+   1,
+   1,
+   30,
+   0,
+   "CLIP"
+  ],
+  [
+   32,
+   30,
+   0,
+   31,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   33,
+   1,
+   0,
+   32,
+   0,
+   "MODEL"
+  ],
+  [
+   34,
+   31,
+   0,
+   32,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   35,
+   7,
+   0,
+   32,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   36,
+   4,
+   0,
+   32,
+   3,
+   "LATENT"
+  ],
+  [
+   37,
+   32,
+   0,
+   33,
+   0,
+   "LATENT"
+  ],
+  [
+   38,
+   1,
+   2,
+   33,
+   1,
+   "VAE"
+  ],
+  [
+   39,
+   33,
+   0,
+   34,
+   0,
+   "IMAGE"
+  ],
+  [
+   40,
+   33,
+   0,
+   36,
+   1,
+   "IMAGE"
+  ],
+  [
+   41,
+   35,
+   0,
+   36,
+   0,
+   "UPSCALE_MODEL"
+  ],
+  [
+   42,
+   36,
+   0,
+   37,
+   0,
+   "IMAGE"
+  ],
+  [
+   43,
+   37,
+   0,
+   38,
+   0,
+   "IMAGE"
+  ],
+  [
+   44,
+   1,
+   1,
+   40,
+   0,
+   "CLIP"
+  ],
+  [
+   45,
+   40,
+   0,
+   41,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   46,
+   1,
+   0,
+   42,
+   0,
+   "MODEL"
+  ],
+  [
+   47,
+   41,
+   0,
+   42,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   48,
+   7,
+   0,
+   42,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   49,
+   4,
+   0,
+   42,
+   3,
+   "LATENT"
+  ],
+  [
+   50,
+   42,
+   0,
+   43,
+   0,
+   "LATENT"
+  ],
+  [
+   51,
+   1,
+   2,
+   43,
+   1,
+   "VAE"
+  ],
+  [
+   52,
+   43,
+   0,
+   44,
+   0,
+   "IMAGE"
+  ],
+  [
+   53,
+   43,
+   0,
+   46,
+   1,
+   "IMAGE"
+  ],
+  [
+   54,
+   45,
+   0,
+   46,
+   0,
+   "UPSCALE_MODEL"
+  ],
+  [
+   55,
+   46,
+   0,
+   47,
+   0,
+   "IMAGE"
+  ],
+  [
+   56,
+   47,
+   0,
+   48,
+   0,
+   "IMAGE"
+  ],
+  [
+   57,
+   1,
+   1,
+   50,
+   0,
+   "CLIP"
+  ],
+  [
+   58,
+   50,
+   0,
+   51,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   59,
+   1,
+   0,
+   52,
+   0,
+   "MODEL"
+  ],
+  [
+   60,
+   51,
+   0,
+   52,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   61,
+   7,
+   0,
+   52,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   62,
+   4,
+   0,
+   52,
+   3,
+   "LATENT"
+  ],
+  [
+   63,
+   52,
+   0,
+   53,
+   0,
+   "LATENT"
+  ],
+  [
+   64,
+   1,
+   2,
+   53,
+   1,
+   "VAE"
+  ],
+  [
+   65,
+   53,
+   0,
+   54,
+   0,
+   "IMAGE"
+  ],
+  [
+   66,
+   53,
+   0,
+   56,
+   1,
+   "IMAGE"
+  ],
+  [
+   67,
+   55,
+   0,
+   56,
+   0,
+   "UPSCALE_MODEL"
+  ],
+  [
+   68,
+   56,
+   0,
+   57,
+   0,
+   "IMAGE"
+  ],
+  [
+   69,
+   57,
+   0,
+   58,
+   0,
+   "IMAGE"
+  ]
+ ],
+ "groups": [],
+ "config": {},
+ "extra": {},
+ "version": 0.4
+}

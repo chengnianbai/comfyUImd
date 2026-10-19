@@ -1,0 +1,107 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "leosamsHelloworldXL_helloworldXL70.safetensors"
+    },
+    "_meta": {
+      "title": "01 通用底模 · LEOSAM HelloWorld XL 7.0 · SDXL"
+    }
+  },
+  "2": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "Full-body front view, age 24, East Asian man with subtle Eurasian eyes; bare feet visible. Broad shoulders, solid torso, thick arms and thighs. Opaque white sleeveless crew-neck shirt tucked into plain white mid-thigh shorts. Deep-set almond brown eyes, clear double-eyelid creases, defined brow ridge, straight high nose bridge, masculine face. Dense dark medium-length layered shag; voluminous crown and sides, irregular loose S-wave curls, broken forward fringe, no defined part. Natural skin, arms at sides, white background.",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "02 SDXL正向｜24岁、五官参考提炼、卷发参考提炼"
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "shirtless, bare torso, underwear, briefs, boxer shorts, transparent fabric, untucked shirt, hem outside waistband, logos, lettering, watermark, cropped body, waist-up, close-up, cropped feet, missing feet, out of frame, center part, side part, curtain fringe, straight flat hair, sparse hair, single eyelids, shallow-set eyes, narrow shoulders, skinny limbs, idol styling, beauty filter, plastic skin, uneven skin, harsh shadows, jewelry, props, extra limbs, malformed hands, extra fingers",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "03 SDXL反向｜排除裸身、瘦削与明确分缝"
+    }
+  },
+  "5": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 768,
+      "height": 1536,
+      "batch_size": 1
+    },
+    "_meta": {
+      "title": "05 SDXL全身画布｜768 × 1536"
+    }
+  },
+  "6": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 2026101516,
+      "steps": 30,
+      "cfg": 6.0,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 1.0,
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "2",
+        0
+      ],
+      "negative": [
+        "3",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "06 SDXL采样｜30步 CFG6 · DPM++2M Karras"
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "6",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "_meta": {
+      "title": "07 VAE 解码"
+    }
+  },
+  "8": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "角色生成/闻灯角色生成-候选16",
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "08 输出｜角色初始形象全身图"
+    }
+  }
+}

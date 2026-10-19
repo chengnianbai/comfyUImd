@@ -1,0 +1,55 @@
+{
+  "model": {
+    "_id": "685c8aea3e21ce0548008f57",
+    "id": "Comfy-Org/flux1-kontext-dev_ComfyUI",
+    "private": false,
+    "library_name": "diffusion-single-file",
+    "tags": [
+      "diffusion-single-file",
+      "comfyui",
+      "base_model:black-forest-labs/FLUX.1-Kontext-dev",
+      "base_model:finetune:black-forest-labs/FLUX.1-Kontext-dev",
+      "license:other",
+      "region:us"
+    ],
+    "downloads": 127961,
+    "likes": 195,
+    "modelId": "Comfy-Org/flux1-kontext-dev_ComfyUI",
+    "author": "Comfy-Org",
+    "sha": "aa3dd3c4bf31e466dd343107b2af67c472b948bc",
+    "lastModified": "2026-09-23T07:16:52.000Z",
+    "gated": false,
+    "disabled": false,
+    "model-index": null,
+    "config": {},
+    "cardData": {
+      "license": "other",
+      "license_name": "flux-1-dev-non-commercial-license",
+      "license_link": "https://huggingface.co/black-forest-labs/FLUX.1-Kontext-dev/blob/main/LICENSE.md",
+      "tags": [
+        "comfyui",
+        "diffusion-single-file"
+      ],
+      "base_model": [
+        "black-forest-labs/FLUX.1-Kontext-dev"
+      ]
+    },
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "split_files/diffusion_models/flux1-dev-kontext_fp8_scaled.safetensors"
+      }
+    ],
+    "spaces": [
+      "tardellirs/model-pulse",
+      "emanforhelp/model-pulse"
+    ],
+    "createdAt": "2025-06-25T23:48:58.000Z",
+    "usedStorage": 11911824973
+  }
+}

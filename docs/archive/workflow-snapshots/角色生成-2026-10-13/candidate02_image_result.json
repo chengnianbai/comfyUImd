@@ -1,0 +1,15 @@
+{
+  "prompt_id": "81c4666c-d6f8-4ea5-b7dc-36e22ddc770e",
+  "image_path": "D:\\xiaobai-claude code\\comfyUImd\\系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\闻灯-正面全身-候选02.png",
+  "bytes": 905157,
+  "sha256": "8d4921d77ffb91a300e4894e8174d3286a47606fdb89564eb9660f9aeb45fa21",
+  "size": [
+    1024,
+    1536
+  ],
+  "mode": "RGB",
+  "image_dir_items": [
+    "闻灯-正面全身-候选01.png",
+    "闻灯-正面全身-候选02.png"
+  ]
+}

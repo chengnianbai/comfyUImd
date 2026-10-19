@@ -1,0 +1,142 @@
+{
+  "changes": [
+    {
+      "path": "/nodes/2/title",
+      "old": "02 当前角色 · 全身优先/微卷/眼眉/浅肤色",
+      "new": "02 当前角色 · 按部位精确描述试验"
+    },
+    {
+      "path": "/nodes/2/widgets_values/0",
+      "old": "Full-body head-to-toe studio photograph, a single man standing at a distance, entire figure from hair to both bare feet and all toes visible. White shorts and bare legs fully visible. His whole body occupies about 85 percent of the image height, white margins above head and below feet. Front view, relaxed upright casting pose, hands beside thighs. Wen Deng is a 24-year-old Asian man, lean athletic 183cm model proportions, long legs and moderately broad shoulders. Plain white sleeveless tank tucked neatly inside plain white shorts. Fluffy short black wavy hair with softly curled textured locks, a thick irregular forward fringe covering the hairline, airy tousled crown. Dark brown almond eyes with distinct double eyelid folds and deeper upper-eye sockets. Thick dark brows with straight inner sections, subtly angled outer arches and tapered tails. Slightly higher nose bridge, subtle Eurasian influence while predominantly Asian, small outer-eye mole. Fair neutral light-beige skin consistently matching on face, shoulders, upper arms, forearms, hands and legs. Even broad frontal diffuse white light and soft fill on the entire figure. White seamless background, realistic skin and fine hair detail, sharp photograph.",
+      "new": "Full-length head-to-toe casting photograph of one adult man, front view, standing at a distance. Entire head, white shorts, bare legs, both feet and all toes visible, generous white margins. Wen Deng, 24, predominantly Asian with subtle Eurasian influence, dark brown eyes, black hair, small mole at an outer eye corner. Lean wiry 183cm model proportions, long legs, natural shoulder width. Hair: airy tousled short waves, irregular overlapping curled locks falling forward as a continuous textured fringe across the hairline. Face: clearly defined double upper-eyelid folds on both eyes, gently recessed eyes below the brow bones, natural relaxed orbicularis oculi contour. Thick eyebrows, straight inner sections, gentle angular outer arches, tapered tails. Moderately high narrow nasal bridge, smooth dorsum, proportionate relaxed nasal alae. Moderate masseter volume, defined natural jawline. Shaped upper-lip Cupid bow, balanced lower-lip fullness, relaxed level mouth corners. Upper body: rounded deltoids, gently defined biceps and triceps, forearm flexor and extensor contours tapering smoothly from elbows to wrists; modest pectoralis major volume beneath opaque fabric, lean waist from external obliques and a flat rectus-abdominis contour under clothing. Lower body: slender thighs with moderate quadriceps volume, smooth knee transitions, natural gastrocnemius curve, lower calves tapering into normal ankles and Achilles tendons. Fair light-beige complexion with a neutral undertone consistently matching face, shoulders, upper arms, forearms, hands and legs, natural skin texture. Opaque plain white sleeveless tank neatly tucked into white shorts. Relaxed upright posture, arms at sides, hands visible, bare feet flat. Seamless white background, broad frontal diffuse neutral daylight and even fill over the whole body, sharp fine skin and hair detail."
+    },
+    {
+      "path": "/nodes/8/title",
+      "old": "08 保存 · 候选05（本轮第3/3次）",
+      "new": "08 保存 · 候选06（用户追加单次解剖结构试验）"
+    },
+    {
+      "path": "/nodes/8/widgets_values/0",
+      "old": "角色生成/闻灯-正面全身-候选05",
+      "new": "角色生成/闻灯-正面全身-候选06"
+    },
+    {
+      "path": "/metadata/revision",
+      "old": 5,
+      "new": 6
+    }
+  ],
+  "scope": "expanded-review",
+  "review_reasons": [
+    "format-or-metadata"
+  ],
+  "context": {
+    "old": {
+      "1": {
+        "type": "CheckpointLoaderSimple",
+        "upstream": [],
+        "downstream": [
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      "2": {
+        "type": "CLIPTextEncode",
+        "upstream": [
+          1
+        ],
+        "downstream": [
+          4
+        ]
+      },
+      "4": {
+        "type": "FluxGuidance",
+        "upstream": [
+          2
+        ],
+        "downstream": [
+          6
+        ]
+      },
+      "7": {
+        "type": "VAEDecode",
+        "upstream": [
+          1,
+          6
+        ],
+        "downstream": [
+          8
+        ]
+      },
+      "8": {
+        "type": "SaveImage",
+        "upstream": [
+          7
+        ],
+        "downstream": []
+      }
+    },
+    "new": {
+      "1": {
+        "type": "CheckpointLoaderSimple",
+        "upstream": [],
+        "downstream": [
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      "2": {
+        "type": "CLIPTextEncode",
+        "upstream": [
+          1
+        ],
+        "downstream": [
+          4
+        ]
+      },
+      "4": {
+        "type": "FluxGuidance",
+        "upstream": [
+          2
+        ],
+        "downstream": [
+          6
+        ]
+      },
+      "7": {
+        "type": "VAEDecode",
+        "upstream": [
+          1,
+          6
+        ],
+        "downstream": [
+          8
+        ]
+      },
+      "8": {
+        "type": "SaveImage",
+        "upstream": [
+          7
+        ],
+        "downstream": []
+      }
+    }
+  },
+  "old_counts": {
+    "nodes": 8,
+    "links": 10
+  },
+  "new_counts": {
+    "nodes": 8,
+    "links": 10
+  },
+  "old_path": "D:\\xiaobai-claude code\\comfyUImd\\docs\\archive\\workflow-snapshots\\角色生成-2026-10-13\\candidate05_workflow.json",
+  "new_path": "D:\\xiaobai-claude code\\comfyUImd\\docs\\archive\\workflow-snapshots\\角色生成-2026-10-13\\candidate06_workflow.json",
+  "old_sha256": "556983bcdc655d0845e6b3b8acb2015797271ce04b482fc244af1ccae824e651",
+  "new_sha256": "33eefdfc9bb0a71f123bd3f917be18ef9d65a0ea84ecf1e9909d39593ed9952c",
+  "parse_skipped": false
+}

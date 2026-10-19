@@ -1,0 +1,32 @@
+{
+  "source_face_sha256": "ab69a0ce25b01e570eee11a95dde2b8b75f873fc15b511eca9519efe7f138342",
+  "source_face_dimensions": [
+    880,
+    1184
+  ],
+  "crop_box": [
+    0,
+    0,
+    880,
+    880
+  ],
+  "crop_dimensions": [
+    880,
+    880
+  ],
+  "crop_pixels_equal_to_source_region": true,
+  "remote_upload_byte_equal": true,
+  "prompt_unchanged": true,
+  "changed_graph_nodes": [
+    1310,
+    1373
+  ],
+  "front_dependencies": 17,
+  "links_unchanged": true,
+  "groups_unchanged": true,
+  "node_overlaps": 0,
+  "browser_errors": [],
+  "queue_empty_before": true,
+  "attempt_limit": 2,
+  "attempt_number": 1
+}

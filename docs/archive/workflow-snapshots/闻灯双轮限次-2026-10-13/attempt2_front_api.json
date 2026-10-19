@@ -1,0 +1,234 @@
+{
+  "15": {
+    "inputs": {
+      "filename_prefix": "闻灯-全身正面-成品",
+      "images": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "存图 · 成品"
+    }
+  },
+  "23": {
+    "inputs": {
+      "upscale_model": [
+        "1018",
+        0
+      ],
+      "image": [
+        "1317",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "使用模型放大图像"
+    }
+  },
+  "24": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "scale_by": 0.5,
+      "image": [
+        "23",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "缩回 1792×2304"
+    }
+  },
+  "1018": {
+    "inputs": {
+      "model_name": "4x-UltraSharp (1).pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "放大模型 4x-UltraSharp"
+    }
+  },
+  "1024": {
+    "inputs": {
+      "unet_name": "FLUX1\\flux1-schnell.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Kontext fp8_scaled（diffusion_models）"
+    }
+  },
+  "1025": {
+    "inputs": {
+      "clip_name1": "t5\\t5xxl_fp8_e4m3fn_scaled.safetensors",
+      "clip_name2": "clip_l.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIP：t5xxl_fp8 + clip_l"
+    }
+  },
+  "1026": {
+    "inputs": {
+      "vae_name": "FLUX1\\ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "VAE ae.safetensors"
+    }
+  },
+  "1030": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "1025",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "★ 负向（cfg=1.0 下无效，留空仅为满足接口）"
+    }
+  },
+  "1302": {
+    "inputs": {
+      "width": 1024,
+      "height": 1792,
+      "batch_size": 1
+    },
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "全身输出尺寸 1024×1792（三视角共用）"
+    }
+  },
+  "1310": {
+    "inputs": {
+      "image": "闻灯-正脸母版00017-仅头脸裁切_验证01.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "正脸母版00017 · 头脸裁切参考（原母版未改）"
+    }
+  },
+  "1311": {
+    "inputs": {
+      "image": [
+        "1310",
+        0
+      ]
+    },
+    "class_type": "FluxKontextImageScale",
+    "_meta": {
+      "title": "参考归一化"
+    }
+  },
+  "1312": {
+    "inputs": {
+      "pixels": [
+        "1311",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "参考 → LATENT"
+    }
+  },
+  "1313": {
+    "inputs": {
+      "text": "Wide long-shot full-length studio photograph in a vertical 9:16 frame. The complete person is deliberately shown smaller and farther from the camera than in a close portrait: hair-to-sole height is about 72 percent of the image, with broad clean white margins above the hair and below the bare feet and visible white background on both sides. Camera straight-on at mid-torso level with natural perspective; no close-up, no medium shot, no crop. The same young East Asian man as the supplied face-only reference. Preserve his recognizable identity, same face shape, eyes, brows, nose, lips, jaw, apparent age, messy wavy black hairstyle and hairline. He wears a plain white cotton sleeveless muscle tee: a crew-neck tank top with broad shoulder straps and large armholes. Both shoulders are fully bare from the neck to the shoulder joints; no sleeves, no short sleeves, and no fabric over the deltoids. The fitted top ends at the waist and is tucked completely inside the shorts; the white shorts waistband is clearly visible, with no shirt hanging over it. Plain white mid-thigh shorts, barefoot, no accessories. His barefoot standing height is 183 cm. Tall lean male fashion-model proportions, naturally long legs and arms, long legs relative to the torso, narrow waist, natural moderate shoulder width, near eight heads tall. Lean athletic body with rounded moderately developed deltoids, visible natural biceps and triceps contours, slim thighs with subtle athletic definition and naturally shaped calves; healthy realistic muscle volume, not a bodybuilder. Stand directly facing the camera, head upright, shoulders level, arms relaxed slightly away from the torso so the bare shoulders and upper arms are visible. Both legs straight, both bare feet flat on the same floor, weight evenly distributed. Pure white seamless studio, soft even lighting, realistic photographic skin and fabric, consistent face and body rendering.",
+      "clip": [
+        "1025",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "正面身体指令 · 无袖背心 / 扎腰 / 72%远景（最终限次验证）"
+    }
+  },
+  "1314": {
+    "inputs": {
+      "guidance": 3,
+      "conditioning": [
+        "1313",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance 3.0"
+    }
+  },
+  "1315": {
+    "inputs": {
+      "conditioning": [
+        "1314",
+        0
+      ],
+      "latent": [
+        "1312",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "ReferenceLatent"
+    }
+  },
+  "1316": {
+    "inputs": {
+      "seed": 20261008,
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "1024",
+        0
+      ],
+      "positive": [
+        "1315",
+        0
+      ],
+      "negative": [
+        "1030",
+        0
+      ],
+      "latent_image": [
+        "1302",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "Kontext 参考采样 · 20步 / denoise 1.0"
+    }
+  },
+  "1317": {
+    "inputs": {
+      "samples": [
+        "1316",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAEDecode"
+    }
+  }
+}

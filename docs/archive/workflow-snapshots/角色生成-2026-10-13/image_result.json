@@ -1,0 +1,17 @@
+{
+  "image_path": "D:\\xiaobai-claude code\\comfyUImd\\系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\闻灯-正面全身-候选01.png",
+  "bytes": 435737,
+  "sha256": "07d369ac919fff9a4c780f8a428b5381e3ad6833566cb05218c5198e2d0a4b94",
+  "size": [
+    768,
+    1152
+  ],
+  "mode": "RGB",
+  "remote": {
+    "filename": "闻灯-正面全身-候选01_00001_.png",
+    "subfolder": "角色生成",
+    "type": "output"
+  },
+  "only_images": true,
+  "image_count": 1
+}

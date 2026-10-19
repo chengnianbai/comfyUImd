@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-10-12T11:31:35.502288+08:00",
+  "base": "https://gw-6866a06688ce4434937853022f606cde.cn-beijing.aigclinks.com:8016",
+  "results": [
+    {
+      "path": "/queue",
+      "error": "HTTPSConnectionPool(host='gw-6866a06688ce4434937853022f606cde.cn-beijing.aigclinks.com', port=8016): Read timed out. (read timeout=8)"
+    },
+    {
+      "path": "/system_stats",
+      "error": "HTTPSConnectionPool(host='gw-6866a06688ce4434937853022f606cde.cn-beijing.aigclinks.com', port=8016): Read timed out. (read timeout=8)"
+    }
+  ],
+  "last_submitted_prompt": "37c584b6-f060-4d07-8ea8-d56bef38caf2",
+  "last_submitted_completed": true,
+  "W_submitted": false
+}

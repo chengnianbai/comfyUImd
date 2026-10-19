@@ -1,0 +1,107 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "leosamsHelloworldXL_helloworldXL70.safetensors"
+    },
+    "_meta": {
+      "title": "01 通用底模 · LEOSAM HelloWorld XL 7.0 · SDXL"
+    }
+  },
+  "2": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "Full-body head-to-toe front view, one person only; head, legs and both bare feet entirely inside frame. (24-year-old East Asian man:1.25), subtle Eurasian eye structure. (Deep-set brown almond eyes with clear upper eyelid creases on both eyes, visible orbital depth, raised defined brow ridge, straight high prominent nasal bridge:1.35). Bare-faced, no visible makeup; subtle tiredness under the eyes, faint tension between the brows, weary gaze, restrained neutral expression. (Dense dark medium-length layered curls, full crown and sides, loose irregular waves, broken forward fringe, no part:1.30). Neutral casting stance, upright facing camera, balanced weight, parallel straight legs, flat bare feet with toes visible, arms relaxed at sides, hands visible. Plain white sleeveless tank top tucked fully into plain white shorts, clear waistband. Broad shoulders, solid chest and torso, full arms and thighs. Natural unretouched skin, white studio background.",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "02 SDXL正向｜候选18：加权年龄、五官、发型"
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "cropped head, cropped legs, cropped feet, partial body, close-up, portrait crop, shoes, sandals, slippers, socks, footwear, sitting, kneeling, crouching, walking, running, dynamic pose, fashion pose, crossed legs, hands on hips, arms crossed, hands in pockets, bent body, leaning, twisted torso, multiple people, duplicate subject, multiple views, collage, shirtless, underwear, transparent shirt, untucked shirt, loose hem, makeup, visible makeup, eyeliner, eyeshadow, mascara, false eyelashes, lipstick, lip gloss, blush, contour makeup, foundation, concealer, glamor portrait, airbrushed skin, retouched face, monolid, single eyelid, shallow-set eyes, flat brow ridge, flat facial features, low nasal bridge, flat nose, short straight hair, flat hair, center part, side part, curtain fringe, sparse hair, skinny limbs, logos, text, symbols, watermark, props, accessories, jewelry, deformed hands, extra fingers, deformed feet, fisheye, wide angle distortion",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "03 SDXL反向｜候选18：排除裁切、鞋袜、偏姿和扁平五官"
+    }
+  },
+  "5": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 768,
+      "height": 1536,
+      "batch_size": 1
+    },
+    "_meta": {
+      "title": "05 SDXL全身画布｜768 × 1536"
+    }
+  },
+  "6": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 2026101518,
+      "steps": 30,
+      "cfg": 6.0,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 1.0,
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "2",
+        0
+      ],
+      "negative": [
+        "3",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "06 SDXL采样｜30步 CFG6 · DPM++2M Karras"
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "6",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "_meta": {
+      "title": "07 VAE 解码"
+    }
+  },
+  "8": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "角色生成/闻灯角色生成-候选18",
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "08 输出｜角色初始形象全身图"
+    }
+  }
+}

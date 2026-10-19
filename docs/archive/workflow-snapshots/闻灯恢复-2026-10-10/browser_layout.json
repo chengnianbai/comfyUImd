@@ -1,0 +1,3729 @@
+{
+  "nodes": [
+    {
+      "id": "2",
+      "type": "CLIPTextEncode",
+      "pos": [
+        80,
+        5700
+      ],
+      "size": [
+        640,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "type": "CLIPTextEncode",
+      "pos": [
+        805,
+        6410
+      ],
+      "size": [
+        640,
+        220
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 5
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "type": "CLIPTextEncode",
+      "pos": [
+        805,
+        5700
+      ],
+      "size": [
+        640,
+        260
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 3
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "type": "CLIPTextEncode",
+      "pos": [
+        805,
+        6715
+      ],
+      "size": [
+        640,
+        220
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 6
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "type": "CLIPTextEncode",
+      "pos": [
+        805,
+        6045
+      ],
+      "size": [
+        640,
+        280
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 4
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "type": "ConditioningCombine",
+      "pos": [
+        1530,
+        5700
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 7
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 8
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "type": "ConditioningCombine",
+      "pos": [
+        1530,
+        6255
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 9
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 10
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "type": "ConditioningCombine",
+      "pos": [
+        1530,
+        6440
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 11
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 12
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        2310,
+        1185
+      ],
+      "size": [
+        420,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 22
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2466
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "type": "ImageScaleBy",
+      "pos": [
+        2815,
+        1000
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 23
+        },
+        {
+          "name": "upscale_method",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "scale_by",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "type": "KSampler",
+      "pos": [
+        1965,
+        5885
+      ],
+      "size": [
+        464,
+        310
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 27
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 28
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 29
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 26
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": null
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "type": "VAEEncode",
+      "pos": [
+        1965,
+        5700
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 2458
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 25
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "type": "VAEDecode",
+      "pos": [
+        1965,
+        6280
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 30
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 31
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "type": "PreviewImage",
+      "pos": [
+        2815,
+        1185
+      ],
+      "size": [
+        440,
+        620
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 2369
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "type": "SaveImage",
+      "pos": [
+        3340,
+        1000
+      ],
+      "size": [
+        440,
+        620
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 2368
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1001",
+      "type": "Note",
+      "pos": [
+        4400,
+        5700
+      ],
+      "size": [
+        1900,
+        520
+      ],
+      "inputs": []
+    },
+    {
+      "id": "1002",
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        1755,
+        180
+      ],
+      "size": [
+        470,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1003",
+      "type": "CLIPSetLastLayer",
+      "pos": [
+        1755,
+        365
+      ],
+      "size": [
+        380,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1001
+        },
+        {
+          "name": "stop_at_clip_layer",
+          "type": "INT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1004",
+      "type": "LoadImage",
+      "pos": [
+        4400,
+        180
+      ],
+      "size": [
+        440,
+        560
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1005",
+      "type": "ImageScale",
+      "pos": [
+        4400,
+        825
+      ],
+      "size": [
+        350,
+        130
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1003
+        },
+        {
+          "name": "upscale_method",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "crop",
+          "type": "COMBO",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1006",
+      "type": "VAEEncode",
+      "pos": [
+        4400,
+        1040
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 1004
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 1002
+        }
+      ]
+    },
+    {
+      "id": "1009",
+      "type": "ConditioningCombine",
+      "pos": [
+        4925,
+        950
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 1007
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 1008
+        }
+      ]
+    },
+    {
+      "id": "1011",
+      "type": "CLIPTextEncode",
+      "pos": [
+        5770,
+        485
+      ],
+      "size": [
+        700,
+        220
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1010
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1012",
+      "type": "CLIPTextEncode",
+      "pos": [
+        5770,
+        790
+      ],
+      "size": [
+        700,
+        220
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1011
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1013",
+      "type": "ConditioningCombine",
+      "pos": [
+        6555,
+        180
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 1012
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 1013
+        }
+      ]
+    },
+    {
+      "id": "1014",
+      "type": "ConditioningCombine",
+      "pos": [
+        6555,
+        365
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 1014
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 1015
+        }
+      ]
+    },
+    {
+      "id": "1016",
+      "type": "VAEDecode",
+      "pos": [
+        6990,
+        575
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 1020
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 1021
+        }
+      ]
+    },
+    {
+      "id": "1018",
+      "type": "UpscaleModelLoader",
+      "pos": [
+        2310,
+        180
+      ],
+      "size": [
+        520,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "model_name",
+          "type": "COMBO",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1019",
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        7475,
+        180
+      ],
+      "size": [
+        440,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 1024
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1023
+        }
+      ]
+    },
+    {
+      "id": "1020",
+      "type": "ImageScaleBy",
+      "pos": [
+        7475,
+        365
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1025
+        },
+        {
+          "name": "upscale_method",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "scale_by",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1022",
+      "type": "Note",
+      "pos": [
+        6385,
+        6505
+      ],
+      "size": [
+        620,
+        220
+      ],
+      "inputs": []
+    },
+    {
+      "id": "1023",
+      "type": "Note",
+      "pos": [
+        6385,
+        5700
+      ],
+      "size": [
+        1620,
+        720
+      ],
+      "inputs": []
+    },
+    {
+      "id": "1024",
+      "type": "UNETLoader",
+      "pos": [
+        80,
+        180
+      ],
+      "size": [
+        430,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "unet_name",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "weight_dtype",
+          "type": "COMBO",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1025",
+      "type": "DualCLIPLoader",
+      "pos": [
+        595,
+        180
+      ],
+      "size": [
+        430,
+        130
+      ],
+      "inputs": [
+        {
+          "name": "clip_name1",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "clip_name2",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "type",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "device",
+          "type": "COMBO",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1026",
+      "type": "VAELoader",
+      "pos": [
+        80,
+        365
+      ],
+      "size": [
+        430,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "vae_name",
+          "type": "COMBO",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1028",
+      "type": "FluxKontextImageScale",
+      "pos": [
+        4400,
+        1350
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2339
+        }
+      ]
+    },
+    {
+      "id": "1029",
+      "type": "VAEEncode",
+      "pos": [
+        4400,
+        1535
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 1030
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 1028
+        }
+      ]
+    },
+    {
+      "id": "1030",
+      "type": "CLIPTextEncode",
+      "pos": [
+        595,
+        395
+      ],
+      "size": [
+        640,
+        220
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1027
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1032",
+      "type": "FluxGuidance",
+      "pos": [
+        4835,
+        2955
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 1032
+        },
+        {
+          "name": "guidance",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1033",
+      "type": "ReferenceLatent",
+      "pos": [
+        5620,
+        2450
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 1033
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 2319
+        }
+      ]
+    },
+    {
+      "id": "1034",
+      "type": "KSampler",
+      "pos": [
+        5620,
+        2635
+      ],
+      "size": [
+        400,
+        310
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1035
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 1036
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 1037
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 2318
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": null
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1035",
+      "type": "VAEDecode",
+      "pos": [
+        6105,
+        2450
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 1039
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 1040
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "type": "Note",
+      "pos": [
+        4400,
+        6305
+      ],
+      "size": [
+        1190,
+        293
+      ],
+      "inputs": []
+    },
+    {
+      "id": "1021",
+      "type": "SaveImage",
+      "pos": [
+        6105,
+        1535
+      ],
+      "size": [
+        500,
+        560
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 2354
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1010",
+      "type": "CLIPTextEncode",
+      "pos": [
+        5770,
+        180
+      ],
+      "size": [
+        700,
+        220
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1009
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1015",
+      "type": "KSampler",
+      "pos": [
+        6990,
+        180
+      ],
+      "size": [
+        400,
+        310
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1016
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 1017
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 1018
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 1019
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": null
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1008",
+      "type": "CLIPTextEncode",
+      "pos": [
+        4925,
+        565
+      ],
+      "size": [
+        760,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1006
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1007",
+      "type": "CLIPTextEncode",
+      "pos": [
+        4925,
+        180
+      ],
+      "size": [
+        760,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1005
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1044",
+      "type": "FluxGuidance",
+      "pos": [
+        8090,
+        6205
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 2302
+        },
+        {
+          "name": "guidance",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1045",
+      "type": "ReferenceLatent",
+      "pos": [
+        5620,
+        1350
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 2366
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 2304
+        }
+      ]
+    },
+    {
+      "id": "1047",
+      "type": "VAEDecode",
+      "pos": [
+        6105,
+        1350
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 2309
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2310
+        }
+      ]
+    },
+    {
+      "id": "1049",
+      "type": "FluxKontextImageScale",
+      "pos": [
+        6690,
+        1350
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2312
+        }
+      ]
+    },
+    {
+      "id": "1050",
+      "type": "VAEEncode",
+      "pos": [
+        6690,
+        1535
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 2313
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2314
+        }
+      ]
+    },
+    {
+      "id": "1051",
+      "type": "ImageFlip",
+      "pos": [
+        6105,
+        2635
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2315
+        },
+        {
+          "name": "flip_method",
+          "type": "COMBO",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1052",
+      "type": "EmptySD3LatentImage",
+      "pos": [
+        4400,
+        2450
+      ],
+      "size": [
+        350,
+        106
+      ],
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1043",
+      "type": "CLIPTextEncode",
+      "pos": [
+        8090,
+        5700
+      ],
+      "size": [
+        700,
+        420
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2301
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1046",
+      "type": "KSampler",
+      "pos": [
+        5620,
+        1535
+      ],
+      "size": [
+        400,
+        310
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 2305
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 2306
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 2307
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 2367
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": null
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1031",
+      "type": "CLIPTextEncode",
+      "pos": [
+        4835,
+        2450
+      ],
+      "size": [
+        700,
+        420
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1031
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1100",
+      "type": "ImageScale",
+      "pos": [
+        4400,
+        3400
+      ],
+      "size": [
+        350,
+        130
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2320
+        },
+        {
+          "name": "upscale_method",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "crop",
+          "type": "COMBO",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1101",
+      "type": "VAEEncode",
+      "pos": [
+        4400,
+        3615
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 2321
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2322
+        }
+      ]
+    },
+    {
+      "id": "1102",
+      "type": "CLIPTextEncode",
+      "pos": [
+        4835,
+        3400
+      ],
+      "size": [
+        760,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2323
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1103",
+      "type": "ConditioningCombine",
+      "pos": [
+        4835,
+        3785
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 2324
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 2325
+        }
+      ]
+    },
+    {
+      "id": "1104",
+      "type": "KSampler",
+      "pos": [
+        5680,
+        3400
+      ],
+      "size": [
+        400,
+        310
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 2326
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 2327
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 2328
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 2329
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": null
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1105",
+      "type": "VAEDecode",
+      "pos": [
+        5680,
+        3795
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 2330
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2331
+        }
+      ]
+    },
+    {
+      "id": "1107",
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        6165,
+        3400
+      ],
+      "size": [
+        440,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 2333
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2334
+        }
+      ]
+    },
+    {
+      "id": "1108",
+      "type": "ImageScaleBy",
+      "pos": [
+        6165,
+        3585
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2335
+        },
+        {
+          "name": "upscale_method",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "scale_by",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1109",
+      "type": "SaveImage",
+      "pos": [
+        6105,
+        4635
+      ],
+      "size": [
+        460,
+        560
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 2362
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1110",
+      "type": "ImageFlip",
+      "pos": [
+        6650,
+        4450
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2363
+        },
+        {
+          "name": "flip_method",
+          "type": "COMBO",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1111",
+      "type": "SaveImage",
+      "pos": [
+        6650,
+        4635
+      ],
+      "size": [
+        460,
+        560
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 2338
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1200",
+      "type": "CLIPTextEncode",
+      "pos": [
+        4835,
+        4450
+      ],
+      "size": [
+        700,
+        420
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2340
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1201",
+      "type": "FluxGuidance",
+      "pos": [
+        4835,
+        4955
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 2341
+        },
+        {
+          "name": "guidance",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1210",
+      "type": "FluxKontextImageScale",
+      "pos": [
+        4400,
+        4450
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2343
+        }
+      ]
+    },
+    {
+      "id": "1211",
+      "type": "VAEEncode",
+      "pos": [
+        4400,
+        4635
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 2344
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2345
+        }
+      ]
+    },
+    {
+      "id": "1212",
+      "type": "ReferenceLatent",
+      "pos": [
+        5620,
+        4450
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 2342
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 2346
+        }
+      ]
+    },
+    {
+      "id": "1213",
+      "type": "KSampler",
+      "pos": [
+        5620,
+        4635
+      ],
+      "size": [
+        400,
+        310
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 2347
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 2348
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 2349
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 2361
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": null
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1214",
+      "type": "VAEDecode",
+      "pos": [
+        6105,
+        4450
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 2351
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2352
+        }
+      ]
+    },
+    {
+      "id": "1220",
+      "type": "CLIPTextEncode",
+      "pos": [
+        4835,
+        1350
+      ],
+      "size": [
+        700,
+        420
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2364
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1221",
+      "type": "FluxGuidance",
+      "pos": [
+        4835,
+        1855
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 2365
+        },
+        {
+          "name": "guidance",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "300",
+      "type": "CLIPTextEncode",
+      "pos": [
+        80,
+        6085
+      ],
+      "size": [
+        640,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2370
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "301",
+      "type": "ConditioningCombine",
+      "pos": [
+        1530,
+        5885
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 2372
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 2373
+        }
+      ]
+    },
+    {
+      "id": "311",
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        2310,
+        2235
+      ],
+      "size": [
+        420,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 2386
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2467
+        }
+      ]
+    },
+    {
+      "id": "312",
+      "type": "ImageScaleBy",
+      "pos": [
+        2815,
+        2050
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2388
+        },
+        {
+          "name": "upscale_method",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "scale_by",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "313",
+      "type": "VAEEncode",
+      "pos": [
+        2514,
+        5700
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 2460
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2390
+        }
+      ]
+    },
+    {
+      "id": "314",
+      "type": "KSampler",
+      "pos": [
+        2514,
+        5885
+      ],
+      "size": [
+        464,
+        310
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 2392
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 2393
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 2394
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 2391
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": null
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "315",
+      "type": "VAEDecode",
+      "pos": [
+        2514,
+        6280
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 2395
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2396
+        }
+      ]
+    },
+    {
+      "id": "316",
+      "type": "SaveImage",
+      "pos": [
+        3250,
+        2050
+      ],
+      "size": [
+        440,
+        620
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 2462
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "330",
+      "type": "CLIPTextEncode",
+      "pos": [
+        80,
+        6470
+      ],
+      "size": [
+        640,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2371
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "331",
+      "type": "ConditioningCombine",
+      "pos": [
+        1530,
+        6070
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning_1",
+          "type": "CONDITIONING",
+          "link": 2398
+        },
+        {
+          "name": "conditioning_2",
+          "type": "CONDITIONING",
+          "link": 2399
+        }
+      ]
+    },
+    {
+      "id": "341",
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        2310,
+        3285
+      ],
+      "size": [
+        420,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 2407
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2468
+        }
+      ]
+    },
+    {
+      "id": "342",
+      "type": "ImageScaleBy",
+      "pos": [
+        2815,
+        3100
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2409
+        },
+        {
+          "name": "upscale_method",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "scale_by",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "343",
+      "type": "VAEEncode",
+      "pos": [
+        3063,
+        5700
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 2463
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2411
+        }
+      ]
+    },
+    {
+      "id": "344",
+      "type": "KSampler",
+      "pos": [
+        3063,
+        5885
+      ],
+      "size": [
+        464,
+        310
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 2413
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 2414
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 2415
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 2412
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": null
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "345",
+      "type": "VAEDecode",
+      "pos": [
+        3063,
+        6280
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 2416
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2417
+        }
+      ]
+    },
+    {
+      "id": "346",
+      "type": "SaveImage",
+      "pos": [
+        3250,
+        3100
+      ],
+      "size": [
+        440,
+        620
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 2465
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1302",
+      "type": "EmptySD3LatentImage",
+      "pos": [
+        1320,
+        180
+      ],
+      "size": [
+        350,
+        106
+      ],
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1310",
+      "type": "LoadImage",
+      "pos": [
+        80,
+        1000
+      ],
+      "size": [
+        440,
+        560
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1311",
+      "type": "FluxKontextImageScale",
+      "pos": [
+        605,
+        1000
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2419
+        }
+      ]
+    },
+    {
+      "id": "1312",
+      "type": "VAEEncode",
+      "pos": [
+        605,
+        1185
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 2420
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2421
+        }
+      ]
+    },
+    {
+      "id": "1313",
+      "type": "CLIPTextEncode",
+      "pos": [
+        1040,
+        1000
+      ],
+      "size": [
+        700,
+        420
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2422
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1314",
+      "type": "FluxGuidance",
+      "pos": [
+        1040,
+        1505
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 2423
+        },
+        {
+          "name": "guidance",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1315",
+      "type": "ReferenceLatent",
+      "pos": [
+        1825,
+        1000
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 2424
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 2425
+        }
+      ]
+    },
+    {
+      "id": "1316",
+      "type": "KSampler",
+      "pos": [
+        1825,
+        1185
+      ],
+      "size": [
+        400,
+        310
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 2426
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 2427
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 2428
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 2429
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": null
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1317",
+      "type": "VAEDecode",
+      "pos": [
+        2310,
+        1000
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 2430
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2431
+        }
+      ]
+    },
+    {
+      "id": "1330",
+      "type": "LoadImage",
+      "pos": [
+        80,
+        2050
+      ],
+      "size": [
+        440,
+        560
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1331",
+      "type": "FluxKontextImageScale",
+      "pos": [
+        605,
+        2050
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2432
+        }
+      ]
+    },
+    {
+      "id": "1332",
+      "type": "VAEEncode",
+      "pos": [
+        605,
+        2235
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 2433
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2434
+        }
+      ]
+    },
+    {
+      "id": "1333",
+      "type": "CLIPTextEncode",
+      "pos": [
+        1040,
+        2050
+      ],
+      "size": [
+        700,
+        420
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2435
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1334",
+      "type": "FluxGuidance",
+      "pos": [
+        1040,
+        2555
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 2436
+        },
+        {
+          "name": "guidance",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1335",
+      "type": "ReferenceLatent",
+      "pos": [
+        1825,
+        2050
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 2437
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 2438
+        }
+      ]
+    },
+    {
+      "id": "1336",
+      "type": "KSampler",
+      "pos": [
+        1825,
+        2235
+      ],
+      "size": [
+        400,
+        310
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 2439
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 2440
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 2441
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 2442
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": null
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1337",
+      "type": "VAEDecode",
+      "pos": [
+        2310,
+        2050
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 2443
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2444
+        }
+      ]
+    },
+    {
+      "id": "1350",
+      "type": "LoadImage",
+      "pos": [
+        80,
+        3100
+      ],
+      "size": [
+        440,
+        560
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1351",
+      "type": "FluxKontextImageScale",
+      "pos": [
+        605,
+        3100
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2445
+        }
+      ]
+    },
+    {
+      "id": "1352",
+      "type": "VAEEncode",
+      "pos": [
+        605,
+        3285
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 2446
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2447
+        }
+      ]
+    },
+    {
+      "id": "1353",
+      "type": "CLIPTextEncode",
+      "pos": [
+        1040,
+        3100
+      ],
+      "size": [
+        700,
+        420
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2448
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1354",
+      "type": "FluxGuidance",
+      "pos": [
+        1040,
+        3605
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 2449
+        },
+        {
+          "name": "guidance",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1355",
+      "type": "ReferenceLatent",
+      "pos": [
+        1825,
+        3100
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 2450
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 2451
+        }
+      ]
+    },
+    {
+      "id": "1356",
+      "type": "KSampler",
+      "pos": [
+        1825,
+        3285
+      ],
+      "size": [
+        400,
+        310
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 2452
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 2453
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 2454
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 2455
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": null
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1357",
+      "type": "VAEDecode",
+      "pos": [
+        2310,
+        3100
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 2456
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2457
+        }
+      ]
+    },
+    {
+      "id": "1360",
+      "type": "ImageCrop",
+      "pos": [
+        80,
+        4250
+      ],
+      "size": [
+        350,
+        130
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2469
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "x",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "y",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "crop",
+          "type": "COMBO",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1361",
+      "type": "ImageScaleBy",
+      "pos": [
+        80,
+        4465
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2470
+        },
+        {
+          "name": "upscale_method",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "scale_by",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1362",
+      "type": "ImageScale",
+      "pos": [
+        80,
+        4650
+      ],
+      "size": [
+        350,
+        130
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2471
+        },
+        {
+          "name": "upscale_method",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "crop",
+          "type": "COMBO",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1363",
+      "type": "VAEEncode",
+      "pos": [
+        80,
+        4865
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 2472
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2473
+        }
+      ]
+    },
+    {
+      "id": "1364",
+      "type": "CLIPTextEncode",
+      "pos": [
+        515,
+        4250
+      ],
+      "size": [
+        760,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2474
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1365",
+      "type": "CLIPTextEncode",
+      "pos": [
+        515,
+        4635
+      ],
+      "size": [
+        700,
+        220
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2475
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1366",
+      "type": "KSampler",
+      "pos": [
+        1360,
+        4250
+      ],
+      "size": [
+        400,
+        310
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 2478
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 2476
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 2477
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 2479
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": null
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": null
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "link": null
+        }
+      ]
+    },
+    {
+      "id": "1367",
+      "type": "VAEDecode",
+      "pos": [
+        1360,
+        4645
+      ],
+      "size": [
+        350,
+        100
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 2480
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2481
+        }
+      ]
+    },
+    {
+      "id": "1368",
+      "type": "SaveImage",
+      "pos": [
+        1845,
+        4250
+      ],
+      "size": [
+        500,
+        560
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 2482
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "link": null
+        }
+      ]
+    }
+  ],
+  "canvasMethods": [
+    "_processDragZoom",
+    "_finishDragZoom",
+    "centerOnNode",
+    "setZoom",
+    "fitViewToSelectionAnimated"
+  ],
+  "groups": [
+    {
+      "title": "【闻灯】脸部 + 全身 · SDXL 出终稿 + Kontext 底稿",
+      "pos": [
+        -15,
+        -35
+      ],
+      "size": [
+        8900,
+        7065
+      ]
+    },
+    {
+      "title": "01 · 共享模型 / 编码器 / 全身尺寸",
+      "pos": [
+        45,
+        85
+      ],
+      "size": [
+        2820,
+        565
+      ]
+    },
+    {
+      "title": "02 · 全身正面 / 完整脸部母版",
+      "pos": [
+        45,
+        905
+      ],
+      "size": [
+        3770,
+        935
+      ]
+    },
+    {
+      "title": "03 · 全身侧面 / 待复核",
+      "pos": [
+        45,
+        1955
+      ],
+      "size": [
+        3680,
+        750
+      ]
+    },
+    {
+      "title": "04 · 全身背面 / 待复核",
+      "pos": [
+        45,
+        3005
+      ],
+      "size": [
+        3680,
+        750
+      ]
+    },
+    {
+      "title": "05 · 裁脸精修 / 独立输出，未回接全身",
+      "pos": [
+        45,
+        4155
+      ],
+      "size": [
+        2335,
+        845
+      ]
+    },
+    {
+      "title": "06 · 脸部历史链 / SDXL 正面底稿",
+      "pos": [
+        4365,
+        85
+      ],
+      "size": [
+        3585,
+        1090
+      ]
+    },
+    {
+      "title": "07 · 脸部历史链 / Kontext 正面处理",
+      "pos": [
+        4365,
+        1255
+      ],
+      "size": [
+        2710,
+        875
+      ]
+    },
+    {
+      "title": "08 · 脸部历史链 / Kontext 转侧面",
+      "pos": [
+        4365,
+        2355
+      ],
+      "size": [
+        2125,
+        735
+      ]
+    },
+    {
+      "title": "09 · 脸部历史链 / SDXL 侧面处理",
+      "pos": [
+        4365,
+        3305
+      ],
+      "size": [
+        2275,
+        625
+      ]
+    },
+    {
+      "title": "10 · 脸部历史链 / 侧面质感及左右输出",
+      "pos": [
+        4365,
+        4355
+      ],
+      "size": [
+        2780,
+        875
+      ]
+    },
+    {
+      "title": "11 · 旧全身 SDXL 条件 / 停用采样支路",
+      "pos": [
+        45,
+        5605
+      ],
+      "size": [
+        3517,
+        1365
+      ]
+    },
+    {
+      "title": "12 · 历史说明 / 不作为当前操作步骤",
+      "pos": [
+        4365,
+        5605
+      ],
+      "size": [
+        4460,
+        1155
+      ]
+    }
+  ]
+}

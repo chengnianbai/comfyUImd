@@ -1,0 +1,120 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "FLUX1\\flux1-dev-fp8.safetensors"
+    },
+    "_meta": {
+      "title": "01 通用底模 · FLUX.1 dev fp8"
+    }
+  },
+  "2": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "Full-length head-to-toe casting photograph of one adult man, front view, standing at a distance. Entire head, white shorts, bare legs, both feet and all toes visible, generous white margins. Wen Deng, 24, predominantly Asian with subtle Eurasian influence, dark brown eyes, black hair, small mole at an outer eye corner. Lean wiry 183cm model proportions, long legs, natural shoulder width. Hair: airy tousled short waves, irregular overlapping curled locks falling forward as a continuous textured fringe across the hairline. Face: clearly defined double upper-eyelid folds on both eyes, gently recessed eyes below the brow bones, natural relaxed orbicularis oculi contour. Thick eyebrows, straight inner sections, gentle angular outer arches, tapered tails. Moderately high narrow nasal bridge, smooth dorsum, proportionate relaxed nasal alae. Moderate masseter volume, defined natural jawline. Shaped upper-lip Cupid bow, balanced lower-lip fullness, relaxed level mouth corners. Upper body: rounded deltoids, gently defined biceps and triceps, forearm flexor and extensor contours tapering smoothly from elbows to wrists; modest pectoralis major volume beneath opaque fabric, lean waist from external obliques and a flat rectus-abdominis contour under clothing. Lower body: slender thighs with moderate quadriceps volume, smooth knee transitions, natural gastrocnemius curve, lower calves tapering into normal ankles and Achilles tendons. Fair light-beige complexion with a neutral undertone consistently matching face, shoulders, upper arms, forearms, hands and legs, natural skin texture. Opaque plain white sleeveless tank neatly tucked into white shorts. Relaxed upright posture, arms at sides, hands visible, bare feet flat. Seamless white background, broad frontal diffuse neutral daylight and even fill over the whole body, sharp fine skin and hair detail.",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "02 当前角色 · 按部位精确描述试验"
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "03 负向占位 · CFG 1 不使用"
+    }
+  },
+  "4": {
+    "class_type": "FluxGuidance",
+    "inputs": {
+      "guidance": 3.5,
+      "conditioning": [
+        "2",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "04 Flux 引导强度"
+    }
+  },
+  "5": {
+    "class_type": "EmptySD3LatentImage",
+    "inputs": {
+      "width": 1024,
+      "height": 1536,
+      "batch_size": 1
+    },
+    "_meta": {
+      "title": "05 初始画布 · 1024×1536 单张"
+    }
+  },
+  "6": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 2026101301,
+      "steps": 28,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0,
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "3",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "06 采样 · 清晰度验证 · 固定种子"
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "6",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "_meta": {
+      "title": "07 VAE 解码"
+    }
+  },
+  "8": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "角色生成/闻灯-正面全身-候选06",
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "08 保存 · 候选06（用户追加单次解剖结构试验）"
+    }
+  }
+}

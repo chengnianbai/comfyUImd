@@ -1,0 +1,14 @@
+{
+  "payload": {
+    "id": "comfyui_ipadapter_plus",
+    "version": "2.0.0",
+    "selected_version": "2.0.0",
+    "mode": "cache",
+    "channel": "https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main",
+    "skip_post_install": false,
+    "repository": "https://github.com/cubiq/ComfyUI_IPAdapter_plus",
+    "ui_id": "comfyui_ipadapter_plus"
+  },
+  "status": 200,
+  "response": ""
+}

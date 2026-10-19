@@ -1,0 +1,8 @@
+{
+  "http_status": 200,
+  "remote_sha256": "c73e8a0517d9fdb304c58d10c7dd67e151939be8616e07211ba07991cf647915",
+  "bytes": 13137,
+  "nodes": 8,
+  "links": 10,
+  "exact_byte_match": true
+}

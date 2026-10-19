@@ -1,0 +1,120 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "FLUX1\\flux1-dev-fp8.safetensors"
+    },
+    "_meta": {
+      "title": "01 通用底模 · FLUX.1 dev fp8"
+    }
+  },
+  "2": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "Photorealistic sharp high-detail full-length casting reference photograph of one adult male character, Wen Deng, age 24. He is Asian, a fictional half-demon shapeshifter shown in ordinary human form, with no supernatural features, no occupational costume, no props. Lean wiry athletic physique, visually about 183 cm tall, naturally long legs, balanced 7.5 to 8 head body proportions, moderately broad rounded shoulders, subtly defined upper arms, realistic anatomy. Dense voluminous tousled black waves and loose curls, rounded airy crown, irregular overlapping curled locks covering the hair roots and falling forward across the forehead, fluffy textured fringe, windswept lift, continuous unbroken fringe across the forehead. Predominantly Asian masculine adult face with subtle mixed Eurasian influence only: slightly deep-set eye sockets and a somewhat higher natural nose bridge, clearly still Asian. Dark brown almond eyes, distinctly visible double eyelid folds on both eyes, a clear upper-eyelid crease, gently recessed eyes beneath defined brow bones, natural depth between eyebrows and upper eyelids. Thick dark eyebrows with individual visible hairs, strong straight inner sections, a gentle angular arch toward the outer third, clean tapering outer tails. One small mole at the outer corner of an eye. Plain solid white sleeveless tank top completely tucked into plain solid white shorts, visible waistline, bare feet. Front view, neutral upright model casting pose, arms relaxed at sides, hands visible, feet flat on the floor. Eye-level camera, centered subject, entire body from top of hair through every toe fully visible, generous clean margins above head and below feet, no cropping, natural perspective. Seamless pure white studio background, broad soft evenly diffused neutral daylight illumination, balanced front fill, naturally fair light-beige skin with a neutral undertone and a subtle healthy rosy tint, the same even complexion across face, shoulders, upper arms, elbows, forearms, wrists, hands and legs, smooth natural skin-tone transitions through both elbows, lifelike skin texture and natural tonal depth, crisp focus, fine hair strands, clear eyes and skin texture, realistic photographic detail. No other people, props, jewelry, logos, text, scenery, blur, soft focus, motion blur, or low resolution.",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "02 当前角色 · 卷发/双眼皮/眼眉/自然偏白统一肤色"
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "03 负向占位 · CFG 1 不使用"
+    }
+  },
+  "4": {
+    "class_type": "FluxGuidance",
+    "inputs": {
+      "guidance": 3.5,
+      "conditioning": [
+        "2",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "04 Flux 引导强度"
+    }
+  },
+  "5": {
+    "class_type": "EmptySD3LatentImage",
+    "inputs": {
+      "width": 1024,
+      "height": 1536,
+      "batch_size": 1
+    },
+    "_meta": {
+      "title": "05 初始画布 · 1024×1536 单张"
+    }
+  },
+  "6": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 2026101301,
+      "steps": 28,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0,
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "3",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "06 采样 · 清晰度验证 · 固定种子"
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "6",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "_meta": {
+      "title": "07 VAE 解码"
+    }
+  },
+  "8": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "角色生成/闻灯-正面全身-候选03",
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "08 保存 · 候选03（本轮第1/3次）"
+    }
+  }
+}

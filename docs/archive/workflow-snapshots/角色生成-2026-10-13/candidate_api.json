@@ -1,0 +1,120 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "FLUX1\\flux1-dev-fp8.safetensors"
+    },
+    "_meta": {
+      "title": "01 通用底模 · FLUX.1 dev fp8"
+    }
+  },
+  "2": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "Photorealistic full-length casting reference photograph of one adult male character, Wen Deng, age 24. He is Asian, a fictional half-demon shapeshifter and night-patrol clerk shown in ordinary human form, without supernatural features or occupational costume. Lean wiry athletic physique, visually about 183 cm tall, naturally long legs, proportionate torso, realistic 7.5 to 8 head body proportions, moderately broad rounded shoulders and subtly defined upper arms, no exaggerated muscles. Short slightly wavy black hair, dark brown eyes, one small mole at the outer corner of an eye. Predominantly Asian masculine adult face with only subtle mixed Eurasian influence: somewhat deeper eye sockets and a slightly higher nose bridge; clearly still Asian. Plain solid white sleeveless tank top completely tucked into plain solid white shorts, visible waistline, bare legs and bare feet. Front view, neutral upright model casting pose, arms relaxed down at sides, hands visible, feet flat on the floor. Eye-level camera, centered subject, whole body from top of hair through every toe fully visible, generous clean margin above head and below feet, no cropping, natural perspective. Seamless pure white studio background, soft neutral studio light, natural skin texture, realistic anatomy. No other people, props, jewelry, logos, text or scenery.",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "02 当前角色与全身构图 · 换角色时编辑此处"
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "03 负向占位 · CFG 1 不使用"
+    }
+  },
+  "4": {
+    "class_type": "FluxGuidance",
+    "inputs": {
+      "guidance": 3.5,
+      "conditioning": [
+        "2",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "04 Flux 引导强度"
+    }
+  },
+  "5": {
+    "class_type": "EmptySD3LatentImage",
+    "inputs": {
+      "width": 768,
+      "height": 1152,
+      "batch_size": 1
+    },
+    "_meta": {
+      "title": "05 初始画布 · 768×1152 单张"
+    }
+  },
+  "6": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 2026101301,
+      "steps": 24,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0,
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "3",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "06 采样 · 固定种子"
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "6",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "_meta": {
+      "title": "07 VAE 解码"
+    }
+  },
+  "8": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "角色生成/闻灯-正面全身-候选01",
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "08 保存 · 当前角色候选"
+    }
+  }
+}

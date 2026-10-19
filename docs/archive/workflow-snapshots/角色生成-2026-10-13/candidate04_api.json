@@ -1,0 +1,120 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "FLUX1\\flux1-dev-fp8.safetensors"
+    },
+    "_meta": {
+      "title": "01 通用底模 · FLUX.1 dev fp8"
+    }
+  },
+  "2": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "A man with thick tousled curly black hair, short fluffy curls and a dense forward fringe covering the hairline. Clearly defined double eyelids, deep-set almond eyes with dark brown irises, thick dark eyebrows with angular outer arches and tapered tails. Fair neutral skin, the same light complexion on face, shoulders, upper arms, forearms, hands and legs. Wen Deng, a 24-year-old Asian man with subtle Eurasian facial structure, a slightly elevated nose bridge and a small outer-eye mole. Lean athletic 183cm model proportions, long legs, moderately broad shoulders. Full-length front-view casting photograph, white sleeveless tank tucked into white shorts, barefoot, arms relaxed. Entire head and every toe visible with margins. White studio background, symmetrical broad frontal diffused light, neutral white balance, crisp detailed skin and hair.",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "02 当前角色 · 简洁优先外观与统一浅肤色"
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "03 负向占位 · CFG 1 不使用"
+    }
+  },
+  "4": {
+    "class_type": "FluxGuidance",
+    "inputs": {
+      "guidance": 3.5,
+      "conditioning": [
+        "2",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "04 Flux 引导强度"
+    }
+  },
+  "5": {
+    "class_type": "EmptySD3LatentImage",
+    "inputs": {
+      "width": 1024,
+      "height": 1536,
+      "batch_size": 1
+    },
+    "_meta": {
+      "title": "05 初始画布 · 1024×1536 单张"
+    }
+  },
+  "6": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 2026101301,
+      "steps": 28,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0,
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "3",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "06 采样 · 清晰度验证 · 固定种子"
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "6",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "_meta": {
+      "title": "07 VAE 解码"
+    }
+  },
+  "8": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "角色生成/闻灯-正面全身-候选04",
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "08 保存 · 候选04（本轮第2/3次）"
+    }
+  }
+}

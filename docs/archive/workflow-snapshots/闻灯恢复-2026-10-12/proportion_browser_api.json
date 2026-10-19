@@ -1,0 +1,1835 @@
+{
+  "2": {
+    "inputs": {
+      "text": "full body shot head to toe, entire body visible, feet fully visible, standing straight, arms at sides, centered, 1boy, solo, 24 year old east asian man, masculine face, messy wavy black hair, small mole at outer eye corner, plain white crew-neck t-shirt, plain white shorts, pure white background",
+      "clip": [
+        "1003",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "正向 A · 构图 + 人物 + 服装（全身正面）"
+    }
+  },
+  "3": {
+    "inputs": {
+      "text": "natural human anatomy, realistic human proportions, 7 to 8 head proportion, correct shoulder width, correct hip width, symmetrical body, visible skin pores, skin texture, peach fuzz, messy wavy hair, pure white background, soft even lighting, sharp focus, photorealistic, small head relative to the body, head about one eighth of the figure height, no big head, long legs",
+      "clip": [
+        "1003",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "正向 B · 人体比例 + 白底 + 光位 + 质感"
+    }
+  },
+  "4": {
+    "inputs": {
+      "conditioning_1": [
+        "2",
+        0
+      ],
+      "conditioning_2": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "ConditioningCombine",
+    "_meta": {
+      "title": "合并 A + B（突破 75 token 上限的关键）"
+    }
+  },
+  "5": {
+    "inputs": {
+      "text": "1girl, female, feminine face, delicate, fragile, soft features, soft round face, pretty boy, boyish face, bishounen, makeup, lipstick, rosy lips, eyeshadow, teenage, child, narrow face, pale skin, blonde hair, straight hair, slicked back hair, undercut, side part, neat hair",
+      "clip": [
+        "1003",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "负向 N1 · 反柔弱 / 反女性"
+    }
+  },
+  "14": {
+    "inputs": {
+      "images": [
+        "1389",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "预览 / 原脸保留的正面比例候选"
+    }
+  },
+  "15": {
+    "inputs": {
+      "filename_prefix": "闻灯/正面比例-待验收",
+      "images": [
+        "1389",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "正面比例候选 / 待验收"
+    }
+  },
+  "18": {
+    "inputs": {
+      "text": "jacket, coat, sweater, hoodie, hood, suit, blazer, tie, collar, scarf, patterned shirt, printed shirt, logo, text on shirt, denim jacket, bare chest, shirtless, topless, nude, naked, dark background, grey background, gradient background, vignette, shadow, busy background, blurry, lowres, bad anatomy, extra limbs, deformed, big head, oversized head, short legs, cropped",
+      "clip": [
+        "1003",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "负向 N2 服饰/正装（已剔除 bare chest/shirtless）"
+    }
+  },
+  "19": {
+    "inputs": {
+      "text": "dark background, grey background, gradient background, vignette, shadow, busy background, freckles, mole on cheek, mole on forehead, extra fingers, bad hands, watermark, text, blurry, lowres, airbrushed, over-smoothed, beauty filter, retouched, dynamic pose, sitting, walking, running, hands on hips, arms crossed, hands in pockets, twisted torso, exaggerated anatomy, long limbs, short legs, oversized head, distorted hands, deformed feet, cropped feet, cropped head, fisheye, wide angle distortion, complex background, props, accessories, cropped legs, cropped feet, cropped ankles, close-up, portrait crop, zoomed in, half body, knees up",
+      "clip": [
+        "1003",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "负向 N3 背景/构图/姿态（全身版 · 已并入 §17）"
+    }
+  },
+  "20": {
+    "inputs": {
+      "conditioning_1": [
+        "5",
+        0
+      ],
+      "conditioning_2": [
+        "18",
+        0
+      ]
+    },
+    "class_type": "ConditioningCombine",
+    "_meta": {
+      "title": "负向 N1+N2"
+    }
+  },
+  "21": {
+    "inputs": {
+      "conditioning_1": [
+        "20",
+        0
+      ],
+      "conditioning_2": [
+        "19",
+        0
+      ]
+    },
+    "class_type": "ConditioningCombine",
+    "_meta": {
+      "title": "负向 (N1+N2)+N3"
+    }
+  },
+  "23": {
+    "inputs": {
+      "upscale_model": [
+        "1018",
+        0
+      ],
+      "image": [
+        "1317",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "使用模型放大图像"
+    }
+  },
+  "24": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "scale_by": 0.5,
+      "image": [
+        "23",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "缩回 1792×2304"
+    }
+  },
+  "300": {
+    "inputs": {
+      "text": "full body shot head to toe, entire body visible, feet fully visible, side view, side profile, standing straight, arms at sides, centered, 1boy, solo, 24 year old east asian man, masculine face, plain white crew-neck t-shirt, plain white shorts, pure white background",
+      "clip": [
+        "1003",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "正向 A · 构图+人物+服装（全身侧面）"
+    }
+  },
+  "301": {
+    "inputs": {
+      "conditioning_1": [
+        "300",
+        0
+      ],
+      "conditioning_2": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "ConditioningCombine",
+    "_meta": {
+      "title": "合并 A+B（侧面）"
+    }
+  },
+  "311": {
+    "inputs": {
+      "upscale_model": [
+        "1018",
+        0
+      ],
+      "image": [
+        "1337",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "4x 放大"
+    }
+  },
+  "312": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "scale_by": 0.5,
+      "image": [
+        "311",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "缩回 0.5（净 2x）"
+    }
+  },
+  "330": {
+    "inputs": {
+      "text": "full body shot head to toe, entire body visible, feet fully visible, back view, seen from behind, standing straight, arms at sides, centered, 1boy, solo, 24 year old east asian man, messy wavy black hair, plain white crew-neck t-shirt, plain white shorts, pure white background",
+      "clip": [
+        "1003",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "正向 A · 构图+人物+服装（全身背面）"
+    }
+  },
+  "331": {
+    "inputs": {
+      "conditioning_1": [
+        "330",
+        0
+      ],
+      "conditioning_2": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "ConditioningCombine",
+    "_meta": {
+      "title": "合并 A+B（背面）"
+    }
+  },
+  "341": {
+    "inputs": {
+      "upscale_model": [
+        "1018",
+        0
+      ],
+      "image": [
+        "1357",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "4x 放大（背面）"
+    }
+  },
+  "342": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "scale_by": 0.5,
+      "image": [
+        "341",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "缩回 0.5（背面）"
+    }
+  },
+  "1002": {
+    "inputs": {
+      "ckpt_name": "leosamsHelloworldXL_helloworldXL70.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "底模 · HelloWorld XL（SDXL）"
+    }
+  },
+  "1003": {
+    "inputs": {
+      "stop_at_clip_layer": -1,
+      "clip": [
+        "1002",
+        1
+      ]
+    },
+    "class_type": "CLIPSetLastLayer",
+    "_meta": {
+      "title": "Clip Skip = 1（SDXL 必须）"
+    }
+  },
+  "1004": {
+    "inputs": {
+      "image": "wendeng_face_base.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "★ 身份基图 = v23 正面（已确认）"
+    }
+  },
+  "1005": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "width": 896,
+      "height": 1152,
+      "crop": "center",
+      "image": [
+        "1004",
+        0
+      ]
+    },
+    "class_type": "ImageScale",
+    "_meta": {
+      "title": "统一到 896×1152"
+    }
+  },
+  "1006": {
+    "inputs": {
+      "pixels": [
+        "1005",
+        0
+      ],
+      "vae": [
+        "1002",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "身份 latent"
+    }
+  },
+  "1007": {
+    "inputs": {
+      "text": "front view, looking at viewer, face closeup, head and shoulders, 1boy, solo, 24 year old young adult east asian man, youthful masculine face, youthful facial proportions, defined but youthful jawline, masculine facial structure, messy wavy black hair, small dark mole at outer corner of eye, visible eye-corner mole, tired but young eyes, slightly heavy eyelids, faint under-eye shadows, faded blue shirt collar, dark worn coat collar, pure white background",
+      "clip": [
+        "1003",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "正向 A · 人物 + 构图"
+    }
+  },
+  "1008": {
+    "inputs": {
+      "text": "detailed face, detailed eyes, clear iris detail, individual eyelashes, natural thick eyebrows, clean shaven face, youthful natural skin, realistic skin texture, fine skin texture, subtle visible pores, natural skin imperfections, realistic complexion, natural facial texture, small dark mole at outer corner of eye, visible mole, clearly defined mole, messy wavy hair with individual hair strands, faded blue shirt collar, dark worn coat, pure white background, soft even studio lighting, subtle facial shadows, sharp focus, realistic skin rendering, photorealistic",
+      "clip": [
+        "1003",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "正向 B · 白底 + 光位 + 皮肤质感"
+    }
+  },
+  "1009": {
+    "inputs": {
+      "conditioning_1": [
+        "1007",
+        0
+      ],
+      "conditioning_2": [
+        "1008",
+        0
+      ]
+    },
+    "class_type": "ConditioningCombine",
+    "_meta": {
+      "title": "合并 A + B（突破 75 token 的关键）"
+    }
+  },
+  "1010": {
+    "inputs": {
+      "text": "old man, middle aged man, mature man, aged face, elderly, aged appearance, aging skin, deep wrinkles, forehead wrinkles, deep nasolabial folds, deep eye bags, heavy dark circles, sunken cheeks, gaunt face, feminine face, feminine features, woman, female, girl, female facial features, delicate feminine features, overly soft facial features, soft jawline, narrow delicate chin, round feminine face, large feminine eyes, makeup, lipstick, pretty girl, bishounen, bishoujo, androgynous, gender ambiguous, effeminate",
+      "clip": [
+        "1003",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "负向 N1 · 反柔弱 / 反女性"
+    }
+  },
+  "1011": {
+    "inputs": {
+      "text": "t-shirt, sweater, business suit, blazer, tie, dress shirt, formal wear, ironed shirt, wool coat, brown coat, beige coat, blue coat, light coat, new clothes, fashion model, jeans, denim, bare chest, shirtless, nude, white sneakers, new shoes, police uniform, wuxia, hanfu",
+      "clip": [
+        "1003",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "负向 N2 · 服饰 / 正装"
+    }
+  },
+  "1012": {
+    "inputs": {
+      "text": "dark background, grey background, gradient background, vignette, shadow, busy background, full body, bare shoulders, shirtless, freckles, mole on cheek, mole on forehead, extra fingers, bad hands, watermark, text, blurry, lowres, airbrushed, over-smoothed, beauty filter, smooth skin, retouched",
+      "clip": [
+        "1003",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "负向 N3 · 背景 / 构图"
+    }
+  },
+  "1013": {
+    "inputs": {
+      "conditioning_1": [
+        "1010",
+        0
+      ],
+      "conditioning_2": [
+        "1011",
+        0
+      ]
+    },
+    "class_type": "ConditioningCombine",
+    "_meta": {
+      "title": "负向 N1+N2"
+    }
+  },
+  "1014": {
+    "inputs": {
+      "conditioning_1": [
+        "1013",
+        0
+      ],
+      "conditioning_2": [
+        "1012",
+        0
+      ]
+    },
+    "class_type": "ConditioningCombine",
+    "_meta": {
+      "title": "负向 (N1+N2)+N3"
+    }
+  },
+  "1015": {
+    "inputs": {
+      "seed": 20260912,
+      "steps": 30,
+      "cfg": 10,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 0.3,
+      "model": [
+        "1002",
+        0
+      ],
+      "positive": [
+        "1009",
+        0
+      ],
+      "negative": [
+        "1014",
+        0
+      ],
+      "latent_image": [
+        "1006",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "① 第一段 · 30步 CFG10 denoise 0.30（保身份）"
+    }
+  },
+  "1016": {
+    "inputs": {
+      "samples": [
+        "1015",
+        0
+      ],
+      "vae": [
+        "1002",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "1018": {
+    "inputs": {
+      "model_name": "4x-UltraSharp (1).pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "放大模型 4x-UltraSharp"
+    }
+  },
+  "1019": {
+    "inputs": {
+      "upscale_model": [
+        "1018",
+        0
+      ],
+      "image": [
+        "1016",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "使用模型放大图像"
+    }
+  },
+  "1020": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "scale_by": 0.5,
+      "image": [
+        "1019",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "缩回 1792×2304"
+    }
+  },
+  "1024": {
+    "inputs": {
+      "unet_name": "FLUX1\\flux1-schnell.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Kontext fp8_scaled（diffusion_models）"
+    }
+  },
+  "1025": {
+    "inputs": {
+      "clip_name1": "t5\\t5xxl_fp8_e4m3fn_scaled.safetensors",
+      "clip_name2": "clip_l.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIP：t5xxl_fp8 + clip_l"
+    }
+  },
+  "1026": {
+    "inputs": {
+      "vae_name": "FLUX1\\ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "VAE ae.safetensors"
+    }
+  },
+  "1028": {
+    "inputs": {
+      "image": [
+        "1020",
+        0
+      ]
+    },
+    "class_type": "FluxKontextImageScale",
+    "_meta": {
+      "title": "缩到 Kontext 合适尺寸（勿手写宽高）"
+    }
+  },
+  "1029": {
+    "inputs": {
+      "pixels": [
+        "1028",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "参考 latent（既喂 conditioning 也当采样起点）"
+    }
+  },
+  "1030": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "1025",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "★ 负向（cfg=1.0 下无效，留空仅为满足接口）"
+    }
+  },
+  "1031": {
+    "inputs": {
+      "text": "Regenerate this person as a natural high-end photographic portrait, seen from a true anatomical 90-degree LEFT profile, while preserving the exact identity of the reference person.\n\nThe reference image is an identity photograph. Use it only as the authoritative source for the person's identity: facial identity, facial structure, facial proportions, hairline and the position of the mole at the outer corner of his left eye. Do not copy its photographic rendering, its skin texture, its surface speckling, its hair volume or its lighting. The finished profile must be re-rendered as a clean, high-end studio portrait of the same person.\n\nThis is a viewing-angle change of the same person, not a new character generation and not a new portrait design. Only the viewing angle changes.\n\nVIEWING ANGLE:\nCreate a true anatomical 90-degree LEFT profile. The face is seen directly from his left side, not a three-quarter view and not a near-profile.\nThe visible facial contour follows naturally: forehead, brow, nose bridge, nose tip, philtrum, lips, chin, jawline, neck.\nKeep the natural relationship between nose projection, lips, chin and jawline. The nose has natural, moderate projection consistent with this person's actual facial structure. The lips sit naturally within the profile without excessive forward projection, excessive fullness or an artificial lip outline. The chin keeps its natural shape and projection: not long, sharp, pointed, recessed or oversized. The jawline stays naturally refined: not excessively angular, square, heavy or sharply V-shaped.\n\nIDENTITY AND FACIAL STRUCTURE:\nPreserve the exact same person, the same apparent age and the same facial character as the reference. Keep the same forehead shape, brow position, eyebrow shape and density, nose structure, lips and mouth shape, philtrum, chin shape, jawline, cheekbone structure, face width and length, and hairline.\nDo not redesign or reinterpret any facial feature. Do not beautify, idealize, masculinize, feminize, mature or make the face more conventionally attractive. Do not replace his facial characteristics with generic male facial features.\n\nAGE:\nHe is a 24-year-old young adult man in his early twenties, healthy and youthful, with youthful facial proportions: not a teenager and not a mature man in his thirties.\n\nSKIN:\nThe entire visible skin surface has a unified, realistic young-adult skin material, applied continuously across the whole visible body: forehead, cheek, nose, lips, ear, jawline, chin, neck, throat and collar area.\nTreat the face, ear, jaw, neck and throat as the same continuous human skin material with consistent photographic rendering.\nThe skin feels soft, supple and naturally hydrated, with a fine-grained organic surface rather than a digitally sharpened or rough surface.\nPrioritize realistic skin material and natural light interaction over visible pore detail. The fine natural microstructure is visible only through gentle changes in light and tone, not through exaggerated pores, sharp lines or coarse surface detail.\nUse delicate skin micro-variation, subtle tonal transitions, natural subsurface light response, soft skin reflectance and very fine natural surface variation.\nThe skin must not look sharpened, crunchy, gritty, rough, dry, cracked, heavily textured or artificially high-frequency. Avoid excessive pore visibility; do not emphasize individual pores as the primary source of realism. Avoid exaggerated skin grain, harsh micro-contrast, excessive local contrast, oversharpening or artificial clarity.\nRender a clean, even, healthy skin surface across the entire cheek, jaw and neck. Do not reproduce the surface speckling, the scattered dark dots or the coarse texture of the reference photograph. The only dark marks on his face are the single mole at the outer corner of his left eye and a very small number of extremely subtle natural skin marks.\nKeep the skin bright, clean and healthy with a light, clear complexion and subtle neutral-warm undertones, without making it pale, bleached, porcelain-like or overexposed.\nThe neck stays clean, even and continuous with the face, with soft continuous tonal transitions from the jaw into the neck and throat. No dark markings, no dark lines, no grooves, no rough patches, no separate or differently textured neck.\nDo not smooth the skin excessively either: no airbrushed, plastic, porcelain, waxy or beauty-filter skin.\n\nLIGHTING:\nKeep the light on the camera side of the face so the visible side of the profile stays evenly and softly lit, as if lit from the camera position. Use a large soft diffused light source from slightly above and slightly toward the camera.\nGentle contrast, soft shadow transitions and realistic highlight rolloff across the forehead, brow, nose, cheekbone, jaw and neck. Natural realistic exposure, restrained highlights, soft shadow detail and realistic dynamic range.\nAvoid harsh raking side light, hard rim light, strong back light, dark split lighting and high-contrast lighting that exaggerates pores, wrinkles or skin roughness.\nThe lighting on the face, ear, jaw and neck must read as the same soft, low-contrast setup, with the same shadow softness, as a clean studio portrait of this person.\n\nHAIR:\nKeep the same black wavy hairstyle and the same hairline as the reference, but render the hair soft, airy and neatly arranged: naturally separated waves, clean soft hair groupings, natural direction and a limited number of fine flyaway hairs.\nThe hair should have realistic soft hair texture with natural variation, and a matte to soft-satin photographic appearance. Lightweight, dry and clean-looking, with restrained, well-controlled volume. Not the loose, oversized, wild or frizzy volume of the reference photograph.\nDo not make the hair look wet, oily, glossy, stiff, gelled, glued together, rope-like, ribbon-like, heavy or like solid blocks.\n\nFACIAL HAIR:\nKeep only very subtle short natural stubble around the upper lip and the sides of the mouth. The moustache area consists of fine individual hairs with visible separation and visible skin between the hairs. Keep the facial hair subtle and low contrast, never a solid dark patch.\nKeep the chin and lower jaw clean-shaven with visible natural skin: no beard, no chin stubble, no goatee, no beard shadow.\nDo not create sideburns or dense facial hair.\n\nEYEBROWS:\nKeep the eyebrows naturally dense but realistic, with visible individual eyebrow hairs, fine hair texture, natural hair direction and slightly irregular natural density. Soft-edged and naturally integrated with the skin: not sparse, not overly sharp, not overly thick, not perfectly shaped, not tattoo-like.\n\nMOLE:\nA single small dark mole is clearly visible at the outer corner of his LEFT eye, in the correct anatomical position for a left profile view. The mole is small, round and naturally embedded in the skin. It is a distinctive identity marker and must remain visible. Do not remove, blur, cover, enlarge or relocate it.\n\nPHOTOGRAPHIC QUALITY:\nNatural high-end photographic realism, realistic male portrait photography, authentic human facial proportions, realistic skin material, natural hair rendering, realistic individual hairs, natural facial shadows, realistic exposure, realistic dynamic range, sharp but natural photographic detail, shallow depth of field, 35mm film photograph, fine natural film grain, muted cinematic color grading, restrained contrast, documentary photographic realism.\nThe image should look like a clean modern studio photograph, not a gritty, grainy or over-processed image. Do not make it more cinematic, dramatic, glossy, contrasty, polished or stylized.\nThe finished profile must look like it was taken in the same session, with the same camera, the same lens, the same lighting and the same color grading as this person's approved front-facing portrait.\n\nFINAL:\nOne single natural photograph of the same person, seen from his left side in a true 90-degree profile.\nThe final result should feel like the same person photographed with a high-end camera under natural professional lighting, not a redesigned face, not a generic model, and not an idealized beauty-filter portrait.\nOnly the viewing angle changes.\n",
+      "clip": [
+        "1025",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "主图编辑指令 · 鼻尖朝画面左（仅生成一侧）"
+    }
+  },
+  "1032": {
+    "inputs": {
+      "guidance": 3,
+      "conditioning": [
+        "1031",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "Guidance 3.0"
+    }
+  },
+  "1033": {
+    "inputs": {
+      "conditioning": [
+        "1032",
+        0
+      ],
+      "latent": [
+        "1029",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "★ 参考图进 conditioning"
+    }
+  },
+  "1034": {
+    "inputs": {
+      "seed": 20260920,
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "1024",
+        0
+      ],
+      "positive": [
+        "1033",
+        0
+      ],
+      "negative": [
+        "1030",
+        0
+      ],
+      "latent_image": [
+        "1052",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "★ 鼻尖朝画面左：Kontext 完整重绘（d1.0）"
+    }
+  },
+  "1035": {
+    "inputs": {
+      "samples": [
+        "1034",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "1045": {
+    "inputs": {
+      "conditioning": [
+        "1221",
+        0
+      ],
+      "latent": [
+        "1029",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "统一正脸 · 参考图进 conditioning"
+    }
+  },
+  "1046": {
+    "inputs": {
+      "seed": 20260920,
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 0.93,
+      "model": [
+        "1024",
+        0
+      ],
+      "positive": [
+        "1045",
+        0
+      ],
+      "negative": [
+        "1030",
+        0
+      ],
+      "latent_image": [
+        "1029",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "统一正脸 · Kontext 完整重绘（d1.0）"
+    }
+  },
+  "1047": {
+    "inputs": {
+      "samples": [
+        "1046",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "统一正脸 · VAEDecode"
+    }
+  },
+  "1049": {
+    "inputs": {
+      "image": [
+        "1047",
+        0
+      ]
+    },
+    "class_type": "FluxKontextImageScale",
+    "_meta": {
+      "title": "统一正脸 · Kontext 尺寸"
+    }
+  },
+  "1050": {
+    "inputs": {
+      "pixels": [
+        "1049",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "统一正脸 · 成品 latent（供左右侧脸共用）"
+    }
+  },
+  "1051": {
+    "inputs": {
+      "flip_method": "y-axis: horizontally",
+      "image": [
+        "1035",
+        0
+      ]
+    },
+    "class_type": "ImageFlip",
+    "_meta": {
+      "title": "右侧脸 · 水平翻转左侧脸（方向硬保证）"
+    }
+  },
+  "1052": {
+    "inputs": {
+      "width": 880,
+      "height": 1184,
+      "batch_size": 1
+    },
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "统一三视角 · 纯噪声 latent 880×1184"
+    }
+  },
+  "1100": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "width": 896,
+      "height": 1152,
+      "crop": "center",
+      "image": [
+        "1035",
+        0
+      ]
+    },
+    "class_type": "ImageScale",
+    "_meta": {
+      "title": "① 拿组3 的 90° 侧脸当基图（缩到 896×1152）"
+    }
+  },
+  "1101": {
+    "inputs": {
+      "pixels": [
+        "1100",
+        0
+      ],
+      "vae": [
+        "1002",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "① 身份/姿势 latent（P45 那条链的起点）"
+    }
+  },
+  "1102": {
+    "inputs": {
+      "text": "side profile view, face centered, true 90 degree side profile, face closeup, head and shoulders, 1boy, solo, 24 year old young adult east asian man, youthful masculine face, youthful facial proportions, defined but youthful jawline, masculine facial structure, messy wavy black hair, small dark mole at outer corner of eye, visible eye-corner mole, tired but young eyes, slightly heavy eyelids, faint under-eye shadows, faded blue shirt collar, dark worn coat collar, pure white background",
+      "clip": [
+        "1003",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "① 正向 A · 侧面视角词"
+    }
+  },
+  "1103": {
+    "inputs": {
+      "conditioning_1": [
+        "1102",
+        0
+      ],
+      "conditioning_2": [
+        "1008",
+        0
+      ]
+    },
+    "class_type": "ConditioningCombine",
+    "_meta": {
+      "title": "① 正向 侧面（视角词 + 质感词）"
+    }
+  },
+  "1104": {
+    "inputs": {
+      "seed": 20260912,
+      "steps": 30,
+      "cfg": 10,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 0.45,
+      "model": [
+        "1002",
+        0
+      ],
+      "positive": [
+        "1103",
+        0
+      ],
+      "negative": [
+        "1014",
+        0
+      ],
+      "latent_image": [
+        "1101",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "② KSampler · SDXL d0.45（P45 档）"
+    }
+  },
+  "1105": {
+    "inputs": {
+      "samples": [
+        "1104",
+        0
+      ],
+      "vae": [
+        "1002",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "② VAEDecode"
+    }
+  },
+  "1107": {
+    "inputs": {
+      "upscale_model": [
+        "1018",
+        0
+      ],
+      "image": [
+        "1105",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "3x 放大（4x-UltraSharp）"
+    }
+  },
+  "1108": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "scale_by": 0.5,
+      "image": [
+        "1107",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "缩回 0.5（净 2x）"
+    }
+  },
+  "1110": {
+    "inputs": {
+      "flip_method": "y-axis: horizontally",
+      "image": [
+        "1214",
+        0
+      ]
+    },
+    "class_type": "ImageFlip",
+    "_meta": {
+      "title": "右脸 = 左脸成品水平翻转（方向硬保证）"
+    }
+  },
+  "1200": {
+    "inputs": {
+      "text": "Re-photograph this exact portrait as a natural high-end photographic portrait of the same person.\n\nKeep exactly the same head direction, viewing angle, facial identity, facial proportions, eyes, eyebrows, nose, lips, jaw, cheekbones, hair, mole placement, clothing, crop, framing, lighting direction and background.\n\nDo not turn, rotate or move the head. Do not change the viewing angle. Do not redesign, beautify, age, symmetrize or replace his face.\n\nRegenerate ONLY the photographic surface and the skin material: natural visible pores, fine skin micro-texture, natural skin grain, subtle skin tone variation, individual eyebrow hairs, realistic short stubble with visible skin between the hairs, a few fine flyaway hair strands.\n\nThe realism must come from a real photographic skin surface with genuine micro-detail, not from sharpening. Keep restrained film grain and natural color, and keep the same photographic rendering, lighting and color grading as the input image.\n\nDo not smooth the skin excessively. Do not create airbrushed, plastic, porcelain, waxy, polished or beauty-filter skin. Do not add freckles, dark spots or scattered dark speckles.",
+      "clip": [
+        "1025",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "★ 提质感词（实测通过那套）"
+    }
+  },
+  "1201": {
+    "inputs": {
+      "guidance": 3,
+      "conditioning": [
+        "1200",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "提质感 · Guidance 3.0"
+    }
+  },
+  "1210": {
+    "inputs": {
+      "image": [
+        "1108",
+        0
+      ]
+    },
+    "class_type": "FluxKontextImageScale",
+    "_meta": {
+      "title": "左脸 · 提质感 · Kontext 尺寸"
+    }
+  },
+  "1211": {
+    "inputs": {
+      "pixels": [
+        "1210",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "左脸 · 提质感 · latent"
+    }
+  },
+  "1212": {
+    "inputs": {
+      "conditioning": [
+        "1201",
+        0
+      ],
+      "latent": [
+        "1211",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "左脸 · 提质感 · 参考进 conditioning"
+    }
+  },
+  "1213": {
+    "inputs": {
+      "seed": 20260920,
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 0.93,
+      "model": [
+        "1024",
+        0
+      ],
+      "positive": [
+        "1212",
+        0
+      ],
+      "negative": [
+        "1030",
+        0
+      ],
+      "latent_image": [
+        "1211",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "左脸 · Flux 提质感 KSampler（d1.0 纯噪声）"
+    }
+  },
+  "1214": {
+    "inputs": {
+      "samples": [
+        "1213",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "左脸 · 提质感 VAEDecode"
+    }
+  },
+  "1220": {
+    "inputs": {
+      "text": "Re-photograph this exact portrait as a natural high-end photographic portrait of the same person.\n\nKeep exactly the same head direction, viewing angle, facial identity, facial proportions, eyes, eyebrows, nose, lips, jaw, cheekbones, hair, mole placement, clothing, crop, framing, lighting direction and background.\n\nDo not turn, rotate or move the head. Do not change the viewing angle. Do not redesign, beautify, age, symmetrize or replace his face.\n\nRegenerate ONLY the photographic surface and the skin material: natural visible pores, fine skin micro-texture, natural skin grain, subtle skin tone variation, individual eyebrow hairs, realistic short stubble with visible skin between the hairs, a few fine flyaway hair strands.\n\nThe realism must come from a real photographic skin surface with genuine micro-detail, not from sharpening. Keep restrained film grain and natural color, and keep the same photographic rendering, lighting and color grading as the input image.\n\nDo not smooth the skin excessively. Do not create airbrushed, plastic, porcelain, waxy, polished or beauty-filter skin. Do not add freckles, dark spots or scattered dark speckles.\n\nBoth eyes are clean and symmetrical, and both inner eye corners (medial canthus) are flat, smooth and unobtrusive. There is no raised fleshy lump, no enlarged or swollen caruncle, no nodule, no bump, no growth, no skin tag, no pterygium and no swelling at the inner corner of either eye. The inner corner of each eye is only a normal flat fold of skin with no protrusion.",
+      "clip": [
+        "1025",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "★ 提质感词 · 正脸版（含内眼角约束）"
+    }
+  },
+  "1221": {
+    "inputs": {
+      "guidance": 3,
+      "conditioning": [
+        "1220",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "提质感 · Guidance 3.0（正脸）"
+    }
+  },
+  "1302": {
+    "inputs": {
+      "width": 1024,
+      "height": 1792,
+      "batch_size": 1
+    },
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "全身输出尺寸 1024×1792（三视角共用）"
+    }
+  },
+  "1310": {
+    "inputs": {
+      "image": "闻灯-脸部正面-成品_00017_.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "已确认正脸母版 00017（完整原图）"
+    }
+  },
+  "1311": {
+    "inputs": {
+      "image": [
+        "1310",
+        0
+      ]
+    },
+    "class_type": "FluxKontextImageScale",
+    "_meta": {
+      "title": "参考归一化"
+    }
+  },
+  "1312": {
+    "inputs": {
+      "pixels": [
+        "1311",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "参考 → LATENT"
+    }
+  },
+  "1313": {
+    "inputs": {
+      "text": "Full-length character reference photograph of a young man wearing a plain white crew-neck t-shirt and plain white shorts, bare feet: simple clean white t-shirt, no logo, no print, no pattern, no pocket; nothing worn over the t-shirt, no jacket, no coat, no collar, no tie, no scarf; plain white shorts. A young East Asian man with East Asian facial features, the same East Asian person as the reference: same ethnicity, same face, same messy wavy black hair, same hairline, same black hair colour. He must never look Caucasian, never look European, never change ethnicity. Regenerate this person as a natural high-end photographic full-length reference photo of the same exact person. Preserve the exact identity of the reference: same facial structure and face shape, same facial proportions, same eyes and eyebrows, same nose shape, same lips, same chin and jawline, same hairline and haircut, same messy wavy black hair, same apparent age, same small mole at the outer corner of the eye, same stable identity marks. Facing the camera directly, front view, looking straight at the viewer. The head is held perfectly upright and level: the eye line is horizontal, the head is not tilted and not turned, the chin is level, the neck is vertical, both shoulders are level and at the same height. Refined slender athletic male body proportions like a professional fashion model, with an elegant, naturally athletic physique: approximately 8-head body proportion, a relatively small head compared with the body, long legs and a long visual leg line, moderately broad and well-shaped shoulders, a defined but not bulky upper torso, a naturally narrow waist, subtle V-shaped torso, balanced chest and shoulder development, lean but healthy body mass, long and refined limbs, straight elegant legs, natural hip width, proportional arms and hands. The physique should look like a professional fashion model rather than a bodybuilder or fitness model: neither muscular nor bulky, neither skinny nor underweight, with restrained muscle definition and a clean, sophisticated silhouette. Realistic adult male anatomy and natural body volume, with no exaggerated muscularity, no extreme thinness, no oversized head, no shortened legs, no distorted proportions. Full body visible from head to feet, head to toe, the entire standing figure inside the frame with clear space above the head and below the feet, standing straight, arms relaxed naturally at the sides, weight evenly distributed on both feet, feet fully visible, centered composition. Pure white seamless background, soft even studio lighting, unified lighting and material across the whole figure, realistic skin texture with subtle visible pores, natural photographic grain, sharp focus on the face.",
+      "clip": [
+        "1025",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "指令词 · 正面 front（2409 字符）"
+    }
+  },
+  "1314": {
+    "inputs": {
+      "guidance": 3,
+      "conditioning": [
+        "1313",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance 3.0"
+    }
+  },
+  "1315": {
+    "inputs": {
+      "conditioning": [
+        "1314",
+        0
+      ],
+      "latent": [
+        "1312",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "ReferenceLatent"
+    }
+  },
+  "1316": {
+    "inputs": {
+      "seed": 20261008,
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "1024",
+        0
+      ],
+      "positive": [
+        "1315",
+        0
+      ],
+      "negative": [
+        "1030",
+        0
+      ],
+      "latent_image": [
+        "1302",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "Kontext 参考采样 · 20步 / denoise 1.0"
+    }
+  },
+  "1317": {
+    "inputs": {
+      "samples": [
+        "1316",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAEDecode"
+    }
+  },
+  "1330": {
+    "inputs": {
+      "image": "闻灯-脸部左侧-成品_00009_.png [output]"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "已确认侧脸母版 00009（完整原图）"
+    }
+  },
+  "1331": {
+    "inputs": {
+      "image": [
+        "1330",
+        0
+      ]
+    },
+    "class_type": "FluxKontextImageScale",
+    "_meta": {
+      "title": "侧脸母版 · 参考归一化"
+    }
+  },
+  "1332": {
+    "inputs": {
+      "pixels": [
+        "1331",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "侧脸母版 · 参考 latent"
+    }
+  },
+  "1333": {
+    "inputs": {
+      "text": "Rotate this same man and his entire body exactly 90 degrees to face the left edge of the image. A strict left-facing side profile of the whole standing person, not a three-quarter view. His face, chest, pelvis, knees and both bare feet all face left. Only one eye is visible. Keep the same man, facial features, curly black hair, moustache, chin beard, skin tone, body build, plain white crew-neck T-shirt and plain white shorts. Keep the camera at the same distance and keep the same full-length head-to-toe framing as the input. The complete hair, legs, heels and toes must be inside the image with white margins above and below. Arms hanging naturally at his sides, standing straight. Plain white studio background, soft even lighting.",
+      "clip": [
+        "1025",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "侧面编辑指令 · 双参考（角度待验收）"
+    }
+  },
+  "1334": {
+    "inputs": {
+      "guidance": 3,
+      "conditioning": [
+        "1333",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance 3.0"
+    }
+  },
+  "1335": {
+    "inputs": {
+      "conditioning": [
+        "1334",
+        0
+      ],
+      "latent": [
+        "1371",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "先加入正面全身参考"
+    }
+  },
+  "1336": {
+    "inputs": {
+      "seed": 20261008,
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "1024",
+        0
+      ],
+      "positive": [
+        "1372",
+        0
+      ],
+      "negative": [
+        "1030",
+        0
+      ],
+      "latent_image": [
+        "1302",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "Kontext 参考采样 · 20步 / denoise 1.0"
+    }
+  },
+  "1337": {
+    "inputs": {
+      "samples": [
+        "1336",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAEDecode"
+    }
+  },
+  "1351": {
+    "inputs": {
+      "image": [
+        "1317",
+        0
+      ]
+    },
+    "class_type": "FluxKontextImageScale",
+    "_meta": {
+      "title": "正面全身 → 背面参考"
+    }
+  },
+  "1352": {
+    "inputs": {
+      "pixels": [
+        "1351",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "参考 → LATENT"
+    }
+  },
+  "1353": {
+    "inputs": {
+      "text": "Turn this same man around to show him directly from behind in a full-length studio photograph. Preserve the exact same body build, height, shoulder width, waist, arms, legs, curly black hairstyle, skin tone, plain white crew-neck T-shirt and plain white shorts. His face is not visible. Neutral upright standing pose, arms relaxed at his sides, feet slightly apart. Show the entire person from hair to bare feet, with white space above and below. Same camera distance, white studio background, soft even lighting and natural photographic rendering.",
+      "clip": [
+        "1025",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "背面编辑指令 · 保持身体与白色服装"
+    }
+  },
+  "1354": {
+    "inputs": {
+      "guidance": 3,
+      "conditioning": [
+        "1353",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance 3.0"
+    }
+  },
+  "1355": {
+    "inputs": {
+      "conditioning": [
+        "1354",
+        0
+      ],
+      "latent": [
+        "1352",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "ReferenceLatent"
+    }
+  },
+  "1356": {
+    "inputs": {
+      "seed": 20261008,
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "1024",
+        0
+      ],
+      "positive": [
+        "1355",
+        0
+      ],
+      "negative": [
+        "1030",
+        0
+      ],
+      "latent_image": [
+        "1302",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "Kontext 参考采样 · 20步 / denoise 1.0"
+    }
+  },
+  "1357": {
+    "inputs": {
+      "samples": [
+        "1356",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAEDecode"
+    }
+  },
+  "1360": {
+    "inputs": {
+      "width": 481,
+      "height": 421,
+      "x": 271,
+      "y": 30,
+      "image": [
+        "1317",
+        0
+      ]
+    },
+    "class_type": "ImageCrop",
+    "_meta": {
+      "title": "★ C1 裁脸（从全身母版）"
+    }
+  },
+  "1361": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "scale_by": 4,
+      "image": [
+        "1360",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "C2 放大 4x（lanczos）"
+    }
+  },
+  "1362": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "width": 1024,
+      "height": 1024,
+      "crop": "center",
+      "image": [
+        "1361",
+        0
+      ]
+    },
+    "class_type": "ImageScale",
+    "_meta": {
+      "title": "C3 归一到 1024x1024"
+    }
+  },
+  "1363": {
+    "inputs": {
+      "pixels": [
+        "1362",
+        0
+      ],
+      "vae": [
+        "1002",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "C4 VAEEncode（SDXL）"
+    }
+  },
+  "1364": {
+    "inputs": {
+      "text": "detailed face, detailed eyes, clear iris detail, individual eyelashes, natural thick eyebrows, clean shaven face, youthful natural skin, realistic skin texture, fine skin texture, subtle visible pores, natural skin imperfections, realistic complexion, natural facial texture, small dark mole at outer corner of eye, visible mole, clearly defined mole, messy wavy hair with individual hair strands, faded blue shirt collar, dark worn coat, pure white background, soft even studio lighting, subtle facial shadows, sharp focus, realistic skin rendering, photorealistic",
+      "clip": [
+        "1003",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "C5 正向（脸部细节词）"
+    }
+  },
+  "1365": {
+    "inputs": {
+      "text": "dark background, grey background, gradient background, vignette, shadow, busy background, full body, bare shoulders, shirtless, freckles, mole on cheek, mole on forehead, extra fingers, bad hands, watermark, text, blurry, lowres, airbrushed, over-smoothed, beauty filter, smooth skin, retouched",
+      "clip": [
+        "1003",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "C6 负向"
+    }
+  },
+  "1366": {
+    "inputs": {
+      "seed": 20260912,
+      "steps": 30,
+      "cfg": 7.5,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 0.45,
+      "model": [
+        "1002",
+        0
+      ],
+      "positive": [
+        "1364",
+        0
+      ],
+      "negative": [
+        "1365",
+        0
+      ],
+      "latent_image": [
+        "1363",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "★ C7 SDXL img2img 精修 1024x1024 denoise 0.45"
+    }
+  },
+  "1367": {
+    "inputs": {
+      "samples": [
+        "1366",
+        0
+      ],
+      "vae": [
+        "1002",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "C8 VAEDecode"
+    }
+  },
+  "1370": {
+    "inputs": {
+      "image": [
+        "1317",
+        0
+      ]
+    },
+    "class_type": "FluxKontextImageScale",
+    "_meta": {
+      "title": "正面全身 · 身体与服装参考"
+    }
+  },
+  "1371": {
+    "inputs": {
+      "pixels": [
+        "1370",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "正面全身 · 参考 latent"
+    }
+  },
+  "1372": {
+    "inputs": {
+      "conditioning": [
+        "1335",
+        0
+      ],
+      "latent": [
+        "1332",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "加入已确认侧脸 · 双参考"
+    }
+  },
+  "1380": {
+    "inputs": {
+      "image": "wendeng_integrated_front.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "已认可正面成图 / 脸部不重生成"
+    }
+  },
+  "1381": {
+    "inputs": {
+      "width": 2048,
+      "height": 800,
+      "x": 0,
+      "y": 0,
+      "image": [
+        "1380",
+        0
+      ]
+    },
+    "class_type": "ImageCrop",
+    "_meta": {
+      "title": "保留头脸 / 顶部 800px"
+    }
+  },
+  "1382": {
+    "inputs": {
+      "width": 2048,
+      "height": 1216,
+      "x": 0,
+      "y": 800,
+      "image": [
+        "1380",
+        0
+      ]
+    },
+    "class_type": "ImageCrop",
+    "_meta": {
+      "title": "上身原段 / 1216px"
+    }
+  },
+  "1383": {
+    "inputs": {
+      "width": 2048,
+      "height": 1248,
+      "x": 0,
+      "y": 2016,
+      "image": [
+        "1380",
+        0
+      ]
+    },
+    "class_type": "ImageCrop",
+    "_meta": {
+      "title": "下半身原段 / 1248px"
+    }
+  },
+  "1384": {
+    "inputs": {
+      "width": 2048,
+      "height": 320,
+      "x": 0,
+      "y": 3264,
+      "image": [
+        "1380",
+        0
+      ]
+    },
+    "class_type": "ImageCrop",
+    "_meta": {
+      "title": "保留脚部 / 底部 320px"
+    }
+  },
+  "1385": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "width": 2048,
+      "height": 1032,
+      "crop": "disabled",
+      "image": [
+        "1382",
+        0
+      ]
+    },
+    "class_type": "ImageScale",
+    "_meta": {
+      "title": "比例调节① 上身高度 1032"
+    }
+  },
+  "1386": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "width": 2048,
+      "height": 1432,
+      "crop": "disabled",
+      "image": [
+        "1383",
+        0
+      ]
+    },
+    "class_type": "ImageScale",
+    "_meta": {
+      "title": "比例调节② 下半身高度 1432"
+    }
+  },
+  "1387": {
+    "inputs": {
+      "direction": "down",
+      "match_image_size": false,
+      "spacing_width": 0,
+      "spacing_color": "white",
+      "image1": [
+        "1381",
+        0
+      ],
+      "image2": [
+        "1385",
+        0
+      ]
+    },
+    "class_type": "ImageStitch",
+    "_meta": {
+      "title": "拼接头部与上身"
+    }
+  },
+  "1388": {
+    "inputs": {
+      "direction": "down",
+      "match_image_size": false,
+      "spacing_width": 0,
+      "spacing_color": "white",
+      "image1": [
+        "1387",
+        0
+      ],
+      "image2": [
+        "1386",
+        0
+      ]
+    },
+    "class_type": "ImageStitch",
+    "_meta": {
+      "title": "接入下半身"
+    }
+  },
+  "1389": {
+    "inputs": {
+      "direction": "down",
+      "match_image_size": false,
+      "spacing_width": 0,
+      "spacing_color": "white",
+      "image1": [
+        "1388",
+        0
+      ],
+      "image2": [
+        "1384",
+        0
+      ]
+    },
+    "class_type": "ImageStitch",
+    "_meta": {
+      "title": "接入原脚部 / 2048×3584"
+    }
+  }
+}

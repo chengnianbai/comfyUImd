@@ -1,0 +1,168 @@
+Turn the same person in the reference image into a true 90-degree LEFT profile.
+
+The reference image is the person's final approved front-facing appearance and is the definitive visual reference for identity, facial structure, skin appearance, hair, and photographic character.
+
+This is a viewing-angle transformation of the same person, NOT a new character generation and NOT a new portrait design.
+
+Change ONLY the viewing angle from front-facing to a true 90-degree LEFT profile.
+
+Preserve the person's existing appearance as closely as possible while changing the viewpoint.
+
+IDENTITY AND FACIAL STRUCTURE:
+
+Preserve the exact same person, apparent age, facial proportions and facial character from the reference.
+
+Keep the same:
+
+* forehead shape
+* brow position
+* eyebrow shape and density
+* nose structure and natural projection
+* lips and mouth shape
+* philtrum
+* chin shape
+* jawline
+* cheekbone structure
+* face width and length
+* hairline
+* facial hair
+* mole placement
+
+Do not redesign or reinterpret any facial feature.
+
+Do not beautify, idealize, masculinize, feminize, mature, or make the face more conventionally attractive.
+
+The profile must be the natural side view of the exact same face, with the same underlying facial proportions as the reference.
+
+PROFILE ANGLE:
+
+Create a true anatomical 90-degree LEFT profile.
+
+The face should be viewed directly from the left side, not a three-quarter view and not a near-profile.
+
+The visible facial contour should naturally follow:
+
+forehead → brow → nose bridge → nose tip → philtrum → lips → chin → jawline → neck.
+
+Keep the natural relationship between nose projection, lips, chin and jawline.
+
+The nose should have natural, moderate projection consistent with the reference person's actual facial structure.
+
+The lips should remain naturally integrated into the facial contour, without excessive forward projection, excessive fullness, or an artificial lip outline.
+
+The chin should maintain its natural shape and projection from the reference, without becoming unusually long, sharp, pointed, recessed, or oversized.
+
+The jawline should remain naturally refined and consistent with the reference, without becoming excessively angular, square, heavy, or sharply V-shaped.
+
+SKIN AND NECK:
+
+Preserve the same clean, healthy, youthful skin appearance as the final front-facing reference.
+
+The facial skin and neck skin should belong to the same continuous natural skin surface.
+
+Keep the complexion clean, even and naturally photographic.
+
+Use only subtle natural photographic texture.
+
+Do not invent a new skin texture for the profile.
+
+Do not make the profile skin rougher, darker, harder, more detailed, more textured, or more processed than the reference.
+
+The neck should remain clean, smooth and natural, with the same overall skin appearance as the face.
+
+Maintain soft, continuous tonal transitions from the face into the jaw, neck and upper chest.
+
+Do not introduce artificial dark markings, dark lines, graphic wrinkles, grooves, scratches, scars, or other unnatural surface patterns on the neck.
+
+Do not create a separate or differently textured neck.
+
+The skin should remain natural and photographic rather than plastic, silicone, waxy, porcelain-like, airbrushed, or digitally synthetic.
+
+EYEBROWS:
+
+Keep the exact eyebrow character established in the reference.
+
+The eyebrows remain naturally shaped, medium-density, soft-edged and naturally integrated with the skin.
+
+Maintain natural overall hair volume and slightly organic irregularity.
+
+Do not make the eyebrows sparse, overly sharp, overly thick, perfectly shaped, tattoo-like, or individually over-rendered.
+
+HAIR:
+
+Keep the exact same black wavy hairstyle from the reference.
+
+Preserve the same hairline, density, overall volume, silhouette and natural wave pattern.
+
+The hair remains soft, lightweight, naturally wavy and slightly irregular.
+
+Keep loose natural waves with natural direction and airy volume.
+
+The hair should appear clean, soft and naturally arranged, with a matte to soft-satin photographic appearance.
+
+Do not turn the hair into heavy solid blocks, rope-like strands, ribbon-like strands, wet hair, greasy hair, waxed hair, gelled hair, or highly glossy artificial hair.
+
+Only a small amount of very fine natural flyaway hair is visible.
+
+FACIAL HAIR:
+
+Preserve the same minimal facial hair appearance as the reference.
+
+Keep only very short, sparse, low-contrast facial hair around the upper lip and mouth area.
+
+Keep the chin and jawline clean and naturally youthful.
+
+Do not create a beard, heavy stubble, beard shadow, sideburns, or dense facial hair.
+
+MOLE:
+
+Preserve the small dark mole at the outer corner of the left eye in its correct anatomical position.
+
+Do not move, enlarge, duplicate, or remove the mole.
+
+PHOTOGRAPHIC CONSISTENCY:
+
+The profile must have the same photographic character as the final front-facing reference.
+
+Preserve the same natural photographic rendering, exposure, tonal balance, lighting character and overall image quality.
+
+The face and neck should remain naturally illuminated with soft, continuous light and restrained contrast.
+
+Do not make the profile more cinematic, dramatic, glossy, sharp, contrasty, polished, stylized, or fashion-like than the reference.
+
+Do not introduce a different photography style.
+
+Do not create the appearance of a short-drama actor, commercial model, digital human, CGI character, or generic AI portrait.
+
+Do not create a smooth plastic face or an artificially perfect male face.
+
+The result should feel like the same real person photographed from the left side with the same camera and the same photographic treatment.
+
+FINAL PRIORITY:
+
+The reference image already defines the person's appearance.
+
+Do not redesign the person.
+
+Do not improve the person.
+
+Do not reinterpret the person.
+
+Do not replace the person's facial characteristics with generic male facial features.
+
+Preserve the existing identity, facial proportions, skin appearance, hair, eyebrows and photographic character.
+
+The only major change is the viewing angle.
+
+Same person.
+Same face.
+Same facial proportions.
+Same skin appearance.
+Same eyebrows.
+Same hair.
+Same facial character.
+Same photographic character.
+
+True 90-degree LEFT profile.
+
+ONLY THE VIEWING ANGLE CHANGES.

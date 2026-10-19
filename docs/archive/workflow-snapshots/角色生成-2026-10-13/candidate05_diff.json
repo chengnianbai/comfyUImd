@@ -1,0 +1,142 @@
+{
+  "changes": [
+    {
+      "path": "/nodes/2/title",
+      "old": "02 当前角色 · 简洁优先外观与统一浅肤色",
+      "new": "02 当前角色 · 全身优先/微卷/眼眉/浅肤色"
+    },
+    {
+      "path": "/nodes/2/widgets_values/0",
+      "old": "A man with thick tousled curly black hair, short fluffy curls and a dense forward fringe covering the hairline. Clearly defined double eyelids, deep-set almond eyes with dark brown irises, thick dark eyebrows with angular outer arches and tapered tails. Fair neutral skin, the same light complexion on face, shoulders, upper arms, forearms, hands and legs. Wen Deng, a 24-year-old Asian man with subtle Eurasian facial structure, a slightly elevated nose bridge and a small outer-eye mole. Lean athletic 183cm model proportions, long legs, moderately broad shoulders. Full-length front-view casting photograph, white sleeveless tank tucked into white shorts, barefoot, arms relaxed. Entire head and every toe visible with margins. White studio background, symmetrical broad frontal diffused light, neutral white balance, crisp detailed skin and hair.",
+      "new": "Full-body head-to-toe studio photograph, a single man standing at a distance, entire figure from hair to both bare feet and all toes visible. White shorts and bare legs fully visible. His whole body occupies about 85 percent of the image height, white margins above head and below feet. Front view, relaxed upright casting pose, hands beside thighs. Wen Deng is a 24-year-old Asian man, lean athletic 183cm model proportions, long legs and moderately broad shoulders. Plain white sleeveless tank tucked neatly inside plain white shorts. Fluffy short black wavy hair with softly curled textured locks, a thick irregular forward fringe covering the hairline, airy tousled crown. Dark brown almond eyes with distinct double eyelid folds and deeper upper-eye sockets. Thick dark brows with straight inner sections, subtly angled outer arches and tapered tails. Slightly higher nose bridge, subtle Eurasian influence while predominantly Asian, small outer-eye mole. Fair neutral light-beige skin consistently matching on face, shoulders, upper arms, forearms, hands and legs. Even broad frontal diffuse white light and soft fill on the entire figure. White seamless background, realistic skin and fine hair detail, sharp photograph."
+    },
+    {
+      "path": "/nodes/8/title",
+      "old": "08 保存 · 候选04（本轮第2/3次）",
+      "new": "08 保存 · 候选05（本轮第3/3次）"
+    },
+    {
+      "path": "/nodes/8/widgets_values/0",
+      "old": "角色生成/闻灯-正面全身-候选04",
+      "new": "角色生成/闻灯-正面全身-候选05"
+    },
+    {
+      "path": "/metadata/revision",
+      "old": 4,
+      "new": 5
+    }
+  ],
+  "scope": "expanded-review",
+  "review_reasons": [
+    "format-or-metadata"
+  ],
+  "context": {
+    "old": {
+      "1": {
+        "type": "CheckpointLoaderSimple",
+        "upstream": [],
+        "downstream": [
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      "2": {
+        "type": "CLIPTextEncode",
+        "upstream": [
+          1
+        ],
+        "downstream": [
+          4
+        ]
+      },
+      "4": {
+        "type": "FluxGuidance",
+        "upstream": [
+          2
+        ],
+        "downstream": [
+          6
+        ]
+      },
+      "7": {
+        "type": "VAEDecode",
+        "upstream": [
+          1,
+          6
+        ],
+        "downstream": [
+          8
+        ]
+      },
+      "8": {
+        "type": "SaveImage",
+        "upstream": [
+          7
+        ],
+        "downstream": []
+      }
+    },
+    "new": {
+      "1": {
+        "type": "CheckpointLoaderSimple",
+        "upstream": [],
+        "downstream": [
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      "2": {
+        "type": "CLIPTextEncode",
+        "upstream": [
+          1
+        ],
+        "downstream": [
+          4
+        ]
+      },
+      "4": {
+        "type": "FluxGuidance",
+        "upstream": [
+          2
+        ],
+        "downstream": [
+          6
+        ]
+      },
+      "7": {
+        "type": "VAEDecode",
+        "upstream": [
+          1,
+          6
+        ],
+        "downstream": [
+          8
+        ]
+      },
+      "8": {
+        "type": "SaveImage",
+        "upstream": [
+          7
+        ],
+        "downstream": []
+      }
+    }
+  },
+  "old_counts": {
+    "nodes": 8,
+    "links": 10
+  },
+  "new_counts": {
+    "nodes": 8,
+    "links": 10
+  },
+  "old_path": "D:\\xiaobai-claude code\\comfyUImd\\docs\\archive\\workflow-snapshots\\角色生成-2026-10-13\\candidate04_workflow.json",
+  "new_path": "D:\\xiaobai-claude code\\comfyUImd\\docs\\archive\\workflow-snapshots\\角色生成-2026-10-13\\candidate05_workflow.json",
+  "old_sha256": "6956ba0a9211517ebf6b4703edf2c76e09b20fbb448226b6aaa5f7258f8b2d44",
+  "new_sha256": "556983bcdc655d0845e6b3b8acb2015797271ce04b482fc244af1ccae824e651",
+  "parse_skipped": false
+}

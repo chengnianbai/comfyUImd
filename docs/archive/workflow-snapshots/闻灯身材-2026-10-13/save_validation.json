@@ -1,0 +1,8 @@
+{
+  "workflow_name": "闻灯.json",
+  "readback_byte_equal": true,
+  "local_byte_equal": true,
+  "sha256": "a07de74b1260c063c52360f0ecbe895dedc6c378a1aa2a55fd37818c557e3ae6",
+  "status": "主工作文件 / 待用户验收",
+  "base": "https://gw-da074043649a46aa8485bca1ba422cbe.cn-beijing.aigclinks.com:8016"
+}

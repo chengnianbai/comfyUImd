@@ -1,0 +1,976 @@
+{
+ "id": "1942ebf9-d94a-4790-bc94-ff98ed497520",
+ "revision": 17,
+ "last_node_id": 8,
+ "last_link_id": 29,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "CheckpointLoaderSimple",
+   "pos": [
+    80,
+    140
+   ],
+   "size": [
+    470,
+    100
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "Checkpoint名称",
+     "name": "ckpt_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "ckpt_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "模型",
+     "name": "MODEL",
+     "type": "MODEL",
+     "slot_index": 0,
+     "links": [
+      29
+     ]
+    },
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "slot_index": 1,
+     "links": [
+      1,
+      2,
+      30,
+      31,
+      32,
+      33
+     ]
+    },
+    {
+     "localized_name": "VAE",
+     "name": "VAE",
+     "type": "VAE",
+     "slot_index": 2,
+     "links": [
+      4
+     ]
+    }
+   ],
+   "title": "01 通用底模 · LEOSAM HelloWorld XL 7.0 · SDXL",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CheckpointLoaderSimple"
+   },
+   "widgets_values": [
+    "leosamsHelloworldXL_helloworldXL70.safetensors"
+   ]
+  },
+  {
+   "id": 2,
+   "type": "CLIPTextEncode",
+   "pos": [
+    660,
+    80
+   ],
+   "size": [
+    640,
+    300
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 1
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      6,
+      34
+     ]
+    }
+   ],
+   "title": "★ 正向 A · 构图/服装",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "One man, (24-year-old East Asian man:1.25), single subject, full-length front view head to bare feet, feet inside frame, neutral standing pose, legs parallel, arms down, hands visible. Plain white tank top tucked into white mid-thigh shorts, bare feet, plain white studio."
+   ]
+  },
+  {
+   "id": 3,
+   "type": "CLIPTextEncode",
+   "pos": [
+    660,
+    495
+   ],
+   "size": [
+    640,
+    300
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 2
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      7,
+      38
+     ]
+    }
+   ],
+   "title": "★ 负向 1 · 五官扁平/裁切/服装",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "monolid, single eyelid, indistinct double eyelid, epicanthic fold over the crease, shallow-set eyes, flat brow ridge, low nasal bridge, flat nose, flat face, flat features, cropped head, cropped legs, cropped feet, partial body, close-up, portrait crop, shoes, socks, shirtless, bare torso"
+   ]
+  },
+  {
+   "id": 5,
+   "type": "EmptyLatentImage",
+   "pos": [
+    1280,
+    420
+   ],
+   "size": [
+    350,
+    106
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "宽度",
+     "name": "width",
+     "type": "INT",
+     "widget": {
+      "name": "width"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "高度",
+     "name": "height",
+     "type": "INT",
+     "widget": {
+      "name": "height"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "批量大小",
+     "name": "batch_size",
+     "type": "INT",
+     "widget": {
+      "name": "batch_size"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      8
+     ]
+    }
+   ],
+   "title": "05 SDXL全身画布｜768 × 1536",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "EmptyLatentImage"
+   },
+   "widgets_values": [
+    768,
+    1344,
+    1
+   ]
+  },
+  {
+   "id": 6,
+   "type": "KSampler",
+   "pos": [
+    1700,
+    170
+   ],
+   "size": [
+    464,
+    310
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "模型",
+     "name": "model",
+     "type": "MODEL",
+     "link": 29
+    },
+    {
+     "localized_name": "正面条件",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 42
+    },
+    {
+     "localized_name": "负面条件",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 43
+    },
+    {
+     "localized_name": "Latent图像",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 8
+    },
+    {
+     "localized_name": "种子",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "步数",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "采样器名称",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "调度器",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "降噪",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      9
+     ]
+    }
+   ],
+   "title": "06 SDXL采样｜30步 CFG6 · DPM++2M Karras",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "KSampler"
+   },
+   "widgets_values": [
+    2026101520,
+    "fixed",
+    30,
+    7.0,
+    "dpmpp_2m",
+    "karras",
+    1.0
+   ]
+  },
+  {
+   "id": 7,
+   "type": "VAEDecode",
+   "pos": [
+    2200,
+    180
+   ],
+   "size": [
+    350,
+    100
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "Latent",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 9
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 4
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      10
+     ]
+    }
+   ],
+   "title": "07 VAE 解码",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 8,
+   "type": "SaveImage",
+   "pos": [
+    2600,
+    180
+   ],
+   "size": [
+    440,
+    620
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图片",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 10
+    },
+    {
+     "localized_name": "文件名前缀",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    }
+   ],
+   "title": "08 输出｜角色初始形象全身图",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "角色生成/闻灯角色生成-关键词修订草稿"
+   ]
+  },
+  {
+   "id": 10,
+   "type": "CLIPTextEncode",
+   "title": "★ 正向 B · 五官（关键段）",
+   "mode": 0,
+   "order": 20,
+   "pos": [
+    -2600,
+    400
+   ],
+   "size": [
+    240,
+    100
+   ],
+   "flags": {},
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "inputs": [
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 30
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      35
+     ]
+    }
+   ],
+   "widgets_values": [
+    "(East Asian face, subtle Eurasian eye structure:1.2), (almond brown eyes:1.15), (clearly visible double eyelid creases on both upper lids:1.3), (deep-set eye sockets, shadow under a defined brow ridge:1.25), (high straight nasal bridge, defined nose root:1.2), (defined cheeks, jaw:1.1), no makeup."
+   ]
+  },
+  {
+   "id": 11,
+   "type": "CLIPTextEncode",
+   "title": "★ 正向 C · 发型/体型",
+   "mode": 0,
+   "order": 21,
+   "pos": [
+    -2600,
+    800
+   ],
+   "size": [
+    240,
+    100
+   ],
+   "flags": {},
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "inputs": [
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 31
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      37
+     ]
+    }
+   ],
+   "widgets_values": [
+    "(Dense dark layered wavy-curly hair:1.2), full volume over crown and temples, curls past the ears to the nape, separated S-locks across the forehead, no visible part line, no exposed scalp. Broad shoulders, solid build, natural skin, faintly furrowed brows."
+   ]
+  },
+  {
+   "id": 13,
+   "type": "CLIPTextEncode",
+   "title": "★ 负向 2 · 服装/logo/妆",
+   "mode": 0,
+   "order": 23,
+   "pos": [
+    -2600,
+    1200
+   ],
+   "size": [
+    240,
+    100
+   ],
+   "flags": {},
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "inputs": [
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 32
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      39
+     ]
+    }
+   ],
+   "widgets_values": [
+    "untucked shirt, shirt hem outside waistband, fabric over waistband, logo, brand mark, emblem, badge, label, lettering, text, numbers, printed graphic, watermark, makeup, eyeliner, eyeshadow, mascara, false eyelashes, lipstick, blush, foundation, glamor portrait, airbrushed skin, retouched face"
+   ]
+  },
+  {
+   "id": 16,
+   "type": "CLIPTextEncode",
+   "title": "★ 负向 3 · 姿态/视图/其他",
+   "mode": 0,
+   "order": 26,
+   "pos": [
+    -2600,
+    1500
+   ],
+   "size": [
+    240,
+    100
+   ],
+   "flags": {},
+   "properties": {
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "inputs": [
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 33
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      41
+     ]
+    }
+   ],
+   "widgets_values": [
+    "sitting, kneeling, walking, dynamic pose, crossed legs, hands on hips, arms crossed, leaning, side view, three-quarter view, back view, multiple people, duplicate subject, collage, short straight hair, flat hair, visible scalp part, sparse hair, skinny build, bodybuilding, props, jewelry, deformed hands, extra fingers, fisheye"
+   ]
+  },
+  {
+   "id": 12,
+   "type": "ConditioningCombine",
+   "title": "合并 A+B",
+   "mode": 0,
+   "order": 22,
+   "pos": [
+    -2200,
+    400
+   ],
+   "size": [
+    240,
+    100
+   ],
+   "flags": {},
+   "properties": {
+    "Node name for S&R": "ConditioningCombine"
+   },
+   "inputs": [
+    {
+     "name": "conditioning_1",
+     "type": "CONDITIONING",
+     "link": 34
+    },
+    {
+     "name": "conditioning_2",
+     "type": "CONDITIONING",
+     "link": 35
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      36
+     ]
+    }
+   ],
+   "widgets_values": []
+  },
+  {
+   "id": 14,
+   "type": "ConditioningCombine",
+   "title": "★ 合并 (A+B)+C → 正向",
+   "mode": 0,
+   "order": 24,
+   "pos": [
+    -1900,
+    400
+   ],
+   "size": [
+    240,
+    100
+   ],
+   "flags": {},
+   "properties": {
+    "Node name for S&R": "ConditioningCombine"
+   },
+   "inputs": [
+    {
+     "name": "conditioning_1",
+     "type": "CONDITIONING",
+     "link": 36
+    },
+    {
+     "name": "conditioning_2",
+     "type": "CONDITIONING",
+     "link": 37
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      42
+     ]
+    }
+   ],
+   "widgets_values": []
+  },
+  {
+   "id": 15,
+   "type": "ConditioningCombine",
+   "title": "合并 负向1+2",
+   "mode": 0,
+   "order": 25,
+   "pos": [
+    -1900,
+    900
+   ],
+   "size": [
+    240,
+    100
+   ],
+   "flags": {},
+   "properties": {
+    "Node name for S&R": "ConditioningCombine"
+   },
+   "inputs": [
+    {
+     "name": "conditioning_1",
+     "type": "CONDITIONING",
+     "link": 38
+    },
+    {
+     "name": "conditioning_2",
+     "type": "CONDITIONING",
+     "link": 39
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      40
+     ]
+    }
+   ],
+   "widgets_values": []
+  },
+  {
+   "id": 17,
+   "type": "ConditioningCombine",
+   "title": "★ 合并 (1+2)+3 → 负向",
+   "mode": 0,
+   "order": 27,
+   "pos": [
+    -1600,
+    900
+   ],
+   "size": [
+    240,
+    100
+   ],
+   "flags": {},
+   "properties": {
+    "Node name for S&R": "ConditioningCombine"
+   },
+   "inputs": [
+    {
+     "name": "conditioning_1",
+     "type": "CONDITIONING",
+     "link": 40
+    },
+    {
+     "name": "conditioning_2",
+     "type": "CONDITIONING",
+     "link": 41
+    }
+   ],
+   "outputs": [
+    {
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      43
+     ]
+    }
+   ],
+   "widgets_values": []
+  }
+ ],
+ "links": [
+  [
+   1,
+   1,
+   1,
+   2,
+   0,
+   "CLIP"
+  ],
+  [
+   2,
+   1,
+   1,
+   3,
+   0,
+   "CLIP"
+  ],
+  [
+   4,
+   1,
+   2,
+   7,
+   1,
+   "VAE"
+  ],
+  [
+   6,
+   2,
+   0,
+   6,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   7,
+   3,
+   0,
+   6,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   8,
+   5,
+   0,
+   6,
+   3,
+   "LATENT"
+  ],
+  [
+   9,
+   6,
+   0,
+   7,
+   0,
+   "LATENT"
+  ],
+  [
+   10,
+   7,
+   0,
+   8,
+   0,
+   "IMAGE"
+  ],
+  [
+   29,
+   1,
+   0,
+   6,
+   0,
+   "MODEL"
+  ],
+  [
+   30,
+   1,
+   1,
+   10,
+   0,
+   "CLIP"
+  ],
+  [
+   31,
+   1,
+   1,
+   11,
+   0,
+   "CLIP"
+  ],
+  [
+   32,
+   1,
+   1,
+   13,
+   0,
+   "CLIP"
+  ],
+  [
+   33,
+   1,
+   1,
+   16,
+   0,
+   "CLIP"
+  ],
+  [
+   34,
+   2,
+   0,
+   12,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   35,
+   10,
+   0,
+   12,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   36,
+   12,
+   0,
+   14,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   37,
+   11,
+   0,
+   14,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   38,
+   3,
+   0,
+   15,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   39,
+   13,
+   0,
+   15,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   40,
+   15,
+   0,
+   17,
+   0,
+   "CONDITIONING"
+  ],
+  [
+   41,
+   16,
+   0,
+   17,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   42,
+   14,
+   0,
+   6,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   43,
+   17,
+   0,
+   6,
+   2,
+   "CONDITIONING"
+  ]
+ ],
+ "groups": [],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.65,
+   "offset": [
+    40,
+    50
+   ]
+  }
+ },
+ "version": 0.4
+}

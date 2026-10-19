@@ -1,0 +1,360 @@
+{
+  "changes": [
+    {
+      "path": "/nodes/1/title",
+      "old": "01 通用底模 · FLUX.1 dev fp8",
+      "new": "01 通用底模 · LEOSAM HelloWorld XL 7.0 · SDXL"
+    },
+    {
+      "path": "/nodes/1/widgets_values/0",
+      "old": "FLUX1\\flux1-dev-fp8.safetensors",
+      "new": "leosamsHelloworldXL_helloworldXL70.safetensors"
+    },
+    {
+      "path": "/nodes/2/outputs/0/links/0",
+      "old": 5,
+      "new": 6
+    },
+    {
+      "path": "/nodes/2/title",
+      "old": "02 当前角色 · 按部位精确描述试验",
+      "new": "02 SDXL正向 · 全身/微卷/双眼皮/统一浅肤色"
+    },
+    {
+      "path": "/nodes/2/widgets_values/0",
+      "old": "Full-length head-to-toe casting photograph of one adult man, front view, standing at a distance. Entire head, white shorts, bare legs, both feet and all toes visible, generous white margins. Wen Deng, 24, predominantly Asian with subtle Eurasian influence, dark brown eyes, black hair, small mole at an outer eye corner. Lean wiry 183cm model proportions, long legs, natural shoulder width. Hair: airy tousled short waves, irregular overlapping curled locks falling forward as a continuous textured fringe across the hairline. Face: clearly defined double upper-eyelid folds on both eyes, gently recessed eyes below the brow bones, natural relaxed orbicularis oculi contour. Thick eyebrows, straight inner sections, gentle angular outer arches, tapered tails. Moderately high narrow nasal bridge, smooth dorsum, proportionate relaxed nasal alae. Moderate masseter volume, defined natural jawline. Shaped upper-lip Cupid bow, balanced lower-lip fullness, relaxed level mouth corners. Upper body: rounded deltoids, gently defined biceps and triceps, forearm flexor and extensor contours tapering smoothly from elbows to wrists; modest pectoralis major volume beneath opaque fabric, lean waist from external obliques and a flat rectus-abdominis contour under clothing. Lower body: slender thighs with moderate quadriceps volume, smooth knee transitions, natural gastrocnemius curve, lower calves tapering into normal ankles and Achilles tendons. Fair light-beige complexion with a neutral undertone consistently matching face, shoulders, upper arms, forearms, hands and legs, natural skin texture. Opaque plain white sleeveless tank neatly tucked into white shorts. Relaxed upright posture, arms at sides, hands visible, bare feet flat. Seamless white background, broad frontal diffuse neutral daylight and even fill over the whole body, sharp fine skin and hair detail.",
+      "new": "(full body photograph, head to toe, both bare feet fully visible:1.3), front view, one adult man, standing upright, arms relaxed beside body, white space above hair and below toes, white seamless studio background. 24 year old Asian man, subtle Eurasian facial influence, lean wiry athletic build, long legs, natural model proportions, moderately broad shoulders. (fluffy tousled wavy black hair, irregular curly forward fringe, unparted hair:1.15), dark brown almond eyes, (clear double eyelid creases, slightly deep-set eyes:1.15), thick straight eyebrows with gentle angular arches and tapered tails, moderately high natural nose bridge, defined youthful jawline, balanced lips, small outer-eye mole. Natural fair neutral light-beige skin, consistent complexion on face, upper arms, forearms, hands and legs. Rounded shoulders, moderate upper-arm muscle, slim waist, natural thigh and calf contours. Plain white sleeveless tank top tucked into plain white shorts, barefoot. Broad soft frontal studio lighting, even fill light, neutral white balance, realistic skin texture, detailed hair strands, sharp focus, realistic anatomy."
+    },
+    {
+      "path": "/nodes/3/title",
+      "old": "03 负向占位 · CFG 1 不使用",
+      "new": "03 SDXL负向 · 裁切/分缝/肤色/畸形"
+    },
+    {
+      "path": "/nodes/3/widgets_values/0",
+      "old": "",
+      "new": "closeup, portrait crop, headshot, half body, cropped feet, out of frame, multiple people, center part, side part, curtain bangs, slicked hair, straight flat hair, single eyelids, light irises, exaggerated muscles, bodybuilder, orange skin, yellow skin cast, patchy skin tone, tan lines, harsh directional shadows, waxy skin, plastic skin, blur, low resolution, deformed anatomy, extra limbs, extra fingers, fused toes, text, watermark, jewelry, props, scenery"
+    },
+    {
+      "path": "/nodes/4",
+      "old": {
+        "id": 4,
+        "type": "FluxGuidance",
+        "pos": [
+          1280,
+          140
+        ],
+        "size": [
+          350,
+          100
+        ],
+        "flags": {},
+        "order": 3,
+        "mode": 0,
+        "inputs": [
+          {
+            "localized_name": "条件",
+            "name": "conditioning",
+            "type": "CONDITIONING",
+            "link": 5
+          },
+          {
+            "localized_name": "引导",
+            "name": "guidance",
+            "type": "FLOAT",
+            "widget": {
+              "name": "guidance"
+            },
+            "link": null
+          }
+        ],
+        "outputs": [
+          {
+            "localized_name": "条件",
+            "name": "CONDITIONING",
+            "type": "CONDITIONING",
+            "slot_index": 0,
+            "links": [
+              6
+            ]
+          }
+        ],
+        "title": "04 Flux 引导强度",
+        "properties": {
+          "cnr_id": "comfy-core",
+          "ver": "0.30.1",
+          "Node name for S&R": "FluxGuidance"
+        },
+        "widgets_values": [
+          3.5
+        ]
+      },
+      "new": null
+    },
+    {
+      "path": "/nodes/5/order",
+      "old": 4,
+      "new": 3
+    },
+    {
+      "path": "/nodes/5/properties/Node name for S&R",
+      "old": "EmptySD3LatentImage",
+      "new": "EmptyLatentImage"
+    },
+    {
+      "path": "/nodes/5/title",
+      "old": "05 初始画布 · 1024×1536 单张",
+      "new": "05 SDXL全身画布 · 896×1344"
+    },
+    {
+      "path": "/nodes/5/type",
+      "old": "EmptySD3LatentImage",
+      "new": "EmptyLatentImage"
+    },
+    {
+      "path": "/nodes/5/widgets_values/0",
+      "old": 1024,
+      "new": 896
+    },
+    {
+      "path": "/nodes/5/widgets_values/1",
+      "old": 1536,
+      "new": 1344
+    },
+    {
+      "path": "/nodes/6/order",
+      "old": 5,
+      "new": 4
+    },
+    {
+      "path": "/nodes/6/title",
+      "old": "06 采样 · 清晰度验证 · 固定种子",
+      "new": "06 SDXL采样 · 30步 CFG6 · DPM++2M Karras"
+    },
+    {
+      "path": "/nodes/6/widgets_values/2",
+      "old": 28,
+      "new": 30
+    },
+    {
+      "path": "/nodes/6/widgets_values/3",
+      "old": 1.0,
+      "new": 6.0
+    },
+    {
+      "path": "/nodes/6/widgets_values/4",
+      "old": "euler",
+      "new": "dpmpp_2m"
+    },
+    {
+      "path": "/nodes/6/widgets_values/5",
+      "old": "simple",
+      "new": "karras"
+    },
+    {
+      "path": "/nodes/7/order",
+      "old": 6,
+      "new": 5
+    },
+    {
+      "path": "/nodes/8/order",
+      "old": 7,
+      "new": 6
+    },
+    {
+      "path": "/nodes/8/title",
+      "old": "08 保存 · 候选06（用户追加单次解剖结构试验）",
+      "new": "08 保存 · SDXL正面全身候选07 · 等整体验收"
+    },
+    {
+      "path": "/nodes/8/widgets_values/0",
+      "old": "角色生成/闻灯-正面全身-候选06",
+      "new": "角色生成/闻灯-SDXL正面全身-候选07"
+    },
+    {
+      "path": "/links/5",
+      "old": [
+        5,
+        2,
+        0,
+        4,
+        0,
+        "CONDITIONING"
+      ],
+      "new": null
+    },
+    {
+      "path": "/links/6/1",
+      "old": 4,
+      "new": 2
+    },
+    {
+      "path": "/metadata/revision",
+      "old": 6,
+      "new": 7
+    }
+  ],
+  "scope": "expanded-review",
+  "review_reasons": [
+    "dependency",
+    "format-or-metadata",
+    "structure"
+  ],
+  "context": {
+    "old": {
+      "1": {
+        "type": "CheckpointLoaderSimple",
+        "upstream": [],
+        "downstream": [
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      "2": {
+        "type": "CLIPTextEncode",
+        "upstream": [
+          1
+        ],
+        "downstream": [
+          4
+        ]
+      },
+      "3": {
+        "type": "CLIPTextEncode",
+        "upstream": [
+          1
+        ],
+        "downstream": [
+          6
+        ]
+      },
+      "4": {
+        "type": "FluxGuidance",
+        "upstream": [
+          2
+        ],
+        "downstream": [
+          6
+        ]
+      },
+      "5": {
+        "type": "EmptySD3LatentImage",
+        "upstream": [],
+        "downstream": [
+          6
+        ]
+      },
+      "6": {
+        "type": "KSampler",
+        "upstream": [
+          1,
+          3,
+          4,
+          5
+        ],
+        "downstream": [
+          7
+        ]
+      },
+      "7": {
+        "type": "VAEDecode",
+        "upstream": [
+          1,
+          6
+        ],
+        "downstream": [
+          8
+        ]
+      },
+      "8": {
+        "type": "SaveImage",
+        "upstream": [
+          7
+        ],
+        "downstream": []
+      }
+    },
+    "new": {
+      "1": {
+        "type": "CheckpointLoaderSimple",
+        "upstream": [],
+        "downstream": [
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      "2": {
+        "type": "CLIPTextEncode",
+        "upstream": [
+          1
+        ],
+        "downstream": [
+          6
+        ]
+      },
+      "3": {
+        "type": "CLIPTextEncode",
+        "upstream": [
+          1
+        ],
+        "downstream": [
+          6
+        ]
+      },
+      "5": {
+        "type": "EmptyLatentImage",
+        "upstream": [],
+        "downstream": [
+          6
+        ]
+      },
+      "6": {
+        "type": "KSampler",
+        "upstream": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "downstream": [
+          7
+        ]
+      },
+      "7": {
+        "type": "VAEDecode",
+        "upstream": [
+          1,
+          6
+        ],
+        "downstream": [
+          8
+        ]
+      },
+      "8": {
+        "type": "SaveImage",
+        "upstream": [
+          7
+        ],
+        "downstream": []
+      }
+    }
+  },
+  "old_counts": {
+    "nodes": 8,
+    "links": 10
+  },
+  "new_counts": {
+    "nodes": 7,
+    "links": 9
+  },
+  "old_path": "D:\\xiaobai-claude code\\comfyUImd\\docs\\archive\\workflow-snapshots\\token-deltas\\33eefdfc9bb0a71f123bd3f917be18ef9d65a0ea84ecf1e9909d39593ed9952c.baseline.json",
+  "new_path": "D:\\xiaobai-claude code\\comfyUImd\\系列-夜市百相簿\\02-角色\\角色生成.json",
+  "old_sha256": "33eefdfc9bb0a71f123bd3f917be18ef9d65a0ea84ecf1e9909d39593ed9952c",
+  "new_sha256": "c5cb47c307c42f42648d1541ce3c316a2bae663978dbf0ca32479f3cbbabaf29",
+  "parse_skipped": false,
+  "state_path": "docs/generated/workflow-state/角色生成.state.json"
+}

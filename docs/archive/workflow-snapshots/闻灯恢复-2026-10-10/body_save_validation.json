@@ -1,0 +1,10 @@
+{
+  "remote_saved": true,
+  "readback_equal": true,
+  "nodes": 132,
+  "links": 198,
+  "group_count": 13,
+  "node_overlaps": 0,
+  "integrated_test": "a8d3897c-0718-45ab-b68b-e3aa2685ebad",
+  "sha256": "50ba3f2ebf0a44a5b54fe47c346aab4d2791e9b39136e6921f7acef0183dd494"
+}

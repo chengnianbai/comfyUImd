@@ -1,0 +1,23 @@
+{
+  "nodes": 132,
+  "links": 198,
+  "groups": 13,
+  "api_changes": [
+    "1313",
+    "1333",
+    "1353"
+  ],
+  "front_dependencies": 17,
+  "full_dependencies": 42,
+  "node_overlaps": 0,
+  "browser_errors": [],
+  "links_unchanged": true,
+  "groups_unchanged": true,
+  "face_reference_equal": true,
+  "face_reference_sha256": "ab69a0ce25b01e570eee11a95dde2b8b75f873fc15b511eca9519efe7f138342",
+  "reference_photos_conditioning": false,
+  "actual_unet_file": "FLUX1\\flux1-schnell.safetensors",
+  "model_title_mismatch": true,
+  "framing_target_percent": 85,
+  "run_limit": 1
+}

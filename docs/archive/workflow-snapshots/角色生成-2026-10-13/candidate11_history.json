@@ -1,0 +1,221 @@
+{
+  "f3f3d122-7ef6-4028-b9f5-92a8363cc221": {
+    "prompt": [
+      0,
+      "f3f3d122-7ef6-4028-b9f5-92a8363cc221",
+      {
+        "1": {
+          "class_type": "CheckpointLoaderSimple",
+          "inputs": {
+            "ckpt_name": "leosamsHelloworldXL_helloworldXL70.safetensors"
+          },
+          "_meta": {
+            "title": "01 通用底模 · LEOSAM HelloWorld XL 7.0 · SDXL"
+          }
+        },
+        "2": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "text": "Full-length straight-on front-view studio casting photograph of one adult man, standing upright with head level, shoulders even, both arms straight and relaxed beside his torso, hands fully visible. Entire body from hair to both bare feet and all toes, centered, occupying about 78 percent of the tall frame with clear white margins above and below. Pure white seamless background. A 24-year-old Asian man with subtle Eurasian influence, moderately sturdy fit build with balanced broad shoulders, a solid chest and abdomen, substantial upper arms and thighs without bodybuilding exaggeration, natural adult male proportions, natural model proportions. Dense short black tousled waves, natural hairline, consistent short sides and back, hair brushed forward from the crown with a full airy irregular curled fringe falling over the forehead, broken asymmetrical curls and visible natural strands, clean silhouette, no center part, no side part, no visible hair parting. Masculine natural appearance, subtle Eurasian influence while remaining clearly Asian, naturally defined brow ridge and slightly higher nose bridge, not styled as a K-pop idol. Dark brown almond eyes with clearly visible double eyelid creases and moderately deep-set eyes, thick straight eyebrows with a gentle angular arch and tapered tails, natural raised nose bridge, youthful defined jaw, small outer-eye mole. Healthy age-appropriate youthful skin, fair neutral light beige, even consistent tone on face, neck, shoulders, arms, hands and legs; smooth intact skin with subtle visible realistic microtexture and fine natural pores, slight healthy sheen, unretouched natural skin, soft broad diffuse frontal light evenly across face and body. Opaque plain white sleeveless tank top correctly worn and fully covering chest, tank hem tucked completely inside the shorts waistband, waistband clearly visible over the tucked hem. Plain white shorts with no logo, print, lettering or brand mark. Barefoot, realistic body anatomy, natural skin and hair detail.",
+            "clip": [
+              "1",
+              1
+            ]
+          },
+          "_meta": {
+            "title": "02 SDXL正向 · V1.3无分缝刘海/细纹理/扎腰"
+          }
+        },
+        "3": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "text": "closeup, portrait, cropped body, cropped feet, cut off toes, out of frame, multiple people, shirtless, bare torso, tank top off, tank hem hanging outside shorts, untucked shirt, cloth wrapped around waist, hands in pockets, tilted head, slouch, center part, side part, visible part line, swept-back open forehead, straight flat hair, sparse hair, brown hair, light eyes, single eyelids, poreless skin, airbrushed skin, beauty filter, waxy skin, plastic skin, overly smooth skin, blurry skin, acne, prominent scars, uneven skin patches, tan lines, yellow or orange skin, harsh shadows, hard specular highlights, oily shine, logo, brand mark, lettering, print, watermark, jewelry, props, scenery, gray background, blur, low resolution, deformed anatomy, extra limbs, extra fingers, fused toes ,center-parted hair, middle part, visible center parting, side part, curtain bangs, symmetrical split fringe, swept-back open forehead, K-pop idol styling, glossy idol makeup, feminine idol face",
+            "clip": [
+              "1",
+              1
+            ]
+          },
+          "_meta": {
+            "title": "03 SDXL负向 · 禁止裁切/散衣摆/磨皮/品牌标记"
+          }
+        },
+        "5": {
+          "class_type": "EmptyLatentImage",
+          "inputs": {
+            "width": 768,
+            "height": 1536,
+            "batch_size": 1
+          },
+          "_meta": {
+            "title": "05 SDXL全身画布 · 768×1536窄高构图"
+          }
+        },
+        "6": {
+          "class_type": "KSampler",
+          "inputs": {
+            "seed": 2026101301,
+            "steps": 30,
+            "cfg": 6.0,
+            "sampler_name": "dpmpp_2m",
+            "scheduler": "karras",
+            "denoise": 1.0,
+            "model": [
+              "12",
+              0
+            ],
+            "positive": [
+              "2",
+              0
+            ],
+            "negative": [
+              "3",
+              0
+            ],
+            "latent_image": [
+              "5",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "06 SDXL采样 · 30步 CFG6 · DPM++2M Karras"
+          }
+        },
+        "7": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "6",
+              0
+            ],
+            "vae": [
+              "1",
+              2
+            ]
+          },
+          "_meta": {
+            "title": "07 VAE 解码"
+          }
+        },
+        "8": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "filename_prefix": "角色生成/闻灯-IPAdapter参考-候选11",
+            "images": [
+              "7",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "08 保存 · SDXL正面全身候选10 · 最终调试"
+          }
+        },
+        "9": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "candidate09_fullbody_reference.png",
+            "upload": "image"
+          }
+        },
+        "10": {
+          "class_type": "PrepImageForClipVision",
+          "inputs": {
+            "image": [
+              "9",
+              0
+            ],
+            "interpolation": "LANCZOS",
+            "crop_position": "pad",
+            "sharpening": 0.0
+          }
+        },
+        "11": {
+          "class_type": "IPAdapterUnifiedLoader",
+          "inputs": {
+            "model": [
+              "1",
+              0
+            ],
+            "preset": "PLUS (high strength)"
+          }
+        },
+        "12": {
+          "class_type": "IPAdapterAdvanced",
+          "inputs": {
+            "model": [
+              "11",
+              0
+            ],
+            "ipadapter": [
+              "11",
+              1
+            ],
+            "image": [
+              "10",
+              0
+            ],
+            "weight": 0.42,
+            "weight_type": "ease out",
+            "combine_embeds": "concat",
+            "start_at": 0.0,
+            "end_at": 0.75,
+            "embeds_scaling": "V only"
+          }
+        }
+      },
+      {
+        "client_id": "3fb60f89-4303-4f5b-8d44-5ec0e82fc229",
+        "create_time": 1792037056279
+      },
+      [
+        "8"
+      ]
+    ],
+    "outputs": {
+      "8": {
+        "images": [
+          {
+            "filename": "闻灯-IPAdapter参考-候选11_00001_.png",
+            "subfolder": "角色生成",
+            "type": "output"
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "f3f3d122-7ef6-4028-b9f5-92a8363cc221",
+            "timestamp": 1792037056280
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "f3f3d122-7ef6-4028-b9f5-92a8363cc221",
+            "timestamp": 1792037056287
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "f3f3d122-7ef6-4028-b9f5-92a8363cc221",
+            "timestamp": 1792037077497
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "8": {
+        "node_id": "8",
+        "display_node": "8",
+        "parent_node": null,
+        "real_node_id": "8"
+      }
+    }
+  }
+}

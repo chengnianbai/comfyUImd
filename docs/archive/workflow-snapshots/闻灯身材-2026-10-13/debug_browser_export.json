@@ -1,0 +1,2691 @@
+{
+  "before": {
+    "14": {
+      "inputs": {
+        "images": [
+          "24",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "★ 预览 · 成品（跑完先看这里）"
+      }
+    },
+    "15": {
+      "inputs": {
+        "filename_prefix": "闻灯-全身正面-成品",
+        "images": [
+          "24",
+          0
+        ]
+      },
+      "class_type": "SaveImage",
+      "_meta": {
+        "title": "存图 · 成品"
+      }
+    },
+    "23": {
+      "inputs": {
+        "upscale_model": [
+          "1018",
+          0
+        ],
+        "image": [
+          "1317",
+          0
+        ]
+      },
+      "class_type": "ImageUpscaleWithModel",
+      "_meta": {
+        "title": "使用模型放大图像"
+      }
+    },
+    "24": {
+      "inputs": {
+        "upscale_method": "lanczos",
+        "scale_by": 0.5,
+        "image": [
+          "23",
+          0
+        ]
+      },
+      "class_type": "ImageScaleBy",
+      "_meta": {
+        "title": "缩回 1792×2304"
+      }
+    },
+    "311": {
+      "inputs": {
+        "upscale_model": [
+          "1018",
+          0
+        ],
+        "image": [
+          "1337",
+          0
+        ]
+      },
+      "class_type": "ImageUpscaleWithModel",
+      "_meta": {
+        "title": "4x 放大"
+      }
+    },
+    "312": {
+      "inputs": {
+        "upscale_method": "lanczos",
+        "scale_by": 0.5,
+        "image": [
+          "311",
+          0
+        ]
+      },
+      "class_type": "ImageScaleBy",
+      "_meta": {
+        "title": "缩回 0.5（净 2x）"
+      }
+    },
+    "316": {
+      "inputs": {
+        "filename_prefix": "闻灯-全身侧面-成品",
+        "images": [
+          "312",
+          0
+        ]
+      },
+      "class_type": "SaveImage",
+      "_meta": {
+        "title": "★ 存图 · 侧面成品"
+      }
+    },
+    "341": {
+      "inputs": {
+        "upscale_model": [
+          "1018",
+          0
+        ],
+        "image": [
+          "1357",
+          0
+        ]
+      },
+      "class_type": "ImageUpscaleWithModel",
+      "_meta": {
+        "title": "4x 放大（背面）"
+      }
+    },
+    "342": {
+      "inputs": {
+        "upscale_method": "lanczos",
+        "scale_by": 0.5,
+        "image": [
+          "341",
+          0
+        ]
+      },
+      "class_type": "ImageScaleBy",
+      "_meta": {
+        "title": "缩回 0.5（背面）"
+      }
+    },
+    "346": {
+      "inputs": {
+        "filename_prefix": "闻灯-全身背面-成品",
+        "images": [
+          "342",
+          0
+        ]
+      },
+      "class_type": "SaveImage",
+      "_meta": {
+        "title": "★ 存图 · 背面成品"
+      }
+    },
+    "1018": {
+      "inputs": {
+        "model_name": "4x-UltraSharp (1).pth"
+      },
+      "class_type": "UpscaleModelLoader",
+      "_meta": {
+        "title": "放大模型 4x-UltraSharp"
+      }
+    },
+    "1024": {
+      "inputs": {
+        "unet_name": "FLUX1\\flux1-schnell.safetensors",
+        "weight_dtype": "default"
+      },
+      "class_type": "UNETLoader",
+      "_meta": {
+        "title": "Kontext fp8_scaled（diffusion_models）"
+      }
+    },
+    "1025": {
+      "inputs": {
+        "clip_name1": "t5\\t5xxl_fp8_e4m3fn_scaled.safetensors",
+        "clip_name2": "clip_l.safetensors",
+        "type": "flux",
+        "device": "default"
+      },
+      "class_type": "DualCLIPLoader",
+      "_meta": {
+        "title": "DualCLIP：t5xxl_fp8 + clip_l"
+      }
+    },
+    "1026": {
+      "inputs": {
+        "vae_name": "FLUX1\\ae.safetensors"
+      },
+      "class_type": "VAELoader",
+      "_meta": {
+        "title": "VAE ae.safetensors"
+      }
+    },
+    "1030": {
+      "inputs": {
+        "text": "",
+        "clip": [
+          "1025",
+          0
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "★ 负向（cfg=1.0 下无效，留空仅为满足接口）"
+      }
+    },
+    "1302": {
+      "inputs": {
+        "width": 1024,
+        "height": 1792,
+        "batch_size": 1
+      },
+      "class_type": "EmptySD3LatentImage",
+      "_meta": {
+        "title": "全身输出尺寸 1024×1792（三视角共用）"
+      }
+    },
+    "1310": {
+      "inputs": {
+        "image": "闻灯-脸部正面-成品_00017_.png"
+      },
+      "class_type": "LoadImage",
+      "_meta": {
+        "title": "已确认正脸母版 00017（完整原图）"
+      }
+    },
+    "1311": {
+      "inputs": {
+        "image": [
+          "1310",
+          0
+        ]
+      },
+      "class_type": "FluxKontextImageScale",
+      "_meta": {
+        "title": "参考归一化"
+      }
+    },
+    "1312": {
+      "inputs": {
+        "pixels": [
+          "1311",
+          0
+        ],
+        "vae": [
+          "1026",
+          0
+        ]
+      },
+      "class_type": "VAEEncode",
+      "_meta": {
+        "title": "参考 → LATENT"
+      }
+    },
+    "1313": {
+      "inputs": {
+        "text": "Full-length character reference photograph of a young man wearing a plain white crew-neck t-shirt and plain white shorts, bare feet: simple clean white t-shirt, no logo, no print, no pattern, no pocket; nothing worn over the t-shirt, no jacket, no coat, no collar, no tie, no scarf; plain white shorts. A young East Asian man with East Asian facial features, the same East Asian person as the reference: same ethnicity, same face, same messy wavy black hair, same hairline, same black hair colour. He must never look Caucasian, never look European, never change ethnicity. Regenerate this person as a natural high-end photographic full-length reference photo of the same exact person. Preserve the exact identity of the reference: same facial structure and face shape, same facial proportions, same eyes and eyebrows, same nose shape, same lips, same chin and jawline, same hairline and haircut, same messy wavy black hair, same apparent age, same small mole at the outer corner of the eye, same stable identity marks. Facing the camera directly, front view, looking straight at the viewer. The head is held perfectly upright and level: the eye line is horizontal, the head is not tilted and not turned, the chin is level, the neck is vertical, both shoulders are level and at the same height. Refined slender athletic male body proportions like a professional fashion model, with an elegant, naturally athletic physique: approximately 8-head body proportion, a relatively small head compared with the body, long legs and a long visual leg line, moderately broad and well-shaped shoulders, a defined but not bulky upper torso, a naturally narrow waist, subtle V-shaped torso, balanced chest and shoulder development, lean but healthy body mass, long and refined limbs, straight elegant legs, natural hip width, proportional arms and hands. The physique should look like a professional fashion model rather than a bodybuilder or fitness model: neither muscular nor bulky, neither skinny nor underweight, with restrained muscle definition and a clean, sophisticated silhouette. Realistic adult male anatomy and natural body volume, with no exaggerated muscularity, no extreme thinness, no oversized head, no shortened legs, no distorted proportions. Full body visible from head to feet, head to toe, the entire standing figure inside the frame with clear space above the head and below the feet, standing straight, arms relaxed naturally at the sides, weight evenly distributed on both feet, feet fully visible, centered composition. Pure white seamless background, soft even studio lighting, unified lighting and material across the whole figure, realistic skin texture with subtle visible pores, natural photographic grain, sharp focus on the face.",
+        "clip": [
+          "1025",
+          0
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "指令词 · 正面 front（2409 字符）"
+      }
+    },
+    "1314": {
+      "inputs": {
+        "guidance": 3,
+        "conditioning": [
+          "1313",
+          0
+        ]
+      },
+      "class_type": "FluxGuidance",
+      "_meta": {
+        "title": "FluxGuidance 3.0"
+      }
+    },
+    "1315": {
+      "inputs": {
+        "conditioning": [
+          "1314",
+          0
+        ],
+        "latent": [
+          "1312",
+          0
+        ]
+      },
+      "class_type": "ReferenceLatent",
+      "_meta": {
+        "title": "ReferenceLatent"
+      }
+    },
+    "1316": {
+      "inputs": {
+        "seed": 20261008,
+        "steps": 20,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1,
+        "model": [
+          "1024",
+          0
+        ],
+        "positive": [
+          "1315",
+          0
+        ],
+        "negative": [
+          "1030",
+          0
+        ],
+        "latent_image": [
+          "1302",
+          0
+        ]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "Kontext 参考采样 · 20步 / denoise 1.0"
+      }
+    },
+    "1317": {
+      "inputs": {
+        "samples": [
+          "1316",
+          0
+        ],
+        "vae": [
+          "1026",
+          0
+        ]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAEDecode"
+      }
+    },
+    "1330": {
+      "inputs": {
+        "image": "闻灯-脸部左侧-成品_00009_.png [output]"
+      },
+      "class_type": "LoadImage",
+      "_meta": {
+        "title": "已确认侧脸母版 00009（完整原图）"
+      }
+    },
+    "1331": {
+      "inputs": {
+        "image": [
+          "1330",
+          0
+        ]
+      },
+      "class_type": "FluxKontextImageScale",
+      "_meta": {
+        "title": "侧脸母版 · 参考归一化"
+      }
+    },
+    "1332": {
+      "inputs": {
+        "pixels": [
+          "1331",
+          0
+        ],
+        "vae": [
+          "1026",
+          0
+        ]
+      },
+      "class_type": "VAEEncode",
+      "_meta": {
+        "title": "侧脸母版 · 参考 latent"
+      }
+    },
+    "1333": {
+      "inputs": {
+        "text": "Rotate this same man and his entire body exactly 90 degrees to face the left edge of the image. A strict left-facing side profile of the whole standing person, not a three-quarter view. His face, chest, pelvis, knees and both bare feet all face left. Only one eye is visible. Keep the same man, facial features, curly black hair, moustache, chin beard, skin tone, body build, plain white crew-neck T-shirt and plain white shorts. Keep the camera at the same distance and keep the same full-length head-to-toe framing as the input. The complete hair, legs, heels and toes must be inside the image with white margins above and below. Arms hanging naturally at his sides, standing straight. Plain white studio background, soft even lighting.",
+        "clip": [
+          "1025",
+          0
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "侧面编辑指令 · 双参考（角度待验收）"
+      }
+    },
+    "1334": {
+      "inputs": {
+        "guidance": 3,
+        "conditioning": [
+          "1333",
+          0
+        ]
+      },
+      "class_type": "FluxGuidance",
+      "_meta": {
+        "title": "FluxGuidance 3.0"
+      }
+    },
+    "1335": {
+      "inputs": {
+        "conditioning": [
+          "1334",
+          0
+        ],
+        "latent": [
+          "1371",
+          0
+        ]
+      },
+      "class_type": "ReferenceLatent",
+      "_meta": {
+        "title": "先加入正面全身参考"
+      }
+    },
+    "1336": {
+      "inputs": {
+        "seed": 20261008,
+        "steps": 20,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1,
+        "model": [
+          "1024",
+          0
+        ],
+        "positive": [
+          "1372",
+          0
+        ],
+        "negative": [
+          "1030",
+          0
+        ],
+        "latent_image": [
+          "1302",
+          0
+        ]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "Kontext 参考采样 · 20步 / denoise 1.0"
+      }
+    },
+    "1337": {
+      "inputs": {
+        "samples": [
+          "1336",
+          0
+        ],
+        "vae": [
+          "1026",
+          0
+        ]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAEDecode"
+      }
+    },
+    "1351": {
+      "inputs": {
+        "image": [
+          "1317",
+          0
+        ]
+      },
+      "class_type": "FluxKontextImageScale",
+      "_meta": {
+        "title": "正面全身 → 背面参考"
+      }
+    },
+    "1352": {
+      "inputs": {
+        "pixels": [
+          "1351",
+          0
+        ],
+        "vae": [
+          "1026",
+          0
+        ]
+      },
+      "class_type": "VAEEncode",
+      "_meta": {
+        "title": "参考 → LATENT"
+      }
+    },
+    "1353": {
+      "inputs": {
+        "text": "Turn this same man around to show him directly from behind in a full-length studio photograph. Preserve the exact same body build, height, shoulder width, waist, arms, legs, curly black hairstyle, skin tone, plain white crew-neck T-shirt and plain white shorts. His face is not visible. Neutral upright standing pose, arms relaxed at his sides, feet slightly apart. Show the entire person from hair to bare feet, with white space above and below. Same camera distance, white studio background, soft even lighting and natural photographic rendering.",
+        "clip": [
+          "1025",
+          0
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "背面编辑指令 · 保持身体与白色服装"
+      }
+    },
+    "1354": {
+      "inputs": {
+        "guidance": 3,
+        "conditioning": [
+          "1353",
+          0
+        ]
+      },
+      "class_type": "FluxGuidance",
+      "_meta": {
+        "title": "FluxGuidance 3.0"
+      }
+    },
+    "1355": {
+      "inputs": {
+        "conditioning": [
+          "1354",
+          0
+        ],
+        "latent": [
+          "1352",
+          0
+        ]
+      },
+      "class_type": "ReferenceLatent",
+      "_meta": {
+        "title": "ReferenceLatent"
+      }
+    },
+    "1356": {
+      "inputs": {
+        "seed": 20261008,
+        "steps": 20,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1,
+        "model": [
+          "1024",
+          0
+        ],
+        "positive": [
+          "1355",
+          0
+        ],
+        "negative": [
+          "1030",
+          0
+        ],
+        "latent_image": [
+          "1302",
+          0
+        ]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "Kontext 参考采样 · 20步 / denoise 1.0"
+      }
+    },
+    "1357": {
+      "inputs": {
+        "samples": [
+          "1356",
+          0
+        ],
+        "vae": [
+          "1026",
+          0
+        ]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAEDecode"
+      }
+    },
+    "1370": {
+      "inputs": {
+        "image": [
+          "1317",
+          0
+        ]
+      },
+      "class_type": "FluxKontextImageScale",
+      "_meta": {
+        "title": "正面全身 · 身体与服装参考"
+      }
+    },
+    "1371": {
+      "inputs": {
+        "pixels": [
+          "1370",
+          0
+        ],
+        "vae": [
+          "1026",
+          0
+        ]
+      },
+      "class_type": "VAEEncode",
+      "_meta": {
+        "title": "正面全身 · 参考 latent"
+      }
+    },
+    "1372": {
+      "inputs": {
+        "conditioning": [
+          "1335",
+          0
+        ],
+        "latent": [
+          "1332",
+          0
+        ]
+      },
+      "class_type": "ReferenceLatent",
+      "_meta": {
+        "title": "加入已确认侧脸 · 双参考"
+      }
+    }
+  },
+  "after": {
+    "14": {
+      "inputs": {
+        "images": [
+          "24",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "★ 预览 · 成品（跑完先看这里）"
+      }
+    },
+    "15": {
+      "inputs": {
+        "filename_prefix": "闻灯-全身正面-成品",
+        "images": [
+          "24",
+          0
+        ]
+      },
+      "class_type": "SaveImage",
+      "_meta": {
+        "title": "存图 · 成品"
+      }
+    },
+    "23": {
+      "inputs": {
+        "upscale_model": [
+          "1018",
+          0
+        ],
+        "image": [
+          "1317",
+          0
+        ]
+      },
+      "class_type": "ImageUpscaleWithModel",
+      "_meta": {
+        "title": "使用模型放大图像"
+      }
+    },
+    "24": {
+      "inputs": {
+        "upscale_method": "lanczos",
+        "scale_by": 0.5,
+        "image": [
+          "23",
+          0
+        ]
+      },
+      "class_type": "ImageScaleBy",
+      "_meta": {
+        "title": "缩回 1792×2304"
+      }
+    },
+    "311": {
+      "inputs": {
+        "upscale_model": [
+          "1018",
+          0
+        ],
+        "image": [
+          "1337",
+          0
+        ]
+      },
+      "class_type": "ImageUpscaleWithModel",
+      "_meta": {
+        "title": "4x 放大"
+      }
+    },
+    "312": {
+      "inputs": {
+        "upscale_method": "lanczos",
+        "scale_by": 0.5,
+        "image": [
+          "311",
+          0
+        ]
+      },
+      "class_type": "ImageScaleBy",
+      "_meta": {
+        "title": "缩回 0.5（净 2x）"
+      }
+    },
+    "316": {
+      "inputs": {
+        "filename_prefix": "闻灯-全身侧面-成品",
+        "images": [
+          "312",
+          0
+        ]
+      },
+      "class_type": "SaveImage",
+      "_meta": {
+        "title": "★ 存图 · 侧面成品"
+      }
+    },
+    "341": {
+      "inputs": {
+        "upscale_model": [
+          "1018",
+          0
+        ],
+        "image": [
+          "1357",
+          0
+        ]
+      },
+      "class_type": "ImageUpscaleWithModel",
+      "_meta": {
+        "title": "4x 放大（背面）"
+      }
+    },
+    "342": {
+      "inputs": {
+        "upscale_method": "lanczos",
+        "scale_by": 0.5,
+        "image": [
+          "341",
+          0
+        ]
+      },
+      "class_type": "ImageScaleBy",
+      "_meta": {
+        "title": "缩回 0.5（背面）"
+      }
+    },
+    "346": {
+      "inputs": {
+        "filename_prefix": "闻灯-全身背面-成品",
+        "images": [
+          "342",
+          0
+        ]
+      },
+      "class_type": "SaveImage",
+      "_meta": {
+        "title": "★ 存图 · 背面成品"
+      }
+    },
+    "1018": {
+      "inputs": {
+        "model_name": "4x-UltraSharp (1).pth"
+      },
+      "class_type": "UpscaleModelLoader",
+      "_meta": {
+        "title": "放大模型 4x-UltraSharp"
+      }
+    },
+    "1024": {
+      "inputs": {
+        "unet_name": "FLUX1\\flux1-schnell.safetensors",
+        "weight_dtype": "default"
+      },
+      "class_type": "UNETLoader",
+      "_meta": {
+        "title": "Kontext fp8_scaled（diffusion_models）"
+      }
+    },
+    "1025": {
+      "inputs": {
+        "clip_name1": "t5\\t5xxl_fp8_e4m3fn_scaled.safetensors",
+        "clip_name2": "clip_l.safetensors",
+        "type": "flux",
+        "device": "default"
+      },
+      "class_type": "DualCLIPLoader",
+      "_meta": {
+        "title": "DualCLIP：t5xxl_fp8 + clip_l"
+      }
+    },
+    "1026": {
+      "inputs": {
+        "vae_name": "FLUX1\\ae.safetensors"
+      },
+      "class_type": "VAELoader",
+      "_meta": {
+        "title": "VAE ae.safetensors"
+      }
+    },
+    "1030": {
+      "inputs": {
+        "text": "",
+        "clip": [
+          "1025",
+          0
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "★ 负向（cfg=1.0 下无效，留空仅为满足接口）"
+      }
+    },
+    "1302": {
+      "inputs": {
+        "width": 1024,
+        "height": 1792,
+        "batch_size": 1
+      },
+      "class_type": "EmptySD3LatentImage",
+      "_meta": {
+        "title": "全身输出尺寸 1024×1792（三视角共用）"
+      }
+    },
+    "1310": {
+      "inputs": {
+        "image": "闻灯-脸部正面-成品_00017_.png"
+      },
+      "class_type": "LoadImage",
+      "_meta": {
+        "title": "已确认正脸母版 00017（完整原图）"
+      }
+    },
+    "1311": {
+      "inputs": {
+        "image": [
+          "1310",
+          0
+        ]
+      },
+      "class_type": "FluxKontextImageScale",
+      "_meta": {
+        "title": "参考归一化"
+      }
+    },
+    "1312": {
+      "inputs": {
+        "pixels": [
+          "1311",
+          0
+        ],
+        "vae": [
+          "1026",
+          0
+        ]
+      },
+      "class_type": "VAEEncode",
+      "_meta": {
+        "title": "参考 → LATENT"
+      }
+    },
+    "1313": {
+      "inputs": {
+        "text": "Full-length character reference photograph of a young man wearing a plain white crew-neck t-shirt and plain white shorts, bare feet: simple clean white t-shirt, no logo, no print, no pattern, no pocket; nothing worn over the t-shirt, no jacket, no coat, no collar, no tie, no scarf; plain white shorts. A young East Asian man with East Asian facial features, the same East Asian person as the reference: same ethnicity, same face, same messy wavy black hair, same hairline, same black hair colour. He must never look Caucasian, never look European, never change ethnicity. Regenerate this person as a natural high-end photographic full-length reference photo of the same exact person. Preserve the exact identity of the reference: same facial structure and face shape, same facial proportions, same eyes and eyebrows, same nose shape, same lips, same chin and jawline, same hairline and haircut, same messy wavy black hair, same apparent age, same small mole at the outer corner of the eye, same stable identity marks. Facing the camera directly, front view, looking straight at the viewer. The head is held perfectly upright and level: the eye line is horizontal, the head is not tilted and not turned, the chin is level, the neck is vertical, both shoulders are level and at the same height. His barefoot standing height is 183 cm. He has a tall, lean male fashion-model physique: a slender elongated silhouette, naturally long legs and long arms, a narrow waist, natural moderate shoulder width and a subtle V-shaped torso. Approximately eight anatomical head lengths from the top of the skull to the soles of the feet, with a naturally proportioned head; preserve the reference facial proportions. The legs are visually long relative to the torso. Keep the torso anatomically natural, without compressing the chest, abdomen or arms. Keep the chest and shoulders lean, with restrained muscle definition and realistic healthy body volume. Avoid a stocky build, thick waist, bulky chest, bodybuilder muscles, extreme thinness, oversized head, shortened legs or exaggerated anatomy. Full body visible from head to feet, head to toe, the entire standing figure inside the frame with clear space above the head and below the feet, standing straight, arms relaxed naturally at the sides, weight evenly distributed on both feet, both legs naturally straight, both bare feet flat on the same level floor, no raised foot, feet fully visible, centered composition. Pure white seamless background, soft even studio lighting, unified lighting and material across the whole figure, realistic skin texture with subtle visible pores, natural photographic grain, sharp focus on the face.",
+        "clip": [
+          "1025",
+          0
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "正面身体指令 · 183 cm / 修长模特体型（待验收）"
+      }
+    },
+    "1314": {
+      "inputs": {
+        "guidance": 3,
+        "conditioning": [
+          "1313",
+          0
+        ]
+      },
+      "class_type": "FluxGuidance",
+      "_meta": {
+        "title": "FluxGuidance 3.0"
+      }
+    },
+    "1315": {
+      "inputs": {
+        "conditioning": [
+          "1314",
+          0
+        ],
+        "latent": [
+          "1312",
+          0
+        ]
+      },
+      "class_type": "ReferenceLatent",
+      "_meta": {
+        "title": "ReferenceLatent"
+      }
+    },
+    "1316": {
+      "inputs": {
+        "seed": 20261008,
+        "steps": 20,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1,
+        "model": [
+          "1024",
+          0
+        ],
+        "positive": [
+          "1315",
+          0
+        ],
+        "negative": [
+          "1030",
+          0
+        ],
+        "latent_image": [
+          "1302",
+          0
+        ]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "Kontext 参考采样 · 20步 / denoise 1.0"
+      }
+    },
+    "1317": {
+      "inputs": {
+        "samples": [
+          "1316",
+          0
+        ],
+        "vae": [
+          "1026",
+          0
+        ]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAEDecode"
+      }
+    },
+    "1330": {
+      "inputs": {
+        "image": "闻灯-脸部左侧-成品_00009_.png [output]"
+      },
+      "class_type": "LoadImage",
+      "_meta": {
+        "title": "已确认侧脸母版 00009（完整原图）"
+      }
+    },
+    "1331": {
+      "inputs": {
+        "image": [
+          "1330",
+          0
+        ]
+      },
+      "class_type": "FluxKontextImageScale",
+      "_meta": {
+        "title": "侧脸母版 · 参考归一化"
+      }
+    },
+    "1332": {
+      "inputs": {
+        "pixels": [
+          "1331",
+          0
+        ],
+        "vae": [
+          "1026",
+          0
+        ]
+      },
+      "class_type": "VAEEncode",
+      "_meta": {
+        "title": "侧脸母版 · 参考 latent"
+      }
+    },
+    "1333": {
+      "inputs": {
+        "text": "Rotate this same man and his entire body exactly 90 degrees to face the left edge of the image. A strict left-facing side profile of the whole standing person, not a three-quarter view. His face, chest, pelvis, knees and both bare feet all face left. Only one eye is visible. Keep the same man, facial features, curly black hair, moustache, chin beard, skin tone, body build, plain white crew-neck T-shirt and plain white shorts. Keep the camera at the same distance and keep the same full-length head-to-toe framing as the input. The complete hair, legs, heels and toes must be inside the image with white margins above and below. Arms hanging naturally at his sides, standing straight. Plain white studio background, soft even lighting. His barefoot standing height remains 183 cm. Preserve the tall, lean fashion-model proportions established in the front view: the same head-to-body ratio, long limbs, moderate shoulder width and narrow waist. Both bare feet rest flat on the same level floor.",
+        "clip": [
+          "1025",
+          0
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "侧面身体指令 · 保持正面 183 cm 比例（角度待验收）"
+      }
+    },
+    "1334": {
+      "inputs": {
+        "guidance": 3,
+        "conditioning": [
+          "1333",
+          0
+        ]
+      },
+      "class_type": "FluxGuidance",
+      "_meta": {
+        "title": "FluxGuidance 3.0"
+      }
+    },
+    "1335": {
+      "inputs": {
+        "conditioning": [
+          "1334",
+          0
+        ],
+        "latent": [
+          "1371",
+          0
+        ]
+      },
+      "class_type": "ReferenceLatent",
+      "_meta": {
+        "title": "先加入正面全身参考"
+      }
+    },
+    "1336": {
+      "inputs": {
+        "seed": 20261008,
+        "steps": 20,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1,
+        "model": [
+          "1024",
+          0
+        ],
+        "positive": [
+          "1372",
+          0
+        ],
+        "negative": [
+          "1030",
+          0
+        ],
+        "latent_image": [
+          "1302",
+          0
+        ]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "Kontext 参考采样 · 20步 / denoise 1.0"
+      }
+    },
+    "1337": {
+      "inputs": {
+        "samples": [
+          "1336",
+          0
+        ],
+        "vae": [
+          "1026",
+          0
+        ]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAEDecode"
+      }
+    },
+    "1351": {
+      "inputs": {
+        "image": [
+          "1317",
+          0
+        ]
+      },
+      "class_type": "FluxKontextImageScale",
+      "_meta": {
+        "title": "正面全身 → 背面参考"
+      }
+    },
+    "1352": {
+      "inputs": {
+        "pixels": [
+          "1351",
+          0
+        ],
+        "vae": [
+          "1026",
+          0
+        ]
+      },
+      "class_type": "VAEEncode",
+      "_meta": {
+        "title": "参考 → LATENT"
+      }
+    },
+    "1353": {
+      "inputs": {
+        "text": "Turn this same man around to show him directly from behind in a full-length studio photograph. Preserve the exact same body build, height, shoulder width, waist, arms, legs, curly black hairstyle, skin tone, plain white crew-neck T-shirt and plain white shorts. His face is not visible. Neutral upright standing pose, arms relaxed at his sides, feet slightly apart. Show the entire person from hair to bare feet, with white space above and below. Same camera distance, white studio background, soft even lighting and natural photographic rendering. His barefoot standing height remains 183 cm. Preserve the tall, lean fashion-model proportions established in the front view: the same head-to-body ratio, long limbs, moderate shoulder width and narrow waist. Both bare feet rest flat on the same level floor.",
+        "clip": [
+          "1025",
+          0
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "背面身体指令 · 保持正面 183 cm 比例"
+      }
+    },
+    "1354": {
+      "inputs": {
+        "guidance": 3,
+        "conditioning": [
+          "1353",
+          0
+        ]
+      },
+      "class_type": "FluxGuidance",
+      "_meta": {
+        "title": "FluxGuidance 3.0"
+      }
+    },
+    "1355": {
+      "inputs": {
+        "conditioning": [
+          "1354",
+          0
+        ],
+        "latent": [
+          "1352",
+          0
+        ]
+      },
+      "class_type": "ReferenceLatent",
+      "_meta": {
+        "title": "ReferenceLatent"
+      }
+    },
+    "1356": {
+      "inputs": {
+        "seed": 20261008,
+        "steps": 20,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1,
+        "model": [
+          "1024",
+          0
+        ],
+        "positive": [
+          "1355",
+          0
+        ],
+        "negative": [
+          "1030",
+          0
+        ],
+        "latent_image": [
+          "1302",
+          0
+        ]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "Kontext 参考采样 · 20步 / denoise 1.0"
+      }
+    },
+    "1357": {
+      "inputs": {
+        "samples": [
+          "1356",
+          0
+        ],
+        "vae": [
+          "1026",
+          0
+        ]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAEDecode"
+      }
+    },
+    "1370": {
+      "inputs": {
+        "image": [
+          "1317",
+          0
+        ]
+      },
+      "class_type": "FluxKontextImageScale",
+      "_meta": {
+        "title": "正面全身 · 身体与服装参考"
+      }
+    },
+    "1371": {
+      "inputs": {
+        "pixels": [
+          "1370",
+          0
+        ],
+        "vae": [
+          "1026",
+          0
+        ]
+      },
+      "class_type": "VAEEncode",
+      "_meta": {
+        "title": "正面全身 · 参考 latent"
+      }
+    },
+    "1372": {
+      "inputs": {
+        "conditioning": [
+          "1335",
+          0
+        ],
+        "latent": [
+          "1332",
+          0
+        ]
+      },
+      "class_type": "ReferenceLatent",
+      "_meta": {
+        "title": "加入已确认侧脸 · 双参考"
+      }
+    }
+  },
+  "missing": [],
+  "nodes": [
+    {
+      "id": 2,
+      "pos": [
+        80,
+        5700
+      ],
+      "size": [
+        640,
+        300
+      ]
+    },
+    {
+      "id": 18,
+      "pos": [
+        805,
+        6410
+      ],
+      "size": [
+        640,
+        220
+      ]
+    },
+    {
+      "id": 3,
+      "pos": [
+        805,
+        5700
+      ],
+      "size": [
+        640,
+        260
+      ]
+    },
+    {
+      "id": 19,
+      "pos": [
+        805,
+        6715
+      ],
+      "size": [
+        640,
+        220
+      ]
+    },
+    {
+      "id": 5,
+      "pos": [
+        805,
+        6045
+      ],
+      "size": [
+        640,
+        280
+      ]
+    },
+    {
+      "id": 4,
+      "pos": [
+        1530,
+        5700
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 20,
+      "pos": [
+        1530,
+        6255
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 21,
+      "pos": [
+        1530,
+        6440
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 23,
+      "pos": [
+        2310,
+        1185
+      ],
+      "size": [
+        420,
+        100
+      ]
+    },
+    {
+      "id": 24,
+      "pos": [
+        2815,
+        1000
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 12,
+      "pos": [
+        1965,
+        5885
+      ],
+      "size": [
+        464,
+        310
+      ]
+    },
+    {
+      "id": 25,
+      "pos": [
+        1965,
+        5700
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 13,
+      "pos": [
+        1965,
+        6280
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 14,
+      "pos": [
+        2815,
+        1185
+      ],
+      "size": [
+        440,
+        620
+      ]
+    },
+    {
+      "id": 15,
+      "pos": [
+        3340,
+        1000
+      ],
+      "size": [
+        440,
+        620
+      ]
+    },
+    {
+      "id": 1001,
+      "pos": [
+        4400,
+        5700
+      ],
+      "size": [
+        1900,
+        520
+      ]
+    },
+    {
+      "id": 1002,
+      "pos": [
+        1755,
+        180
+      ],
+      "size": [
+        470,
+        100
+      ]
+    },
+    {
+      "id": 1003,
+      "pos": [
+        1755,
+        365
+      ],
+      "size": [
+        380,
+        100
+      ]
+    },
+    {
+      "id": 1004,
+      "pos": [
+        4400,
+        180
+      ],
+      "size": [
+        440,
+        560
+      ]
+    },
+    {
+      "id": 1005,
+      "pos": [
+        4400,
+        825
+      ],
+      "size": [
+        350,
+        130
+      ]
+    },
+    {
+      "id": 1006,
+      "pos": [
+        4400,
+        1040
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1009,
+      "pos": [
+        4925,
+        950
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1011,
+      "pos": [
+        5770,
+        485
+      ],
+      "size": [
+        700,
+        220
+      ]
+    },
+    {
+      "id": 1012,
+      "pos": [
+        5770,
+        790
+      ],
+      "size": [
+        700,
+        220
+      ]
+    },
+    {
+      "id": 1013,
+      "pos": [
+        6555,
+        180
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1014,
+      "pos": [
+        6555,
+        365
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1016,
+      "pos": [
+        6990,
+        575
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1018,
+      "pos": [
+        2310,
+        180
+      ],
+      "size": [
+        520,
+        100
+      ]
+    },
+    {
+      "id": 1019,
+      "pos": [
+        7475,
+        180
+      ],
+      "size": [
+        440,
+        100
+      ]
+    },
+    {
+      "id": 1020,
+      "pos": [
+        7475,
+        365
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1022,
+      "pos": [
+        6385,
+        6505
+      ],
+      "size": [
+        620,
+        220
+      ]
+    },
+    {
+      "id": 1023,
+      "pos": [
+        6385,
+        5700
+      ],
+      "size": [
+        1620,
+        720
+      ]
+    },
+    {
+      "id": 1024,
+      "pos": [
+        80,
+        180
+      ],
+      "size": [
+        430,
+        100
+      ]
+    },
+    {
+      "id": 1025,
+      "pos": [
+        595,
+        180
+      ],
+      "size": [
+        430,
+        130
+      ]
+    },
+    {
+      "id": 1026,
+      "pos": [
+        80,
+        365
+      ],
+      "size": [
+        430,
+        100
+      ]
+    },
+    {
+      "id": 1028,
+      "pos": [
+        4400,
+        1350
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1029,
+      "pos": [
+        4400,
+        1535
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1030,
+      "pos": [
+        595,
+        395
+      ],
+      "size": [
+        640,
+        220
+      ]
+    },
+    {
+      "id": 1032,
+      "pos": [
+        4835,
+        2955
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1033,
+      "pos": [
+        5620,
+        2450
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1034,
+      "pos": [
+        5620,
+        2635
+      ],
+      "size": [
+        400,
+        310
+      ]
+    },
+    {
+      "id": 1035,
+      "pos": [
+        6105,
+        2450
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 16,
+      "pos": [
+        4400,
+        6305
+      ],
+      "size": [
+        1190,
+        293
+      ]
+    },
+    {
+      "id": 1021,
+      "pos": [
+        6105,
+        1535
+      ],
+      "size": [
+        500,
+        560
+      ]
+    },
+    {
+      "id": 1010,
+      "pos": [
+        5770,
+        180
+      ],
+      "size": [
+        700,
+        220
+      ]
+    },
+    {
+      "id": 1015,
+      "pos": [
+        6990,
+        180
+      ],
+      "size": [
+        400,
+        310
+      ]
+    },
+    {
+      "id": 1008,
+      "pos": [
+        4925,
+        565
+      ],
+      "size": [
+        760,
+        300
+      ]
+    },
+    {
+      "id": 1007,
+      "pos": [
+        4925,
+        180
+      ],
+      "size": [
+        760,
+        300
+      ]
+    },
+    {
+      "id": 1044,
+      "pos": [
+        8090,
+        6205
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1045,
+      "pos": [
+        5620,
+        1350
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1047,
+      "pos": [
+        6105,
+        1350
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1049,
+      "pos": [
+        6690,
+        1350
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1050,
+      "pos": [
+        6690,
+        1535
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1051,
+      "pos": [
+        6105,
+        2635
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1052,
+      "pos": [
+        4400,
+        2450
+      ],
+      "size": [
+        350,
+        106
+      ]
+    },
+    {
+      "id": 1043,
+      "pos": [
+        8090,
+        5700
+      ],
+      "size": [
+        700,
+        420
+      ]
+    },
+    {
+      "id": 1046,
+      "pos": [
+        5620,
+        1535
+      ],
+      "size": [
+        400,
+        310
+      ]
+    },
+    {
+      "id": 1031,
+      "pos": [
+        4835,
+        2450
+      ],
+      "size": [
+        700,
+        420
+      ]
+    },
+    {
+      "id": 1100,
+      "pos": [
+        4400,
+        3400
+      ],
+      "size": [
+        350,
+        130
+      ]
+    },
+    {
+      "id": 1101,
+      "pos": [
+        4400,
+        3615
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1102,
+      "pos": [
+        4835,
+        3400
+      ],
+      "size": [
+        760,
+        300
+      ]
+    },
+    {
+      "id": 1103,
+      "pos": [
+        4835,
+        3785
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1104,
+      "pos": [
+        5680,
+        3400
+      ],
+      "size": [
+        400,
+        310
+      ]
+    },
+    {
+      "id": 1105,
+      "pos": [
+        5680,
+        3795
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1107,
+      "pos": [
+        6165,
+        3400
+      ],
+      "size": [
+        440,
+        100
+      ]
+    },
+    {
+      "id": 1108,
+      "pos": [
+        6165,
+        3585
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1109,
+      "pos": [
+        6105,
+        4635
+      ],
+      "size": [
+        460,
+        560
+      ]
+    },
+    {
+      "id": 1110,
+      "pos": [
+        6650,
+        4450
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1111,
+      "pos": [
+        6650,
+        4635
+      ],
+      "size": [
+        460,
+        560
+      ]
+    },
+    {
+      "id": 1200,
+      "pos": [
+        4835,
+        4450
+      ],
+      "size": [
+        700,
+        420
+      ]
+    },
+    {
+      "id": 1201,
+      "pos": [
+        4835,
+        4955
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1210,
+      "pos": [
+        4400,
+        4450
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1211,
+      "pos": [
+        4400,
+        4635
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1212,
+      "pos": [
+        5620,
+        4450
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1213,
+      "pos": [
+        5620,
+        4635
+      ],
+      "size": [
+        400,
+        310
+      ]
+    },
+    {
+      "id": 1214,
+      "pos": [
+        6105,
+        4450
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1220,
+      "pos": [
+        4835,
+        1350
+      ],
+      "size": [
+        700,
+        420
+      ]
+    },
+    {
+      "id": 1221,
+      "pos": [
+        4835,
+        1855
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 300,
+      "pos": [
+        80,
+        6085
+      ],
+      "size": [
+        640,
+        300
+      ]
+    },
+    {
+      "id": 301,
+      "pos": [
+        1530,
+        5885
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 311,
+      "pos": [
+        2310,
+        2235
+      ],
+      "size": [
+        420,
+        100
+      ]
+    },
+    {
+      "id": 312,
+      "pos": [
+        2815,
+        2050
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 313,
+      "pos": [
+        2514,
+        5700
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 314,
+      "pos": [
+        2514,
+        5885
+      ],
+      "size": [
+        464,
+        310
+      ]
+    },
+    {
+      "id": 315,
+      "pos": [
+        2514,
+        6280
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 316,
+      "pos": [
+        3250,
+        2050
+      ],
+      "size": [
+        440,
+        620
+      ]
+    },
+    {
+      "id": 330,
+      "pos": [
+        80,
+        6470
+      ],
+      "size": [
+        640,
+        300
+      ]
+    },
+    {
+      "id": 331,
+      "pos": [
+        1530,
+        6070
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 341,
+      "pos": [
+        2310,
+        3285
+      ],
+      "size": [
+        420,
+        100
+      ]
+    },
+    {
+      "id": 342,
+      "pos": [
+        2815,
+        3100
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 343,
+      "pos": [
+        3063,
+        5700
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 344,
+      "pos": [
+        3063,
+        5885
+      ],
+      "size": [
+        464,
+        310
+      ]
+    },
+    {
+      "id": 345,
+      "pos": [
+        3063,
+        6280
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 346,
+      "pos": [
+        3250,
+        3100
+      ],
+      "size": [
+        440,
+        620
+      ]
+    },
+    {
+      "id": 1302,
+      "pos": [
+        1320,
+        180
+      ],
+      "size": [
+        350,
+        106
+      ]
+    },
+    {
+      "id": 1310,
+      "pos": [
+        80,
+        1000
+      ],
+      "size": [
+        440,
+        560
+      ]
+    },
+    {
+      "id": 1311,
+      "pos": [
+        605,
+        1000
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1312,
+      "pos": [
+        605,
+        1185
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1313,
+      "pos": [
+        1040,
+        1000
+      ],
+      "size": [
+        700,
+        420
+      ]
+    },
+    {
+      "id": 1314,
+      "pos": [
+        1040,
+        1505
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1315,
+      "pos": [
+        1825,
+        1000
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1316,
+      "pos": [
+        1825,
+        1185
+      ],
+      "size": [
+        400,
+        310
+      ]
+    },
+    {
+      "id": 1317,
+      "pos": [
+        2310,
+        1000
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1330,
+      "pos": [
+        80,
+        2050
+      ],
+      "size": [
+        440,
+        560
+      ]
+    },
+    {
+      "id": 1331,
+      "pos": [
+        605,
+        2050
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1332,
+      "pos": [
+        605,
+        2235
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1333,
+      "pos": [
+        1040,
+        2050
+      ],
+      "size": [
+        700,
+        420
+      ]
+    },
+    {
+      "id": 1334,
+      "pos": [
+        1040,
+        2555
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1335,
+      "pos": [
+        1825,
+        2050
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1336,
+      "pos": [
+        1825,
+        2420
+      ],
+      "size": [
+        400,
+        310
+      ]
+    },
+    {
+      "id": 1337,
+      "pos": [
+        2310,
+        2050
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1350,
+      "pos": [
+        8000,
+        6800
+      ],
+      "size": [
+        440,
+        560
+      ]
+    },
+    {
+      "id": 1351,
+      "pos": [
+        605,
+        3100
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1352,
+      "pos": [
+        605,
+        3285
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1353,
+      "pos": [
+        1040,
+        3100
+      ],
+      "size": [
+        700,
+        420
+      ]
+    },
+    {
+      "id": 1354,
+      "pos": [
+        1040,
+        3605
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1355,
+      "pos": [
+        1825,
+        3100
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1356,
+      "pos": [
+        1825,
+        3285
+      ],
+      "size": [
+        400,
+        310
+      ]
+    },
+    {
+      "id": 1357,
+      "pos": [
+        2310,
+        3100
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1360,
+      "pos": [
+        80,
+        4250
+      ],
+      "size": [
+        350,
+        130
+      ]
+    },
+    {
+      "id": 1361,
+      "pos": [
+        80,
+        4465
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1362,
+      "pos": [
+        80,
+        4650
+      ],
+      "size": [
+        350,
+        130
+      ]
+    },
+    {
+      "id": 1363,
+      "pos": [
+        80,
+        4865
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1364,
+      "pos": [
+        515,
+        4250
+      ],
+      "size": [
+        760,
+        300
+      ]
+    },
+    {
+      "id": 1365,
+      "pos": [
+        515,
+        4635
+      ],
+      "size": [
+        700,
+        220
+      ]
+    },
+    {
+      "id": 1366,
+      "pos": [
+        1360,
+        4250
+      ],
+      "size": [
+        400,
+        310
+      ]
+    },
+    {
+      "id": 1367,
+      "pos": [
+        1360,
+        4645
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1368,
+      "pos": [
+        1845,
+        4250
+      ],
+      "size": [
+        500,
+        560
+      ]
+    },
+    {
+      "id": 1370,
+      "pos": [
+        605,
+        2420
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1371,
+      "pos": [
+        605,
+        2605
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1372,
+      "pos": [
+        1825,
+        2235
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1373,
+      "pos": [
+        3100,
+        180
+      ],
+      "size": [
+        950,
+        610
+      ]
+    }
+  ]
+}

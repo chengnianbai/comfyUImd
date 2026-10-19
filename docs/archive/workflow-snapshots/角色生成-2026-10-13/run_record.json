@@ -1,0 +1,827 @@
+{
+  "date": "2026-10-15",
+  "workflow": "系列-夜市百相簿\\02-角色\\角色生成.json",
+  "workflow_sha256": "01970ee6e8968630a7c09e4eeb419bb63d872427cd9ee09c4a4afac566b0efec",
+  "workflow_id": "1942ebf9-d94a-4790-bc94-ff98ed497520",
+  "scope": "用户授权本轮连续运行候选16至20共5张；逐张目视检查，未达标则调整下一版本提示词，第5张结束。不得安装/下载模型或LoRA。",
+  "reference_condition": "用户提供3张图仅用于提炼文字关键词：前2张五官、最后1张发型；工作流不加载图像；候选09全身参考也已移除。",
+  "attempts": [
+    {
+      "candidate": "01",
+      "workflow": "candidate01_workflow.json",
+      "sha256": "c73e8a0517d9fdb304c58d10c7dd67e151939be8616e07211ba07991cf647915",
+      "api": "candidate_api.json",
+      "history": "history.json",
+      "prompt_id": "2e767336-556f-4f8c-b432-848e216ee526",
+      "status": "success",
+      "size": [
+        768,
+        1152
+      ],
+      "steps": 24,
+      "seed": 2026101301,
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\闻灯-正面全身-候选01.png",
+      "review": "用户指出模糊，发型、眼型和眉型不符，未验收"
+    },
+    {
+      "candidate": "02",
+      "api": "candidate02_api.json",
+      "history": "candidate02_history.json",
+      "diff": "candidate02_verified_diff.json",
+      "save_result": "candidate02_save_result.json",
+      "image_result": "candidate02_image_result.json",
+      "prompt_id": "81c4666c-d6f8-4ea5-b7dc-36e22ddc770e",
+      "status": "success",
+      "size": [
+        1024,
+        1536
+      ],
+      "steps": 28,
+      "seed": 2026101301,
+      "cfg": 1,
+      "sampler": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "flux_guidance": 3.5,
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\闻灯-正面全身-候选02.png",
+      "image_sha256": "8d4921d77ffb91a300e4894e8174d3286a47606fdb89564eb9660f9aeb45fa21",
+      "review": "清晰度改善且头脚完整；仍有分缝，双眼皮/眼窝/眉型不足，眼尾痣不清，背心未扎腰；待用户判断",
+      "api_matches_history": true
+    },
+    {
+      "candidate": "03",
+      "round_attempt": 1,
+      "prompt_id": "375d0fd4-dac9-4a52-8608-4c7c3d9272fb",
+      "status": "success",
+      "workflow": "candidate03_workflow.json",
+      "workflow_sha256": "233225d9344a09acf5b68251a3cd6737ebc06a6049724b7b297aec7452ee0606",
+      "api": "candidate03_api.json",
+      "save_result": "candidate03_save_result.json",
+      "diff": "candidate03_submission_diff.json",
+      "size": [
+        1024,
+        1536
+      ],
+      "steps": 28,
+      "seed": 2026101301,
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\闻灯-正面全身-候选03.png",
+      "image_sha256": "60c9cbb59cca0a589e69f86b16d57161d36ce3d2e5b63bc010e2491a72074594",
+      "history": "candidate03_history.json",
+      "review": "发型仍偏分，两眼双眼皮不清晰/眼窝眉型未达参考；面部与肩部稍浅但前臂/小腿暗且偏暖；衣摆堆叠，整体未达标。"
+    },
+    {
+      "candidate": "04",
+      "round_attempt": 2,
+      "prompt_id": "ce26222b-a7a8-435a-8d29-6e27282f24ef",
+      "status": "success",
+      "workflow": "candidate04_workflow.json",
+      "workflow_sha256": "6956ba0a9211517ebf6b4703edf2c76e09b20fbb448226b6aaa5f7258f8b2d44",
+      "api": "candidate04_api.json",
+      "diff": "candidate04_diff.json",
+      "save_result": "candidate04_save_result.json",
+      "size": [
+        1024,
+        1536
+      ],
+      "steps": 28,
+      "seed": 2026101301,
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\闻灯-正面全身-候选04.png",
+      "image_sha256": "2ede5128829b3537290a69844983cfe2486dbca5a5181218f162cadfdc4dc69a",
+      "history": "candidate04_history.json",
+      "review": "卷发更明显但过卷，偏白脸部改善；变成半身特写丢失腿脚，全身构图失败；眼窝/双眼皮仍不足，身体肤色不可完整判断。"
+    },
+    {
+      "candidate": "05",
+      "round_attempt": 3,
+      "prompt_id": "55751faf-739f-46ca-991b-2ee564de4dc2",
+      "status": "success",
+      "workflow": "candidate05_workflow.json",
+      "workflow_sha256": "556983bcdc655d0845e6b3b8acb2015797271ce04b482fc244af1ccae824e651",
+      "api": "candidate05_api.json",
+      "diff": "candidate05_diff.json",
+      "save_result": "candidate05_save_result.json",
+      "size": [
+        1024,
+        1536
+      ],
+      "steps": 28,
+      "seed": 2026101301,
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\闻灯-正面全身-候选05.png",
+      "image_sha256": "288209c86996b039d0695f0223a4b79347c6f2829087b3b612c332b85eda26cd",
+      "history": "candidate05_history.json",
+      "review": "恢复头脚完整但分缝、双眼皮/眼窝/眉型及肤色差异仍不达标，清晰度下降。前三次已用完。"
+    },
+    {
+      "candidate": "06",
+      "authorization": "用户追加一次解剖结构提示词试验",
+      "prompt_id": "2ae12722-949d-4f37-823d-c89683626c54",
+      "status": "success",
+      "workflow": "candidate06_workflow.json",
+      "workflow_sha256": "33eefdfc9bb0a71f123bd3f917be18ef9d65a0ea84ecf1e9909d39593ed9952c",
+      "api": "candidate06_api.json",
+      "diff": "candidate06_diff.json",
+      "save_result": "candidate06_save_result.json",
+      "size": [
+        1024,
+        1536
+      ],
+      "steps": 28,
+      "seed": 2026101301,
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\闻灯-正面全身-候选06.png",
+      "image_sha256": "5fac2cbc6a8fd4626232ed86dd590af0bf8f7ce682739a6ae05bdc2a2d92e035",
+      "history": "candidate06_history.json",
+      "review": "头脚完整且背心扎腰更明确；仍有发型分缝，眼窝/双眼皮/眉型不足，前臂与小腿仍暗于肩部，自然偏白目标未落实；清晰度低于用户认可的候选02，未验收。"
+    },
+    {
+      "candidate": "07",
+      "authorization": "用户明确授权现有SDXL正面完整全身候选一张；整体人工确认后才扩展多角度",
+      "status": "success",
+      "workflow": "candidate07_workflow.json",
+      "workflow_sha256": "c5cb47c307c42f42648d1541ce3c316a2bae663978dbf0ca32479f3cbbabaf29",
+      "api": "candidate07_api.json",
+      "diff": "candidate07_verified_diff.json",
+      "save_result": "candidate07_save_result.json",
+      "dependencies": "candidate07_sdxl_dependencies.json",
+      "size": [
+        896,
+        1344
+      ],
+      "steps": 30,
+      "cfg": 6.0,
+      "seed": 2026101301,
+      "checkpoint": "leosamsHelloworldXL_helloworldXL70.safetensors",
+      "graph_validation": "passed; API rebuild equals stored; all 27 changes reviewed including structure and dependencies",
+      "submitted_at": "2026-10-13T09:57:06.147381+00:00",
+      "prompt_id": "74e7fecc-ccf6-4993-8e1c-8c3bafe98840",
+      "history": "candidate07_history.json",
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\闻灯-SDXL正面全身-候选07.png",
+      "image_sha256": "83c43ccba13612cc1b631fe2d180251eabdd38ed3e103abe7f7830762bd003da",
+      "actual_api_matches": true,
+      "user_accepted": false,
+      "review": "头顶至双脚完整；肤色目视偏白且较均匀，但不代表已验收。未达标：白背心未穿在身上（裸上身，白布堆在腰部）；头发明显分缝且未形成参考的前向碎卷刘海；双眼皮褶皱和眼窝深度不足、眉型仍未贴合参考；歪头且双手插兜，不能检查手部和自然垂臂；背景偏灰，头顶留白不足；面部偏柔滑，眼尾痣未能可靠辨认，清晰度需用户判断。",
+      "face_review": "candidate07_face_review.png",
+      "dependency_assessment": "history实收API与候选一致，服装/站姿/发型/眼眉条件均已提交；加载现有HelloWorld XL7.0下拉项，SDXL潜空间/采样及图连线通过校验。图像参考未接入；具体权重SHA未核验。当前服装/姿态服从及细节不足，不能凭一次结果断言SDXL不具备能力或直接认定缺模型。用户暂停，后续先确认整体方向和排查条件优先级，再评估现有控制/参考是否适合；新增依赖按规则告知并获授权。"
+    },
+    {
+      "candidate": "08",
+      "authorization": "用户以“继续”并提供新工作流网关，恢复候选07停点；按新增V1.3规则继续正面完整全身验证，当前本轮提交1/3",
+      "status": "success",
+      "workflow": "candidate08_workflow.json",
+      "workflow_sha256": "fdc4107a908d82de98627eecaf64c1e5aa7630f166325cdfd680b3723840c898",
+      "api": "candidate08_api.json",
+      "diff": "candidate08_diff.json",
+      "save_result": "candidate08_save_result.json",
+      "dependency_check": "candidate08_sdxl_dependency_check.json",
+      "prompt": "candidate08_prompt.json",
+      "size": [
+        896,
+        1344
+      ],
+      "steps": 30,
+      "cfg": 6.0,
+      "seed": 2026101301,
+      "checkpoint": "leosamsHelloworldXL_helloworldXL70.safetensors",
+      "dependency_assessment": "history实际API与candidate08一致，任务执行成功证明CheckpointLoaderSimple选中的HelloWorld XL7.0在该实例可加载；/models/checkpoints空列表与成功运行矛盾，不能据此认定模型缺失。权重文件SHA仍未核验。当前主要失败是构图比例与提示服从；先做更窄更高画布验证，不足以归因缺LoRA/底模。",
+      "previous_sha256": "c5cb47c307c42f42648d1541ce3c316a2bae663978dbf0ca32479f3cbbabaf29",
+      "saved_at": "2026-10-15T01:49:02.690308+00:00",
+      "prompt_id": "5a9da059-3827-4fe9-b775-3b0bc1d59b40",
+      "queue_number": 0,
+      "node_errors": {},
+      "history": "candidate08_history.json",
+      "actual_api_matches": true,
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\闻灯-SDXL正面全身-候选08.png",
+      "image_sha256": "d69fb9aa787879395f86d9317c38f0cc938fa92cd3be7da517970a6ec066e2cb",
+      "dimensions": [
+        896,
+        1344
+      ],
+      "user_accepted": false,
+      "review": "部分改善：白色背心已正确穿着上身，双手露出并置于身体两侧，黑色波浪发与肤色整体较自然均匀。仍未达标：构图在大腿处裁切，双脚缺失；背心下摆未扎入短裤；头部仍倾斜；皮肤细微毛孔/纹理在本图不可辨，眼尾痣不清楚；眼窝与眉型需后续目视确认。"
+    },
+    {
+      "candidate": "09",
+      "authorization": "恢复本轮正面全身迭代，按3次上限执行；当前候选08为1/3，本候选为2/3",
+      "status": "success",
+      "workflow": "candidate09_workflow.json",
+      "workflow_sha256": "f81afc591f18d4e8f8ad2752c6726cd4f9d12411f795fcdc33acb7174cf59d01",
+      "api": "candidate09_api.json",
+      "diff": "candidate09_diff.json",
+      "save_result": "candidate09_save_result.json",
+      "size": [
+        768,
+        1536
+      ],
+      "steps": 30,
+      "cfg": 6.0,
+      "seed": 2026101301,
+      "checkpoint": "leosamsHelloworldXL_helloworldXL70.safetensors",
+      "only_behavioral_change": "画布由896x1344改为768x1536；提示词、模型、采样、seed与其余节点保持候选08",
+      "previous_sha256": "fdc4107a908d82de98627eecaf64c1e5aa7630f166325cdfd680b3723840c898",
+      "saved_at": "2026-10-15T01:51:54.195489+00:00",
+      "prompt_id": "752815fd-8098-439c-8f98-812fdc8456bc",
+      "queue_number": 1,
+      "node_errors": {},
+      "history": "candidate09_history.json",
+      "actual_api_matches": true,
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\闻灯-SDXL正面全身-候选09.png",
+      "image_sha256": "dbedf5f06adf4e60fc09f2630d5ee5200c80b15a0ecde4ab431b65e780872a37",
+      "dimensions": [
+        768,
+        1536
+      ],
+      "user_accepted": false,
+      "review": "构图改善明显：头顶至双脚完整，正面端正站立，双手可见，肤色基础色调较一致。仍未达标：背心衣摆垂在短裤外，未扎腰；皮肤表面明显偏平滑，细微自然纹理/毛孔难辨；发型仍未形成期望的额前碎卷刘海，额头暴露较多；短裤出现疑似品牌标记，需消除。面部/眼尾痣在全身分辨率下不够清楚。",
+      "dependency_assessment": "candidate09实证模型与采样成功，窄高画布改善全身取景。当前衣摆、前刘海及细节仍受提示服从/全身像素限制；现有链无身份参考、控制节点或局部细化。单次未达不能证明底模缺失，但候选10后若仍无法兼顾全身和材质，评估SDXL兼容的姿态/构图控制和全身图细节方案；不自动下载或安装。"
+    },
+    {
+      "candidate": "10",
+      "authorization": "用户恢复继续；依照同轮最大3次调试，candidate08=1/3、candidate09=2/3，本次为最后一次3/3",
+      "status": "success",
+      "workflow": "candidate10_workflow.json",
+      "workflow_sha256": "d852cfe014145108f484eee0b547002e8177cdaab825375edb263c05098e71d4",
+      "api": "candidate10_api.json",
+      "diff": "candidate10_diff.json",
+      "save_result": "candidate10_save_result.json",
+      "size": [
+        768,
+        1536
+      ],
+      "steps": 30,
+      "cfg": 6.0,
+      "seed": 2026101301,
+      "checkpoint": "leosamsHelloworldXL_helloworldXL70.safetensors",
+      "changes": "只改提示词以加强前向无分缝刘海、可见自然微纹理、衣摆完全扎入腰头、无品牌标志；画布采样模型和seed沿用候选09",
+      "previous_sha256": "f81afc591f18d4e8f8ad2752c6726cd4f9d12411f795fcdc33acb7174cf59d01",
+      "saved_at": "2026-10-15T01:53:34.427474+00:00",
+      "prompt_id": "c321caba-6e47-43e7-8b85-201a6d290105",
+      "queue_number": 2,
+      "node_errors": {},
+      "history": "candidate10_history.json",
+      "actual_api_matches": true,
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\闻灯-SDXL正面全身-候选10.png",
+      "image_sha256": "ec02e96601c219a2f6a3e7a17879f37821b34f45d15a7385cd243591329ba6c1",
+      "dimensions": [
+        768,
+        1536
+      ],
+      "user_accepted": false,
+      "review": "正面头顶至双脚完整、双手可见，面部较候选09更正，但人物身份观感与08/09不同；皮肤仍偏平滑，细微毛孔未达标；头发为短而后梳的造型，缺少要求的向前波浪碎刘海；背心衣摆仍在短裤外，未扎腰；短裤残留类似徽标/字样的伪影。整体未达标、未获用户验收。",
+      "dependency_assessment": "三次恢复后调试均执行成功。当前SDXL checkpoint任务实际加载成功，节点链没有任何图像身份输入或IP-Adapter节点；同seed只固定噪声，提示词变化及画布比例变化仍可重构脸。身体提示含lean wiry/long legs，直接偏向消瘦；去除此词并改写体量，配合获认可全身参考更合适。现有链缺IP-Adapter自定义节点及编码器/适配器权重；尚无用户认可的全身基准，故不安装、不设母版。无已核验合适的LoRA候选。"
+    },
+    {
+      "candidate": "11",
+      "authorization": "one IP-Adapter reference experiment, user selected candidate09; not a new retry allowance",
+      "workflow": "candidate11_workflow.json",
+      "workflow_sha256": "524db4233b045903f3604e876eb82367cbb0ad9b90e909c23b02326b9b681295",
+      "api": "candidate11_api.json",
+      "api_sha256": "fa6afa4d2cf5b8c12a27142d1d0246a009c7353011ca5035c191af26f90acad2",
+      "diff": "candidate11_diff.json",
+      "remote_readback_sha256": "524db4233b045903f3604e876eb82367cbb0ad9b90e909c23b02326b9b681295",
+      "remote_readback_exact": true,
+      "prompt_id": "f3f3d122-7ef6-4028-b9f5-92a8363cc221",
+      "status": "success",
+      "checkpoint": "leosamsHelloworldXL_helloworldXL70.safetensors",
+      "reference_image": "candidate09_fullbody_reference.png",
+      "reference_image_sha256": "dbedf5f06adf4e60fc09f2630d5ee5200c80b15a0ecde4ab431b65e780872a37",
+      "reference_weight": 0.42,
+      "weight_type": "ease out",
+      "end_at": 0.75,
+      "preprocess": "LANCZOS, pad, sharpening 0.0",
+      "seed": 2026101301,
+      "size": [
+        768,
+        1536
+      ],
+      "nodes": 11,
+      "links": 14,
+      "actual_api_matches_history": true,
+      "node_errors": {},
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\闻灯-IPAdapter参考-候选11.png",
+      "image_sha256": "a91a879e7922da431d97287c49721738345b3bd910dfa82fe8cf22f9e178ad9f",
+      "user_accepted": false,
+      "review": "目视初检：无明显中分线，但头发仍有单侧梳理/分束感；面部眉骨和鼻梁结构比候选09清晰，整体仍偏精修偶像感；体型稍有肌肉感但仍偏瘦；背心未扎入短裤，短裤有伪标记。未获用户验收。"
+    },
+    {
+      "candidate": "12",
+      "authorization": "本轮角色生成调试",
+      "workflow": "candidate12_workflow.json",
+      "api": "candidate12_api.json",
+      "history": "candidate12_history.json",
+      "prompt_id": "e6bb83cc-db58-4dd2-b9fa-c25b6961a88f",
+      "status": "success",
+      "size": [
+        768,
+        1536
+      ],
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\candidate12.png",
+      "image_sha256": "b53a08b9c4efc1ef244e0bb207231bf955a2f8fec38ce3dffdd99099226e4101",
+      "review": "候选12脸部近景，裸上身，未形成全身白背心白短裤图，未验收。",
+      "api_matches_history": true
+    },
+    {
+      "candidate": "13",
+      "authorization": "本轮角色生成调试",
+      "workflow": "candidate13_workflow.json",
+      "api": "candidate13_api.json",
+      "history": "candidate13_history.json",
+      "prompt_id": "a2239493-f1fc-4486-96f4-130f61380b98",
+      "status": "success",
+      "size": [
+        768,
+        1536
+      ],
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\candidate13.png",
+      "image_sha256": "72f3c58ec4a8d429a2a8cd136816613cdcd82d04e47d2b8d8c977aa8440ad537",
+      "review": "候选13仍为裸上身及内裤式下装，画面止于大腿，双脚缺失；提示词虽含24岁和服装但未执行，未验收。",
+      "api_matches_history": true
+    },
+    {
+      "candidate": "14",
+      "authorization": "本轮角色生成调试",
+      "workflow": "candidate14_workflow.json",
+      "api": "candidate14_api.json",
+      "history": "candidate14_history.json",
+      "prompt_id": "a595f72d-3da7-4090-a880-1cd16db7ad9c",
+      "status": "success",
+      "size": [
+        768,
+        1536
+      ],
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\candidate14.png",
+      "image_sha256": "2e5fe86f82a2537ba1edcfb78b9edd5f0cdcaac7aa3c9599dfbad2697b229f40",
+      "review": "候选14为24岁、外穿白背心和白短裤并显示双脚；衣摆未扎入、出现鞋和伪标记，体型仍偏瘦、手臂藏后，未验收。",
+      "api_matches_history": true
+    },
+    {
+      "candidate": "15",
+      "authorization": "用户明确要求运行的单张验证",
+      "workflow": "candidate15_workflow.json",
+      "api": "candidate15_api.json",
+      "history": "candidate15_history.json",
+      "prompt_id": "bf4e130f-b334-4e80-986d-4ee0911a9db5",
+      "status": "success",
+      "size": [
+        768,
+        1536
+      ],
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\candidate15.png",
+      "image_sha256": "8037e0db0172c20f194787ebcbaa4707da141a8c86ee6347c35eb976a5f1c65f",
+      "review": "候选15在移除所有图像参考/IP-Adapter节点后生成：白背心和短裤正确穿着但衣摆未扎腰，短裤有伪标记，穿鞋，体型偏瘦，发型偏短直且五官未达参考方向；该图生成于本轮提炼参考图关键词之前，未验收。",
+      "api_matches_history": true,
+      "workflow_sha256": "1049565e22399769819e5d538f3402f680e9161b68f4f202d4e3abe97daedb2d",
+      "seed": 2026101515,
+      "image_conditioning": "none; no LoadImage or IP-Adapter nodes",
+      "runtime_overrides": {
+        "filename_prefix": "角色生成/闻灯角色生成-候选15"
+      }
+    },
+    {
+      "candidate": "16",
+      "authorization": "用户明确授权关键词更新后连续运行5次；第1/5次",
+      "workflow": "candidate16_workflow.json",
+      "workflow_sha256": "79c958080a8df8d033d2ca2d44252cbb1cbd073c1d587c744ecc931b94cf396d",
+      "api": "candidate16_api.json",
+      "api_sha256": "607b9361655459990304e4433c4e43c38f0c49175bf14c0e6e349958eb825a5e",
+      "history": "candidate16_history.json",
+      "prompt_id": "adb63625-b511-4850-bd8e-2235700be5cf",
+      "status": "success",
+      "seed": 2026101516,
+      "size": [
+        768,
+        1536
+      ],
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\candidate16.png",
+      "image_sha256": "37431b476ddc639d4be14b15f43db2dadb38e679dc6afb5e6c53c813e119a42d",
+      "image_conditioning": "none",
+      "review": "未达标：背心衣摆在腰外；穿凉鞋；双手插袋；发型短且偏直，眼窝/双眼皮特征较弱。"
+    },
+    {
+      "candidate": "17",
+      "round_attempt": 2,
+      "workflow": "candidate17_workflow.json",
+      "workflow_sha256": "6b552bc1882ef5940c8cca3c15b971fcc24cd4954da27e83df87c155b86e6972",
+      "api": "candidate17_api.json",
+      "history": "candidate17_history.json",
+      "submit_response": "candidate17_submit_response.json",
+      "prompt_id": "90d5270a-7a8f-4f2b-adbd-bb04123c429e",
+      "status": "success",
+      "size": [
+        768,
+        1536
+      ],
+      "steps": 30,
+      "cfg": 6.0,
+      "sampler": "dpmpp_2m",
+      "scheduler": "karras",
+      "seed": 2026101517,
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\candidate17.png",
+      "image_sha256": "4b3fa2effafae7a543556810b21f0e5a1e04340f736de8fd9fee61555e6aa05c",
+      "review": "未达标：站姿较自然但裁到膝下，脚未入镜；背心未扎腰，短裤有伪字标；眼睛仍偏平、双眼皮不清，发型短直。"
+    },
+    {
+      "candidate": "18",
+      "round_attempt": 3,
+      "workflow": "candidate18_workflow.json",
+      "workflow_sha256": "14862041599cb8d8795062ec79033de71b106ea54e2d527db3e8e4dcc7894e05",
+      "api": "candidate18_api.json",
+      "history": "candidate18_history.json",
+      "submit_response": "candidate18_submit_response.json",
+      "prompt_id": "4eeaab5e-077f-4ede-9b29-f685248fd336",
+      "status": "success",
+      "size": [
+        768,
+        1536
+      ],
+      "steps": 30,
+      "cfg": 6.0,
+      "sampler": "dpmpp_2m",
+      "scheduler": "karras",
+      "seed": 2026101518,
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\candidate18.png",
+      "image_sha256": "c5fedbd2bbeaf8d0fe73486988153539fef198181ff6a765c865a912805ee16e",
+      "review": "未达标：脸/发权重过强，生成肩部特写，丢失全身、短裤和脚；五官立体与双眼皮仍不足，妆感和精修感仍明显。"
+    },
+    {
+      "candidate": "19",
+      "round_attempt": 4,
+      "workflow": "candidate19_workflow.json",
+      "workflow_sha256": "c12055797a24cc1d976bde549a3b4234021f546c4cc5942d8bd8d7b44b51d682",
+      "api": "candidate19_api.json",
+      "history": "candidate19_history.json",
+      "submit_response": "candidate19_submit_response.json",
+      "prompt_id": "071a72d8-916d-4294-8894-7dade680d414",
+      "status": "success",
+      "size": [
+        768,
+        1536
+      ],
+      "steps": 30,
+      "cfg": 6.0,
+      "sampler": "dpmpp_2m",
+      "scheduler": "karras",
+      "seed": 2026101519,
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\candidate19.png",
+      "image_sha256": "c51ffa8be50cf9ca1c318d8e706c73ee8e9e4276f3e07cc153de90a75cb92069",
+      "review": "未达标：背心消失，生成内裤式短裤；身体扭成侧姿且膝下裁切；面部、眼型与发型仍不稳定。"
+    },
+    {
+      "candidate": "20",
+      "round_attempt": 5,
+      "workflow": "candidate20_workflow.json",
+      "workflow_sha256": "c589da9831030b3cf9474cdc7eb9f60fcaa64712870d0d7752ede0a15c8e5952",
+      "api": "candidate20_api.json",
+      "history": "candidate20_history.json",
+      "submit_response": "candidate20_submit_response.json",
+      "prompt_id": "dddd52c7-784e-4f46-91ff-f3728856c361",
+      "status": "success",
+      "size": [
+        768,
+        1536
+      ],
+      "steps": 30,
+      "cfg": 6.0,
+      "sampler": "dpmpp_2m",
+      "scheduler": "karras",
+      "seed": 2026101520,
+      "image": "系列-夜市百相簿\\02-角色\\闻灯\\设定图\\闻灯-角色生成示意图\\candidate20.png",
+      "image_sha256": "ade50f948527265179ead1896e69937e3df139ecfa6adb4a87a4021154006a82",
+      "review": "未达标：全身正面、自然垂臂、白背心和短裤、赤脚均回到画面；但背心未扎腰，短裤有伪标，发型偏短有分缝，眼窝/双眼皮/眉骨/鼻梁立体度仍不足，疲态较轻。"
+    }
+  ],
+  "remote_saved_readback": {
+    "gateway": "https://gw-6ed29e3e0a33433b9eb91aca62301fa5.cn-beijing.aigclinks.com:8016",
+    "saved_at": "2026-10-15",
+    "workflow_sha256": "79c958080a8df8d033d2ca2d44252cbb1cbd073c1d587c744ecc931b94cf396d",
+    "full_readback_matches": true,
+    "node_count": 7,
+    "link_count": 9,
+    "image_reference_nodes": 0,
+    "note": "candidate16: user-provided facial/hair references are text-only keyword sources; no image input nodes"
+  },
+  "final_availability_check": {
+    "at": "2026-10-13T08:17:24.423557+00:00",
+    "status": 400,
+    "page_title": "服务连接失败",
+    "note": "保存时已完整回读一致；收尾时网关不可用，无法再次核验实时云端状态，不追加保存或运行。"
+  },
+  "dependencies": "模型可运行但精确权重SHA未核验；无图像参考、LoRA、局部修复或放大链。建议先评估兼容图像参考/局部属性控制，未新增安装或切换。",
+  "next": "已完成G01/G02共20张，用户明确两组均不满意；按用户关于先对比再修改的反馈停止剩余组进行诊断。云端有用户/DeepSeek改过的13节点/20连线图，已只读归档，不覆盖本地主入口或云端。其成图仅作改动证据，用户未将其设为母版/参考/验收标准。不得把77 token分块误写为全段硬截断；生成质量问题原因仍未隔离，下一步先明确诊断结果，禁止直接照预设组别连跑。",
+  "platform_input_tokens": null,
+  "platform_cached_tokens": null,
+  "retry_policy": {
+    "max_generation_attempts": 3,
+    "current_round_count": 3,
+    "round_first_candidate": "03",
+    "prepared_next_candidate": "03",
+    "note": "用户最新明确授权：从接下来的调整起最多3次，旧候选01/02不计入此次新额度；每次目视检查，达标提前停，三次仍失败再讨论具体模型/LoRA及安装时长。"
+  },
+  "user_feedback_candidate02": "清晰度足够；发型分缝，双眼皮/眼窝/眉型不符；上臂以下肤色不一致；皮肤减少黄黑、自然偏白一点。",
+  "prepared_candidate": null,
+  "latest_availability_check": "2026-10-15 HTTP 200; cloud workflow full readback equals local; 7 nodes, 9 links; no image inputs or IP-Adapter nodes",
+  "gateway": "https://gw-6ed29e3e0a33433b9eb91aca62301fa5.cn-beijing.aigclinks.com:8016",
+  "additional_authorization": "2026-10-15用户以“继续”并提供新网关，恢复候选07停点。自动调试08–10三次用尽；不因换网关重置。",
+  "dependency_evaluation": {
+    "conclusion": "Candidates16-20 changed multiple prompt variables, so the visual failures do not isolate a keyword-only or model capability cause. No model/LoRA recommendation is justified until a controlled test establishes a specific capability gap. Candidate20 still missed eye/hair structure, tucked hem, and logo-free clothing.",
+    "selected_checkpoint": "leosamsHelloworldXL_helloworldXL70.safetensors",
+    "image_conditioning_in_current_workflow": false,
+    "new_model_or_lora_installed": false,
+    "recommendation": "Withdraw the earlier RealVisXL comparison suggestion. No model/LoRA selected, downloaded, installed, or switched; first validate the clarified prompt under controlled conditions, then reassess only if evidence identifies a dependency gap."
+  },
+  "approved_face_audit": "approved_face00017_generation_chain.json",
+  "current_route": "SDXL base with candidate09 low-weight IP-Adapter Plus ViT-H full-body conditioning; output candidate11 not accepted",
+  "paused_by_user": "2026-10-13 用户：先暂时这样，把未达标的先记录上，我准备把云电脑关了",
+  "latest_dependency_assessment": {
+    "conclusion": "not a missing SDXL checkpoint; missing identity-image conditioning in the reusable chain; body thinness is reinforced by explicit prompt wording",
+    "selected_checkpoint_loaded": true,
+    "workflow_has_image_input": false,
+    "ipadapter_nodes_available": false,
+    "exact_checkpoint_sha256": "unknown",
+    "ipadapter_recommendation": "SDXL IP-Adapter Plus ViT-H general image reference after user selects an approved full-body base",
+    "weight_sources_checked": true,
+    "no_download_or_install_authorized_or_performed": true
+  },
+  "ipadapter_install": {
+    "authorization": "2026-10-15 user authorizes recommended downloads and node/workflow modifications",
+    "reference_choice": "candidate09, experimental input not accepted master",
+    "node_package": "comfyui_ipadapter_plus",
+    "node_version": "2.0.0",
+    "node_install": "comfyui_ipadapter_plus 2.0.0 registered at runtime; IPAdapterUnifiedLoader, IPAdapterAdvanced, PrepImageForClipVision present",
+    "ipadapter_weight": "ip-adapter-plus_sdxl_vit-h.safetensors",
+    "ipadapter_weight_bytes": 847517512,
+    "vision_weight": "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors",
+    "vision_source": "h94/IP-Adapter/models/image_encoder/model.safetensors",
+    "vision_weight_expected_bytes": 2528373448,
+    "total_weight_expected_bytes": 3375890960,
+    "correction": "Previously quoted sdxl_models/image_encoder 3.69GB was bigG and incompatible with this ViT-H adapter. No bigG downloaded.",
+    "downloads": "both remote files fully present at exact expected byte sizes; runtime node schemas confirmed",
+    "generation_budget": "08–10 limit remains exhausted; dependency installation validation separately authorized, no new auto-retry allowance inferred",
+    "candidate09_sha256": "dbedf5f06adf4e60fc09f2630d5ee5200c80b15a0ecde4ab431b65e780872a37",
+    "next": "single authorized experiment complete; await user review, no further automatic generation",
+    "ipadapter_weight_actual_bytes": 847517512,
+    "vision_weight_actual_bytes": 2528373448,
+    "reference_intent": "candidate09 for full-body/framing reference only; user rejects its Korean-idol styling and center-parted hair",
+    "actual_test": "candidate11 completed successfully; see attempts[10]"
+  },
+  "current_workflow": "candidate20_workflow.json",
+  "current_prompt_updated_after_candidate15": true,
+  "iteration_authorization": {
+    "authorized_by": "2026-10-15 user instruction",
+    "total_runs": 5,
+    "completed": 5,
+    "next_candidate": null,
+    "stop_after": "candidate20",
+    "rule": "每张目视核验；未达标则按观察调整提示词后运行下一张；第5张后停止。"
+  },
+  "authorized_round_count": 5,
+  "completed_round_attempts": 5,
+  "latest_prompt_revision": {
+    "status": "previous local text revision; cloud was subsequently externally edited; no new generation during diagnosis",
+    "changes": [
+      "Describe double eyelid creases, orbital shadow, brow ridge, and nose root as visible structures without increasing face weight.",
+      "Specify full crown/temple volume, curl length past ears toward nape, forward loose curls, and no visible part line.",
+      "Specify the shorts waistband concealing the entire tank hem and blank unbranded shorts; exclude hems outside waistband and garment marks/logos.",
+      "Do not recommend model/LoRA downloads until controlled evidence isolates a concrete dependency gap."
+    ],
+    "generation_authorized": true,
+    "workflow_sha256": "01970ee6e8968630a7c09e4eeb419bb63d872427cd9ee09c4a4afac566b0efec",
+    "cloud_full_readback_matches": true
+  },
+  "controlled_prompt_groups": {
+    "authorized_at": "2026-10-15 user instruction",
+    "max_groups": 5,
+    "images_per_group": 10,
+    "early_stop": "Stop remaining groups once a candidate visibly satisfies the requested face, hair, tucked tank, blank shorts, full-body and barefoot criteria; present it for user acceptance without claiming acceptance.",
+    "shared_settings": "same SDXL checkpoint, 768x1536, 30 steps, CFG 6, DPM++ 2M Karras, denoise 1.0, same negative baseline except group-specific face/hair/clothing exclusions; paired seed sequence 2026101601-2026101610",
+    "groups": [
+      {
+        "group": 1,
+        "variant": "candidate20 prompt baseline",
+        "status": "complete",
+        "count": 10,
+        "review": "0/10 satisfy all criteria. Full-body/barefoot usually held; tank color/style and shorts branding drifted, 2 outputs lacked a shirt, most hems were untucked, face/hair remained inconsistent.",
+        "runs": [
+          {
+            "seed": 2026101601,
+            "prompt_id": "0fc6dc25-d49f-410e-ab42-cf9c4e1c5882",
+            "image": "G01-基线-S01.png",
+            "sha256": "1a7d306f4a68f4eaf3484d4bef22ac7e8de04b9efe20c47c875e657b5ec9ca9c"
+          },
+          {
+            "seed": 2026101602,
+            "prompt_id": "70cafb0c-f09f-4396-90c6-cef655e52ffe",
+            "image": "G01-基线-S02.png",
+            "sha256": "ff1c3acc6fe8b9d0119d89b8e9bb15399281f0bb7cb9abfb737095f9fe401837"
+          },
+          {
+            "seed": 2026101603,
+            "prompt_id": "2cc6f529-e79e-47c4-bef2-142c3700b75b",
+            "image": "G01-基线-S03.png",
+            "sha256": "130e102fcccea119e9b8bbb52a54515edaf67aae136e579f2be4ecc43399a5a9"
+          },
+          {
+            "seed": 2026101604,
+            "prompt_id": "93004c22-0233-4368-86d0-6de3f01678cc",
+            "image": "G01-基线-S04.png",
+            "sha256": "4e87081f06f6a1506f8f4156473227b19fb270f37e3200884feb25478c28d587"
+          },
+          {
+            "seed": 2026101605,
+            "prompt_id": "c9e76414-1627-4660-a0f3-931173849940",
+            "image": "G01-基线-S05.png",
+            "sha256": "f630cb057a1cec818a151cb07f7513c6c4332311eb97cd97d9a09654515f4106"
+          },
+          {
+            "seed": 2026101606,
+            "prompt_id": "ac4eefaf-5b58-4633-9946-09b1d64182b5",
+            "image": "G01-基线-S06.png",
+            "sha256": "4c87b13c3d2ee968506462d7c85dfd684176e73e4018419d25f8a6d95ca53e86"
+          },
+          {
+            "seed": 2026101607,
+            "prompt_id": "2a88ddd9-a98d-4121-a931-904b794a658b",
+            "image": "G01-基线-S07.png",
+            "sha256": "e077e521dd537ce1b9fdd4634c8cd29c6294294098fd9287bdfa593551abdf32"
+          },
+          {
+            "seed": 2026101608,
+            "prompt_id": "9b7effce-f798-43da-8909-61103ef55dd9",
+            "image": "G01-基线-S08.png",
+            "sha256": "476440edc40266fa27b17f1207814bdec559ced4016ee1dec491b653d34d4e8c"
+          },
+          {
+            "seed": 2026101609,
+            "prompt_id": "3bdc9e9f-9b33-4d2b-87f2-2fe2d0f4d494",
+            "image": "G01-基线-S09.png",
+            "sha256": "836962354ec0d29ea9ad71df23825ba5bfabfaaf458c83f497fd01507183f051"
+          },
+          {
+            "seed": 2026101610,
+            "prompt_id": "6903f4e3-e352-4103-9a3e-9c7eb9158319",
+            "image": "G01-基线-S10.png",
+            "sha256": "6945324a6057046df49a04b14e2218840901da98ede313a0f9ebbd7a09c273f3"
+          }
+        ],
+        "user_accepted": false
+      },
+      {
+        "group": 2,
+        "variant": "face morphology only",
+        "status": "complete; rejected by user",
+        "count": 10,
+        "user_accepted": false,
+        "review": "0/10 meet all goals. Face-only wording did not resolve desired eye morphology; 8/10 crop feet/legs or become close portraits, 2/10 lack tank, all lack a visibly fully tucked hem. No next group launched.",
+        "runs": [
+          {
+            "seed": 2026101601,
+            "prompt_id": "6c4a4738-b270-4cfd-9c6e-c88a1a41487c",
+            "image": "G02-face-S01.png",
+            "sha256": "60dfc1fd0a99482f4d9071fea014365bcc91dab799fc0d7e9d54af9c84e15685",
+            "status": "success",
+            "user_accepted": false,
+            "submitted_api_sha256": "c74e7fda6c08140574efd591fed7c33dc1bd49c5090a2ee4c0d0f5e79140c0fc"
+          },
+          {
+            "seed": 2026101602,
+            "prompt_id": "cc8a93f7-6882-4148-856d-2dfeb80f6c04",
+            "image": "G02-face-S02.png",
+            "sha256": "8e858fb83d4617eae2b6175297cea990d78762cb511d081d5852f60be34f3ad2",
+            "status": "success",
+            "user_accepted": false,
+            "submitted_api_sha256": "78efabaf069170cb38bb73553aaebfddeb5bcdd50f3573ae95bb8c0db4930161"
+          },
+          {
+            "seed": 2026101603,
+            "prompt_id": "9065cd0c-7454-4e98-b8e8-5899f8422aca",
+            "image": "G02-face-S03.png",
+            "sha256": "c56195e674447fc8f0797424faf5b1870bf7ef2110cdd8abc8a198dfa94c4c96",
+            "status": "success",
+            "user_accepted": false,
+            "submitted_api_sha256": "c48ceec5d661fbb4f75265714132dc1a83325245cebfb8de6af3ab617520fff2"
+          },
+          {
+            "seed": 2026101604,
+            "prompt_id": "e12f97a1-ceb3-4a3d-999f-7ead334c9132",
+            "image": "G02-face-S04.png",
+            "sha256": "1222e27b90ae186b1a394b2ba3f6401f49ce4ea3e4c8a5253f5087a2690a1e3f",
+            "status": "success",
+            "user_accepted": false,
+            "submitted_api_sha256": "9e43bbbee195907b75b5e4e5b00379fa3d38566654f940342ba70f98d031e1d4"
+          },
+          {
+            "seed": 2026101605,
+            "prompt_id": "71f4ac0f-43c4-484c-bfee-09bf60dde32d",
+            "image": "G02-face-S05.png",
+            "sha256": "44dacad975f6b238b13e2f36be4e92cabe7d40a6aaac72c7d06c557d94ab423a",
+            "status": "success",
+            "user_accepted": false,
+            "submitted_api_sha256": "f892f9817e6fdf2ebd49276d7eefe486fe4eb263ac252184bbc4d74c0630c99c"
+          },
+          {
+            "seed": 2026101606,
+            "prompt_id": "d84c6fff-ffec-41d6-b903-d715abdb2a4d",
+            "image": "G02-face-S06.png",
+            "sha256": "97dedec501fe814f36e98e747de4758b08481aab206a23a4ad249d89737aea5c",
+            "status": "success",
+            "user_accepted": false,
+            "submitted_api_sha256": "cf0e2ef2a24dac98e555ae2ddb91d7c36061cc576704f5df69890d2a7236fd0f"
+          },
+          {
+            "seed": 2026101607,
+            "prompt_id": "9bcdc886-fb17-43d9-8182-5735a3d456c4",
+            "image": "G02-face-S07.png",
+            "sha256": "cc48ee89f920094ca8699c924f4ef2e444ba29c8c031dbe5e9cd07cc9a6838e1",
+            "status": "success",
+            "user_accepted": false,
+            "submitted_api_sha256": "41e4f29fbbf0bf0dd199655cdd0c8ad105da0dd4dbaa263ec6b78ad46516c5aa"
+          },
+          {
+            "seed": 2026101608,
+            "prompt_id": "4df82e1d-ae55-40b5-9a77-d734e918082a",
+            "image": "G02-face-S08.png",
+            "sha256": "0e8279eec3d551b8ef1b01bd31814f4634dd5a8686c9923a204829a2586c33e3",
+            "status": "success",
+            "user_accepted": false,
+            "submitted_api_sha256": "3a9344dfb1cb58f12bf022305f26397577654eb49325d47ccdb27a17852d37fa"
+          },
+          {
+            "seed": 2026101609,
+            "prompt_id": "1d429ae2-f19d-4249-a8c9-32719b27e3e3",
+            "image": "G02-face-S09.png",
+            "sha256": "582c1e8f8ce4e52e1a47a6a777e95d9820675c834857031a6f35fb50f83c934d",
+            "status": "success",
+            "user_accepted": false,
+            "submitted_api_sha256": "961a647264faf45724f89ebab075e5e45612a36dab473f60df54df1ae5326a1b"
+          },
+          {
+            "seed": 2026101610,
+            "prompt_id": "b50f3be1-11c1-48ca-a0e3-845c0ab0f562",
+            "image": "G02-face-S10.png",
+            "sha256": "f9b7ad63d17022e797de0a1e456b79aefaa2dd65a2a19f43872bcc477bfaa346",
+            "status": "success",
+            "user_accepted": false,
+            "submitted_api_sha256": "65c15f13a4ac8e1c0fa8ee6b75991293fe9b6a99e077935076ff5237af57391f"
+          }
+        ],
+        "actual_api_template": "G02-face-api-template.json"
+      },
+      {
+        "group": 3,
+        "variant": "hair structure only",
+        "status": "not run; stopped for diagnosis"
+      },
+      {
+        "group": 4,
+        "variant": "tucked tank and blank shorts only",
+        "status": "not run; stopped for diagnosis"
+      },
+      {
+        "group": 5,
+        "variant": "integrated revised prompt",
+        "status": "not run; stopped for diagnosis"
+      }
+    ],
+    "generation_authorization": "explicit; do not install or download dependencies during this run",
+    "status": "stopped after 20 images for diagnosis following user dissatisfaction",
+    "completed_images": 20,
+    "user_feedback": "两组没有一张满意。用户要求先对比实际结果再修改，不能按预设组别继续；DeepSeek成图脸没问题不等于母版、生成参考或验收标准。",
+    "authorization_remaining": "Original maximum 5x10 authorization is not exhausted; no additional runs submitted during diagnosis."
+  },
+  "external_workflow_inspection": {
+    "at": "2026-10-15T09:39:31.761668+00:00",
+    "snapshot": "cloud-user-edit-5bc63a9b04f2.json",
+    "cloud_sha256": "5bc63a9b04f2b4d218d88792b09c8b26a9ed11047e990052ba0c81f38dad30cc",
+    "nodes": 13,
+    "links": 20,
+    "local_sha256": "01970ee6e8968630a7c09e4eeb419bb63d872427cd9ee09c4a4afac566b0efec",
+    "local_and_cloud_differ": true,
+    "validation": {
+      "valid": false,
+      "error": "workflow 连线 6 与端口反向引用不一致",
+      "action": "Observed only; not repaired or saved to cloud."
+    },
+    "purpose": "Evidence for diagnosis only; not approved master or reference image; no cloud overwrite."
+  },
+  "clip_length_audit": {
+    "official_source": "https://github.com/Comfy-Org/ComfyUI/blob/v0.30.1/comfy/sd1_clip.py",
+    "source_sha256": "cada45bf2cd1e2e20d24a46b959d86fc9f5529953456bb21471735f036e2dc70",
+    "observed_cloud_version": "0.30.1",
+    "finding": "Official SDTokenizer creates additional 77-position chunks, returns all chunks; ClipTokenWeightEncoder encodes sections and concatenates embeddings. No evidence all text after 77 tokens was discarded. Cloud runtime patches not directly inspected.",
+    "cfg_finding": "CFG6 alone is not evidence of insufficient guidance; CFG change has not been isolated in an otherwise equal comparison.",
+    "baseline_api_comparison": "G01-S01 differs from candidate20 API only in seed and output prefix; batch_size=1. No model, dimensions, sampler or CFG downgrade found."
+  },
+  "single_image_retry_request": {
+    "authorization": "2026-10-15 user: 你先跑一个看看呢",
+    "max_new_images": 1,
+    "workflow_read_status": 504,
+    "availability_check": {
+      "at": "2026-10-15T10:23:50.478787+00:00",
+      "endpoint": "/system_stats",
+      "generation_submitted": false,
+      "status": 504,
+      "error": "HTTP Error 504: Gateway Time-out"
+    },
+    "prompt_id": null,
+    "submitted_count": 0,
+    "next": "网关不可用，未提交生成、未修改工作流。恢复可用后只执行用户授权的一张，不恢复旧分组连跑。"
+  }
+}

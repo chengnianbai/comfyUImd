@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-15",
+  "gateway": "https://gw-6ed29e3e0a33433b9eb91aca62301fa5.cn-beijing.aigclinks.com:8016",
+  "current_checkpoint": "leosamsHelloworldXL_helloworldXL70.safetensors",
+  "execution_confirmed": "candidate08-10 history success; exact weight content SHA not exposed",
+  "current_workflow": "7 nodes/9 links; EmptyLatentImage; no LoadImage or IPAdapter conditioning",
+  "queried_nodes": {
+    "IPAdapterUnifiedLoader": "absent ({})",
+    "IPAdapter": "absent ({})",
+    "ControlNetLoader": "present",
+    "ControlNetApplyAdvanced": "present",
+    "OpenposePreprocessor": "absent ({})"
+  },
+  "model_listing": "/models/checkpoints returned empty despite successful SDXL runs; checkpoint choice appears in CheckpointLoaderSimple object_info",
+  "recommendation": {
+    "purpose": "condition future full-body angles on one user-approved whole-body identity/body reference",
+    "model": "IP-Adapter Plus SDXL ViT-H general image reference",
+    "model_repo": "https://huggingface.co/h94/IP-Adapter/tree/018e402774aeeddd60609b4ecdb7e298259dc729/sdxl_models",
+    "weight_file": "ip-adapter-plus_sdxl_vit-h.safetensors",
+    "weight_size_bytes": 847517512,
+    "image_encoder_file": "sdxl_models/image_encoder/model.safetensors",
+    "image_encoder_size_bytes": 3689912664,
+    "license": "IP-Adapter weights Apache-2.0",
+    "custom_nodes": "https://github.com/cubiq/ComfyUI_IPAdapter_plus/tree/a0f451a5113cf9becb0847b92884cb10cbdec0ef",
+    "custom_nodes_license": "GPL-3.0",
+    "required_total_bytes": 4537420265,
+    "compatibility": "SDXL weight and ComfyUI node family; exact instance has no IPAdapter nodes and needs install/restart/first graph check",
+    "expected_effect": "soft full-image identity, hair and body-reference conditioning; does not guarantee exact face or make thin source bodies broader",
+    "time_estimate": "about 20-40 minutes total: 4.54 GB at 20-50 MB/s is roughly 2-4 minutes download plus node installation, restart, wiring and first test; actual gateway/GPU unknown",
+    "unselected_optional_face_weight": "ip-adapter-plus-face_sdxl_vit-h.safetensors, 847517512 bytes, same Apache-2.0 repo; not included in initial recommendation",
+    "controlnet_openpose_candidate": "xinsir/controlnet-openpose-sdxl-1.0/diffusion_pytorch_model.safetensors, 2502139104 bytes, Apache-2.0; pose only and does not preserve face/body mass; not recommended as standalone fix",
+    "lora": "No verified suitable LoRA selected",
+    "decision": "Do not download/install until user authorizes and selects an approved full-body reference."
+  }
+}

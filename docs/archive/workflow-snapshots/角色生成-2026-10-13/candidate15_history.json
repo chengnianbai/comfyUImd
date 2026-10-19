@@ -1,0 +1,174 @@
+{
+  "bf4e130f-b334-4e80-986d-4ee0911a9db5": {
+    "prompt": [
+      6,
+      "bf4e130f-b334-4e80-986d-4ee0911a9db5",
+      {
+        "1": {
+          "class_type": "CheckpointLoaderSimple",
+          "inputs": {
+            "ckpt_name": "leosamsHelloworldXL_helloworldXL70.safetensors"
+          },
+          "_meta": {
+            "title": "01 通用底模 · LEOSAM HelloWorld XL 7.0 · SDXL"
+          }
+        },
+        "2": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "text": "Full-length front-view character design reference of one 24-year-old East Asian man with subtle Eurasian eye features. Show his entire figure from hair to both bare feet, with clear space above his head and below his feet. He wears opaque white casual outerwear: a sleeveless crew-neck athletic shirt with broad straps, fully covering chest and abdomen, tucked all around inside plain white casual mid-thigh shorts; the waistband sits over the shirt hem. Clearly dressed, not underwear. Sturdy healthy adult build, broad shoulders, full rib cage and chest, solid abdomen, thick upper arms, thighs and calves; not slim. Dark brown deep-set almond eyes, visible double eyelid creases on both eyes, defined natural brow ridge, straight higher nose bridge, masculine East Asian face with only subtle Eurasian influence, natural skin texture. Thick dark medium-length loose natural waves, layered sides and nape, irregular forward-falling curls across the forehead, no center part, side part or curtain split. Small mole at the outer eye. Plain pure-white seamless studio background, soft even light, natural realistic proportions, relaxed front-facing stance.",
+            "clip": [
+              "1",
+              1
+            ]
+          },
+          "_meta": {
+            "title": "02 SDXL正向｜人物、服装与全身关键词"
+          }
+        },
+        "3": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "text": "shirtless, bare chest, exposed torso, nudity, underwear, briefs, boxer briefs, trunks, panties, open shirt, transparent fabric, untucked shirt, shirt hem outside waistband, logo, lettering, watermark, cropped body, waist-up, portrait, close-up, cropped head, cropped legs, cropped feet, missing feet, out of frame, center part, side part, curtain split, swept-back forehead, single eyelids, narrow shoulders, skinny limbs, runway-model thinness, Korean idol styling, beauty filter, plastic skin, yellow skin, uneven skin tone, gray background, harsh shadow, jewelry, props, extra limbs, deformed hands, extra fingers",
+            "clip": [
+              "1",
+              1
+            ]
+          },
+          "_meta": {
+            "title": "03 SDXL反向｜排除裸身、内裤与不需要的风格"
+          }
+        },
+        "5": {
+          "class_type": "EmptyLatentImage",
+          "inputs": {
+            "width": 768,
+            "height": 1536,
+            "batch_size": 1
+          },
+          "_meta": {
+            "title": "05 SDXL全身画布｜768 × 1536"
+          }
+        },
+        "6": {
+          "class_type": "KSampler",
+          "inputs": {
+            "seed": 2026101515,
+            "steps": 30,
+            "cfg": 6.0,
+            "sampler_name": "dpmpp_2m",
+            "scheduler": "karras",
+            "denoise": 1.0,
+            "model": [
+              "1",
+              0
+            ],
+            "positive": [
+              "2",
+              0
+            ],
+            "negative": [
+              "3",
+              0
+            ],
+            "latent_image": [
+              "5",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "06 SDXL采样｜30步 CFG6 · DPM++2M Karras"
+          }
+        },
+        "7": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "6",
+              0
+            ],
+            "vae": [
+              "1",
+              2
+            ]
+          },
+          "_meta": {
+            "title": "07 VAE 解码"
+          }
+        },
+        "8": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "filename_prefix": "角色生成/闻灯角色生成-候选15",
+            "images": [
+              "7",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "08 输出｜角色初始形象全身图"
+          }
+        }
+      },
+      {
+        "client_id": "7d80ced5-0428-4b69-9849-c15a8067a53d",
+        "create_time": 1792049908601
+      },
+      [
+        "8"
+      ]
+    ],
+    "outputs": {
+      "8": {
+        "images": [
+          {
+            "filename": "闻灯角色生成-候选15_00001_.png",
+            "subfolder": "角色生成",
+            "type": "output"
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "bf4e130f-b334-4e80-986d-4ee0911a9db5",
+            "timestamp": 1792049908602
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "2",
+              "3",
+              "5"
+            ],
+            "prompt_id": "bf4e130f-b334-4e80-986d-4ee0911a9db5",
+            "timestamp": 1792049908603
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "bf4e130f-b334-4e80-986d-4ee0911a9db5",
+            "timestamp": 1792049915116
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "8": {
+        "node_id": "8",
+        "display_node": "8",
+        "parent_node": null,
+        "real_node_id": "8"
+      }
+    }
+  }
+}

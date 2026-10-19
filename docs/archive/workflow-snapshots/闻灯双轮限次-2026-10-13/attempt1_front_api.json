@@ -1,0 +1,234 @@
+{
+  "1030": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "1025",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "★ 负向（cfg=1.0 下无效，留空仅为满足接口）"
+    }
+  },
+  "1024": {
+    "inputs": {
+      "unet_name": "FLUX1\\flux1-schnell.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Kontext fp8_scaled（diffusion_models）"
+    }
+  },
+  "1314": {
+    "inputs": {
+      "guidance": 3,
+      "conditioning": [
+        "1313",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance 3.0"
+    }
+  },
+  "1025": {
+    "inputs": {
+      "clip_name1": "t5\\t5xxl_fp8_e4m3fn_scaled.safetensors",
+      "clip_name2": "clip_l.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIP：t5xxl_fp8 + clip_l"
+    }
+  },
+  "1302": {
+    "inputs": {
+      "width": 1024,
+      "height": 1792,
+      "batch_size": 1
+    },
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "全身输出尺寸 1024×1792（三视角共用）"
+    }
+  },
+  "23": {
+    "inputs": {
+      "upscale_model": [
+        "1018",
+        0
+      ],
+      "image": [
+        "1317",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "使用模型放大图像"
+    }
+  },
+  "1310": {
+    "inputs": {
+      "image": "闻灯-正脸母版00017-仅头脸裁切_验证01.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "正脸母版00017 · 头脸裁切参考（原母版未改）"
+    }
+  },
+  "1026": {
+    "inputs": {
+      "vae_name": "FLUX1\\ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "VAE ae.safetensors"
+    }
+  },
+  "1316": {
+    "inputs": {
+      "seed": 20261008,
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "1024",
+        0
+      ],
+      "positive": [
+        "1315",
+        0
+      ],
+      "negative": [
+        "1030",
+        0
+      ],
+      "latent_image": [
+        "1302",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "Kontext 参考采样 · 20步 / denoise 1.0"
+    }
+  },
+  "1315": {
+    "inputs": {
+      "conditioning": [
+        "1314",
+        0
+      ],
+      "latent": [
+        "1312",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "ReferenceLatent"
+    }
+  },
+  "15": {
+    "inputs": {
+      "filename_prefix": "闻灯-全身正面-成品",
+      "images": [
+        "24",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "存图 · 成品"
+    }
+  },
+  "1317": {
+    "inputs": {
+      "samples": [
+        "1316",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAEDecode"
+    }
+  },
+  "24": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "scale_by": 0.5,
+      "image": [
+        "23",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "缩回 1792×2304"
+    }
+  },
+  "1018": {
+    "inputs": {
+      "model_name": "4x-UltraSharp (1).pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "放大模型 4x-UltraSharp"
+    }
+  },
+  "1311": {
+    "inputs": {
+      "image": [
+        "1310",
+        0
+      ]
+    },
+    "class_type": "FluxKontextImageScale",
+    "_meta": {
+      "title": "参考归一化"
+    }
+  },
+  "1312": {
+    "inputs": {
+      "pixels": [
+        "1311",
+        0
+      ],
+      "vae": [
+        "1026",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "参考 → LATENT"
+    }
+  },
+  "1313": {
+    "inputs": {
+      "text": "Full-length front-view studio reference photograph of the same young East Asian man as the supplied face reference. Preserve his exact facial identity, facial structure and proportions, eyes, eyebrows, nose, lips, chin and jawline, apparent age, messy wavy black hair, hairline and small mole by the outer eye. He wears a plain white fitted sleeveless crew-neck T-shirt with no sleeves, no logo or pattern. The entire shirt hem is neatly tucked inside the waistband of plain white mid-thigh shorts. The waistband is clearly visible and the shirt does not hang over the shorts. No jacket or accessories. Bare feet. His barefoot standing height is 183 cm. A tall, lean athletic male fashion-model physique, naturally long arms and legs, narrow waist, natural moderate shoulder width and a subtle V-shaped torso. Near eight-head body proportions, with a naturally proportioned head and anatomically natural torso. His exposed shoulders have smoothly rounded, moderately developed deltoids, with clear front and outer shoulder contours. The upper arms are moderately full, with natural biceps volume and a visible gentle transition between shoulder and upper arm. The legs are long and lean, with subtle thigh muscle contours, naturally shaped calves and slim ankles. Healthy realistic muscle volume, not bulky or extremely thin, no exaggerated bodybuilding definition. Face and body directly forward, head upright, eye line horizontal, shoulders level. Stand naturally straight, arms relaxed slightly clear of the waist, both feet flat on the same level floor, no raised foot. Use a wider full-length framing from a comfortable camera distance, natural 70 mm portrait perspective, camera level around mid-torso, straight-on without tilt or wide-angle distortion. The entire figure from hair to bare soles occupies about 85 percent of the image height. Leave generous white space above the head and visible floor below both feet; do not crop head, hands or feet. Centered on a pure white seamless studio background, soft even lighting revealing natural shoulder and arm form, realistic skin texture, unified photographic rendering.",
+      "clip": [
+        "1025",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "正面身体指令 · 无袖扎腰 / 肩臂 / 85%取景（待验收）"
+    }
+  }
+}

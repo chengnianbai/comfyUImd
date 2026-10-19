@@ -1,0 +1,107 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "leosamsHelloworldXL_helloworldXL70.safetensors"
+    },
+    "_meta": {
+      "title": "01 通用底模 · LEOSAM HelloWorld XL 7.0 · SDXL"
+    }
+  },
+  "2": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "Full-length front-view studio casting photo of one adult man, standing upright with head level, shoulders even, both arms relaxed straight beside the torso, hands visible outside the shorts pockets. Entire head, both bare feet and all toes visible, generous clean white space above hair and below toes, pure white seamless background. A 24-year-old Asian man with subtle Eurasian influence, lean wiry athletic build, long legs and natural model proportions. Dense black hair with a natural hairline and clean silhouette: short airy tousled waves, irregular curled fringe directed forward across the forehead, defined strand texture, consistent length, no part and no center or side part, subtle natural sheen. Dark brown almond eyes with clearly visible double eyelid creases and moderately deep-set eyes; thick straight eyebrows with gentle angular arches and tapered tails, natural high nose bridge, youthful defined jaw, small outer-eye mole. Natural youthful healthy fair neutral-light-beige skin, clean even complexion consistent from face and neck through shoulders, upper arms, forearms, hands and legs; smooth intact skin with fine realistic texture and subtle natural pores, slight healthy sheen, no airbrushed finish. Plain opaque white sleeveless tank top correctly worn on the torso, fully covering the chest, both armholes visible, hem clearly tucked inside plain white shorts at the waistband; barefoot. Soft even frontal studio light across face and body, neutral white balance, realistic anatomy, sharp natural hair and skin detail.",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "02 SDXL正向 · V1.3皮肤与头发/服装姿态明确"
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "closeup, portrait crop, headshot, half body, cropped feet, out of frame, multiple people, shirtless, bare chest, naked torso, tank top removed, shirt wrapped around waist, loose cloth tied at waist, center part, side part, curtain bangs, slicked hair, sparse hair, flat hair, single eyelids, light irises, exaggerated muscles, bodybuilder, orange or yellow skin cast, patchy complexion, tan lines, acne, prominent scars, poreless skin, airbrushed skin, waxy plastic skin, oily metallic shine, harsh specular highlights, harsh directional shadows, tilted head, slouching, hands in pockets, hidden hands, gray background, blur, low resolution, deformed anatomy, extra limbs, extra fingers, fused toes, text, watermark, jewelry, props, scenery",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "03 SDXL负向 · 禁止裸上身分缝磨皮与插兜"
+    }
+  },
+  "5": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 896,
+      "height": 1344,
+      "batch_size": 1
+    },
+    "_meta": {
+      "title": "05 SDXL全身画布 · 896×1344"
+    }
+  },
+  "6": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 2026101301,
+      "steps": 30,
+      "cfg": 6.0,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 1.0,
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "2",
+        0
+      ],
+      "negative": [
+        "3",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "06 SDXL采样 · 30步 CFG6 · DPM++2M Karras"
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "6",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "_meta": {
+      "title": "07 VAE 解码"
+    }
+  },
+  "8": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "角色生成/闻灯-SDXL正面全身-候选08",
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "08 保存 · SDXL正面全身候选08 · V1.3材质"
+    }
+  }
+}

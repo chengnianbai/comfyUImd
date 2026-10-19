@@ -1,0 +1,4 @@
+# 全部按二进制原样存取，禁止任何行尾（CRLF/LF）转换。
+# 原因：公共/ 下的 .bat 是 GBK 编码 + CRLF、.ps1 是 UTF-8 BOM，
+# 一旦被 git 做行尾归一化，在 Windows 上会变成乱码或无法执行。
+* -text

@@ -1,0 +1,39 @@
+{
+  "changed_prompt_nodes": [
+    1313,
+    1333,
+    1353
+  ],
+  "height_cm": 183,
+  "links_unchanged": true,
+  "groups_unchanged": true,
+  "body_photo_conditioning": false,
+  "nodes": 132,
+  "links": 198,
+  "groups": 13,
+  "node_overlaps": 0,
+  "front_dependencies": 17,
+  "full_dependencies": 42,
+  "api_changes": [
+    "1313",
+    "1333",
+    "1353"
+  ],
+  "browser_errors": [],
+  "face_references": [
+    {
+      "node": 1310,
+      "filename": "闻灯-脸部正面-成品_00017_.png",
+      "type": "input",
+      "sha256": "ab69a0ce25b01e570eee11a95dde2b8b75f873fc15b511eca9519efe7f138342",
+      "byte_equal": true
+    },
+    {
+      "node": 1330,
+      "filename": "闻灯-脸部左侧-成品_00009_.png",
+      "type": "output",
+      "sha256": "b4442acce4941e6b6a07d43f507f1a5648863b8fac2b10d43c494cd50d79aed4",
+      "byte_equal": true
+    }
+  ]
+}

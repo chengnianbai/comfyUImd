@@ -1,0 +1,1596 @@
+{
+  "nodes": [
+    {
+      "id": 2,
+      "type": "CLIPTextEncode",
+      "pos": [
+        80,
+        5700
+      ],
+      "size": [
+        640,
+        300
+      ]
+    },
+    {
+      "id": 18,
+      "type": "CLIPTextEncode",
+      "pos": [
+        805,
+        6410
+      ],
+      "size": [
+        640,
+        220
+      ]
+    },
+    {
+      "id": 3,
+      "type": "CLIPTextEncode",
+      "pos": [
+        805,
+        5700
+      ],
+      "size": [
+        640,
+        260
+      ]
+    },
+    {
+      "id": 19,
+      "type": "CLIPTextEncode",
+      "pos": [
+        805,
+        6715
+      ],
+      "size": [
+        640,
+        220
+      ]
+    },
+    {
+      "id": 5,
+      "type": "CLIPTextEncode",
+      "pos": [
+        805,
+        6045
+      ],
+      "size": [
+        640,
+        280
+      ]
+    },
+    {
+      "id": 4,
+      "type": "ConditioningCombine",
+      "pos": [
+        1530,
+        5700
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 20,
+      "type": "ConditioningCombine",
+      "pos": [
+        1530,
+        6255
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 21,
+      "type": "ConditioningCombine",
+      "pos": [
+        1530,
+        6440
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 23,
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        2310,
+        1185
+      ],
+      "size": [
+        420,
+        100
+      ]
+    },
+    {
+      "id": 24,
+      "type": "ImageScaleBy",
+      "pos": [
+        2815,
+        1000
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 12,
+      "type": "KSampler",
+      "pos": [
+        1965,
+        5885
+      ],
+      "size": [
+        464,
+        310
+      ]
+    },
+    {
+      "id": 25,
+      "type": "VAEEncode",
+      "pos": [
+        1965,
+        5700
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 13,
+      "type": "VAEDecode",
+      "pos": [
+        1965,
+        6280
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 14,
+      "type": "PreviewImage",
+      "pos": [
+        2815,
+        1185
+      ],
+      "size": [
+        440,
+        620
+      ]
+    },
+    {
+      "id": 15,
+      "type": "SaveImage",
+      "pos": [
+        3340,
+        1000
+      ],
+      "size": [
+        440,
+        620
+      ]
+    },
+    {
+      "id": 1001,
+      "type": "Note",
+      "pos": [
+        4400,
+        5700
+      ],
+      "size": [
+        1900,
+        520
+      ]
+    },
+    {
+      "id": 1002,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        1755,
+        180
+      ],
+      "size": [
+        470,
+        100
+      ]
+    },
+    {
+      "id": 1003,
+      "type": "CLIPSetLastLayer",
+      "pos": [
+        1755,
+        365
+      ],
+      "size": [
+        380,
+        100
+      ]
+    },
+    {
+      "id": 1004,
+      "type": "LoadImage",
+      "pos": [
+        4400,
+        180
+      ],
+      "size": [
+        440,
+        560
+      ]
+    },
+    {
+      "id": 1005,
+      "type": "ImageScale",
+      "pos": [
+        4400,
+        825
+      ],
+      "size": [
+        350,
+        130
+      ]
+    },
+    {
+      "id": 1006,
+      "type": "VAEEncode",
+      "pos": [
+        4400,
+        1040
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1009,
+      "type": "ConditioningCombine",
+      "pos": [
+        4925,
+        950
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1011,
+      "type": "CLIPTextEncode",
+      "pos": [
+        5770,
+        485
+      ],
+      "size": [
+        700,
+        220
+      ]
+    },
+    {
+      "id": 1012,
+      "type": "CLIPTextEncode",
+      "pos": [
+        5770,
+        790
+      ],
+      "size": [
+        700,
+        220
+      ]
+    },
+    {
+      "id": 1013,
+      "type": "ConditioningCombine",
+      "pos": [
+        6555,
+        180
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1014,
+      "type": "ConditioningCombine",
+      "pos": [
+        6555,
+        365
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1016,
+      "type": "VAEDecode",
+      "pos": [
+        6990,
+        575
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1018,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        2310,
+        180
+      ],
+      "size": [
+        520,
+        100
+      ]
+    },
+    {
+      "id": 1019,
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        7475,
+        180
+      ],
+      "size": [
+        440,
+        100
+      ]
+    },
+    {
+      "id": 1020,
+      "type": "ImageScaleBy",
+      "pos": [
+        7475,
+        365
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1022,
+      "type": "Note",
+      "pos": [
+        6385,
+        6505
+      ],
+      "size": [
+        620,
+        220
+      ]
+    },
+    {
+      "id": 1023,
+      "type": "Note",
+      "pos": [
+        6385,
+        5700
+      ],
+      "size": [
+        1620,
+        720
+      ]
+    },
+    {
+      "id": 1024,
+      "type": "UNETLoader",
+      "pos": [
+        80,
+        180
+      ],
+      "size": [
+        430,
+        100
+      ]
+    },
+    {
+      "id": 1025,
+      "type": "DualCLIPLoader",
+      "pos": [
+        595,
+        180
+      ],
+      "size": [
+        430,
+        130
+      ]
+    },
+    {
+      "id": 1026,
+      "type": "VAELoader",
+      "pos": [
+        80,
+        365
+      ],
+      "size": [
+        430,
+        100
+      ]
+    },
+    {
+      "id": 1028,
+      "type": "FluxKontextImageScale",
+      "pos": [
+        4400,
+        1350
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1029,
+      "type": "VAEEncode",
+      "pos": [
+        4400,
+        1535
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1030,
+      "type": "CLIPTextEncode",
+      "pos": [
+        595,
+        395
+      ],
+      "size": [
+        640,
+        220
+      ]
+    },
+    {
+      "id": 1032,
+      "type": "FluxGuidance",
+      "pos": [
+        4835,
+        2955
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1033,
+      "type": "ReferenceLatent",
+      "pos": [
+        5620,
+        2450
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1034,
+      "type": "KSampler",
+      "pos": [
+        5620,
+        2635
+      ],
+      "size": [
+        400,
+        310
+      ]
+    },
+    {
+      "id": 1035,
+      "type": "VAEDecode",
+      "pos": [
+        6105,
+        2450
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 16,
+      "type": "Note",
+      "pos": [
+        4400,
+        6305
+      ],
+      "size": [
+        1190,
+        293
+      ]
+    },
+    {
+      "id": 1021,
+      "type": "SaveImage",
+      "pos": [
+        6105,
+        1535
+      ],
+      "size": [
+        500,
+        560
+      ]
+    },
+    {
+      "id": 1010,
+      "type": "CLIPTextEncode",
+      "pos": [
+        5770,
+        180
+      ],
+      "size": [
+        700,
+        220
+      ]
+    },
+    {
+      "id": 1015,
+      "type": "KSampler",
+      "pos": [
+        6990,
+        180
+      ],
+      "size": [
+        400,
+        310
+      ]
+    },
+    {
+      "id": 1008,
+      "type": "CLIPTextEncode",
+      "pos": [
+        4925,
+        565
+      ],
+      "size": [
+        760,
+        300
+      ]
+    },
+    {
+      "id": 1007,
+      "type": "CLIPTextEncode",
+      "pos": [
+        4925,
+        180
+      ],
+      "size": [
+        760,
+        300
+      ]
+    },
+    {
+      "id": 1044,
+      "type": "FluxGuidance",
+      "pos": [
+        8090,
+        6205
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1045,
+      "type": "ReferenceLatent",
+      "pos": [
+        5620,
+        1350
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1047,
+      "type": "VAEDecode",
+      "pos": [
+        6105,
+        1350
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1049,
+      "type": "FluxKontextImageScale",
+      "pos": [
+        6690,
+        1350
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1050,
+      "type": "VAEEncode",
+      "pos": [
+        6690,
+        1535
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1051,
+      "type": "ImageFlip",
+      "pos": [
+        6105,
+        2635
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1052,
+      "type": "EmptySD3LatentImage",
+      "pos": [
+        4400,
+        2450
+      ],
+      "size": [
+        350,
+        106
+      ]
+    },
+    {
+      "id": 1043,
+      "type": "CLIPTextEncode",
+      "pos": [
+        8090,
+        5700
+      ],
+      "size": [
+        700,
+        420
+      ]
+    },
+    {
+      "id": 1046,
+      "type": "KSampler",
+      "pos": [
+        5620,
+        1535
+      ],
+      "size": [
+        400,
+        310
+      ]
+    },
+    {
+      "id": 1031,
+      "type": "CLIPTextEncode",
+      "pos": [
+        4835,
+        2450
+      ],
+      "size": [
+        700,
+        420
+      ]
+    },
+    {
+      "id": 1100,
+      "type": "ImageScale",
+      "pos": [
+        4400,
+        3400
+      ],
+      "size": [
+        350,
+        130
+      ]
+    },
+    {
+      "id": 1101,
+      "type": "VAEEncode",
+      "pos": [
+        4400,
+        3615
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1102,
+      "type": "CLIPTextEncode",
+      "pos": [
+        4835,
+        3400
+      ],
+      "size": [
+        760,
+        300
+      ]
+    },
+    {
+      "id": 1103,
+      "type": "ConditioningCombine",
+      "pos": [
+        4835,
+        3785
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1104,
+      "type": "KSampler",
+      "pos": [
+        5680,
+        3400
+      ],
+      "size": [
+        400,
+        310
+      ]
+    },
+    {
+      "id": 1105,
+      "type": "VAEDecode",
+      "pos": [
+        5680,
+        3795
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1107,
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        6165,
+        3400
+      ],
+      "size": [
+        440,
+        100
+      ]
+    },
+    {
+      "id": 1108,
+      "type": "ImageScaleBy",
+      "pos": [
+        6165,
+        3585
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1109,
+      "type": "SaveImage",
+      "pos": [
+        6105,
+        4635
+      ],
+      "size": [
+        460,
+        560
+      ]
+    },
+    {
+      "id": 1110,
+      "type": "ImageFlip",
+      "pos": [
+        6650,
+        4450
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1111,
+      "type": "SaveImage",
+      "pos": [
+        6650,
+        4635
+      ],
+      "size": [
+        460,
+        560
+      ]
+    },
+    {
+      "id": 1200,
+      "type": "CLIPTextEncode",
+      "pos": [
+        4835,
+        4450
+      ],
+      "size": [
+        700,
+        420
+      ]
+    },
+    {
+      "id": 1201,
+      "type": "FluxGuidance",
+      "pos": [
+        4835,
+        4955
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1210,
+      "type": "FluxKontextImageScale",
+      "pos": [
+        4400,
+        4450
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1211,
+      "type": "VAEEncode",
+      "pos": [
+        4400,
+        4635
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1212,
+      "type": "ReferenceLatent",
+      "pos": [
+        5620,
+        4450
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1213,
+      "type": "KSampler",
+      "pos": [
+        5620,
+        4635
+      ],
+      "size": [
+        400,
+        310
+      ]
+    },
+    {
+      "id": 1214,
+      "type": "VAEDecode",
+      "pos": [
+        6105,
+        4450
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1220,
+      "type": "CLIPTextEncode",
+      "pos": [
+        4835,
+        1350
+      ],
+      "size": [
+        700,
+        420
+      ]
+    },
+    {
+      "id": 1221,
+      "type": "FluxGuidance",
+      "pos": [
+        4835,
+        1855
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 300,
+      "type": "CLIPTextEncode",
+      "pos": [
+        80,
+        6085
+      ],
+      "size": [
+        640,
+        300
+      ]
+    },
+    {
+      "id": 301,
+      "type": "ConditioningCombine",
+      "pos": [
+        1530,
+        5885
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 311,
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        2310,
+        2235
+      ],
+      "size": [
+        420,
+        100
+      ]
+    },
+    {
+      "id": 312,
+      "type": "ImageScaleBy",
+      "pos": [
+        2815,
+        2050
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 313,
+      "type": "VAEEncode",
+      "pos": [
+        2514,
+        5700
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 314,
+      "type": "KSampler",
+      "pos": [
+        2514,
+        5885
+      ],
+      "size": [
+        464,
+        310
+      ]
+    },
+    {
+      "id": 315,
+      "type": "VAEDecode",
+      "pos": [
+        2514,
+        6280
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 316,
+      "type": "SaveImage",
+      "pos": [
+        3250,
+        2050
+      ],
+      "size": [
+        440,
+        620
+      ]
+    },
+    {
+      "id": 330,
+      "type": "CLIPTextEncode",
+      "pos": [
+        80,
+        6470
+      ],
+      "size": [
+        640,
+        300
+      ]
+    },
+    {
+      "id": 331,
+      "type": "ConditioningCombine",
+      "pos": [
+        1530,
+        6070
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 341,
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        2310,
+        3285
+      ],
+      "size": [
+        420,
+        100
+      ]
+    },
+    {
+      "id": 342,
+      "type": "ImageScaleBy",
+      "pos": [
+        2815,
+        3100
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 343,
+      "type": "VAEEncode",
+      "pos": [
+        3063,
+        5700
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 344,
+      "type": "KSampler",
+      "pos": [
+        3063,
+        5885
+      ],
+      "size": [
+        464,
+        310
+      ]
+    },
+    {
+      "id": 345,
+      "type": "VAEDecode",
+      "pos": [
+        3063,
+        6280
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 346,
+      "type": "SaveImage",
+      "pos": [
+        3250,
+        3100
+      ],
+      "size": [
+        440,
+        620
+      ]
+    },
+    {
+      "id": 1302,
+      "type": "EmptySD3LatentImage",
+      "pos": [
+        1320,
+        180
+      ],
+      "size": [
+        350,
+        106
+      ]
+    },
+    {
+      "id": 1310,
+      "type": "LoadImage",
+      "pos": [
+        80,
+        1000
+      ],
+      "size": [
+        440,
+        560
+      ]
+    },
+    {
+      "id": 1311,
+      "type": "FluxKontextImageScale",
+      "pos": [
+        605,
+        1000
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1312,
+      "type": "VAEEncode",
+      "pos": [
+        605,
+        1185
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1313,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1040,
+        1000
+      ],
+      "size": [
+        700,
+        420
+      ]
+    },
+    {
+      "id": 1314,
+      "type": "FluxGuidance",
+      "pos": [
+        1040,
+        1505
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1315,
+      "type": "ReferenceLatent",
+      "pos": [
+        1825,
+        1000
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1316,
+      "type": "KSampler",
+      "pos": [
+        1825,
+        1185
+      ],
+      "size": [
+        400,
+        310
+      ]
+    },
+    {
+      "id": 1317,
+      "type": "VAEDecode",
+      "pos": [
+        2310,
+        1000
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1330,
+      "type": "LoadImage",
+      "pos": [
+        80,
+        2050
+      ],
+      "size": [
+        440,
+        560
+      ]
+    },
+    {
+      "id": 1331,
+      "type": "FluxKontextImageScale",
+      "pos": [
+        605,
+        2050
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1332,
+      "type": "VAEEncode",
+      "pos": [
+        605,
+        2235
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1333,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1040,
+        2050
+      ],
+      "size": [
+        700,
+        420
+      ]
+    },
+    {
+      "id": 1334,
+      "type": "FluxGuidance",
+      "pos": [
+        1040,
+        2555
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1335,
+      "type": "ReferenceLatent",
+      "pos": [
+        1825,
+        2050
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1336,
+      "type": "KSampler",
+      "pos": [
+        1825,
+        2420
+      ],
+      "size": [
+        400,
+        310
+      ]
+    },
+    {
+      "id": 1337,
+      "type": "VAEDecode",
+      "pos": [
+        2310,
+        2050
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1350,
+      "type": "LoadImage",
+      "pos": [
+        8000,
+        6800
+      ],
+      "size": [
+        440,
+        560
+      ]
+    },
+    {
+      "id": 1351,
+      "type": "FluxKontextImageScale",
+      "pos": [
+        605,
+        3100
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1352,
+      "type": "VAEEncode",
+      "pos": [
+        605,
+        3285
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1353,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1040,
+        3100
+      ],
+      "size": [
+        700,
+        420
+      ]
+    },
+    {
+      "id": 1354,
+      "type": "FluxGuidance",
+      "pos": [
+        1040,
+        3605
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1355,
+      "type": "ReferenceLatent",
+      "pos": [
+        1825,
+        3100
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1356,
+      "type": "KSampler",
+      "pos": [
+        1825,
+        3285
+      ],
+      "size": [
+        400,
+        310
+      ]
+    },
+    {
+      "id": 1357,
+      "type": "VAEDecode",
+      "pos": [
+        2310,
+        3100
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1360,
+      "type": "ImageCrop",
+      "pos": [
+        80,
+        4250
+      ],
+      "size": [
+        350,
+        130
+      ]
+    },
+    {
+      "id": 1361,
+      "type": "ImageScaleBy",
+      "pos": [
+        80,
+        4465
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1362,
+      "type": "ImageScale",
+      "pos": [
+        80,
+        4650
+      ],
+      "size": [
+        350,
+        130
+      ]
+    },
+    {
+      "id": 1363,
+      "type": "VAEEncode",
+      "pos": [
+        80,
+        4865
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1364,
+      "type": "CLIPTextEncode",
+      "pos": [
+        515,
+        4250
+      ],
+      "size": [
+        760,
+        300
+      ]
+    },
+    {
+      "id": 1365,
+      "type": "CLIPTextEncode",
+      "pos": [
+        515,
+        4635
+      ],
+      "size": [
+        700,
+        220
+      ]
+    },
+    {
+      "id": 1366,
+      "type": "KSampler",
+      "pos": [
+        1360,
+        4250
+      ],
+      "size": [
+        400,
+        310
+      ]
+    },
+    {
+      "id": 1367,
+      "type": "VAEDecode",
+      "pos": [
+        1360,
+        4645
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1368,
+      "type": "SaveImage",
+      "pos": [
+        1845,
+        4250
+      ],
+      "size": [
+        500,
+        560
+      ]
+    },
+    {
+      "id": 1370,
+      "type": "FluxKontextImageScale",
+      "pos": [
+        605,
+        2420
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1371,
+      "type": "VAEEncode",
+      "pos": [
+        605,
+        2605
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1372,
+      "type": "ReferenceLatent",
+      "pos": [
+        1825,
+        2235
+      ],
+      "size": [
+        350,
+        100
+      ]
+    },
+    {
+      "id": 1373,
+      "type": "Note",
+      "pos": [
+        3100,
+        180
+      ],
+      "size": [
+        950,
+        610
+      ]
+    }
+  ],
+  "groups": 13,
+  "reroutes": 510,
+  "apiMove": "async moveUserData(e,t,n={overwrite:!1}){return await this.fetchApi(`/userdata/${encodeURIComponent(e)}/move/${encodeURIComponent(t)}?overwrite=${n?.overwrite}`,{method:`POST`})}",
+  "apiDelete": "async deleteUserData(e){return await this.fetchApi(`/userdata/${encodeURIComponent(e)}`,{method:`DELETE`})}",
+  "apiStore": "async storeUserData(e,t,n={overwrite:!0,stringify:!0,throwOnError:!0,full_info:!1}){let r=await this.fetchApi(`/userdata/${encodeURIComponent(e)}?overwrite=${n.overwrite}&full_info=${n.full_info}`,{method:`POST`,body:n?.stringify?JSON.stringify(t):t,...n});if(r.status!==200&&n.throwOnError!==!1)throw Error(`Error storing user data file '${e}': ${r.status} ${(await r).statusText}`);return r}",
+  "missing": [],
+  "overlaps": [],
+  "page_errors": []
+}

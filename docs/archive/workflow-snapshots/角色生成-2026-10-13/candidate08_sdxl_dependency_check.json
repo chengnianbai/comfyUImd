@@ -1,0 +1,13 @@
+{
+  "gateway": "https://gw-6ed29e3e0a33433b9eb91aca62301fa5.cn-beijing.aigclinks.com:8016",
+  "queried_endpoints": [
+    "/object_info/CheckpointLoaderSimple",
+    "/object_info/EmptyLatentImage",
+    "/object_info/KSampler",
+    "/models/checkpoints"
+  ],
+  "checkpoint_dropdown_present": true,
+  "checkpoint_file_list_present": false,
+  "exact_weight_sha256": "not available through queried API",
+  "required_nodes_available": true
+}

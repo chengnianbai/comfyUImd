@@ -1,0 +1,15 @@
+{
+  "baseline_sha256": "a22419e7d44ef9554f9a7f15dbe7e3b82c61e2e60fc9d9adeb07638b4a39d4d1",
+  "candidate_sha256": "23287dbd57f8f64f4526fa85b9651059e1d98df92ce5e6d5e1db6d2710a4390b",
+  "changed_nodes": [
+    1313,
+    1333,
+    1353,
+    1373
+  ],
+  "links_unchanged": true,
+  "groups_unchanged": true,
+  "unrelated_node_1002_dangling_link_preserved": true,
+  "attempt_number": 2,
+  "attempt_limit": 2
+}

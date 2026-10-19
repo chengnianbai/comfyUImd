@@ -1,0 +1,142 @@
+{
+  "changes": [
+    {
+      "path": "/nodes/2/title",
+      "old": "02 当前角色与全身构图 · 发型/眼型参考已更新",
+      "new": "02 当前角色 · 卷发/双眼皮/眼眉/自然偏白统一肤色"
+    },
+    {
+      "path": "/nodes/2/widgets_values/0",
+      "old": "Photorealistic sharp high-detail full-length casting reference photograph of one adult male character, Wen Deng, age 24. He is Asian, a fictional half-demon shapeshifter shown in ordinary human form, with no supernatural features, no occupational costume, no props. Lean wiry athletic physique, visually about 183 cm tall, naturally long legs, balanced 7.5 to 8 head body proportions, moderately broad rounded shoulders, subtly defined upper arms, realistic anatomy. Short-to-medium naturally tousled wavy black hair with abundant airy texture, irregular forward-falling fringe and separated wispy strands over the forehead, slightly messy youthful volume, no center part, no side part, no neat comb-over, no undercut. Predominantly Asian masculine adult face with subtle mixed Eurasian influence only: slightly deep-set eye sockets and a somewhat higher natural nose bridge, clearly still Asian. Almond-shaped dark brown eyes with clearly visible natural double eyelid creases on both eyes, open alert gaze, slightly deep eye sockets. Thick dark eyebrows with a clean defined shape, mostly straight with a gentle natural arch. One small mole at the outer corner of an eye. Plain solid white sleeveless tank top completely tucked into plain solid white shorts, visible waistline, bare feet. Front view, neutral upright model casting pose, arms relaxed at sides, hands visible, feet flat on the floor. Eye-level camera, centered subject, entire body from top of hair through every toe fully visible, generous clean margins above head and below feet, no cropping, natural perspective. Seamless pure white studio background, soft neutral studio lighting, crisp focus, fine hair strands, clear eyes and skin texture, realistic photographic detail. No other people, props, jewelry, logos, text, scenery, blur, soft focus, motion blur, or low resolution.",
+      "new": "Photorealistic sharp high-detail full-length casting reference photograph of one adult male character, Wen Deng, age 24. He is Asian, a fictional half-demon shapeshifter shown in ordinary human form, with no supernatural features, no occupational costume, no props. Lean wiry athletic physique, visually about 183 cm tall, naturally long legs, balanced 7.5 to 8 head body proportions, moderately broad rounded shoulders, subtly defined upper arms, realistic anatomy. Dense voluminous tousled black waves and loose curls, rounded airy crown, irregular overlapping curled locks covering the hair roots and falling forward across the forehead, fluffy textured fringe, windswept lift, continuous unbroken fringe across the forehead. Predominantly Asian masculine adult face with subtle mixed Eurasian influence only: slightly deep-set eye sockets and a somewhat higher natural nose bridge, clearly still Asian. Dark brown almond eyes, distinctly visible double eyelid folds on both eyes, a clear upper-eyelid crease, gently recessed eyes beneath defined brow bones, natural depth between eyebrows and upper eyelids. Thick dark eyebrows with individual visible hairs, strong straight inner sections, a gentle angular arch toward the outer third, clean tapering outer tails. One small mole at the outer corner of an eye. Plain solid white sleeveless tank top completely tucked into plain solid white shorts, visible waistline, bare feet. Front view, neutral upright model casting pose, arms relaxed at sides, hands visible, feet flat on the floor. Eye-level camera, centered subject, entire body from top of hair through every toe fully visible, generous clean margins above head and below feet, no cropping, natural perspective. Seamless pure white studio background, broad soft evenly diffused neutral daylight illumination, balanced front fill, naturally fair light-beige skin with a neutral undertone and a subtle healthy rosy tint, the same even complexion across face, shoulders, upper arms, elbows, forearms, wrists, hands and legs, smooth natural skin-tone transitions through both elbows, lifelike skin texture and natural tonal depth, crisp focus, fine hair strands, clear eyes and skin texture, realistic photographic detail. No other people, props, jewelry, logos, text, scenery, blur, soft focus, motion blur, or low resolution."
+    },
+    {
+      "path": "/nodes/8/title",
+      "old": "08 保存 · 当前角色候选02",
+      "new": "08 保存 · 候选03（本轮第1/3次，尚未提交）"
+    },
+    {
+      "path": "/nodes/8/widgets_values/0",
+      "old": "角色生成/闻灯-正面全身-候选02",
+      "new": "角色生成/闻灯-正面全身-候选03"
+    },
+    {
+      "path": "/metadata/revision",
+      "old": 2,
+      "new": 3
+    }
+  ],
+  "scope": "expanded-review",
+  "review_reasons": [
+    "format-or-metadata"
+  ],
+  "context": {
+    "old": {
+      "1": {
+        "type": "CheckpointLoaderSimple",
+        "upstream": [],
+        "downstream": [
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      "2": {
+        "type": "CLIPTextEncode",
+        "upstream": [
+          1
+        ],
+        "downstream": [
+          4
+        ]
+      },
+      "4": {
+        "type": "FluxGuidance",
+        "upstream": [
+          2
+        ],
+        "downstream": [
+          6
+        ]
+      },
+      "7": {
+        "type": "VAEDecode",
+        "upstream": [
+          1,
+          6
+        ],
+        "downstream": [
+          8
+        ]
+      },
+      "8": {
+        "type": "SaveImage",
+        "upstream": [
+          7
+        ],
+        "downstream": []
+      }
+    },
+    "new": {
+      "1": {
+        "type": "CheckpointLoaderSimple",
+        "upstream": [],
+        "downstream": [
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      "2": {
+        "type": "CLIPTextEncode",
+        "upstream": [
+          1
+        ],
+        "downstream": [
+          4
+        ]
+      },
+      "4": {
+        "type": "FluxGuidance",
+        "upstream": [
+          2
+        ],
+        "downstream": [
+          6
+        ]
+      },
+      "7": {
+        "type": "VAEDecode",
+        "upstream": [
+          1,
+          6
+        ],
+        "downstream": [
+          8
+        ]
+      },
+      "8": {
+        "type": "SaveImage",
+        "upstream": [
+          7
+        ],
+        "downstream": []
+      }
+    }
+  },
+  "old_counts": {
+    "nodes": 8,
+    "links": 10
+  },
+  "new_counts": {
+    "nodes": 8,
+    "links": 10
+  },
+  "old_path": "D:\\xiaobai-claude code\\comfyUImd\\系列-夜市百相簿\\02-角色\\角色生成.json",
+  "new_path": "D:\\xiaobai-claude code\\comfyUImd\\docs\\archive\\workflow-snapshots\\角色生成-2026-10-13\\candidate03_workflow.json",
+  "old_sha256": "d6a0c4715ff73be4e40c960ae1480152f5aa917982937e7f1347c1e5ee4bca8b",
+  "new_sha256": "a6156ea0b37e432f597930167927fedc0b09077a10eef993268270553f065266",
+  "parse_skipped": false
+}

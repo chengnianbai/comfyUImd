@@ -1,0 +1,26 @@
+{
+  "front_matches_successful_P_api": true,
+  "only_input_filename_changed": true,
+  "default_output_dependencies": [
+    "14",
+    "15",
+    "1380",
+    "1381",
+    "1382",
+    "1383",
+    "1384",
+    "1385",
+    "1386",
+    "1387",
+    "1388",
+    "1389"
+  ],
+  "default_dependency_count": 12,
+  "nodes": 142,
+  "links": 210,
+  "node_overlaps": 0,
+  "local_candidate": "系列-夜市百相簿\\02-角色\\闻灯\\工作流\\验证\\闻灯-正面比例-待云端同步.json",
+  "canonical_unchanged": true,
+  "remote_candidate_saved": false,
+  "input_upload_verified": false
+}

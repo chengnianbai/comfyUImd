@@ -1,0 +1,34 @@
+{
+  "nodes": 132,
+  "links": 198,
+  "node_overlaps": 0,
+  "routed_links": 85,
+  "routing_execution_unchanged": true,
+  "input1360": [
+    {
+      "name": "image",
+      "type": "IMAGE",
+      "link": 2469
+    },
+    {
+      "name": "width",
+      "type": "INT",
+      "link": null
+    },
+    {
+      "name": "height",
+      "type": "INT",
+      "link": null
+    },
+    {
+      "name": "x",
+      "type": "INT",
+      "link": null
+    },
+    {
+      "name": "y",
+      "type": "INT",
+      "link": null
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "changes": [
+    {
+      "path": "/nodes/5/title",
+      "old": "05 SDXL全身画布 · 896×1344",
+      "new": "05 SDXL全身画布 · 768×1536窄高构图"
+    },
+    {
+      "path": "/nodes/5/widgets_values/0",
+      "old": 896,
+      "new": 768
+    },
+    {
+      "path": "/nodes/5/widgets_values/1",
+      "old": 1344,
+      "new": 1536
+    },
+    {
+      "path": "/nodes/8/title",
+      "old": "08 保存 · SDXL正面全身候选08 · V1.3材质",
+      "new": "08 保存 · SDXL正面全身候选09 · 窄高画布"
+    },
+    {
+      "path": "/nodes/8/widgets_values/0",
+      "old": "角色生成/闻灯-SDXL正面全身-候选08",
+      "new": "角色生成/闻灯-SDXL正面全身-候选09"
+    },
+    {
+      "path": "/metadata/revision",
+      "old": 8,
+      "new": 9
+    }
+  ],
+  "scope": "expanded-review",
+  "review_reasons": [
+    "format-or-metadata"
+  ],
+  "context": {
+    "old": {
+      "5": {
+        "type": "EmptyLatentImage",
+        "upstream": [],
+        "downstream": [
+          6
+        ]
+      },
+      "6": {
+        "type": "KSampler",
+        "upstream": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "downstream": [
+          7
+        ]
+      },
+      "7": {
+        "type": "VAEDecode",
+        "upstream": [
+          1,
+          6
+        ],
+        "downstream": [
+          8
+        ]
+      },
+      "8": {
+        "type": "SaveImage",
+        "upstream": [
+          7
+        ],
+        "downstream": []
+      }
+    },
+    "new": {
+      "5": {
+        "type": "EmptyLatentImage",
+        "upstream": [],
+        "downstream": [
+          6
+        ]
+      },
+      "6": {
+        "type": "KSampler",
+        "upstream": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "downstream": [
+          7
+        ]
+      },
+      "7": {
+        "type": "VAEDecode",
+        "upstream": [
+          1,
+          6
+        ],
+        "downstream": [
+          8
+        ]
+      },
+      "8": {
+        "type": "SaveImage",
+        "upstream": [
+          7
+        ],
+        "downstream": []
+      }
+    }
+  },
+  "old_counts": {
+    "nodes": 7,
+    "links": 9
+  },
+  "new_counts": {
+    "nodes": 7,
+    "links": 9
+  },
+  "old_path": "D:\\xiaobai-claude code\\comfyUImd\\docs\\archive\\workflow-snapshots\\token-deltas\\fdc4107a908d82de98627eecaf64c1e5aa7630f166325cdfd680b3723840c898.baseline.json",
+  "new_path": "D:\\xiaobai-claude code\\comfyUImd\\系列-夜市百相簿\\02-角色\\角色生成.json",
+  "old_sha256": "fdc4107a908d82de98627eecaf64c1e5aa7630f166325cdfd680b3723840c898",
+  "new_sha256": "f81afc591f18d4e8f8ad2752c6726cd4f9d12411f795fcdc33acb7174cf59d01",
+  "parse_skipped": false,
+  "state_path": "docs/generated/workflow-state/角色生成.state.json"
+}

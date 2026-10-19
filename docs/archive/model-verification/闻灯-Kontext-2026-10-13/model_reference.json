@@ -1,0 +1,35 @@
+{
+  "checked_date": "2026-10-13",
+  "expected_file": "flux1-dev-kontext_fp8_scaled.safetensors",
+  "server_alias": "FLUX1\\flux1-schnell.safetensors",
+  "server_identity_status": "未验证；借槽位安装经过仅为历史记录",
+  "official_reference": {
+    "repository": "Comfy-Org/flux1-kontext-dev_ComfyUI",
+    "path": "split_files/diffusion_models/flux1-dev-kontext_fp8_scaled.safetensors",
+    "size_bytes": 11904640136,
+    "sha256": "630ba795ec64283b4230ea23cf79406c2c68b7c578229ed139f30043eadb30a2",
+    "huggingface_lfs_oid_matches_modelscope_sha256": true,
+    "huggingface_source": "https://huggingface.co/api/models/Comfy-Org/flux1-kontext-dev_ComfyUI/tree/main/split_files/diffusion_models?expand=true",
+    "modelscope_source": "https://www.modelscope.cn/api/v1/models/Comfy-Org/flux1-kontext-dev_ComfyUI/repo/files?Revision=master&Root=split_files/diffusion_models&Recursive=false",
+    "official_prefix_range_status": 206,
+    "official_prefix_content_range": "bytes 0-7/11904640136",
+    "official_first8_hex": "3032020000000000",
+    "official_header_length_bytes": 143920,
+    "full_tensor_header_read": false
+  },
+  "remote_verification": {
+    "base": "https://gw-da074043649a46aa8485bca1ba422cbe.cn-beijing.aigclinks.com:8016",
+    "home_status": 504,
+    "queue_status": 504,
+    "model_listing_status": 504,
+    "view_metadata_status": 504,
+    "size_read": false,
+    "header_read": false,
+    "sha256_read": false
+  },
+  "paused_by_user": true,
+  "pause_reason": "用户已关闭云电脑，明确要求等开机后再处理",
+  "workflow_modified": false,
+  "generation_submitted": false,
+  "validation_standard": "大小与张量结构支持结构匹配；SHA-256与官方相同证明文件字节一致"
+}

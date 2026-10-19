@@ -1,0 +1,1738 @@
+{
+ "id": "1942ebf9-d94a-4790-bc94-ff98ed497520",
+ "revision": 14,
+ "last_node_id": 21,
+ "last_link_id": 28,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "CheckpointLoaderSimple",
+   "pos": [
+    80,
+    140
+   ],
+   "size": [
+    470,
+    100
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "Checkpoint名称",
+     "name": "ckpt_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "ckpt_name"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "模型",
+     "name": "MODEL",
+     "type": "MODEL",
+     "slot_index": 0,
+     "links": [
+      11
+     ]
+    },
+    {
+     "localized_name": "CLIP",
+     "name": "CLIP",
+     "type": "CLIP",
+     "slot_index": 1,
+     "links": [
+      1,
+      2
+     ]
+    },
+    {
+     "localized_name": "VAE",
+     "name": "VAE",
+     "type": "VAE",
+     "slot_index": 2,
+     "links": [
+      4
+     ]
+    }
+   ],
+   "title": "01 通用底模 · LEOSAM HelloWorld XL 7.0 · SDXL",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CheckpointLoaderSimple"
+   },
+   "widgets_values": [
+    "leosamsHelloworldXL_helloworldXL70.safetensors"
+   ]
+  },
+  {
+   "id": 2,
+   "type": "CLIPTextEncode",
+   "pos": [
+    660,
+    80
+   ],
+   "size": [
+    640,
+    300
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 1
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      6
+     ]
+    }
+   ],
+   "title": "02 SDXL正向｜候选14：服装与全身硬条件前置",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "Full-length front-view character design reference of one 24-year-old East Asian man with subtle Eurasian eye features. Show his entire figure from hair to both bare feet, with clear space above his head and below his feet. He wears opaque white casual outerwear: a sleeveless crew-neck athletic shirt with broad straps, fully covering chest and abdomen, tucked all around inside plain white casual mid-thigh shorts; the waistband sits over the shirt hem. Clearly dressed, not underwear. Sturdy healthy adult build, broad shoulders, full rib cage and chest, solid abdomen, thick upper arms, thighs and calves; not slim. Dark brown deep-set almond eyes, visible double eyelid creases on both eyes, defined natural brow ridge, straight higher nose bridge, masculine East Asian face with only subtle Eurasian influence, natural skin texture. Thick dark medium-length loose natural waves, layered sides and nape, irregular forward-falling curls across the forehead, no center part, side part or curtain split. Small mole at the outer eye. Plain pure-white seamless studio background, soft even light, natural realistic proportions, relaxed front-facing stance."
+   ]
+  },
+  {
+   "id": 3,
+   "type": "CLIPTextEncode",
+   "pos": [
+    660,
+    495
+   ],
+   "size": [
+    640,
+    300
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "link": 2
+    },
+    {
+     "localized_name": "文本",
+     "name": "text",
+     "type": "STRING",
+     "widget": {
+      "name": "text"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "条件",
+     "name": "CONDITIONING",
+     "type": "CONDITIONING",
+     "links": [
+      7
+     ]
+    }
+   ],
+   "title": "03 SDXL负向｜候选14：排除裸身/内裤",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "CLIPTextEncode"
+   },
+   "widgets_values": [
+    "shirtless, bare chest, exposed torso, nudity, underwear, briefs, boxer briefs, trunks, panties, open shirt, transparent fabric, untucked shirt, shirt hem outside waistband, logo, lettering, watermark, cropped body, waist-up, portrait, close-up, cropped head, cropped legs, cropped feet, missing feet, out of frame, center part, side part, curtain split, swept-back forehead, single eyelids, narrow shoulders, skinny limbs, runway-model thinness, Korean idol styling, beauty filter, plastic skin, yellow skin, uneven skin tone, gray background, harsh shadow, jewelry, props, extra limbs, deformed hands, extra fingers"
+   ]
+  },
+  {
+   "id": 5,
+   "type": "EmptyLatentImage",
+   "pos": [
+    1280,
+    420
+   ],
+   "size": [
+    350,
+    106
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "宽度",
+     "name": "width",
+     "type": "INT",
+     "widget": {
+      "name": "width"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "高度",
+     "name": "height",
+     "type": "INT",
+     "widget": {
+      "name": "height"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "批量大小",
+     "name": "batch_size",
+     "type": "INT",
+     "widget": {
+      "name": "batch_size"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "slot_index": 0,
+     "links": [
+      8
+     ]
+    }
+   ],
+   "title": "06 SDXL采样｜候选14",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "EmptyLatentImage"
+   },
+   "widgets_values": [
+    768,
+    1536,
+    1
+   ]
+  },
+  {
+   "id": 6,
+   "type": "KSampler",
+   "pos": [
+    1700,
+    170
+   ],
+   "size": [
+    464,
+    310
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "模型",
+     "name": "model",
+     "type": "MODEL",
+     "link": 25
+    },
+    {
+     "localized_name": "正面条件",
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 6
+    },
+    {
+     "localized_name": "负面条件",
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 7
+    },
+    {
+     "localized_name": "Latent图像",
+     "name": "latent_image",
+     "type": "LATENT",
+     "link": 8
+    },
+    {
+     "localized_name": "种子",
+     "name": "seed",
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "步数",
+     "name": "steps",
+     "type": "INT",
+     "widget": {
+      "name": "steps"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "cfg",
+     "name": "cfg",
+     "type": "FLOAT",
+     "widget": {
+      "name": "cfg"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "采样器名称",
+     "name": "sampler_name",
+     "type": "COMBO",
+     "widget": {
+      "name": "sampler_name"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "调度器",
+     "name": "scheduler",
+     "type": "COMBO",
+     "widget": {
+      "name": "scheduler"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "降噪",
+     "name": "denoise",
+     "type": "FLOAT",
+     "widget": {
+      "name": "denoise"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "Latent",
+     "name": "LATENT",
+     "type": "LATENT",
+     "links": [
+      9
+     ]
+    }
+   ],
+   "title": "06 SDXL采样 · 30步 CFG6 · DPM++2M Karras",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "KSampler"
+   },
+   "widgets_values": [
+    2026101514,
+    "fixed",
+    30,
+    6.0,
+    "dpmpp_2m",
+    "karras",
+    1.0
+   ]
+  },
+  {
+   "id": 7,
+   "type": "VAEDecode",
+   "pos": [
+    2200,
+    180
+   ],
+   "size": [
+    350,
+    100
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "Latent",
+     "name": "samples",
+     "type": "LATENT",
+     "link": 9
+    },
+    {
+     "localized_name": "vae",
+     "name": "vae",
+     "type": "VAE",
+     "link": 4
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      10
+     ]
+    }
+   ],
+   "title": "07 VAE 解码",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "VAEDecode"
+   },
+   "widgets_values": []
+  },
+  {
+   "id": 8,
+   "type": "SaveImage",
+   "pos": [
+    2600,
+    180
+   ],
+   "size": [
+    440,
+    620
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图片",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 10
+    },
+    {
+     "localized_name": "文件名前缀",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": []
+    }
+   ],
+   "title": "08 输出｜闻灯角色生成候选14",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "角色生成/闻灯角色生成-候选14"
+   ]
+  },
+  {
+   "id": 9,
+   "type": "LoadImage",
+   "pos": [
+    180,
+    610
+   ],
+   "size": [
+    360,
+    420
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "COMBO",
+     "widget": {
+      "name": "image"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "选择文件上传",
+     "name": "upload",
+     "type": "IMAGEUPLOAD",
+     "widget": {
+      "name": "upload"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      14
+     ]
+    },
+    {
+     "localized_name": "遮罩",
+     "name": "MASK",
+     "type": "MASK",
+     "slot_index": 1,
+     "links": []
+    }
+   ],
+   "title": "09 候选09全身参考（低权重）",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "0.30.1",
+    "Node name for S&R": "LoadImage"
+   },
+   "widgets_values": [
+    "candidate09_fullbody_reference.png",
+    "image"
+   ]
+  },
+  {
+   "id": 10,
+   "type": "PrepImageForClipVision",
+   "pos": [
+    600,
+    610
+   ],
+   "size": [
+    300,
+    160
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 14
+    },
+    {
+     "localized_name": "插值",
+     "name": "interpolation",
+     "type": "COMBO",
+     "widget": {
+      "name": "interpolation"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "裁剪位置",
+     "name": "crop_position",
+     "type": "COMBO",
+     "widget": {
+      "name": "crop_position"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "锐化",
+     "name": "sharpening",
+     "type": "FLOAT",
+     "widget": {
+      "name": "sharpening"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      15
+     ]
+    }
+   ],
+   "title": "10 参考图预处理 · 等比补边保留全身",
+   "properties": {
+    "cnr_id": "comfyui_ipadapter_plus",
+    "ver": "2.0.0",
+    "Node name for S&R": "PrepImageForClipVision"
+   },
+   "widgets_values": [
+    "LANCZOS",
+    "pad",
+    0.0
+   ]
+  },
+  {
+   "id": 11,
+   "type": "IPAdapterUnifiedLoader",
+   "pos": [
+    960,
+    610
+   ],
+   "size": [
+    320,
+    130
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "模型",
+     "name": "model",
+     "type": "MODEL",
+     "link": 11
+    },
+    {
+     "localized_name": "预设",
+     "name": "preset",
+     "type": "COMBO",
+     "widget": {
+      "name": "preset"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "模型",
+     "name": "MODEL",
+     "type": "MODEL",
+     "slot_index": 0,
+     "links": [
+      12
+     ]
+    },
+    {
+     "localized_name": "IPAdapter",
+     "name": "ipadapter",
+     "type": "IPADAPTER",
+     "slot_index": 1,
+     "links": [
+      13,
+      26,
+      27,
+      28
+     ]
+    }
+   ],
+   "title": "11 SDXL IP-Adapter Plus ViT-H",
+   "properties": {
+    "cnr_id": "comfyui_ipadapter_plus",
+    "ver": "2.0.0",
+    "Node name for S&R": "IPAdapterUnifiedLoader"
+   },
+   "widgets_values": [
+    "PLUS (high strength)"
+   ]
+  },
+  {
+   "id": 12,
+   "type": "IPAdapterAdvanced",
+   "pos": [
+    1370,
+    610
+   ],
+   "size": [
+    350,
+    330
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "模型",
+     "name": "model",
+     "type": "MODEL",
+     "link": 12
+    },
+    {
+     "localized_name": "IPAdapter",
+     "name": "ipadapter",
+     "type": "IPADAPTER",
+     "link": 13
+    },
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 15
+    },
+    {
+     "localized_name": "权重",
+     "name": "weight",
+     "type": "FLOAT",
+     "widget": {
+      "name": "weight"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "权重类型",
+     "name": "weight_type",
+     "type": "COMBO",
+     "widget": {
+      "name": "weight_type"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "合并嵌入",
+     "name": "combine_embeds",
+     "type": "COMBO",
+     "widget": {
+      "name": "combine_embeds"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "开始",
+     "name": "start_at",
+     "type": "FLOAT",
+     "widget": {
+      "name": "start_at"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "结束",
+     "name": "end_at",
+     "type": "FLOAT",
+     "widget": {
+      "name": "end_at"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "嵌入缩放",
+     "name": "embeds_scaling",
+     "type": "COMBO",
+     "widget": {
+      "name": "embeds_scaling"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "模型",
+     "name": "MODEL",
+     "type": "MODEL",
+     "slot_index": 0,
+     "links": [
+      16
+     ]
+    }
+   ],
+   "title": "12 轻度参考 · 避免照搬偏分与偏瘦",
+   "properties": {
+    "cnr_id": "comfyui_ipadapter_plus",
+    "ver": "2.0.0",
+    "Node name for S&R": "IPAdapterAdvanced"
+   },
+   "widgets_values": [
+    0.06,
+    "ease out",
+    "concat",
+    0.0,
+    0.3,
+    "V only"
+   ]
+  },
+  {
+   "id": 13,
+   "type": "LoadImage",
+   "pos": [
+    180,
+    1080
+   ],
+   "size": [
+    330,
+    390
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "COMBO",
+     "widget": {
+      "name": "image"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "选择文件上传",
+     "name": "upload",
+     "type": "IMAGEUPLOAD",
+     "widget": {
+      "name": "upload"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      17
+     ]
+    },
+    {
+     "localized_name": "遮罩",
+     "name": "MASK",
+     "type": "MASK",
+     "slot_index": 1,
+     "links": []
+    }
+   ],
+   "title": "参考图 · candidate12_feature_ref_01.png",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "2.0.0",
+    "Node name for S&R": "LoadImage"
+   },
+   "widgets_values": [
+    "candidate12_feature_ref_01.png",
+    "image"
+   ]
+  },
+  {
+   "id": 14,
+   "type": "PrepImageForClipVision",
+   "pos": [
+    560,
+    1080
+   ],
+   "size": [
+    290,
+    160
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 17
+    },
+    {
+     "localized_name": "插值",
+     "name": "interpolation",
+     "type": "COMBO",
+     "widget": {
+      "name": "interpolation"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "裁剪位置",
+     "name": "crop_position",
+     "type": "COMBO",
+     "widget": {
+      "name": "crop_position"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "锐化",
+     "name": "sharpening",
+     "type": "FLOAT",
+     "widget": {
+      "name": "sharpening"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      18
+     ]
+    }
+   ],
+   "title": "眼眉与鼻根裁切 A",
+   "properties": {
+    "cnr_id": "comfyui_ipadapter_plus",
+    "ver": "2.0.0",
+    "Node name for S&R": "PrepImageForClipVision"
+   },
+   "widgets_values": [
+    "LANCZOS",
+    "pad",
+    0.0
+   ]
+  },
+  {
+   "id": 15,
+   "type": "IPAdapterAdvanced",
+   "pos": [
+    1370,
+    1030
+   ],
+   "size": [
+    360,
+    330
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "模型",
+     "name": "model",
+     "type": "MODEL",
+     "link": 16
+    },
+    {
+     "localized_name": "IPAdapter",
+     "name": "ipadapter",
+     "type": "IPADAPTER",
+     "link": 26
+    },
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 18
+    },
+    {
+     "localized_name": "weight",
+     "name": "weight",
+     "type": "FLOAT",
+     "widget": {
+      "name": "weight"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "weight_type",
+     "name": "weight_type",
+     "type": "COMBO",
+     "widget": {
+      "name": "weight_type"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "combine_embeds",
+     "name": "combine_embeds",
+     "type": "COMBO",
+     "widget": {
+      "name": "combine_embeds"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "start_at",
+     "name": "start_at",
+     "type": "FLOAT",
+     "widget": {
+      "name": "start_at"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "end_at",
+     "name": "end_at",
+     "type": "FLOAT",
+     "widget": {
+      "name": "end_at"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "embeds_scaling",
+     "name": "embeds_scaling",
+     "type": "COMBO",
+     "widget": {
+      "name": "embeds_scaling"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "模型",
+     "name": "MODEL",
+     "type": "MODEL",
+     "slot_index": 0,
+     "links": [
+      19
+     ]
+    }
+   ],
+   "title": "眼窝/双眼皮/鼻梁参考 A",
+   "properties": {
+    "cnr_id": "comfyui_ipadapter_plus",
+    "ver": "2.0.0",
+    "Node name for S&R": "IPAdapterAdvanced"
+   },
+   "widgets_values": [
+    0.18,
+    "ease out",
+    "concat",
+    0.0,
+    0.46,
+    "V only"
+   ]
+  },
+  {
+   "id": 16,
+   "type": "LoadImage",
+   "pos": [
+    180,
+    1540
+   ],
+   "size": [
+    330,
+    390
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "COMBO",
+     "widget": {
+      "name": "image"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "选择文件上传",
+     "name": "upload",
+     "type": "IMAGEUPLOAD",
+     "widget": {
+      "name": "upload"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      20
+     ]
+    },
+    {
+     "localized_name": "遮罩",
+     "name": "MASK",
+     "type": "MASK",
+     "slot_index": 1,
+     "links": []
+    }
+   ],
+   "title": "参考图 · candidate12_feature_ref_02.png",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "2.0.0",
+    "Node name for S&R": "LoadImage"
+   },
+   "widgets_values": [
+    "candidate13_feature_ref_02.png",
+    "image"
+   ]
+  },
+  {
+   "id": 17,
+   "type": "PrepImageForClipVision",
+   "pos": [
+    560,
+    1540
+   ],
+   "size": [
+    290,
+    160
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 20
+    },
+    {
+     "localized_name": "插值",
+     "name": "interpolation",
+     "type": "COMBO",
+     "widget": {
+      "name": "interpolation"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "裁剪位置",
+     "name": "crop_position",
+     "type": "COMBO",
+     "widget": {
+      "name": "crop_position"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "锐化",
+     "name": "sharpening",
+     "type": "FLOAT",
+     "widget": {
+      "name": "sharpening"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      21
+     ]
+    }
+   ],
+   "title": "眼眉与鼻背裁切 B",
+   "properties": {
+    "cnr_id": "comfyui_ipadapter_plus",
+    "ver": "2.0.0",
+    "Node name for S&R": "PrepImageForClipVision"
+   },
+   "widgets_values": [
+    "LANCZOS",
+    "pad",
+    0.0
+   ]
+  },
+  {
+   "id": 18,
+   "type": "IPAdapterAdvanced",
+   "pos": [
+    1800,
+    930
+   ],
+   "size": [
+    360,
+    330
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "模型",
+     "name": "model",
+     "type": "MODEL",
+     "link": 19
+    },
+    {
+     "localized_name": "IPAdapter",
+     "name": "ipadapter",
+     "type": "IPADAPTER",
+     "link": 27
+    },
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 21
+    },
+    {
+     "localized_name": "weight",
+     "name": "weight",
+     "type": "FLOAT",
+     "widget": {
+      "name": "weight"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "weight_type",
+     "name": "weight_type",
+     "type": "COMBO",
+     "widget": {
+      "name": "weight_type"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "combine_embeds",
+     "name": "combine_embeds",
+     "type": "COMBO",
+     "widget": {
+      "name": "combine_embeds"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "start_at",
+     "name": "start_at",
+     "type": "FLOAT",
+     "widget": {
+      "name": "start_at"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "end_at",
+     "name": "end_at",
+     "type": "FLOAT",
+     "widget": {
+      "name": "end_at"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "embeds_scaling",
+     "name": "embeds_scaling",
+     "type": "COMBO",
+     "widget": {
+      "name": "embeds_scaling"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "模型",
+     "name": "MODEL",
+     "type": "MODEL",
+     "slot_index": 0,
+     "links": [
+      22
+     ]
+    }
+   ],
+   "title": "眼型/眉骨/鼻背参考 B",
+   "properties": {
+    "cnr_id": "comfyui_ipadapter_plus",
+    "ver": "2.0.0",
+    "Node name for S&R": "IPAdapterAdvanced"
+   },
+   "widgets_values": [
+    0.16,
+    "ease out",
+    "concat",
+    0.0,
+    0.46,
+    "V only"
+   ]
+  },
+  {
+   "id": 19,
+   "type": "LoadImage",
+   "pos": [
+    180,
+    2000
+   ],
+   "size": [
+    330,
+    390
+   ],
+   "flags": {},
+   "order": 15,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "COMBO",
+     "widget": {
+      "name": "image"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "选择文件上传",
+     "name": "upload",
+     "type": "IMAGEUPLOAD",
+     "widget": {
+      "name": "upload"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      23
+     ]
+    },
+    {
+     "localized_name": "遮罩",
+     "name": "MASK",
+     "type": "MASK",
+     "slot_index": 1,
+     "links": []
+    }
+   ],
+   "title": "参考图 · candidate12_feature_ref_03.png",
+   "properties": {
+    "cnr_id": "comfy-core",
+    "ver": "2.0.0",
+    "Node name for S&R": "LoadImage"
+   },
+   "widgets_values": [
+    "candidate13_feature_ref_03.png",
+    "image"
+   ]
+  },
+  {
+   "id": 20,
+   "type": "PrepImageForClipVision",
+   "pos": [
+    560,
+    2000
+   ],
+   "size": [
+    290,
+    160
+   ],
+   "flags": {},
+   "order": 16,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 23
+    },
+    {
+     "localized_name": "插值",
+     "name": "interpolation",
+     "type": "COMBO",
+     "widget": {
+      "name": "interpolation"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "裁剪位置",
+     "name": "crop_position",
+     "type": "COMBO",
+     "widget": {
+      "name": "crop_position"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "锐化",
+     "name": "sharpening",
+     "type": "FLOAT",
+     "widget": {
+      "name": "sharpening"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "图像",
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "slot_index": 0,
+     "links": [
+      24
+     ]
+    }
+   ],
+   "title": "卷发轮廓裁切 · 不含眼部",
+   "properties": {
+    "cnr_id": "comfyui_ipadapter_plus",
+    "ver": "2.0.0",
+    "Node name for S&R": "PrepImageForClipVision"
+   },
+   "widgets_values": [
+    "LANCZOS",
+    "pad",
+    0.0
+   ]
+  },
+  {
+   "id": 21,
+   "type": "IPAdapterAdvanced",
+   "pos": [
+    2250,
+    830
+   ],
+   "size": [
+    360,
+    330
+   ],
+   "flags": {},
+   "order": 17,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "模型",
+     "name": "model",
+     "type": "MODEL",
+     "link": 22
+    },
+    {
+     "localized_name": "IPAdapter",
+     "name": "ipadapter",
+     "type": "IPADAPTER",
+     "link": 28
+    },
+    {
+     "localized_name": "图像",
+     "name": "image",
+     "type": "IMAGE",
+     "link": 24
+    },
+    {
+     "localized_name": "weight",
+     "name": "weight",
+     "type": "FLOAT",
+     "widget": {
+      "name": "weight"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "weight_type",
+     "name": "weight_type",
+     "type": "COMBO",
+     "widget": {
+      "name": "weight_type"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "combine_embeds",
+     "name": "combine_embeds",
+     "type": "COMBO",
+     "widget": {
+      "name": "combine_embeds"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "start_at",
+     "name": "start_at",
+     "type": "FLOAT",
+     "widget": {
+      "name": "start_at"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "end_at",
+     "name": "end_at",
+     "type": "FLOAT",
+     "widget": {
+      "name": "end_at"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "embeds_scaling",
+     "name": "embeds_scaling",
+     "type": "COMBO",
+     "widget": {
+      "name": "embeds_scaling"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "模型",
+     "name": "MODEL",
+     "type": "MODEL",
+     "slot_index": 0,
+     "links": [
+      25
+     ]
+    }
+   ],
+   "title": "头发体积/波浪纹理参考",
+   "properties": {
+    "cnr_id": "comfyui_ipadapter_plus",
+    "ver": "2.0.0",
+    "Node name for S&R": "IPAdapterAdvanced"
+   },
+   "widgets_values": [
+    0.18,
+    "ease out",
+    "concat",
+    0.0,
+    0.5,
+    "V only"
+   ]
+  }
+ ],
+ "links": [
+  [
+   1,
+   1,
+   1,
+   2,
+   0,
+   "CLIP"
+  ],
+  [
+   2,
+   1,
+   1,
+   3,
+   0,
+   "CLIP"
+  ],
+  [
+   4,
+   1,
+   2,
+   7,
+   1,
+   "VAE"
+  ],
+  [
+   6,
+   2,
+   0,
+   6,
+   1,
+   "CONDITIONING"
+  ],
+  [
+   7,
+   3,
+   0,
+   6,
+   2,
+   "CONDITIONING"
+  ],
+  [
+   8,
+   5,
+   0,
+   6,
+   3,
+   "LATENT"
+  ],
+  [
+   9,
+   6,
+   0,
+   7,
+   0,
+   "LATENT"
+  ],
+  [
+   10,
+   7,
+   0,
+   8,
+   0,
+   "IMAGE"
+  ],
+  [
+   11,
+   1,
+   0,
+   11,
+   0,
+   "MODEL"
+  ],
+  [
+   12,
+   11,
+   0,
+   12,
+   0,
+   "MODEL"
+  ],
+  [
+   13,
+   11,
+   1,
+   12,
+   1,
+   "IPADAPTER"
+  ],
+  [
+   14,
+   9,
+   0,
+   10,
+   0,
+   "IMAGE"
+  ],
+  [
+   15,
+   10,
+   0,
+   12,
+   2,
+   "IMAGE"
+  ],
+  [
+   16,
+   12,
+   0,
+   15,
+   0,
+   "MODEL"
+  ],
+  [
+   17,
+   13,
+   0,
+   14,
+   0,
+   "IMAGE"
+  ],
+  [
+   18,
+   14,
+   0,
+   15,
+   2,
+   "IMAGE"
+  ],
+  [
+   19,
+   15,
+   0,
+   18,
+   0,
+   "MODEL"
+  ],
+  [
+   20,
+   16,
+   0,
+   17,
+   0,
+   "IMAGE"
+  ],
+  [
+   21,
+   17,
+   0,
+   18,
+   2,
+   "IMAGE"
+  ],
+  [
+   22,
+   18,
+   0,
+   21,
+   0,
+   "MODEL"
+  ],
+  [
+   23,
+   19,
+   0,
+   20,
+   0,
+   "IMAGE"
+  ],
+  [
+   24,
+   20,
+   0,
+   21,
+   2,
+   "IMAGE"
+  ],
+  [
+   25,
+   21,
+   0,
+   6,
+   0,
+   "MODEL"
+  ],
+  [
+   26,
+   11,
+   1,
+   15,
+   1,
+   "IPADAPTER"
+  ],
+  [
+   27,
+   11,
+   1,
+   18,
+   1,
+   "IPADAPTER"
+  ],
+  [
+   28,
+   11,
+   1,
+   21,
+   1,
+   "IPADAPTER"
+  ]
+ ],
+ "groups": [],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.65,
+   "offset": [
+    40,
+    50
+   ]
+  }
+ },
+ "version": 0.4
+}

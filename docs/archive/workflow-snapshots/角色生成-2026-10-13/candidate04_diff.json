@@ -1,0 +1,142 @@
+{
+  "changes": [
+    {
+      "path": "/nodes/2/title",
+      "old": "02 当前角色 · 卷发/双眼皮/眼眉/自然偏白统一肤色",
+      "new": "02 当前角色 · 简洁优先外观与统一浅肤色"
+    },
+    {
+      "path": "/nodes/2/widgets_values/0",
+      "old": "Photorealistic sharp high-detail full-length casting reference photograph of one adult male character, Wen Deng, age 24. He is Asian, a fictional half-demon shapeshifter shown in ordinary human form, with no supernatural features, no occupational costume, no props. Lean wiry athletic physique, visually about 183 cm tall, naturally long legs, balanced 7.5 to 8 head body proportions, moderately broad rounded shoulders, subtly defined upper arms, realistic anatomy. Dense voluminous tousled black waves and loose curls, rounded airy crown, irregular overlapping curled locks covering the hair roots and falling forward across the forehead, fluffy textured fringe, windswept lift, continuous unbroken fringe across the forehead. Predominantly Asian masculine adult face with subtle mixed Eurasian influence only: slightly deep-set eye sockets and a somewhat higher natural nose bridge, clearly still Asian. Dark brown almond eyes, distinctly visible double eyelid folds on both eyes, a clear upper-eyelid crease, gently recessed eyes beneath defined brow bones, natural depth between eyebrows and upper eyelids. Thick dark eyebrows with individual visible hairs, strong straight inner sections, a gentle angular arch toward the outer third, clean tapering outer tails. One small mole at the outer corner of an eye. Plain solid white sleeveless tank top completely tucked into plain solid white shorts, visible waistline, bare feet. Front view, neutral upright model casting pose, arms relaxed at sides, hands visible, feet flat on the floor. Eye-level camera, centered subject, entire body from top of hair through every toe fully visible, generous clean margins above head and below feet, no cropping, natural perspective. Seamless pure white studio background, broad soft evenly diffused neutral daylight illumination, balanced front fill, naturally fair light-beige skin with a neutral undertone and a subtle healthy rosy tint, the same even complexion across face, shoulders, upper arms, elbows, forearms, wrists, hands and legs, smooth natural skin-tone transitions through both elbows, lifelike skin texture and natural tonal depth, crisp focus, fine hair strands, clear eyes and skin texture, realistic photographic detail. No other people, props, jewelry, logos, text, scenery, blur, soft focus, motion blur, or low resolution.",
+      "new": "A man with thick tousled curly black hair, short fluffy curls and a dense forward fringe covering the hairline. Clearly defined double eyelids, deep-set almond eyes with dark brown irises, thick dark eyebrows with angular outer arches and tapered tails. Fair neutral skin, the same light complexion on face, shoulders, upper arms, forearms, hands and legs. Wen Deng, a 24-year-old Asian man with subtle Eurasian facial structure, a slightly elevated nose bridge and a small outer-eye mole. Lean athletic 183cm model proportions, long legs, moderately broad shoulders. Full-length front-view casting photograph, white sleeveless tank tucked into white shorts, barefoot, arms relaxed. Entire head and every toe visible with margins. White studio background, symmetrical broad frontal diffused light, neutral white balance, crisp detailed skin and hair."
+    },
+    {
+      "path": "/nodes/8/title",
+      "old": "08 保存 · 候选03（本轮第1/3次）",
+      "new": "08 保存 · 候选04（本轮第2/3次）"
+    },
+    {
+      "path": "/nodes/8/widgets_values/0",
+      "old": "角色生成/闻灯-正面全身-候选03",
+      "new": "角色生成/闻灯-正面全身-候选04"
+    },
+    {
+      "path": "/metadata/revision",
+      "old": 3,
+      "new": 4
+    }
+  ],
+  "scope": "expanded-review",
+  "review_reasons": [
+    "format-or-metadata"
+  ],
+  "context": {
+    "old": {
+      "1": {
+        "type": "CheckpointLoaderSimple",
+        "upstream": [],
+        "downstream": [
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      "2": {
+        "type": "CLIPTextEncode",
+        "upstream": [
+          1
+        ],
+        "downstream": [
+          4
+        ]
+      },
+      "4": {
+        "type": "FluxGuidance",
+        "upstream": [
+          2
+        ],
+        "downstream": [
+          6
+        ]
+      },
+      "7": {
+        "type": "VAEDecode",
+        "upstream": [
+          1,
+          6
+        ],
+        "downstream": [
+          8
+        ]
+      },
+      "8": {
+        "type": "SaveImage",
+        "upstream": [
+          7
+        ],
+        "downstream": []
+      }
+    },
+    "new": {
+      "1": {
+        "type": "CheckpointLoaderSimple",
+        "upstream": [],
+        "downstream": [
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      "2": {
+        "type": "CLIPTextEncode",
+        "upstream": [
+          1
+        ],
+        "downstream": [
+          4
+        ]
+      },
+      "4": {
+        "type": "FluxGuidance",
+        "upstream": [
+          2
+        ],
+        "downstream": [
+          6
+        ]
+      },
+      "7": {
+        "type": "VAEDecode",
+        "upstream": [
+          1,
+          6
+        ],
+        "downstream": [
+          8
+        ]
+      },
+      "8": {
+        "type": "SaveImage",
+        "upstream": [
+          7
+        ],
+        "downstream": []
+      }
+    }
+  },
+  "old_counts": {
+    "nodes": 8,
+    "links": 10
+  },
+  "new_counts": {
+    "nodes": 8,
+    "links": 10
+  },
+  "old_path": "D:\\xiaobai-claude code\\comfyUImd\\docs\\archive\\workflow-snapshots\\角色生成-2026-10-13\\candidate03_workflow.json",
+  "new_path": "D:\\xiaobai-claude code\\comfyUImd\\docs\\archive\\workflow-snapshots\\角色生成-2026-10-13\\candidate04_workflow.json",
+  "old_sha256": "233225d9344a09acf5b68251a3cd6737ebc06a6049724b7b297aec7452ee0606",
+  "new_sha256": "6956ba0a9211517ebf6b4703edf2c76e09b20fbb448226b6aaa5f7258f8b2d44",
+  "parse_skipped": false
+}

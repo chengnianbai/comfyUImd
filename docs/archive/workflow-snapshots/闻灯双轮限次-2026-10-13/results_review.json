@@ -1,0 +1,51 @@
+{
+  "attempt_limit": 2,
+  "actual_new_attempts": 2,
+  "generation_stopped": true,
+  "attempts": [
+    {
+      "attempt": 1,
+      "name": "attempt1_face_crop",
+      "prompt_id": "a0f8a34b-0fa9-4839-801d-096c9b78edd7",
+      "history_status": "success",
+      "exact_request_received": true,
+      "image_count": 1,
+      "dimensions": [
+        2048,
+        3584
+      ],
+      "execution_seconds": 83.576
+    },
+    {
+      "attempt": 2,
+      "name": "attempt2_tank_framing",
+      "prompt_id": "35933f62-e92f-40d7-b944-cbefe5565e53",
+      "history_status": "success",
+      "exact_request_received": true,
+      "image_count": 1,
+      "dimensions": [
+        2048,
+        3584
+      ],
+      "execution_seconds": 51.546
+    }
+  ],
+  "main_workflow_sha256": "23287dbd57f8f64f4526fa85b9651059e1d98df92ce5e6d5e1db6d2710a4390b",
+  "local_remote_readback_equal": true,
+  "source_face_unchanged": true,
+  "comparison_state_advanced": false,
+  "strict_state_failure": "v1 state incompatible with v2; v2 also rejects pre-existing node1002 dangling output link1; kept unchanged, whitelist and browser/API validation used",
+  "visual_review": {
+    "attempt1": "仍短袖、未扎腰、画面过满；去掉大部分肩部衣着参考不足以改善这些目标",
+    "attempt2": {
+      "sleeveless": "已出现无袖、双肩可见",
+      "muscles": "肩臂更易观察，但参考图的修长体型未明显达到",
+      "shirt_tucked": "未达到，衣摆仍在裤外",
+      "framing": "未达到72%目标，人物仍接近占满画面",
+      "identity": "外观仍相近，但本轮脸部有变化，需用户重新判断",
+      "new_artifact": "颈后蓝色衣领残影；880×880母版裁切仍含少量领口像素，不能称完全去掉衣服参考"
+    }
+  },
+  "user_acceptance": "未验收",
+  "next_action": "限次结束，展示实际图并等待用户判断；不自动第3次生成"
+}

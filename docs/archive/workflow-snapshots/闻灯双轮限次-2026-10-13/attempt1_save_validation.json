@@ -1,0 +1,7 @@
+{
+  "readback_byte_equal": true,
+  "sha256": "a22419e7d44ef9554f9a7f15dbe7e3b82c61e2e60fc9d9adeb07638b4a39d4d1",
+  "workflow": "闻灯.json",
+  "status": "角色主工作入口，待验收",
+  "only_front_reference_changed": true
+}

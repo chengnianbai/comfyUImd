@@ -1,0 +1,25 @@
+{
+  "goal": "单次验证肩臂肌肉、白色无袖上衣扎裤腰及更宽松的完整全身取景",
+  "authorized_runs": 1,
+  "stages": [
+    "核验线上与本地一致并留备份",
+    "仅修改1313/1333/1353提示词和1373说明",
+    "浏览器导出API并核验差异与前向依赖",
+    "保存同名主入口并回读",
+    "仅提交正面一次并下载实际输出",
+    "展示实际图、指出未达项、等待用户决定下一轮"
+  ],
+  "constraints": {
+    "height_cm": 183,
+    "clothing": "白色无袖T恤扎进白短裤",
+    "identity": "闻灯母版00017",
+    "pose": "双脚落地自然正面站立",
+    "framing_target": "人物约占画面高度85%，头脚完整",
+    "body": "修长、适度圆润肩臂肌肉、精瘦腿部",
+    "reference_conditioning": false,
+    "model_switch": false
+  },
+  "model_issue": "标题Kontext，实际UNETLoader为FLUX1/flux1-schnell.safetensors，服务仅列出该文件；不能据标题确认真实权重，后续单独核查",
+  "status": "单次运行完成、目标未达到、待用户判断",
+  "prompt_id": "b4330900-e594-4449-946b-192f49e46b48"
+}

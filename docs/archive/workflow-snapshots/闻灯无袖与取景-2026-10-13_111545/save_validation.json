@@ -1,0 +1,8 @@
+{
+  "local_remote_equal": true,
+  "sha256": "f20973bd9f9cacde73fda289d57b32cddf6ece88f389a0ba90389ae1eef8226c",
+  "name": "闻灯.json",
+  "status": "主工作入口，待用户验收",
+  "base": "https://gw-da074043649a46aa8485bca1ba422cbe.cn-beijing.aigclinks.com:8016",
+  "comparison_baseline_advanced": true
+}
